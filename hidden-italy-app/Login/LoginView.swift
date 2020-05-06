@@ -18,16 +18,28 @@ struct LoginView: View {
 
 
     var body: some View {
+        
         VStack()
         {
-            if (nextView == "createUser") {
-                CreateUserView()
-            } else if (nextView == "resetUser") {
-                ResetUserView()
-            } else if (nextView == "login"){
-                MapView()
+//            NavigationLink(destination: ResetUserView()) {
+//                Text("Push new screen")
+//            }
+//            if (nextView == "createUser") {
+//                CreateUserView()
+//            } else if (nextView == "resetUser") {
+//                ResetUserView()
+//            } else if (nextView == "login"){
+//                MapView()
+//            }
+            if loginView {
+                VStack {
+                    RootTabView()
+                    .animation(.easeIn(duration: 1))
+                    .transition(AnyTransition.opacity.combined(with: .slide))
+                }
+                //ResetUserView()
             }
-        
+
             Text("HIDDEN ITALY")
             .font(.largeTitle)
                 .padding([.top,.bottom], 20)
@@ -80,7 +92,9 @@ struct LoginView: View {
             }.padding(.horizontal, 20)
            
             Button(action:  {
-                self.nextView = "login"
+                //self.nextView = "login"
+                self.loginView = true
+                
             }){
                 //
                 Text("Log In")
@@ -90,6 +104,10 @@ struct LoginView: View {
             }.background(Color("btnBg"))
             .clipShape(Capsule())
                 .padding(.top, 35)
+            
+//            .sheet(isPresented: $loginView) {
+//                MapView()
+//            }
                    
             Text("oppure").foregroundColor(Color.gray.opacity(0.5)).padding([.top,.bottom], 10)
             
@@ -126,7 +144,6 @@ struct LoginView: View {
                 }
             }.padding([.top,.bottom], 10)
         }
-         
     }
 }
 

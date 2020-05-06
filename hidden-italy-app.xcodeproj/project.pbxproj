@@ -11,6 +11,8 @@
 		051585772462E34A00194002 /* ResetUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585762462E34A00194002 /* ResetUserView.swift */; };
 		051585792462E36800194002 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585782462E36800194002 /* LoginView.swift */; };
 		0515857F2463336D00194002 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0515857E2463336D00194002 /* MapView.swift */; };
+		051585822463536100194002 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585812463536100194002 /* TestView.swift */; };
+		05158584246365A400194002 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05158583246365A400194002 /* ImagePicker.swift */; };
 		05948F8D245FFBC1001BB4A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948F8C245FFBC1001BB4A6 /* AppDelegate.swift */; };
 		05948F8F245FFBC1001BB4A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948F8E245FFBC1001BB4A6 /* SceneDelegate.swift */; };
 		05948F91245FFBC1001BB4A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948F90245FFBC1001BB4A6 /* ContentView.swift */; };
@@ -27,6 +29,8 @@
 		051585762462E34A00194002 /* ResetUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetUserView.swift; sourceTree = "<group>"; };
 		051585782462E36800194002 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0515857E2463336D00194002 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		051585812463536100194002 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		05158583246365A400194002 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		05948F89245FFBC1001BB4A6 /* hidden-italy-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hidden-italy-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05948F8C245FFBC1001BB4A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05948F8E245FFBC1001BB4A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,9 +58,10 @@
 		051585732462E2F000194002 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				051585742462E32F00194002 /* CreateUserView.swift */,
 				051585762462E34A00194002 /* ResetUserView.swift */,
+				051585742462E32F00194002 /* CreateUserView.swift */,
 				051585782462E36800194002 /* LoginView.swift */,
+				051585812463536100194002 /* TestView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -100,6 +105,7 @@
 				05948FA0245FFC45001BB4A6 /* SplashView.swift */,
 				05948FA2245FFCF5001BB4A6 /* ManagerView.swift */,
 				05948FA4245FFD72001BB4A6 /* RootTabView.swift */,
+				05158583246365A400194002 /* ImagePicker.swift */,
 			);
 			path = "hidden-italy-app";
 			sourceTree = "<group>";
@@ -185,12 +191,14 @@
 			files = (
 				051585752462E32F00194002 /* CreateUserView.swift in Sources */,
 				05948FA3245FFCF5001BB4A6 /* ManagerView.swift in Sources */,
+				051585822463536100194002 /* TestView.swift in Sources */,
 				05948F8D245FFBC1001BB4A6 /* AppDelegate.swift in Sources */,
 				05948FA1245FFC45001BB4A6 /* SplashView.swift in Sources */,
 				05948F8F245FFBC1001BB4A6 /* SceneDelegate.swift in Sources */,
 				051585792462E36800194002 /* LoginView.swift in Sources */,
 				05948FA5245FFD72001BB4A6 /* RootTabView.swift in Sources */,
 				0515857F2463336D00194002 /* MapView.swift in Sources */,
+				05158584246365A400194002 /* ImagePicker.swift in Sources */,
 				051585772462E34A00194002 /* ResetUserView.swift in Sources */,
 				05948F91245FFBC1001BB4A6 /* ContentView.swift in Sources */,
 			);
