@@ -35,6 +35,9 @@
 		05948FA1245FFC45001BB4A6 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948FA0245FFC45001BB4A6 /* SplashView.swift */; };
 		05948FA3245FFCF5001BB4A6 /* ManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948FA2245FFCF5001BB4A6 /* ManagerView.swift */; };
 		05948FA5245FFD72001BB4A6 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948FA4245FFD72001BB4A6 /* RootTabView.swift */; };
+		79F63FDE2464BB8300D25235 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F63FDD2464BB8300D25235 /* LocationManager.swift */; };
+		79F63FE02464BBC400D25235 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F63FDF2464BBC400D25235 /* MapCoordinator.swift */; };
+		79F63FE22464BC1D00D25235 /* MapTestPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F63FE12464BC1D00D25235 /* MapTestPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,9 @@
 		05948FA0245FFC45001BB4A6 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		05948FA2245FFCF5001BB4A6 /* ManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerView.swift; sourceTree = "<group>"; };
 		05948FA4245FFD72001BB4A6 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		79F63FDD2464BB8300D25235 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		79F63FDF2464BBC400D25235 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
+		79F63FE12464BC1D00D25235 /* MapTestPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTestPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				0515857E2463336D00194002 /* MapView.swift */,
+				79F63FE12464BC1D00D25235 /* MapTestPage.swift */,
 			);
 			path = "Map View";
 			sourceTree = "<group>";
@@ -168,6 +175,8 @@
 		05948F8B245FFBC1001BB4A6 /* hidden-italy-app */ = {
 			isa = PBXGroup;
 			children = (
+				79F63FDC2464BB0C00D25235 /* Managers */,
+				79F63FDB2464BAE000D25235 /* Coordinators */,
 				051585A22464AA2F00194002 /* Comment View */,
 				05158599246490A700194002 /* Monument View */,
 				0515858C24647F8A00194002 /* Models View */,
@@ -195,6 +204,22 @@
 				05948F95245FFBC4001BB4A6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		79F63FDB2464BAE000D25235 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				79F63FDF2464BBC400D25235 /* MapCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		79F63FDC2464BB0C00D25235 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				79F63FDD2464BB8300D25235 /* LocationManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79F63FE02464BBC400D25235 /* MapCoordinator.swift in Sources */,
 				051585752462E32F00194002 /* CreateUserView.swift in Sources */,
 				051585902464859B00194002 /* MonumentModelView.swift in Sources */,
 				05948FA3245FFCF5001BB4A6 /* ManagerView.swift in Sources */,
@@ -280,6 +306,7 @@
 				0515859F24649FE700194002 /* MonumentListView.swift in Sources */,
 				05948FA1245FFC45001BB4A6 /* SplashView.swift in Sources */,
 				05948F8F245FFBC1001BB4A6 /* SceneDelegate.swift in Sources */,
+				79F63FDE2464BB8300D25235 /* LocationManager.swift in Sources */,
 				051585922464863000194002 /* User.swift in Sources */,
 				0515858E2464823500194002 /* Monument.swift in Sources */,
 				05158586246405E700194002 /* CircleTab.swift in Sources */,
@@ -289,6 +316,7 @@
 				051585A12464AA2300194002 /* CommentListView.swift in Sources */,
 				05948FA5245FFD72001BB4A6 /* RootTabView.swift in Sources */,
 				0515857F2463336D00194002 /* MapView.swift in Sources */,
+				79F63FE22464BC1D00D25235 /* MapTestPage.swift in Sources */,
 				05158584246365A400194002 /* ImagePicker.swift in Sources */,
 				051585A52464AA5B00194002 /* CommentRowView.swift in Sources */,
 				051585772462E34A00194002 /* ResetUserView.swift in Sources */,

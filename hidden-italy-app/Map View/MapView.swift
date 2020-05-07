@@ -2,19 +2,40 @@
 //  MapView.swift
 //  hidden-italy-app
 //
-//  Created by Andrea Arizzoli on 06/05/2020.
+//  Created by user172259 on 07/05/2020.
 //  Copyright © 2020 Andrea Arizzoli. All rights reserved.
 //
 
 import SwiftUI
+import MapKit
 
-struct MapView: View {
-    var body: some View {
-        Text("Map View")
+struct MapView: UIViewRepresentable {
+  
+  var locationManager = CLLocationManager()
+  func setupManager() {
+//    locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//    locationManager.requestWhenInUseAuthorization()
+//    locationManager.requestAlwaysAuthorization()
+  }
+  
+    func makeUIView(context: Context) -> MKMapView {
+    setupManager()
+    let map = MKMapView(frame: UIScreen.main.bounds)
+    map.showsUserLocation = true
+    map.delegate = context.coordinator
+    map.userTrackingMode = .follow
+    return map
+  }
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
     }
+    
+  func updateUIView(_ uiView: MKMapView, context: Context) {
+    
+  }
 }
 
-struct MapView_Previews: PreviewProvider {
+struct Map_Previews: PreviewProvider {
     static var previews: some View {
         MapView()
     }
