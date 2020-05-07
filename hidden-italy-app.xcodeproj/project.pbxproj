@@ -59,7 +59,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		051585732462E2F000194002 /* Login */ = {
+		051585732462E2F000194002 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
 				051585762462E34A00194002 /* ResetUserView.swift */,
@@ -67,15 +67,15 @@
 				051585782462E36800194002 /* LoginView.swift */,
 				051585812463536100194002 /* TestView.swift */,
 			);
-			path = Login;
+			path = Auth;
 			sourceTree = "<group>";
 		};
-		051585802463337300194002 /* Map */ = {
+		051585802463337300194002 /* Map View */ = {
 			isa = PBXGroup;
 			children = (
 				0515857E2463336D00194002 /* MapView.swift */,
 			);
-			path = Map;
+			path = "Map View";
 			sourceTree = "<group>";
 		};
 		05158587246406B700194002 /* Tab View */ = {
@@ -86,13 +86,6 @@
 				051585882464072000194002 /* RootCircleTabTabView.swift */,
 			);
 			path = "Tab View";
-			sourceTree = "<group>";
-		};
-		0515858A246416A300194002 /* User */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = User;
 			sourceTree = "<group>";
 		};
 		05948F80245FFBC1001BB4A6 = {
@@ -114,10 +107,9 @@
 		05948F8B245FFBC1001BB4A6 /* hidden-italy-app */ = {
 			isa = PBXGroup;
 			children = (
-				0515858A246416A300194002 /* User */,
 				05158587246406B700194002 /* Tab View */,
-				051585802463337300194002 /* Map */,
-				051585732462E2F000194002 /* Login */,
+				051585802463337300194002 /* Map View */,
+				051585732462E2F000194002 /* Auth */,
 				05948F8C245FFBC1001BB4A6 /* AppDelegate.swift */,
 				05948F8E245FFBC1001BB4A6 /* SceneDelegate.swift */,
 				05948F90245FFBC1001BB4A6 /* ContentView.swift */,
