@@ -16,7 +16,6 @@ struct LoginView: View {
     @State private var loginView = false
 
 
-
     var body: some View {
         
         VStack()
@@ -32,12 +31,10 @@ struct LoginView: View {
 //                MapView()
 //            }
             if loginView {
-                VStack {
-                    RootTabView()
-                    .animation(.easeIn(duration: 1))
-                    .transition(AnyTransition.opacity.combined(with: .slide))
-                }
-                //ResetUserView()
+                RootTabView()
+                .animation(.easeIn(duration: 1))
+                .transition(AnyTransition.opacity.combined(with: .slide))
+            
             }
 
             Text("HIDDEN ITALY")
@@ -77,6 +74,7 @@ struct LoginView: View {
                 HStack{
                     
                     Spacer()
+                    
                     
                     Button(action: {
                         self.nextView = "resetUser"

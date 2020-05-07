@@ -14,28 +14,28 @@ struct RootTabView: View {
             
             LoginView()
                 .tabItem{
-                    Image(systemName:"cart")
-                    Text("Buy/Sell")
+                    Image(systemName:"magnifyingglass")
+                    Text("Mappa")
                 }
             ResetUserView()
             .tabItem{
-                Image(systemName:"gear")
-                Text("Gear")
+                Image(systemName:"list.dash")
+                Text("Luoghi")
             }
             CreateUserView()
             .tabItem{
-                Image(systemName:"bandage")
-                Text("Hospital")
+                Image(systemName:"list.number")
+                Text("Classifica")
             }
             LoginView()
             .tabItem{
-                Image(systemName:"dollarsign.circle")
-                Text("Bank")
+                Image(systemName:"heart")
+                Text("Notifiche")
             }
             LoginView()
             .tabItem{
-                Image(systemName:"airplane")
-                Text("Travel")
+                Image(systemName:"person")
+                Text("Profilo")
             }
         }
         .accentColor(Color .blue)

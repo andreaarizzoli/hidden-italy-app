@@ -18,7 +18,7 @@ struct ManagerView: View {
            
            if (self.flagStart) {
                //LoginView()
-                RootTabView()
+                LoginView()
 
                    .transition(AnyTransition.opacity.combined(with: .slide))
             

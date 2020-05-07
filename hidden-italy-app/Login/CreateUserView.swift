@@ -81,7 +81,7 @@ struct CreateUserView: View {
             
             Spacer()
             Button(action:  {
-                self.createUser = true
+                //self.createUser = true
             }){
                 Text("Crea utente")
                     .foregroundColor(.white)
