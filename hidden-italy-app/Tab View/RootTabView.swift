@@ -12,27 +12,27 @@ struct RootTabView: View {
     var body: some View {
         TabView{
             
-            LoginView()
+            MapView()
                 .tabItem{
                     Image(systemName:"magnifyingglass")
                     Text("Mappa")
                 }
-            ResetUserView()
+            MonumentListView()
             .tabItem{
                 Image(systemName:"list.dash")
                 Text("Luoghi")
             }
-            CreateUserView()
+            MapView()
             .tabItem{
                 Image(systemName:"list.number")
                 Text("Classifica")
             }
-            LoginView()
+            MapView()
             .tabItem{
                 Image(systemName:"heart")
                 Text("Notifiche")
             }
-            LoginView()
+            MapView()
             .tabItem{
                 Image(systemName:"person")
                 Text("Profilo")

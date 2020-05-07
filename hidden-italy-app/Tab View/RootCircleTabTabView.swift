@@ -18,10 +18,10 @@ struct TestTabView: View {
             Spacer()
             ZStack{
                 if self.index == 0 {
-                    MapView()
+                    Color.red
                 }
                 else if self.index == 1 {
-                    Color.blue
+                    Color.yellow
                 }
                 else if self.index == 2 {
                     Color.orange
