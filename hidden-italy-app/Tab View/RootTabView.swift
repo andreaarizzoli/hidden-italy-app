@@ -12,30 +12,30 @@ struct RootTabView: View {
     var body: some View {
         TabView{
             
-            LoginView()
+            MapView()
                 .tabItem{
-                    Image(systemName:"cart")
-                    Text("Buy/Sell")
+                    Image(systemName:"magnifyingglass")
+                    Text("Mappa")
                 }
-            ResetUserView()
+            MonumentListView()
             .tabItem{
-                Image(systemName:"gear")
-                Text("Gear")
+                Image(systemName:"list.dash")
+                Text("Luoghi")
             }
-            CreateUserView()
+            MapView()
             .tabItem{
-                Image(systemName:"bandage")
-                Text("Hospital")
+                Image(systemName:"list.number")
+                Text("Classifica")
             }
-            LoginView()
+            MapView()
             .tabItem{
-                Image(systemName:"dollarsign.circle")
-                Text("Bank")
+                Image(systemName:"heart")
+                Text("Notifiche")
             }
-            LoginView()
+            MapView()
             .tabItem{
-                Image(systemName:"airplane")
-                Text("Travel")
+                Image(systemName:"person")
+                Text("Profilo")
             }
         }
         .accentColor(Color .blue)

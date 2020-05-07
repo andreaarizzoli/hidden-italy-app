@@ -27,3 +27,5 @@ struct SplashView_Previews: PreviewProvider {
         SplashView()
     }
 }
+
+
