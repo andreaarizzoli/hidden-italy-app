@@ -8,17 +8,16 @@
 
 import SwiftUI
 
-struct MonumentListView: View {
+struct MonumentsView: View {
     var body: some View {
         VStack {
    
             NavigationView{
                 List(0..<5) { item in
                     NavigationLink(destination:
-                        MonumentView()
+                        MonumentDetailView()
                     ){
                         MonumentRowView()
-                        
                     }
                 }
                 .navigationBarTitle("Monumenti")
@@ -27,8 +26,8 @@ struct MonumentListView: View {
     }
 }
 
-struct MonumentListView_Previews: PreviewProvider {
+struct MonumentsView_Previews: PreviewProvider {
     static var previews: some View {
-        MonumentListView()
+        MonumentsView()
     }
 }

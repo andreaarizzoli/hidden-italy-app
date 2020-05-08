@@ -13,9 +13,9 @@ struct CommentListView: View {
         VStack{
             Text("Commenti")
                 .font(.title)
+            
             List(0..<5) { item in
                 CommentRowView()
-                
             }
         }
     }

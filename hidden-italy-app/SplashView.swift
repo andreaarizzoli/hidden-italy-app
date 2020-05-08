@@ -10,14 +10,10 @@ import SwiftUI
 
 struct SplashView: View {
     var body: some View {
-        ZStack {
-//            Color.white
-//            .edgesIgnoringSafeArea(.all)
-            
+        ZStack {            
             VStack {
                Image("logo")
             }
-
         }
     }
 }

@@ -8,28 +8,29 @@
 
 import SwiftUI
 
-struct MonumentView: View {
-    
+struct MonumentDetailView: View {
     
     var body: some View {
         VStack{
             Image("duomo")
-            .resizable()
-            .scaledToFit()
-            //.aspectRatio(contentMode: .fill)
+                .resizable()
+                .scaledToFit()
+            
             Text("Duomo di Milano")
                 .font(.largeTitle)
+            
             Text("Questa è una descrizione test per il monumento. ")
                 .padding(.horizontal, 10)
                 .padding(.vertical, 10)
+            
             CommentListView()
         }
         
     }
 }
 
-struct MonumentView_Previews: PreviewProvider {
+struct MonumentDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MonumentView()
+        MonumentDetailView()
     }
 }

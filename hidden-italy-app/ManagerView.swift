@@ -9,24 +9,28 @@
 import SwiftUI
 
 struct ManagerView: View {
+    
     @State private var flagStart = false
-    let timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
+    
+    let timer = Timer.publish(
+        every: 3,
+        on: .main,
+        in: .common
+    ).autoconnect()
    
        
     var body: some View {
        Group{
            
            if (self.flagStart) {
-               RootTabView()
-                //RootTabView()
-
-                   .transition(AnyTransition.opacity.combined(with: .slide))
+               LoginView()
+                    .transition(AnyTransition.opacity.combined(with: .slide))
             
            } else {
                SplashView()
-                .onReceive(self.timer) {
-                    input in self.flagStart = true
-               }
+                    .onReceive(self.timer) {
+                        input in self.flagStart = true
+                    }
            }
        }
     }

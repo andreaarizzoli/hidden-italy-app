@@ -16,28 +16,25 @@ struct TestTabView: View {
         
         VStack {
             Spacer()
+            
             ZStack{
-                if self.index == 0 {
+                if (self.index == 0) {
                     Color.red
-                }
-                else if self.index == 1 {
+                } else if (self.index == 1) {
                     Color.yellow
-                }
-                else if self.index == 2 {
+                } else if (self.index == 2) {
                     Color.orange
-                }
-                else if self.index == 3 {
+                } else if (self.index == 3) {
                     Color.green
-                }
-                else {
+                } else {
                     Color.pink
                 }
             }
             
             CircleTab(index: self.index)
-            
         }
-        .background(Color.black.opacity(0.05).edgesIgnoringSafeArea(.top))
+        .background(Color.black.opacity(0.05)
+        .edgesIgnoringSafeArea(.top))
     }
 }
 

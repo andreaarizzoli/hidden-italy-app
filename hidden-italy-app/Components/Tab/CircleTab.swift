@@ -15,7 +15,7 @@ struct CircleTab: View {
     var body: some View {
         
         HStack{
-                        
+            
             Button(action: {
                 
                 self.index = 0

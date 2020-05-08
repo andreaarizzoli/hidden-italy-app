@@ -15,17 +15,21 @@ struct CommentRowView: View {
                 Image("duomoComment")
                     .resizable()
                     .frame(width: 65, height: 65)
-                .clipShape(Circle())
-                    .shadow(color: Color.black.opacity(0.5), radius: 5, x: 5, y: 5)
+                    .clipShape(Circle())
+                    .shadow(
+                        color: Color.black.opacity(0.5),
+                        radius: 5, x: 5, y: 5
+                    )
+                
                 VStack(alignment:.leading) {
                     Text("Il duomo è molto carino")
                         .font(.title)
                         .fontWeight(.light)
+                    
                     HStack(){
                         Text("Creato da: zola91")
                         Spacer()
                     }
-                                  
                 }
             }
            
