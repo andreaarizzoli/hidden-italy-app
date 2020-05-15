@@ -10,8 +10,15 @@ import SwiftUI
 
 struct MonumentDetailView: View {
     
+    var monumentList: Monument
+    
+
+    
     var body: some View {
         VStack{
+        
+            print(self.monumentList.id)
+        
             Image("duomo")
                 .resizable()
                 .scaledToFit()

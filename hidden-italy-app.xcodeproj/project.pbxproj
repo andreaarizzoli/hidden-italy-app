@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0510B38A246DE4A300BCB0C8 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0510B389246DE4A300BCB0C8 /* ImageModel.swift */; };
+		0510B38C246DE4E800BCB0C8 /* MonumentCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0510B38B246DE4E800BCB0C8 /* MonumentCategory.swift */; };
+		0510B38E246DE5AB00BCB0C8 /* MonumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0510B38D246DE5AB00BCB0C8 /* MonumentController.swift */; };
 		051585752462E32F00194002 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585742462E32F00194002 /* RegisterView.swift */; };
 		051585792462E36800194002 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585782462E36800194002 /* LoginView.swift */; };
 		0515857F2463336D00194002 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0515857E2463336D00194002 /* Map.swift */; };
@@ -16,8 +19,6 @@
 		051585902464859B00194002 /* MonumentModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0515858F2464859B00194002 /* MonumentModelView.swift */; };
 		051585922464863000194002 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585912464863000194002 /* User.swift */; };
 		051585942464865300194002 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585932464865300194002 /* Category.swift */; };
-		051585962464875D00194002 /* UserModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585952464875D00194002 /* UserModelView.swift */; };
-		0515859824648C6500194002 /* CategoryModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0515859724648C6500194002 /* CategoryModelView.swift */; };
 		0515859B246490C700194002 /* MonumentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0515859A246490C700194002 /* MonumentDetailView.swift */; };
 		0515859D2464979F00194002 /* MonumentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0515859C2464979F00194002 /* MonumentRowView.swift */; };
 		0515859F24649FE700194002 /* MonumentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0515859E24649FE700194002 /* MonumentListView.swift */; };
@@ -32,12 +33,15 @@
 		05948FA1245FFC45001BB4A6 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948FA0245FFC45001BB4A6 /* SplashView.swift */; };
 		05948FA3245FFCF5001BB4A6 /* ManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948FA2245FFCF5001BB4A6 /* ManagerView.swift */; };
 		05948FA5245FFD72001BB4A6 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948FA4245FFD72001BB4A6 /* RootTabView.swift */; };
-		77880D4E246553F100413151 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77880D4D246553F100413151 /* Endpoints.swift */; };
+		524AFFCBDF9F2C10AA0B262F /* Pods_hidden_italy_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77042D062AEAF40F5B011575 /* Pods_hidden_italy_app.framework */; };
 		79F63FDE2464BB8300D25235 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F63FDD2464BB8300D25235 /* LocationManager.swift */; };
 		79F63FE02464BBC400D25235 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F63FDF2464BBC400D25235 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0510B389246DE4A300BCB0C8 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		0510B38B246DE4E800BCB0C8 /* MonumentCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentCategory.swift; sourceTree = "<group>"; };
+		0510B38D246DE5AB00BCB0C8 /* MonumentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentController.swift; sourceTree = "<group>"; };
 		051585742462E32F00194002 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		051585782462E36800194002 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0515857E2463336D00194002 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
@@ -47,8 +51,6 @@
 		0515858F2464859B00194002 /* MonumentModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentModelView.swift; sourceTree = "<group>"; };
 		051585912464863000194002 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		051585932464865300194002 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		051585952464875D00194002 /* UserModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelView.swift; sourceTree = "<group>"; };
-		0515859724648C6500194002 /* CategoryModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModelView.swift; sourceTree = "<group>"; };
 		0515859A246490C700194002 /* MonumentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentDetailView.swift; sourceTree = "<group>"; };
 		0515859C2464979F00194002 /* MonumentRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentRowView.swift; sourceTree = "<group>"; };
 		0515859E24649FE700194002 /* MonumentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentListView.swift; sourceTree = "<group>"; };
@@ -65,10 +67,12 @@
 		05948FA0245FFC45001BB4A6 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		05948FA2245FFCF5001BB4A6 /* ManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerView.swift; sourceTree = "<group>"; };
 		05948FA4245FFD72001BB4A6 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
-		77880D4D246553F100413151 /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Endpoints.swift; path = ../../../Config/Endpoints.swift; sourceTree = "<group>"; };
+		77042D062AEAF40F5B011575 /* Pods_hidden_italy_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hidden_italy_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77880D522465540200413151 /* Crud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crud.swift; sourceTree = "<group>"; };
 		79F63FDD2464BB8300D25235 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		79F63FDF2464BBC400D25235 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		8A070482E3B92E37E0CE7C77 /* Pods-hidden-italy-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hidden-italy-app.release.xcconfig"; path = "Target Support Files/Pods-hidden-italy-app/Pods-hidden-italy-app.release.xcconfig"; sourceTree = "<group>"; };
+		C79F7732B9EC41F9B11E0471 /* Pods-hidden-italy-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hidden-italy-app.debug.xcconfig"; path = "Target Support Files/Pods-hidden-italy-app/Pods-hidden-italy-app.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				524AFFCBDF9F2C10AA0B262F /* Pods_hidden_italy_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,8 +101,10 @@
 			isa = PBXGroup;
 			children = (
 				0515858D2464823500194002 /* Monument.swift */,
+				0510B389246DE4A300BCB0C8 /* ImageModel.swift */,
 				051585912464863000194002 /* User.swift */,
 				051585932464865300194002 /* Category.swift */,
+				0510B38B246DE4E800BCB0C8 /* MonumentCategory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -106,8 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				0515858F2464859B00194002 /* MonumentModelView.swift */,
-				051585952464875D00194002 /* UserModelView.swift */,
-				0515859724648C6500194002 /* CategoryModelView.swift */,
+				0510B38D246DE5AB00BCB0C8 /* MonumentController.swift */,
 			);
 			path = ModelViews;
 			sourceTree = "<group>";
@@ -134,6 +140,8 @@
 			children = (
 				05948F8B245FFBC1001BB4A6 /* hidden-italy-app */,
 				05948F8A245FFBC1001BB4A6 /* Products */,
+				F4C057D8A74BB8F21D27B15D /* Pods */,
+				6E6CC0BA4B322C43F6CF369F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,10 +184,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		6E6CC0BA4B322C43F6CF369F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				77042D062AEAF40F5B011575 /* Pods_hidden_italy_app.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		77880D4C246553D800413151 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				77880D4D246553F100413151 /* Endpoints.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -231,6 +246,15 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		F4C057D8A74BB8F21D27B15D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C79F7732B9EC41F9B11E0471 /* Pods-hidden-italy-app.debug.xcconfig */,
+				8A070482E3B92E37E0CE7C77 /* Pods-hidden-italy-app.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -238,9 +262,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05948F9D245FFBC4001BB4A6 /* Build configuration list for PBXNativeTarget "hidden-italy-app" */;
 			buildPhases = (
+				0FB515C02F4EC370D4B5D368 /* [CP] Check Pods Manifest.lock */,
 				05948F85245FFBC1001BB4A6 /* Sources */,
 				05948F86245FFBC1001BB4A6 /* Frameworks */,
 				05948F87245FFBC1001BB4A6 /* Resources */,
+				663DFE2A56CFD4CAF0F488E0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -297,6 +323,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0FB515C02F4EC370D4B5D368 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hidden-italy-app-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		663DFE2A56CFD4CAF0F488E0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hidden-italy-app/Pods-hidden-italy-app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hidden-italy-app/Pods-hidden-italy-app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hidden-italy-app/Pods-hidden-italy-app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		05948F85245FFBC1001BB4A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -307,18 +375,17 @@
 				051585902464859B00194002 /* MonumentModelView.swift in Sources */,
 				05948FA3245FFCF5001BB4A6 /* ManagerView.swift in Sources */,
 				0515859D2464979F00194002 /* MonumentRowView.swift in Sources */,
-				0515859824648C6500194002 /* CategoryModelView.swift in Sources */,
 				05948F8D245FFBC1001BB4A6 /* AppDelegate.swift in Sources */,
-				051585962464875D00194002 /* UserModelView.swift in Sources */,
 				051585942464865300194002 /* Category.swift in Sources */,
+				0510B38E246DE5AB00BCB0C8 /* MonumentController.swift in Sources */,
 				0515859F24649FE700194002 /* MonumentListView.swift in Sources */,
+				0510B38C246DE4E800BCB0C8 /* MonumentCategory.swift in Sources */,
 				05948FA1245FFC45001BB4A6 /* SplashView.swift in Sources */,
 				05948F8F245FFBC1001BB4A6 /* SceneDelegate.swift in Sources */,
 				79F63FDE2464BB8300D25235 /* LocationManager.swift in Sources */,
 				051585922464863000194002 /* User.swift in Sources */,
 				0515858E2464823500194002 /* Monument.swift in Sources */,
 				05158586246405E700194002 /* CircleTab.swift in Sources */,
-				77880D4E246553F100413151 /* Endpoints.swift in Sources */,
 				051585792462E36800194002 /* LoginView.swift in Sources */,
 				051585892464072000194002 /* RootCircleTabTabView.swift in Sources */,
 				0515859B246490C700194002 /* MonumentDetailView.swift in Sources */,
@@ -327,6 +394,7 @@
 				0515857F2463336D00194002 /* Map.swift in Sources */,
 				051585A52464AA5B00194002 /* CommentRowView.swift in Sources */,
 				05948F91245FFBC1001BB4A6 /* ContentView.swift in Sources */,
+				0510B38A246DE4A300BCB0C8 /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +528,7 @@
 		};
 		05948F9E245FFBC4001BB4A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C79F7732B9EC41F9B11E0471 /* Pods-hidden-italy-app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -479,6 +548,7 @@
 		};
 		05948F9F245FFBC4001BB4A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A070482E3B92E37E0CE7C77 /* Pods-hidden-italy-app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

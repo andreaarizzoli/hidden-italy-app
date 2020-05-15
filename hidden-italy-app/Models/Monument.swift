@@ -15,6 +15,5 @@ struct Monument: Codable, Identifiable {
     var lat: Double
     var lon: Double
     var user: String
-    var category: String
+    var category: Category
 }
-

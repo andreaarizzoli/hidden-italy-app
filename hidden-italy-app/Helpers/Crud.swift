@@ -28,5 +28,5 @@ func perform<T: Decodable>(
                 case .failure(let error):
                     completion(.failure(error))
             }
-        })
+    };)
 }
