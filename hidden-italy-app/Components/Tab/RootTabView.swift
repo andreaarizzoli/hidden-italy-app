@@ -9,9 +9,12 @@
 import SwiftUI
 
 struct RootTabView: View {
+    
+    @ObservedObject var locationManager = LocationManager()
+    
     var body: some View {
         TabView {
-            Map()
+            MapView()
                 .tabItem{
                     Image(systemName: "magnifyingglass")
                     Text("Mappa")
@@ -23,19 +26,19 @@ struct RootTabView: View {
                     Text("Luoghi")
                 }
             
-            Map()
+            MapView()
                 .tabItem{
                     Image(systemName: "list.number")
                     Text("Classifica")
                 }
             
-            Map()
+            MapView()
                 .tabItem{
                     Image(systemName: "heart")
                     Text("Notifiche")
                 }
             
-            Map()
+            MapView()
                 .tabItem{
                     Image(systemName: "person")
                     Text("Profilo")

@@ -11,8 +11,6 @@ import MapKit
 
 struct Map: UIViewRepresentable {
   
-    var locationManager = CLLocationManager()
-  
     func makeUIView(context: Context) -> MKMapView {
         let map = MKMapView(frame: UIScreen.main.bounds)
         
