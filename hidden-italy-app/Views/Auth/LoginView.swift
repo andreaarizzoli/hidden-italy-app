@@ -27,6 +27,9 @@ struct LoginView: View {
                 Text("HIDDEN ITALY")
                     .font(.largeTitle)
                     .padding([.top,.bottom], 20)
+                    .onAppear {
+                            CategoryApi().getCategories()
+                    }
                 
                 Spacer()
                         

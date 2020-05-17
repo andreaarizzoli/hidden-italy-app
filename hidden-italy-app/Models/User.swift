@@ -10,6 +10,13 @@ import Foundation
 
 struct User: Codable, Identifiable {
     var id: Int
+    var nickname: String
     var name: String
+    var surname: String
+    var email: String
+    var email_verified_at: String
+    var role_id: Int
+    var created_at: String?
+    var updated_at: String?
 }
 

@@ -10,14 +10,21 @@ import SwiftUI
 
 struct MonumentDetailView: View {
     
+<<<<<<< HEAD
 //    var monumentList: Monument
+=======
+    //var monumentList: Monument
+>>>>>>> Work on Category Api. #2
     
 
     
     var body: some View {
         VStack{
         
+<<<<<<< HEAD
 //            print(self.monumentList.id)
+=======
+>>>>>>> Work on Category Api. #2
         
             Image("duomo")
                 .resizable()
@@ -25,7 +32,7 @@ struct MonumentDetailView: View {
             
             Text("Duomo di Milano")
                 .font(.largeTitle)
-            
+                
             Text("Questa è una descrizione test per il monumento. ")
                 .padding(.horizontal, 10)
                 .padding(.vertical, 10)

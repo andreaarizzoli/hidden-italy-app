@@ -33,6 +33,7 @@
 		05948FA1245FFC45001BB4A6 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948FA0245FFC45001BB4A6 /* SplashView.swift */; };
 		05948FA3245FFCF5001BB4A6 /* ManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948FA2245FFCF5001BB4A6 /* ManagerView.swift */; };
 		05948FA5245FFD72001BB4A6 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948FA4245FFD72001BB4A6 /* RootTabView.swift */; };
+		05F6F93D2471ED53008E90D5 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F6F93C2471ED53008E90D5 /* TestData.swift */; };
 		524AFFCBDF9F2C10AA0B262F /* Pods_hidden_italy_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77042D062AEAF40F5B011575 /* Pods_hidden_italy_app.framework */; };
 		79B5CE632471EF780016DF41 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B5CE622471EF780016DF41 /* MapView.swift */; };
 		79B5CE652471F26E0016DF41 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B5CE642471F26E0016DF41 /* Landmark.swift */; };
@@ -69,6 +70,7 @@
 		05948FA0245FFC45001BB4A6 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		05948FA2245FFCF5001BB4A6 /* ManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerView.swift; sourceTree = "<group>"; };
 		05948FA4245FFD72001BB4A6 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		05F6F93C2471ED53008E90D5 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		77042D062AEAF40F5B011575 /* Pods_hidden_italy_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hidden_italy_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77880D522465540200413151 /* Crud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crud.swift; sourceTree = "<group>"; };
 		79B5CE622471EF780016DF41 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -109,7 +111,11 @@
 				051585912464863000194002 /* User.swift */,
 				051585932464865300194002 /* Category.swift */,
 				0510B38B246DE4E800BCB0C8 /* MonumentCategory.swift */,
+<<<<<<< HEAD
 				79B5CE642471F26E0016DF41 /* Landmark.swift */,
+=======
+				05F6F93C2471ED53008E90D5 /* TestData.swift */,
+>>>>>>> Work on Category Api. #2
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -402,7 +408,11 @@
 				0515858E2464823500194002 /* Monument.swift in Sources */,
 				05158586246405E700194002 /* CircleTab.swift in Sources */,
 				051585792462E36800194002 /* LoginView.swift in Sources */,
+<<<<<<< HEAD
 				79B5CE632471EF780016DF41 /* MapView.swift in Sources */,
+=======
+				05F6F93D2471ED53008E90D5 /* TestData.swift in Sources */,
+>>>>>>> Work on Category Api. #2
 				051585892464072000194002 /* RootCircleTabTabView.swift in Sources */,
 				0515859B246490C700194002 /* MonumentDetailView.swift in Sources */,
 				051585A12464AA2300194002 /* CommentListView.swift in Sources */,

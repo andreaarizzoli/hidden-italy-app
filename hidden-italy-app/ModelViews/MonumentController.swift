@@ -11,42 +11,45 @@ import Alamofire
 
 class MonumentController: ObservableObject {
     
-    @Published var monumentList = [Monument]()
-    //@Published var monumentItem = MonumentItem()
+   
+    //@Published var monumentList = [Monument]()
+//    @Published var monumentItem = MonumentItem()
+        
 
     func getMonument() {
         print("test 01")
 
         AF.request("https://hiddenitaly.test/api/monuments",
                    method: .get)
-                  // parameters: request)
             .responseJSON { response in
-                
-                switch response.result {
-                    
-                    case .success(_):
-                        
-                    do {
-                        let jsonDecoder = JSONDecoder()
-                        
-                        let decoded = try jsonDecoder.decode([Monument].self, from: response.data!)
-                        
-                        self.monumentList = decoded
-                        print("Converted JSON in struct \(decoded)")
-                         
-                    }
-                    
-                    catch {
-                        print(error)
-                    }
-                case .failure(let error):
-                    print("test 03")
-                    print(error)
-
-                }
+                //debugPrint(response)
+                print(response)
+//                switch response.result {
+//
+//                    case .success(_):
+//
+//                    do {
+//                        let jsonDecoder = JSONDecoder()
+//
+//                        let decoded = try jsonDecoder.decode([Monument].self, from: response.data!)
+//
+//                        self.monumentList = decoded
+//                        print("Converted JSON in struct \(decoded)")
+//
+//                    }
+//
+//                    catch {
+//                        print(error)
+//                    }
+//                case .failure(let error):
+//                    print("test 03")
+//                    print(error)
+//
+//                }
         }
-        
-        
+
+
     }
+    
     
 }
