@@ -33,10 +33,7 @@
 		05948FA1245FFC45001BB4A6 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948FA0245FFC45001BB4A6 /* SplashView.swift */; };
 		05948FA3245FFCF5001BB4A6 /* ManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948FA2245FFCF5001BB4A6 /* ManagerView.swift */; };
 		05948FA5245FFD72001BB4A6 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948FA4245FFD72001BB4A6 /* RootTabView.swift */; };
-		05F6F93D2471ED53008E90D5 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F6F93C2471ED53008E90D5 /* TestData.swift */; };
 		524AFFCBDF9F2C10AA0B262F /* Pods_hidden_italy_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77042D062AEAF40F5B011575 /* Pods_hidden_italy_app.framework */; };
-		79B5CE632471EF780016DF41 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B5CE622471EF780016DF41 /* MapView.swift */; };
-		79B5CE652471F26E0016DF41 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B5CE642471F26E0016DF41 /* Landmark.swift */; };
 		79F63FDE2464BB8300D25235 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F63FDD2464BB8300D25235 /* LocationManager.swift */; };
 		79F63FE02464BBC400D25235 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F63FDF2464BBC400D25235 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
@@ -70,11 +67,8 @@
 		05948FA0245FFC45001BB4A6 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		05948FA2245FFCF5001BB4A6 /* ManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerView.swift; sourceTree = "<group>"; };
 		05948FA4245FFD72001BB4A6 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
-		05F6F93C2471ED53008E90D5 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		77042D062AEAF40F5B011575 /* Pods_hidden_italy_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hidden_italy_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77880D522465540200413151 /* Crud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crud.swift; sourceTree = "<group>"; };
-		79B5CE622471EF780016DF41 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		79B5CE642471F26E0016DF41 /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		79F63FDD2464BB8300D25235 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		79F63FDF2464BBC400D25235 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8A070482E3B92E37E0CE7C77 /* Pods-hidden-italy-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hidden-italy-app.release.xcconfig"; path = "Target Support Files/Pods-hidden-italy-app/Pods-hidden-italy-app.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,11 +105,6 @@
 				051585912464863000194002 /* User.swift */,
 				051585932464865300194002 /* Category.swift */,
 				0510B38B246DE4E800BCB0C8 /* MonumentCategory.swift */,
-<<<<<<< HEAD
-				79B5CE642471F26E0016DF41 /* Landmark.swift */,
-=======
-				05F6F93C2471ED53008E90D5 /* TestData.swift */,
->>>>>>> Work on Category Api. #2
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -171,7 +160,7 @@
 				77880D512465540200413151 /* Helpers */,
 				77880D4C246553D800413151 /* Config */,
 				77E544BC2465531900C27BBA /* Views */,
-				79F63FDC2464BB0C00D25235 /* MapController */,
+				79F63FDC2464BB0C00D25235 /* Map */,
 				0515858C24647F8A00194002 /* ModelViews */,
 				0515858B24647F7F00194002 /* Models */,
 				05948F8C245FFBC1001BB4A6 /* AppDelegate.swift */,
@@ -231,11 +220,9 @@
 		77E544BC2465531900C27BBA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				79B5CE662471F6BE0016DF41 /* MapViews */,
 				05158599246490A700194002 /* Monuments */,
 				051585A22464AA2F00194002 /* Comments */,
 				77E544BD2465533000C27BBA /* Auth */,
-				79B5CE622471EF780016DF41 /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -249,21 +236,14 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		79B5CE662471F6BE0016DF41 /* MapViews */ = {
-			isa = PBXGroup;
-			children = (
-				0515857E2463336D00194002 /* Map.swift */,
-			);
-			path = MapViews;
-			sourceTree = "<group>";
-		};
-		79F63FDC2464BB0C00D25235 /* MapController */ = {
+		79F63FDC2464BB0C00D25235 /* Map */ = {
 			isa = PBXGroup;
 			children = (
 				79F63FDD2464BB8300D25235 /* LocationManager.swift */,
 				79F63FDF2464BBC400D25235 /* Coordinator.swift */,
+				0515857E2463336D00194002 /* Map.swift */,
 			);
-			path = MapController;
+			path = Map;
 			sourceTree = "<group>";
 		};
 		F4C057D8A74BB8F21D27B15D /* Pods */ = {
@@ -395,7 +375,6 @@
 				051585902464859B00194002 /* MonumentModelView.swift in Sources */,
 				05948FA3245FFCF5001BB4A6 /* ManagerView.swift in Sources */,
 				0515859D2464979F00194002 /* MonumentRowView.swift in Sources */,
-				79B5CE652471F26E0016DF41 /* Landmark.swift in Sources */,
 				05948F8D245FFBC1001BB4A6 /* AppDelegate.swift in Sources */,
 				051585942464865300194002 /* Category.swift in Sources */,
 				0510B38E246DE5AB00BCB0C8 /* MonumentController.swift in Sources */,
@@ -408,11 +387,6 @@
 				0515858E2464823500194002 /* Monument.swift in Sources */,
 				05158586246405E700194002 /* CircleTab.swift in Sources */,
 				051585792462E36800194002 /* LoginView.swift in Sources */,
-<<<<<<< HEAD
-				79B5CE632471EF780016DF41 /* MapView.swift in Sources */,
-=======
-				05F6F93D2471ED53008E90D5 /* TestData.swift in Sources */,
->>>>>>> Work on Category Api. #2
 				051585892464072000194002 /* RootCircleTabTabView.swift in Sources */,
 				0515859B246490C700194002 /* MonumentDetailView.swift in Sources */,
 				051585A12464AA2300194002 /* CommentListView.swift in Sources */,
