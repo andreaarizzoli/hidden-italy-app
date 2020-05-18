@@ -20,3 +20,7 @@ struct User: Codable, Identifiable {
     var updated_at: String?
 }
 
+struct UsersList: Codable {
+    var users:[User] = []
+}
+

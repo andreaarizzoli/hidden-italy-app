@@ -8,14 +8,16 @@
 
 import Foundation
 
-//struct Monument: Codable, Identifiable {
-//    var id: Int
-//    var name: String
-//    var description: String
-//    var lat: Double
-//    var lon: Double
-//    var user_id: User
-//    var category_id: Category
-//    var created_at: String?
-//    var updated_at: String?
-//}
+struct Monument: Codable, Identifiable {
+    var id: Int
+    var name: String
+    var description: String
+    var lat: String
+    var lon: String
+    var user_id: Int
+    var category_id: Int?
+    var created_at: String
+    var updated_at: String?
+   // var categories: Array<MonumentCategory>
+  //  var images: Array<ImageModel>
+}

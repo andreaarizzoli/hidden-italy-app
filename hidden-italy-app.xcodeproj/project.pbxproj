@@ -15,7 +15,6 @@
 		05158586246405E700194002 /* CircleTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05158585246405E700194002 /* CircleTab.swift */; };
 		051585892464072000194002 /* RootCircleTabTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585882464072000194002 /* RootCircleTabTabView.swift */; };
 		0515858E2464823500194002 /* Monument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0515858D2464823500194002 /* Monument.swift */; };
-		051585902464859B00194002 /* MonumentModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0515858F2464859B00194002 /* MonumentModelView.swift */; };
 		051585922464863000194002 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585912464863000194002 /* User.swift */; };
 		051585942464865300194002 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585932464865300194002 /* Category.swift */; };
 		0515859B246490C700194002 /* MonumentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0515859A246490C700194002 /* MonumentDetailView.swift */; };
@@ -36,6 +35,8 @@
 		05C7D974247208F000E02F47 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7D972247208F000E02F47 /* LocationManager.swift */; };
 		05C7D975247208F000E02F47 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7D973247208F000E02F47 /* Coordinator.swift */; };
 		05C7D9772472090400E02F47 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7D9762472090400E02F47 /* Map.swift */; };
+		05C7D97A2472FCA900E02F47 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7D9792472FCA900E02F47 /* CategoryController.swift */; };
+		05C7D97C2473087400E02F47 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7D97B2473087400E02F47 /* ApiService.swift */; };
 		524AFFCBDF9F2C10AA0B262F /* Pods_hidden_italy_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77042D062AEAF40F5B011575 /* Pods_hidden_italy_app.framework */; };
 		79B58DD224720C990052BDC7 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B58DD124720C990052BDC7 /* Landmark.swift */; };
 /* End PBXBuildFile section */
@@ -49,7 +50,6 @@
 		05158585246405E700194002 /* CircleTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTab.swift; sourceTree = "<group>"; };
 		051585882464072000194002 /* RootCircleTabTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCircleTabTabView.swift; sourceTree = "<group>"; };
 		0515858D2464823500194002 /* Monument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monument.swift; sourceTree = "<group>"; };
-		0515858F2464859B00194002 /* MonumentModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentModelView.swift; sourceTree = "<group>"; };
 		051585912464863000194002 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		051585932464865300194002 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		0515859A246490C700194002 /* MonumentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentDetailView.swift; sourceTree = "<group>"; };
@@ -72,6 +72,8 @@
 		05C7D972247208F000E02F47 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = "hidden-italy-app/MapController/LocationManager.swift"; sourceTree = SOURCE_ROOT; };
 		05C7D973247208F000E02F47 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Coordinator.swift; path = "hidden-italy-app/MapController/Coordinator.swift"; sourceTree = SOURCE_ROOT; };
 		05C7D9762472090400E02F47 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Map.swift; path = "hidden-italy-app/Views/MapViews/Map.swift"; sourceTree = SOURCE_ROOT; };
+		05C7D9792472FCA900E02F47 /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
+		05C7D97B2473087400E02F47 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		77042D062AEAF40F5B011575 /* Pods_hidden_italy_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hidden_italy_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77880D522465540200413151 /* Crud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crud.swift; sourceTree = "<group>"; };
 		79B58DD124720C990052BDC7 /* Landmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
@@ -117,8 +119,9 @@
 		0515858C24647F8A00194002 /* ModelViews */ = {
 			isa = PBXGroup;
 			children = (
-				0515858F2464859B00194002 /* MonumentModelView.swift */,
 				0510B38D246DE5AB00BCB0C8 /* MonumentController.swift */,
+				05C7D9792472FCA900E02F47 /* CategoryController.swift */,
+				05C7D97B2473087400E02F47 /* ApiService.swift */,
 			);
 			path = ModelViews;
 			sourceTree = "<group>";
@@ -189,6 +192,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		05C7D9782472FC6400E02F47 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				05C7D970247208CC00E02F47 /* MapView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		6E6CC0BA4B322C43F6CF369F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,7 +236,7 @@
 		77E544BC2465531900C27BBA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				05C7D970247208CC00E02F47 /* MapView.swift */,
+				05C7D9782472FC6400E02F47 /* Map */,
 				05158599246490A700194002 /* Monuments */,
 				051585A22464AA2F00194002 /* Comments */,
 				77E544BD2465533000C27BBA /* Auth */,
@@ -377,7 +388,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				051585752462E32F00194002 /* RegisterView.swift in Sources */,
-				051585902464859B00194002 /* MonumentModelView.swift in Sources */,
 				05C7D9772472090400E02F47 /* Map.swift in Sources */,
 				05948FA3245FFCF5001BB4A6 /* ManagerView.swift in Sources */,
 				0515859D2464979F00194002 /* MonumentRowView.swift in Sources */,
@@ -403,6 +413,8 @@
 				05C7D975247208F000E02F47 /* Coordinator.swift in Sources */,
 				05948F91245FFBC1001BB4A6 /* ContentView.swift in Sources */,
 				0510B38A246DE4A300BCB0C8 /* ImageModel.swift in Sources */,
+				05C7D97C2473087400E02F47 /* ApiService.swift in Sources */,
+				05C7D97A2472FCA900E02F47 /* CategoryController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

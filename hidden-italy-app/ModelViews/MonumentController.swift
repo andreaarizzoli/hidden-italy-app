@@ -8,48 +8,31 @@
 
 import Foundation
 import Alamofire
+import Combine
 
-class MonumentController: ObservableObject {
+class MonumentController {
     
-   
-    //@Published var monumentList = [Monument]()
-//    @Published var monumentItem = MonumentItem()
+    @Published var monumentList = [Monument]()
+    
+    func getMonuments() {
         
-
-    func getMonument() {
-        print("test 01")
-
-        AF.request("https://hiddenitaly.test/api/monuments",
-                   method: .get)
-            .responseJSON { response in
-                //debugPrint(response)
-                print(response)
-//                switch response.result {
-//
-//                    case .success(_):
-//
-//                    do {
-//                        let jsonDecoder = JSONDecoder()
-//
-//                        let decoded = try jsonDecoder.decode([Monument].self, from: response.data!)
-//
-//                        self.monumentList = decoded
-//                        print("Converted JSON in struct \(decoded)")
-//
-//                    }
-//
-//                    catch {
-//                        print(error)
-//                    }
-//                case .failure(let error):
-//                    print("test 03")
-//                    print(error)
-//
-//                }
+        AF.request("http://127.0.0.1:8000/api/monuments",method: .get).responseJSON { response in
+            print(response)
+            
+            switch response.result {
+            case .success(_):
+                do {
+                    let jsonDecoder  = JSONDecoder()
+                    let decode = try jsonDecoder.decode([Monument].self, from: response.data!)
+                    self.monumentList = decode
+                    print("Converted JSON in struct \(self.monumentList)")
+                }
+                catch {
+                    print("Error reading JSON file: \(error.localizedDescription) Error description: \(error)")
+                }
+            case .failure(let error):
+                print(error)
+            }
         }
-
-
     }
-    
-    
 }

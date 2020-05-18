@@ -28,7 +28,7 @@ struct LoginView: View {
                     .font(.largeTitle)
                     .padding([.top,.bottom], 20)
                     .onAppear {
-                            CategoryApi().getCategories()
+                            MonumentController().getMonuments()
                     }
                 
                 Spacer()
