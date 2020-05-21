@@ -10,9 +10,9 @@ import Foundation
 import Alamofire
 import Combine
 
-class MonumentController {
+class MonumentController: ObservableObject {
     
-    @Published var monumentList = [Monument]()
+   @Published var monumentList = [Monument]()
     
     func getMonuments() {
         
