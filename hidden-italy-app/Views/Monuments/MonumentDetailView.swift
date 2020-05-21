@@ -10,6 +10,11 @@ import SwiftUI
 
 struct MonumentDetailView: View {
     
+    var monument: Monument
+    
+   // Text(str.substring(toIndex: str.length - 2))
+
+
     var body: some View {
         VStack{
             ZStack (alignment: .bottom){
@@ -24,26 +29,23 @@ struct MonumentDetailView: View {
                 .opacity(0.30)
                 .blur(radius: 10)
                  
-                 Text("Duomo di Milano")
-                     .font(.largeTitle)
+                Text("\(monument.name)")
+                    .font(.largeTitle)
                     .foregroundColor(Color.white)
             }
-        
- 
-            
-                
-            Text("Questa è una descrizione test per il monumento. ")
+
+            Text("\(monument.description)")
                 .padding(.horizontal, 2)
                 .padding(.vertical, 10)
             
             CommentListView()
         }
-        
     }
 }
 
 struct MonumentDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MonumentDetailView()
+        MonumentDetailView(monument: testMonument)
     }
 }
+

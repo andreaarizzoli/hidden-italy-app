@@ -51,4 +51,14 @@ class MonumentViewModel: ObservableObject {
             }
         }
     }
+    
+    func shortDescription(description: String){
+        //description.stringByPaddingToLength(3, withString: "", startingAtIndex: 0)
+       // var response = "blablabla"
+       // return response
+    }
+    
+    
 }
+
+

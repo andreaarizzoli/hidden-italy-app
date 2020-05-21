@@ -9,20 +9,24 @@
 import SwiftUI
 
 struct MonumentsView: View {
+    
+    @ObservedObject var monuments = MonumentViewModel()
+    
     var body: some View {
         VStack {
-   
+            
             NavigationView{
-                List(0..<5) { item in
+                List(monuments.monumentList) { monument in
                     NavigationLink(destination:
-                        MonumentDetailView()
+                        MonumentDetailView(monument: monument)
                     ){
-                        MonumentRowView()
+                        MonumentRowView(monument: monument)
                     }
                 }
                 .navigationBarTitle("Monumenti")
-
             }
+        }.onAppear {
+            self.monuments.getMonuments()
         }
     }
 }
@@ -32,3 +36,4 @@ struct MonumentsView_Previews: PreviewProvider {
         MonumentsView()
     }
 }
+

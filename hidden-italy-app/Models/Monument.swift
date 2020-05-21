@@ -22,3 +22,4 @@ struct Monument: Codable, Identifiable {
     //var images: [ImageModel?]
 }
 
+let testMonument = Monument(id: 1, name: "Duomo di Milano", description: "blablabal", lat: "00", lon: "00", user_id: 1, category_id: 1, created_at: "sjodjifs",  updated_at: "blabla")
