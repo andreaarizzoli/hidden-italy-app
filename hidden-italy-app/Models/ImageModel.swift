@@ -13,8 +13,8 @@ struct ImageModel: Codable, Identifiable {
     var title: String
     var description: String
     var url: String
-    var monument_id: Monument
-    var user_id: User
+    var monument_id: Monument?
+    var user_id: User?
     var created_at: String?
     var updated_at: String?
 

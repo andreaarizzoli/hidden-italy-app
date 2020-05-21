@@ -10,8 +10,8 @@ import Foundation
 
 struct MonumentCategory: Codable, Identifiable {
     var id: Int
-    var category_id: Category
-    var monument_id: Monument
+    var category_id: Category?
+    var monument_id: Monument?
     var created_at: String
     var updated_at: String?
 }

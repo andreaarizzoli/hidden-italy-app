@@ -15,9 +15,10 @@ struct Monument: Codable, Identifiable {
     var lat: String
     var lon: String
     var user_id: Int
-    var category_id: Int?
+    var category_id: Int
     var created_at: String
     var updated_at: String?
-   // var categories: Array<MonumentCategory>
-  //  var images: Array<ImageModel>
+    //var categories: [MonumentCategory?]
+    //var images: [ImageModel?]
 }
+

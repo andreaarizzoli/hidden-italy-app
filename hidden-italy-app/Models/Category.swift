@@ -13,6 +13,13 @@ struct Category: Codable, Identifiable {
     var description: String
     var created_at: String
     var updated_at: String?
+    
+//    init(id: Int, description: String,  created_at: String ,updated_at: String? = nil) {
+//        self.id = 1
+//        self.description = "descrizione"
+//        self.created_at = "data"
+//        self.updated_at = "data"
+//    }
 
 }
 

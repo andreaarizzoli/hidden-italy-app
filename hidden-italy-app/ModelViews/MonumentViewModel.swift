@@ -10,15 +10,31 @@ import Foundation
 import Alamofire
 import Combine
 
-class MonumentController: ObservableObject {
+class MonumentViewModel: ObservableObject {
     
-   @Published var monumentList = [Monument]()
+   // @Published var monumentList = [Monument]()
+    
+    @Published var monumentList: [Monument] = [
+        .init(
+            id: 1,
+            name: "Descrizione",
+            description: "Descrizione",
+            lat: "1.1",
+            lon: "1.1",
+            user_id: 1,
+            category_id: 1,
+            //categories: MonumentCategory,
+            //images: [ImageModel?],
+            created_at: "Data creazione",
+            updated_at: "Data creaione"
+        )
+    ]
     
     func getMonuments() {
         
         AF.request("http://127.0.0.1:8000/api/monuments",method: .get).responseJSON { response in
             print(response)
-            
+
             switch response.result {
             case .success(_):
                 do {
