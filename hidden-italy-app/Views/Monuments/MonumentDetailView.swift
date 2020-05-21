@@ -11,23 +11,51 @@ import SwiftUI
 struct MonumentDetailView: View {
     
     var body: some View {
+        
         VStack{
-        
-            Image("duomo")
+            ScrollView{
+            ZStack(alignment: .bottom){
+                Image("duomoComment")
                 .resizable()
-                .scaledToFit()
-            
-            Text("Duomo di Milano")
-                .font(.largeTitle)
+//                .aspectRatio(contentMode: .fit)
+                .frame(height: 250)
                 
-            Text("Questa è una descrizione test per il monumento. ")
-                .padding(.horizontal, 10)
-                .padding(.vertical, 10)
+                Rectangle()
+                    .frame(height: 80)
+                    .opacity(0.30)
+                    .blur(radius: 10)
+                
+                HStack{
+                    VStack(alignment: .leading, spacing: 8){
+                        Text("Duomo di Milano")
+                        .font(.largeTitle)
+                        .foregroundColor(Color.white)
+                    }
+                    .padding(Edge.Set.leading, 30)
+                    .padding(.bottom)
+                    Spacer()
+                }
+
+            }.listRowInsets(EdgeInsets())
+        VStack(alignment: .leading, spacing: 8){
+           
             
-            CommentListView()
+            Text("Questa è una descrizione test per il monumento. ")
+            .multilineTextAlignment(.leading)
+            .lineSpacing(8)
+            .padding(Edge.Set.leading, 30)
+            .padding(Edge.Set.trailing, 30)
+            .padding(.top)
+            
+           
+            CommentListView().lineLimit(nil)
+                .frame(height: 400)
+
+            
+            }
+            }}.edgesIgnoringSafeArea(.top)
+        .navigationBarHidden(true)
         }
-        
-    }
 }
 
 struct MonumentDetailView_Previews: PreviewProvider {

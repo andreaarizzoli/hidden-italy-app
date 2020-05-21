@@ -21,6 +21,7 @@ struct MonumentsView: View {
                     }
                 }
                 .navigationBarTitle("Monumenti")
+
             }
         }
     }

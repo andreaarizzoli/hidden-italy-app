@@ -8,10 +8,16 @@
 
 import SwiftUI
 
+
+
 struct CommentRowView: View {
+    init() {
+       UITableView.appearance().tableFooterView = UIView()
+    }
+    
     var body: some View {
         VStack(alignment:.leading) {
-            HStack(alignment: .center , spacing:15){
+            HStack(alignment: .top){
                 Image("duomoComment")
                     .resizable()
                     .frame(width: 65, height: 65)
@@ -20,19 +26,31 @@ struct CommentRowView: View {
                         color: Color.black.opacity(0.5),
                         radius: 5, x: 5, y: 5
                     )
+                    .padding(.leading)
+                    .padding(.trailing)
+                
+               
                 
                 VStack(alignment:.leading) {
-                    Text("Il duomo è molto carino")
-                        .font(.title)
-                        .fontWeight(.light)
-                    
                     HStack(){
-                        Text("Creato da: zola91")
-                        Spacer()
+                        Text("zola91")
+                        .font(.custom("Avenir-Black", size: 16))
+                        .fontWeight(.regular)
+                        .padding(.bottom)
+                        Text("24 mar 19:00")
+                            .font(.caption)
+                        .fontWeight(.regular)
+                        .padding(.bottom)
                     }
+                    
+                    Text("Il duomo è molto carino e pieno di negozi.")
+                        .font(.body)
+                        .fontWeight(.regular)
+                        .padding(.bottom)
+                    
+                    
                 }
             }
-           
         }
     }
 }
