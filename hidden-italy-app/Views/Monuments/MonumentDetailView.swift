@@ -7,21 +7,24 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct MonumentDetailView: View {
     
     var monument: Monument
     
+    var url = "http://127.0.0.1:8000/"
+    
    // Text(str.substring(toIndex: str.length - 2))
-
 
     var body: some View {
         VStack{
             ZStack (alignment: .bottom){
                 Image("duomoComment")
+//                URLImage(URL(string: "http://127.0.0.1:8000/storage/\(monument.images[0]!.url)")!)
+//                URLImage(URL(string: "http://127.0.0.1:8000/storage/seedImage/chiesa1.jpg")!)
                      .resizable()
-                     //.scaledToFit()
-                    
+                     .scaledToFit()
                      .frame(height: 250)
                 
                 Rectangle()

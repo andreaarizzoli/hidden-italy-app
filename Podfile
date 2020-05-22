@@ -7,7 +7,12 @@ target 'hidden-italy-app' do
   use_frameworks!
 	
 pod 'Alamofire', '~> 5.1'
+pod 'Kingfisher', '~> 5.0'
+pod 'URLImage'
+
+
 
   # Pods for hidden-italy-app
+  
 
 end

@@ -12,23 +12,23 @@ import Combine
 
 class MonumentViewModel: ObservableObject {
     
-   // @Published var monumentList = [Monument]()
+    @Published var monumentList = [Monument]()
     
-    @Published var monumentList: [Monument] = [
-        .init(
-            id: 1,
-            name: "Descrizione",
-            description: "Descrizione",
-            lat: "1.1",
-            lon: "1.1",
-            user_id: 1,
-            category_id: 1,
-            //categories: MonumentCategory,
-            //images: [ImageModel?],
-            created_at: "Data creazione",
-            updated_at: "Data creaione"
-        )
-    ]
+//    @Published var monumentList: [Monument] = [
+//        .init(
+//            id: 1,
+//            name: "Descrizione",
+//            description: "Descrizione",
+//            lat: "1.1",
+//            lon: "1.1",
+//            user_id: 1,
+//            category_id: 1,
+//            created_at: "Data creazione",
+//            updated_at: "Data creaione",
+//            categories: [],
+//            images: []
+//        )
+//    ]
     
     func getMonuments() {
         

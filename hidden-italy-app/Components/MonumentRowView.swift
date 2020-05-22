@@ -11,6 +11,9 @@ import SwiftUI
 struct MonumentRowView: View {
     
     var monument: Monument
+    
+//    let url = URL(string: "http://127.0.0.1:8000/\(monument.images[0]!.url)")
+//    imageView.kf.setImage(with: url)
 
     var body: some View {
         
@@ -25,6 +28,11 @@ struct MonumentRowView: View {
                     Text("\(monument.name)")
                         .font(.title)
                         .fontWeight(.light)
+//                    if (monument.images.count > 0){
+//                        Text("\(monument.images[0]!.title)")
+//                    } else {
+//                        Text("Not working")
+//                    }
                 }
             }.padding(.bottom)
             Text("\(monument.description[0 ..< 80])...")
