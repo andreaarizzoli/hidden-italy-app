@@ -11,7 +11,7 @@ import SwiftUI
 struct MonumentsView: View {
     
     @ObservedObject var monuments = MonumentViewModel()
-    
+
     var body: some View {
         VStack {
             
@@ -23,7 +23,8 @@ struct MonumentsView: View {
                         MonumentRowView(monument: monument)
                     }
                 }
-                .navigationBarTitle("Monumenti")
+                //.navigationBarTitle("Monumenti")
+                    .navigationBarTitle(Text("Monumenti"), displayMode: .inline)
             }
         }.onAppear {
             self.monuments.getMonuments()

@@ -14,6 +14,9 @@ class MonumentViewModel: ObservableObject {
     
     @Published var monumentList = [Monument]()
     
+    private var apiUrl = "http://127.0.0.1:8000/api/monuments"
+
+    
 //    @Published var monumentList: [Monument] = [
 //        .init(
 //            id: 1,
@@ -32,7 +35,7 @@ class MonumentViewModel: ObservableObject {
     
     func getMonuments() {
         
-        AF.request("http://127.0.0.1:8000/api/monuments",method: .get).responseJSON { response in
+        AF.request(self.apiUrl ,method: .get).responseJSON { response in
             print(response)
 
             switch response.result {

@@ -7,38 +7,41 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct MonumentRowView: View {
     
-    var monument: Monument
-    
-//    let url = URL(string: "http://127.0.0.1:8000/\(monument.images[0]!.url)")
-//    imageView.kf.setImage(with: url)
+    @State var monument: Monument
+    var url = "http://127.0.0.1:8000/"
 
     var body: some View {
         
         VStack(alignment:.leading) {
+            
             HStack(alignment: .center , spacing:15){
-                Image("duomoComment")
-                    .resizable()
-                    .frame(width: 75, height: 75)
-                .clipShape(Circle())
-                    .shadow(color: Color.black.opacity(0.5), radius: 5, x: 5, y: 5)
+                if (monument.images.count > 0){
+                    URLImage(URL(string: "\(url)storage/\(monument.images[0]!.url)")!, content: {
+                        $0.image
+                            .resizable()
+                           .frame(width: 50, height: 50)
+                           .clipShape(Circle())
+                               .shadow(color: Color.black.opacity(0.5), radius: 5, x: 5, y: 5)
+                    })
+                } else {
+                    Image("duomoComment")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
+                        .shadow(color: Color.black.opacity(0.5), radius: 5, x: 5, y: 5)
+                }
                 VStack(alignment:.leading) {
                     Text("\(monument.name)")
-                        .font(.title)
-                        .fontWeight(.light)
-//                    if (monument.images.count > 0){
-//                        Text("\(monument.images[0]!.title)")
-//                    } else {
-//                        Text("Not working")
-//                    }
+                        .font(.custom("Avenir", size: 20))
                 }
-            }.padding(.bottom)
+            }
             Text("\(monument.description[0 ..< 80])...")
+                .font(.custom("Avenir", size: 16))
                 .font(.body)
-                .fontWeight(.regular)
-                .padding(.bottom)
         }
     }
     

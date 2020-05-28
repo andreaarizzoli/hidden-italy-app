@@ -21,11 +21,11 @@ class CategoryViewModel :ObservableObject {
             updated_at: "stringa")
     ]
     
-    var apiUrl = "http://127.0.0.1:8000/api/categories"
+    private var apiUrl = "http://127.0.0.1:8000/api/categories"
     
     func getCategories() {
         
-        AF.request("http://127.0.0.1:8000/api/categories",method: .get).responseJSON { response in
+        AF.request(self.apiUrl,method: .get).responseJSON { response in
 
             switch response.result {
             case .success(_):
