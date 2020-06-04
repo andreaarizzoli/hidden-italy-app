@@ -13,6 +13,7 @@ struct SplashView: View {
         ZStack {            
             VStack {
                Image("logo")
+                Text("Scoprire ciò che ti circonda")
             }
         }
     }

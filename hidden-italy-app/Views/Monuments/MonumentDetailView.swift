@@ -21,6 +21,7 @@ struct MonumentDetailView: View {
                 URLImage(URL(string: "\(url)storage/\(monument.images[0]!.url)")!, content: {
                     $0.image
                         .resizable()
+//                        .scaledToFill()
                         .frame(height: 250)
                 })
 

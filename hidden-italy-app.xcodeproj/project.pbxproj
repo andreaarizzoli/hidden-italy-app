@@ -31,11 +31,14 @@
 		05948FA1245FFC45001BB4A6 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948FA0245FFC45001BB4A6 /* SplashView.swift */; };
 		05948FA3245FFCF5001BB4A6 /* ManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948FA2245FFCF5001BB4A6 /* ManagerView.swift */; };
 		05948FA5245FFD72001BB4A6 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948FA4245FFD72001BB4A6 /* RootTabView.swift */; };
+		059516CA24898E160054AC5A /* MonumentListView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059516C924898E160054AC5A /* MonumentListView2.swift */; };
+		059516CC2489A14E0054AC5A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059516CB2489A14E0054AC5A /* Colors.swift */; };
 		05C7D971247208CC00E02F47 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7D970247208CC00E02F47 /* MapView.swift */; };
 		05C7D974247208F000E02F47 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7D972247208F000E02F47 /* LocationManager.swift */; };
 		05C7D975247208F000E02F47 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7D973247208F000E02F47 /* Coordinator.swift */; };
 		05C7D9772472090400E02F47 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7D9762472090400E02F47 /* Map.swift */; };
 		05C7D97A2472FCA900E02F47 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7D9792472FCA900E02F47 /* CategoryViewModel.swift */; };
+		05E8C0A82480634C007B299F /* MapView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E8C0A72480634C007B299F /* MapView2.swift */; };
 		05F034812477472D004805BA /* summaryString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F034802477472D004805BA /* summaryString.swift */; };
 		524AFFCBDF9F2C10AA0B262F /* Pods_hidden_italy_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77042D062AEAF40F5B011575 /* Pods_hidden_italy_app.framework */; };
 		79B58DD224720C990052BDC7 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B58DD124720C990052BDC7 /* Landmark.swift */; };
@@ -68,11 +71,14 @@
 		05948FA0245FFC45001BB4A6 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		05948FA2245FFCF5001BB4A6 /* ManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerView.swift; sourceTree = "<group>"; };
 		05948FA4245FFD72001BB4A6 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		059516C924898E160054AC5A /* MonumentListView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentListView2.swift; sourceTree = "<group>"; };
+		059516CB2489A14E0054AC5A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		05C7D970247208CC00E02F47 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		05C7D972247208F000E02F47 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = "hidden-italy-app/MapController/LocationManager.swift"; sourceTree = SOURCE_ROOT; };
 		05C7D973247208F000E02F47 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Coordinator.swift; path = "hidden-italy-app/MapController/Coordinator.swift"; sourceTree = SOURCE_ROOT; };
 		05C7D9762472090400E02F47 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Map.swift; path = "hidden-italy-app/Views/MapViews/Map.swift"; sourceTree = SOURCE_ROOT; };
 		05C7D9792472FCA900E02F47 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		05E8C0A72480634C007B299F /* MapView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView2.swift; sourceTree = "<group>"; };
 		05F034802477472D004805BA /* summaryString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = summaryString.swift; sourceTree = "<group>"; };
 		77042D062AEAF40F5B011575 /* Pods_hidden_italy_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hidden_italy_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77880D522465540200413151 /* Crud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crud.swift; sourceTree = "<group>"; };
@@ -130,6 +136,7 @@
 			children = (
 				0515859A246490C700194002 /* MonumentDetailView.swift */,
 				0515859E24649FE700194002 /* MonumentListView.swift */,
+				059516C924898E160054AC5A /* MonumentListView2.swift */,
 			);
 			path = Monuments;
 			sourceTree = "<group>";
@@ -195,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				05C7D970247208CC00E02F47 /* MapView.swift */,
+				05E8C0A72480634C007B299F /* MapView2.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -229,6 +237,7 @@
 				051585A42464AA5B00194002 /* CommentRowView.swift */,
 				0515859C2464979F00194002 /* MonumentRowView.swift */,
 				05F034802477472D004805BA /* summaryString.swift */,
+				059516CB2489A14E0054AC5A /* Colors.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -392,6 +401,7 @@
 				05948FA3245FFCF5001BB4A6 /* ManagerView.swift in Sources */,
 				0515859D2464979F00194002 /* MonumentRowView.swift in Sources */,
 				79B58DD224720C990052BDC7 /* Landmark.swift in Sources */,
+				059516CC2489A14E0054AC5A /* Colors.swift in Sources */,
 				05948F8D245FFBC1001BB4A6 /* AppDelegate.swift in Sources */,
 				051585942464865300194002 /* Category.swift in Sources */,
 				0510B38E246DE5AB00BCB0C8 /* MonumentViewModel.swift in Sources */,
@@ -399,6 +409,7 @@
 				0510B38C246DE4E800BCB0C8 /* MonumentCategory.swift in Sources */,
 				05C7D971247208CC00E02F47 /* MapView.swift in Sources */,
 				05948FA1245FFC45001BB4A6 /* SplashView.swift in Sources */,
+				05E8C0A82480634C007B299F /* MapView2.swift in Sources */,
 				05948F8F245FFBC1001BB4A6 /* SceneDelegate.swift in Sources */,
 				051585922464863000194002 /* User.swift in Sources */,
 				0515858E2464823500194002 /* Monument.swift in Sources */,
@@ -406,6 +417,7 @@
 				051585792462E36800194002 /* LoginView.swift in Sources */,
 				051585892464072000194002 /* RootCircleTabTabView.swift in Sources */,
 				0515859B246490C700194002 /* MonumentDetailView.swift in Sources */,
+				059516CA24898E160054AC5A /* MonumentListView2.swift in Sources */,
 				051585A12464AA2300194002 /* CommentListView.swift in Sources */,
 				05948FA5245FFD72001BB4A6 /* RootTabView.swift in Sources */,
 				05C7D974247208F000E02F47 /* LocationManager.swift in Sources */,

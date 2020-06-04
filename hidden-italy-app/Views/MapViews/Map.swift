@@ -10,14 +10,16 @@ import SwiftUI
 import MapKit
 
 struct Map: UIViewRepresentable {
-  
+    
+
     func makeUIView(context: Context) -> MKMapView {
         let map = MKMapView(frame: UIScreen.main.bounds)
         
         map.showsUserLocation = true
         map.delegate = context.coordinator
         map.userTrackingMode = .follow
-        
+    //    map.mapType = .mutedStandard
+        //map.pointOfInterestFilter = .some(MKPointOfInterestFilter(including: []))
         return map
     }
     
@@ -27,11 +29,16 @@ struct Map: UIViewRepresentable {
     
   func updateUIView(_ uiView: MKMapView, context: Context) {
     
+//    let coordinate3 = MKPointAnnotation()
+//    coordinate3.title = self.monuments.monumentList[0].name
+//
+//    coordinate3.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(exactly: Double(self.monuments.monumentList[0].lat)!)!, longitude: 9.18966)
+//    uiView.addAnnotation(coordinate3)
   }
 }
 
-struct Map_Previews: PreviewProvider {
-    static var previews: some View {
-        Map()
-    }
-}
+//struct Map_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Map()
+//    }
+//}

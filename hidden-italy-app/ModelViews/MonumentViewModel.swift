@@ -44,7 +44,7 @@ class MonumentViewModel: ObservableObject {
                     let jsonDecoder  = JSONDecoder()
                     let decode = try jsonDecoder.decode([Monument].self, from: response.data!)
                     self.monumentList = decode
-                    print("Converted JSON in struct \(self.monumentList)")
+                    //print("Converted JSON in struct \(self.monumentList)")
                 }
                 catch {
                     print("Error reading JSON file: \(error.localizedDescription) Error description: \(error)")
