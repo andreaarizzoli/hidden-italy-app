@@ -3,24 +3,28 @@ PODS:
   - Kingfisher (5.14.0):
     - Kingfisher/Core (= 5.14.0)
   - Kingfisher/Core (5.14.0)
+  - SkeletonView (1.8.7)
   - URLImage (0.9.15)
 
 DEPENDENCIES:
   - Alamofire (~> 5.1)
   - Kingfisher (~> 5.0)
+  - SkeletonView
   - URLImage
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
+    - SkeletonView
     - URLImage
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  SkeletonView: ba5370f41280b2f0a76918bb143c1294232bb4f4
   URLImage: 1adef9b81f071fc2fc13a1a87ff882c0a694d48b
 
-PODFILE CHECKSUM: 3499378d21ae56888709ce9011806853fc457eaf
+PODFILE CHECKSUM: b452f0c4bec19c03d1666379489576dc8c5abee3
 
 COCOAPODS: 1.9.1

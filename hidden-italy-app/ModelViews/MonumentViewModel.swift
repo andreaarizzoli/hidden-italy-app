@@ -60,8 +60,6 @@ class MonumentViewModel: ObservableObject {
        // var response = "blablabla"
        // return response
     }
-    
-    
 }
 
 
