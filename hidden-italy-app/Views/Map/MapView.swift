@@ -13,17 +13,19 @@ struct MapView: View {
     
     @ObservedObject var locationManager = LocationManager()
     @State private var search:String = ""
-    
+    @ObservedObject var monuments = MonumentViewModel()
+
     var body: some View {
         ZStack(alignment: .top){
-            Map()
-            
+            Map(monuments: self.$monuments.monumentList)
             TextField("Search", text: $search, onEditingChanged: { _ in })
             {
                 
             }.textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
                 .offset(y: 44)
+        }.onAppear {
+            self.monuments.getMonuments()
         }
     }
 }

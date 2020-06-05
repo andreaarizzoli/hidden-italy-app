@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,6 +33,7 @@
 		05948FA5245FFD72001BB4A6 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948FA4245FFD72001BB4A6 /* RootTabView.swift */; };
 		059516CA24898E160054AC5A /* MonumentListView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059516C924898E160054AC5A /* MonumentListView2.swift */; };
 		059516CC2489A14E0054AC5A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059516CB2489A14E0054AC5A /* Colors.swift */; };
+		059516CF248A3CB90054AC5A /* SkeletonUI in Frameworks */ = {isa = PBXBuildFile; productRef = 059516CE248A3CB90054AC5A /* SkeletonUI */; };
 		05C7D971247208CC00E02F47 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7D970247208CC00E02F47 /* MapView.swift */; };
 		05C7D974247208F000E02F47 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7D972247208F000E02F47 /* LocationManager.swift */; };
 		05C7D975247208F000E02F47 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7D973247208F000E02F47 /* Coordinator.swift */; };
@@ -93,6 +94,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				524AFFCBDF9F2C10AA0B262F /* Pods_hidden_italy_app.framework in Frameworks */,
+				059516CF248A3CB90054AC5A /* SkeletonUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +301,9 @@
 			dependencies = (
 			);
 			name = "hidden-italy-app";
+			packageProductDependencies = (
+				059516CE248A3CB90054AC5A /* SkeletonUI */,
+			);
 			productName = "hidden-italy-app";
 			productReference = 05948F89245FFBC1001BB4A6 /* hidden-italy-app.app */;
 			productType = "com.apple.product-type.application";
@@ -327,6 +332,9 @@
 				Base,
 			);
 			mainGroup = 05948F80245FFBC1001BB4A6;
+			packageReferences = (
+				059516CD248A3CB90054AC5A /* XCRemoteSwiftPackageReference "SkeletonUI" */,
+			);
 			productRefGroup = 05948F8A245FFBC1001BB4A6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -620,6 +628,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		059516CD248A3CB90054AC5A /* XCRemoteSwiftPackageReference "SkeletonUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CSolanaM/SkeletonUI.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		059516CE248A3CB90054AC5A /* SkeletonUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 059516CD248A3CB90054AC5A /* XCRemoteSwiftPackageReference "SkeletonUI" */;
+			productName = SkeletonUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 05948F81245FFBC1001BB4A6 /* Project object */;
 }

@@ -9,7 +9,7 @@
 import SwiftUI
 import URLImage
 import CoreImage
-import SkeletonView
+import SkeletonUI
 
 struct MonumentListView2: View {
     
@@ -29,13 +29,15 @@ struct MonumentListView2: View {
 
                     ForEach(monuments.monumentList) { item in
                         GeometryReader { geometry in
-                            CardView(monument: item, minY: geometry.frame(in: .global).minY, maxY: geometry.frame(in: .global).maxY)
+                            CardView(monument: item, minY: geometry.frame(in: .global).minY, maxY: geometry.frame(in: .global).maxY).skeleton(with: item.name.isEmpty)
 //
 //                            Text("\(geometry.frame(in: .global).maxY / 1000 + 1)")
                         }
+
                         .frame(width: 300)
                         .frame(height: 350)
                     }
+
                 }
             }
         }.onAppear {
@@ -84,9 +86,11 @@ struct CardView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(Color.white)
+                    .skeleton(with: monument.name.isEmpty)
                 
                 Text("\(monument.category_id)")
                 .foregroundColor(Color.white)
+
             }.padding(.bottom)
 
             
