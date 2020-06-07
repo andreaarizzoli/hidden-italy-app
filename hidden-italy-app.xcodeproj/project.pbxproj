@@ -186,7 +186,6 @@
 				05948F97245FFBC4001BB4A6 /* LaunchScreen.storyboard */,
 				05948F9A245FFBC4001BB4A6 /* Info.plist */,
 				05948F94245FFBC4001BB4A6 /* Preview Content */,
-				05948FA0245FFC45001BB4A6 /* SplashView.swift */,
 				05948FA2245FFCF5001BB4A6 /* ManagerView.swift */,
 			);
 			path = "hidden-italy-app";
@@ -258,6 +257,7 @@
 		77E544BD2465533000C27BBA /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				05948FA0245FFC45001BB4A6 /* SplashView.swift */,
 				051585742462E32F00194002 /* RegisterView.swift */,
 				051585782462E36800194002 /* LoginView.swift */,
 			);

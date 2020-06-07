@@ -14,6 +14,7 @@ struct SplashView: View {
             VStack {
                Image("logo")
                 Text("Scoprire ciò che ti circonda")
+                    .foregroundColor(Color(darkAccent))
             }
         }
     }
