@@ -13,33 +13,41 @@ struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var nextView = ""
-    @State private var loginView = false
-
 
     var body: some View {
         
-        VStack() {
-            if loginView {
+       VStack() {
+            if (nextView == "logged") {
                 RootTabView()
-                    .animation(.easeIn(duration: 1))
-                    .transition(AnyTransition.opacity.combined(with: .slide))
-            } else {
+//                    .animation()
+//                    .transition()
+            }
+            else if (nextView == "resetUser"){
+//                ResetView()
                 
-                VStack (alignment: .center, spacing: 30){
+            }
+            else if (nextView == "registerUser"){
+                RegisterUserView()
+            }
+            
+            else {
+                
+                VStack (alignment: .center, spacing:20){
                     Spacer()
                     Image("logo").resizable().frame(width:109, height:89)
                     Spacer()
                 
                     HStack {
-                       Image(systemName: "person").foregroundColor(.gray)
-                        TextField("Inserisci la tua email", text: $email).foregroundColor(.gray)
-                    }.padding()
+                        TextField("Email", text: $email).foregroundColor(.gray)
+                        Image(systemName: "envelope").foregroundColor(.gray).padding(2)
+                    }.padding(15)
                     .overlay(RoundedRectangle(cornerRadius: 35).stroke(Color.gray, lineWidth: 1))
                     
                     HStack {
-                       Image(systemName: "lock").foregroundColor(.gray)
-                        SecureField("Inerisci la tua Password", text: $password).foregroundColor(.gray)
-                    }.padding()
+                        SecureField("Password", text: $password).foregroundColor(.gray)
+                        Image(systemName: "lock").foregroundColor(.gray).padding(4)
+                        
+                    }.padding(15)
                     .overlay(RoundedRectangle(cornerRadius: 35).stroke(Color.gray, lineWidth: 1))
                    
                     HStack(){
@@ -52,11 +60,12 @@ struct LoginView: View {
                     }
                     
                     Button(action:  {
-                        self.loginView = true
+                        self.nextView = "logged"
                     }){
                         
                         Text("Log In")
-                            .foregroundColor(.white).fontWeight(.bold)
+                            .foregroundColor(.white)
+//                            .fontWeight(.bold)
                             .frame(minWidth: 0, maxWidth: .infinity)
                             .padding()
                     }
@@ -69,12 +78,12 @@ struct LoginView: View {
                             .foregroundColor(Color.gray.opacity(0.5))
                         
                         Button(action: {
-                            self.nextView = "createUser"
+                            self.nextView = "registerUser"
                         }) {
                             Text("Registrati")
                                 .foregroundColor(Color(darkAccent))
                         }
-                    }.padding(.bottom)
+                    }
                     HStack{
                         
                         Button(action: {    }){
