@@ -22,6 +22,8 @@
 		0515859F24649FE700194002 /* MonumentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0515859E24649FE700194002 /* MonumentListView.swift */; };
 		051585A12464AA2300194002 /* CommentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585A02464AA2300194002 /* CommentListView.swift */; };
 		051585A52464AA5B00194002 /* CommentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585A42464AA5B00194002 /* CommentRowView.swift */; };
+		0569BC3D248E8AE0000B5972 /* ExpandViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3C248E8AE0000B5972 /* ExpandViewTest.swift */; };
+		0569BC3F249186C8000B5972 /* MapMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3E249186C8000B5972 /* MapMonumentView.swift */; };
 		05948F8D245FFBC1001BB4A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948F8C245FFBC1001BB4A6 /* AppDelegate.swift */; };
 		05948F8F245FFBC1001BB4A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948F8E245FFBC1001BB4A6 /* SceneDelegate.swift */; };
 		05948F91245FFBC1001BB4A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948F90245FFBC1001BB4A6 /* ContentView.swift */; };
@@ -61,6 +63,8 @@
 		0515859E24649FE700194002 /* MonumentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentListView.swift; sourceTree = "<group>"; };
 		051585A02464AA2300194002 /* CommentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListView.swift; sourceTree = "<group>"; };
 		051585A42464AA5B00194002 /* CommentRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRowView.swift; sourceTree = "<group>"; };
+		0569BC3C248E8AE0000B5972 /* ExpandViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandViewTest.swift; sourceTree = "<group>"; };
+		0569BC3E249186C8000B5972 /* MapMonumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMonumentView.swift; sourceTree = "<group>"; };
 		05948F89245FFBC1001BB4A6 /* hidden-italy-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hidden-italy-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05948F8C245FFBC1001BB4A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05948F8E245FFBC1001BB4A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 				0515859A246490C700194002 /* MonumentDetailView.swift */,
 				0515859E24649FE700194002 /* MonumentListView.swift */,
 				059516C924898E160054AC5A /* MonumentListView2.swift */,
+				0569BC3C248E8AE0000B5972 /* ExpandViewTest.swift */,
 			);
 			path = Monuments;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 			children = (
 				05C7D970247208CC00E02F47 /* MapView.swift */,
 				05E8C0A72480634C007B299F /* MapView2.swift */,
+				0569BC3E249186C8000B5972 /* MapMonumentView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -407,6 +413,7 @@
 				051585752462E32F00194002 /* RegisterUserView.swift in Sources */,
 				05C7D9772472090400E02F47 /* Map.swift in Sources */,
 				05948FA3245FFCF5001BB4A6 /* ManagerView.swift in Sources */,
+				0569BC3F249186C8000B5972 /* MapMonumentView.swift in Sources */,
 				0515859D2464979F00194002 /* MonumentRowView.swift in Sources */,
 				79B58DD224720C990052BDC7 /* Landmark.swift in Sources */,
 				059516CC2489A14E0054AC5A /* Colors.swift in Sources */,
@@ -414,6 +421,7 @@
 				051585942464865300194002 /* Category.swift in Sources */,
 				0510B38E246DE5AB00BCB0C8 /* MonumentViewModel.swift in Sources */,
 				0515859F24649FE700194002 /* MonumentListView.swift in Sources */,
+				0569BC3D248E8AE0000B5972 /* ExpandViewTest.swift in Sources */,
 				0510B38C246DE4E800BCB0C8 /* MonumentCategory.swift in Sources */,
 				05C7D971247208CC00E02F47 /* MapView.swift in Sources */,
 				05948FA1245FFC45001BB4A6 /* SplashView.swift in Sources */,

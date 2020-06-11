@@ -18,26 +18,32 @@ struct MonumentListView2: View {
     //MonumentListView2.showAnimatedGradientSkeleton()
 
     var body: some View {
-        ZStack {
-            Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)).edgesIgnoringSafeArea(.all)
-            ScrollView {
-                VStack {
+        VStack {
+//            Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)).edgesIgnoringSafeArea(.all)
+            ScrollView(.vertical, showsIndicators: false) {
+                HStack (alignment: .bottom){
                     Text("Monumenti")
-                        .font(.largeTitle).bold()
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal, 30)
-
-                    ForEach(monuments.monumentList) { item in
-                        GeometryReader { geometry in
-                            CardView(monument: item, minY: geometry.frame(in: .global).minY, maxY: geometry.frame(in: .global).maxY).skeleton(with: item.name.isEmpty)
-//
-//                            Text("\(geometry.frame(in: .global).maxY / 1000 + 1)")
+                        .font(.largeTitle)
+                    Spacer()
+                    VStack(alignment: .leading){
+                         Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                            Text("Aggiungi")
+                            .foregroundColor(Color(bgColor))
+//                            Image("duomo")
+//                            .resizable()
+//                            .frame(width: 50, height: 50)
+//                            .clipShape(Capsule())
                         }
-
-                        .frame(width: 300)
-                        .frame(height: 350)
                     }
-
+                }.padding(.horizontal, 30)
+              
+                ForEach(monuments.monumentList) { item in
+                    GeometryReader { geometry in
+                        CardView(monument: item, minY: geometry.frame(in: .global).minY, maxY: geometry.frame(in: .global).maxY)
+//                            Text("\(geometry.frame(in: .global).maxY / 1000 + 1)")
+                    }
+                    .frame(width: 300)
+                    .frame(height: 350)
                 }
             }
         }.onAppear {
@@ -70,8 +76,8 @@ struct CardView: View {
                 Resize(size: CGSize(width: 300.0, height: 350.0), scale: UIScreen.main.scale) ], content: {
             $0.image
             .resizable()
-            .offset(x: self.show ? -330 : 0)
-            .rotationEffect(Angle(degrees: self.show ? 10 : 0))
+//            .offset(x: self.show ? -330 : 0)
+//            .rotationEffect(Angle(degrees: self.show ? 10 : 0))
             .clipped()
             })
             .animation(.spring(response: 0.6, dampingFraction: 0.6, blendDuration: 0)).frame(width: 300, height: 350)
@@ -86,7 +92,6 @@ struct CardView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(Color.white)
-                    .skeleton(with: monument.name.isEmpty)
                 
                 Text("\(monument.category_id)")
                 .foregroundColor(Color.white)

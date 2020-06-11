@@ -38,7 +38,7 @@ struct RootTabView: View {
                     Text("Notifiche")
                 }
             
-            MapView()
+            ExpandViewTest()
                 .tabItem{
                     Image(systemName: "person")
                     Text("Profilo")
