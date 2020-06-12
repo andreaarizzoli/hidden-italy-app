@@ -20,25 +20,25 @@ struct RootTabView: View {
                     Text("Mappa")
                 }
             
-            MonumentListView2()
+            MonumentListView()
                 .tabItem{
                     Image(systemName: "list.dash")
                     Text("Luoghi")
                 }
             
-            MapView2()
+            MonumentListView2()
                 .tabItem{
                     Image(systemName: "list.number")
                     Text("Classifica")
                 }
             
-            MonumentsView()
+            MonumentListView2()
                 .tabItem{
                     Image(systemName: "heart")
                     Text("Notifiche")
                 }
             
-            ExpandViewTest()
+            MonumentListView2()
                 .tabItem{
                     Image(systemName: "person")
                     Text("Profilo")
