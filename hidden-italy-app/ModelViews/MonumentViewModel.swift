@@ -16,8 +16,8 @@ class MonumentViewModel: ObservableObject {
     @Published var userCoordinates = LocationManager()
     
     let parameters = [
-        "lat": "45.441683",
-        "lon": "9.1916211"
+        "lat": "45.4641684",
+        "lon": " 9.1916211"
     ]
     
     private var apiUrl = "http://127.0.0.1:8000/api/monuments"

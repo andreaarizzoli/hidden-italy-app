@@ -25,28 +25,30 @@ struct MonumentListView: View {
     @State var expandedScreen_willHide = false
     var url = "http://127.0.0.1:8000/"
     let ciContext = CIContext()
-
+    @State var showSheetMonumentView = false
     
     var body: some View {
         
         ZStack{
             Color.white.edgesIgnoringSafeArea(.all)
             ScrollView{
-                HStack (alignment: .bottom){
+                HStack (alignment: .center){
                     Text("Monumenti")
                         .font(.largeTitle)
                     Spacer()
                     VStack(alignment: .leading){
-                         Button(action: {}) {
-                            Text("Aggiungi")
+                         Button(action: {
+                            self.showSheetMonumentView.toggle()
+                         }) {
+                            Image(systemName: "plus.circle.fill")
                             .foregroundColor(Color(bgColor))
-//                            Image("duomo")
-//                            .resizable()
-//                            .frame(width: 50, height: 50)
-//                            .clipShape(Capsule())
+                            .font(.system(size: 35))
+                        }.sheet(isPresented: $showSheetMonumentView) {
+//                            CreateMonumentView()
+                            CreateMonumentView(showSheetMonumentView: self.$showSheetMonumentView)
                         }
                     }
-                }.padding(.horizontal, 30)
+                }.padding(.horizontal, 30).padding(.top)
                 
                 //ForEach_start
                 ForEach(monuments.monumentList, id: \.id){thisItem in
