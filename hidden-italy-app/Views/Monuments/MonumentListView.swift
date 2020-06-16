@@ -18,7 +18,7 @@ struct MonumentListView: View {
     let SVWidth = UIScreen.main.bounds.width - 40
    
     @ObservedObject var monuments = MonumentViewModel()
-    @State var expandedItem = Monument(id: 1, name: "abc", description: "abc", lat: 00, lon: 00, visible: true, user_id: 1, category_id: 1, created_at: "abc",  updated_at: "abc", categories: [], images: [])
+    @State var expandedItem = Monument(id: 1, name: "abc", description: "abc", lat: 00, lon: 00, visible: true, user_id: 1, category_id: 1, distance: 0.1, created_at: "abc",  updated_at: "abc", categories: [], images: [])
     @State var expandedScreen_startPoint = CGRect(x: 0, y: 0, width: 100, height: 100)
     @State var expandedScreen_returnPoint = CGRect(x: 0, y: 0, width: 100, height: 100)
     @State var expandedScreen_shown = false
@@ -81,24 +81,31 @@ struct MonumentListView: View {
                                         self.expandedScreen_startPoint =  CGRect(x: 0, y: 0, width:UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
                                     }
                                 }) {
-                                    ZStack{
+                                    ZStack (alignment: .bottom){
                                         Rectangle()
                                         .frame(height: 100)
                                         .opacity(0.30)
-                                        .blur(radius: 15)
-                                        .background(Color.clear.opacity(0.9))
+                                        .blur(radius: 30)
+                                        .background(Color.black.opacity(0.2))
                                             
                                         
                                         VStack(alignment: .leading){
                                             Text("\(thisItem.name)")
                                                 .font(.largeTitle)
                                                 .fontWeight(.bold)
+                                                .padding(.bottom)
                                         
-                                            Text("\(thisItem.category_id)")
+                                            HStack(){
+                                                Text("\(thisItem.category_id)")
+                                                .foregroundColor(Color.white)
+                                                Spacer()
+                                                Text("\(String(format: "%.2f", round(thisItem.distance*100)/100)) km")
+                                                .foregroundColor(Color.white)
+                                            }
+                                            
 
-                                        }.padding(.bottom).foregroundColor(Color.white)
+                                        }.padding().foregroundColor(Color.white)
 
-                                        
                                     }.frame(width: self.SVWidth)
                                     
                                 }
@@ -208,7 +215,7 @@ struct MonumentListView: View {
                     Animation.easeInOut(duration: 0.05)
                         .delay(self.expandedScreen_willHide ? 0.5 : 0))
         }.onAppear {
-        self.monuments.getMonuments()
+        self.monuments.getNearMonuments()
         }
     }
 }

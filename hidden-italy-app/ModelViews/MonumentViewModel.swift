@@ -13,30 +13,18 @@ import Combine
 class MonumentViewModel: ObservableObject {
     
     @Published var monumentList = [Monument]()
+    @Published var userCoordinates = LocationManager()
+    
+    let parameters = [
+        "lat": "45.441683",
+        "lon": "9.1916211"
+    ]
     
     private var apiUrl = "http://127.0.0.1:8000/api/monuments"
 
-    
-//    @Published var monumentList: [Monument] = [
-//        .init(
-//            id: 1,
-//            name: "Descrizione",
-//            description: "Descrizione",
-//            lat: "1.1",
-//            lon: "1.1",
-//            user_id: 1,
-//            category_id: 1,
-//            created_at: "Data creazione",
-//            updated_at: "Data creaione",
-//            categories: [],
-//            images: []
-//        )
-//    ]
-    
     func getMonuments() {
         
         AF.request(self.apiUrl ,method: .get).responseJSON { response in
-            print(response)
 
             switch response.result {
             case .success(_):
@@ -44,7 +32,30 @@ class MonumentViewModel: ObservableObject {
                     let jsonDecoder  = JSONDecoder()
                     let decode = try jsonDecoder.decode([Monument].self, from: response.data!)
                     self.monumentList = decode
-                    //print("Converted JSON in struct \(self.monumentList)")
+//                    print("Converted JSON in struct \(self.monumentList)")
+                }
+                catch {
+                    print("Error reading JSON file: \(error.localizedDescription) Error description: \(error)")
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func getNearMonuments() {
+        
+        AF.request(self.apiUrl + "/findNearest" ,method: .post, parameters:parameters, encoding: JSONEncoding.default).responseJSON { response in
+//            print(response)
+            print("trovato\(self.userCoordinates)")
+
+            switch response.result {
+            case .success(_):
+                do {
+                    let jsonDecoder  = JSONDecoder()
+                    let decode = try jsonDecoder.decode([Monument].self, from: response.data!)
+                    self.monumentList = decode
+                    print("Converted JSON in struct \(self.monumentList)")
                 }
                 catch {
                     print("Error reading JSON file: \(error.localizedDescription) Error description: \(error)")

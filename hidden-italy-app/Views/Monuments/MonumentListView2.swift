@@ -47,7 +47,7 @@ struct MonumentListView2: View {
                 }
             }
         }.onAppear {
-        self.monuments.getMonuments()
+        self.monuments.getNearMonuments()
         }
     }
 }
@@ -70,7 +70,6 @@ struct CardView: View {
     var body: some View {
         
         ZStack(alignment: .bottom) {
-
             URLImage(URL(string: "\(url)storage/\(monument.images[0]!.url)")!, processors: [
                 CoreImageFilterProcessor(name: "CISepiaTone", parameters: [ kCIInputIntensityKey: 0.2 ], context: self.ciContext),
                 Resize(size: CGSize(width: 300.0, height: 350.0), scale: UIScreen.main.scale) ], content: {
@@ -92,14 +91,18 @@ struct CardView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(Color.white)
+                    .padding(.bottom)
                 
-                Text("\(monument.category_id)")
-                .foregroundColor(Color.white)
-
+                HStack(){
+                    Text("\(monument.category_id)")
+                    .foregroundColor(Color.white)
+                    Spacer()
+                    Text("\(String(format: "%.2f", round(monument.distance*100)/100)) km")
+                    .foregroundColor(Color.white)
+                }
             }.padding(.bottom)
+            .padding(.horizontal)
 
-            
-    
         }
         .clipShape(RoundedRectangle(cornerRadius: 15))
         .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)).opacity(0.3), radius: self.show ? 100 : 40, x:0, y: self.show ? 100 : 20)

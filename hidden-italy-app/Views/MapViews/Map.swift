@@ -30,7 +30,7 @@ struct Map: UIViewRepresentable {
     
   func updateUIView(_ uiView: MKMapView, context: Context) {
     for monument in monuments {
-        print("entrato")
+        //print("entrato")
         let coordinate = MKPointAnnotation()
         coordinate.title = monument.name
         coordinate.subtitle = monument.description

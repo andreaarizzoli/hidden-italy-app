@@ -40,6 +40,8 @@ extension LocationManager: CLLocationManagerDelegate {
         }
         
         self.location = location
+//        print("La mia posizione: \(self.location!.coordinate.longitude)")
     }
+    
     
 }

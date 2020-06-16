@@ -33,7 +33,7 @@ class CategoryViewModel :ObservableObject {
                     let jsonDecoder  = JSONDecoder()
                     let decode = try jsonDecoder.decode([Category].self, from: response.data!)
                     self.categoriesList = decode
-                    print("Converted JSON in struct \(self.categoriesList)")
+                    //print("Converted JSON in struct \(self.categoriesList)")
                 }
                 catch {
                     print(error)
