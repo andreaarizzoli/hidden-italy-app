@@ -66,6 +66,40 @@ class MonumentViewModel: ObservableObject {
         }
     }
     
+    func createMonument(name: String, description: String, lat: String, lon: String, category: String){
+        
+        let parameters = [
+            "name": name,
+            "description": description,
+            "lat": lat,
+            "lon": lon,
+            "category": category,
+            "user_id": "1",
+            "main_category_id": category,
+//            "url": ???,
+            "categories": "2",
+            ] as [String : Any]
+//
+//        AF.request(self.apiUrl ,method: .post, parameters:parameters, encoding: JSONEncoding.default).responseJSON { response in
+//
+//            switch response.result {
+//            case .success(_):
+//                do {
+//                    let jsonDecoder  = JSONDecoder()
+//                    let decode = try jsonDecoder.decode([Monument].self, from: response.data!)
+//                    self.monumentList = decode
+//                    print("Converted JSON in struct \(self.monumentList)")
+//                }
+//                catch {
+//                    print("Error reading JSON file: \(error.localizedDescription) Error description: \(error)")
+//                }
+//            case .failure(let error):
+//                print(error)
+//            }
+        //}
+        
+    }
+    
     func shortDescription(description: String){
         //description.stringByPaddingToLength(3, withString: "", startingAtIndex: 0)
        // var response = "blablabla"
