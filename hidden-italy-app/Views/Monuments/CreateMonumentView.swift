@@ -18,13 +18,9 @@ struct CreateMonumentView: View {
     @State private var lon = ""
     @State private var category = ""
     
-<<<<<<< HEAD
-
-=======
     @State var isShowingImagePicker = false
     @State var imageInBox = UIImage() //imageInBox
     
->>>>>>> Add picker Image.
     var body: some View {
         
         ScrollView{
