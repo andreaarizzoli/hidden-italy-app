@@ -19,64 +19,49 @@ struct LoginView: View {
        VStack() {
             if (nextView == "logged") {
                 RootTabView()
-//                    .animation()
-//                    .transition()
             }
             else if (nextView == "resetUser"){
 //                ResetView()
-                
             }
             else if (nextView == "registerUser"){
                 RegisterUserView()
             }
-            
             else {
                 
                 VStack (alignment: .center, spacing:20){
                     Spacer()
                     Image("logo").resizable().frame(width:109, height:89)
+                    
                     Spacer()
                 
                     HStack {
-                        TextField("Email", text: $email).foregroundColor(.gray)
-                        Image(systemName: "envelope").foregroundColor(.gray).padding(2)
-                    }.padding(15)
-                    .overlay(RoundedRectangle(cornerRadius: 35).stroke(Color.gray, lineWidth: 1))
+                        TextField("Email", text: $email).modifier(FormTexFieldText())
+                        Image(systemName: "envelope").modifier(FormTexFieldImage())
+                    }.modifier(FormTexField())
                     
                     HStack {
-                        SecureField("Password", text: $password).foregroundColor(.gray)
-                        Image(systemName: "lock").foregroundColor(.gray).padding(4)
-                        
-                    }.padding(15)
-                    .overlay(RoundedRectangle(cornerRadius: 35).stroke(Color.gray, lineWidth: 1))
+                        SecureField("Password", text: $password).modifier(FormTexFieldText())
+                        Image(systemName: "lock").modifier(FormTexFieldImage())
+                    }.modifier(FormTexField())
                    
                     HStack(){
                         Spacer()
-                    
                         Button(action: {self.nextView = "resetUser"}) {
                             Text("Hai dimenticato la password?")
-                                .foregroundColor(Color.gray.opacity(0.5))
+                                .modifier(LoginText())
                         }
                     }
                     
                     Button(action:  {
                         self.nextView = "logged"
                     }){
-                        
                         Text("Log In")
-                            .foregroundColor(.white)
-//                            .fontWeight(.bold)
-                            .frame(minWidth: 0, maxWidth: .infinity)
-                            .padding()
-                    }
-                         .background(Color(bgColor))
-//                    .background(LinearGradient(gradient: Gradient(colors:                     [Color(lightAccent), Color(darkAccent)]), startPoint:                       .top, endPoint: .bottom))
-                    .clipShape(Capsule())
+                            .modifier(FormButtomText())
+                    }.modifier(FormButtom())
                     
                     HStack(){
                         Text("Non hai un account?")
-                            .foregroundColor(Color.gray.opacity(0.5))
-                        
+                            .modifier(LoginText())
                         Button(action: {
                             self.nextView = "registerUser"
                         }) {
@@ -84,8 +69,8 @@ struct LoginView: View {
                                 .foregroundColor(Color(darkAccent))
                         }
                     }
+                    
                     HStack{
-                        
                         Button(action: {    }){
                             Image("google")
                             .resizable()
@@ -98,9 +83,10 @@ struct LoginView: View {
                             .frame(width: 35.0, height: 35)
                         }.padding(.leading)
                     }
+                    
                     Spacer()
-                }.padding(.horizontal, 30).padding(.bottom)
-                
+                    
+                }.modifier(Form())
             }
         }
     }

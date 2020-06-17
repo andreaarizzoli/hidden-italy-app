@@ -18,7 +18,6 @@
 		051585922464863000194002 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585912464863000194002 /* User.swift */; };
 		051585942464865300194002 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585932464865300194002 /* Category.swift */; };
 		051585A12464AA2300194002 /* CommentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585A02464AA2300194002 /* CommentListView.swift */; };
-		051585A52464AA5B00194002 /* CommentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585A42464AA5B00194002 /* CommentRowView.swift */; };
 		0541621824998EE400525898 /* CreateMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541621724998EE400525898 /* CreateMonumentView.swift */; };
 		0569BC3D248E8AE0000B5972 /* MonumentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3C248E8AE0000B5972 /* MonumentListView.swift */; };
 		0569BC3F249186C8000B5972 /* MapMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3E249186C8000B5972 /* MapMonumentView.swift */; };
@@ -39,6 +38,8 @@
 		05C7D975247208F000E02F47 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7D973247208F000E02F47 /* Coordinator.swift */; };
 		05C7D9772472090400E02F47 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7D9762472090400E02F47 /* Map.swift */; };
 		05C7D97A2472FCA900E02F47 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7D9792472FCA900E02F47 /* CategoryViewModel.swift */; };
+		05D0DE69249A92ED00F6DA2B /* CustomModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D0DE68249A92ED00F6DA2B /* CustomModifier.swift */; };
+		05D0DE6B249A94B000F6DA2B /* CommentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D0DE6A249A94B000F6DA2B /* CommentRowView.swift */; };
 		05E8C0A82480634C007B299F /* MapView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E8C0A72480634C007B299F /* MapView2.swift */; };
 		05F034812477472D004805BA /* summaryString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F034802477472D004805BA /* summaryString.swift */; };
 		524AFFCBDF9F2C10AA0B262F /* Pods_hidden_italy_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77042D062AEAF40F5B011575 /* Pods_hidden_italy_app.framework */; };
@@ -57,7 +58,6 @@
 		051585912464863000194002 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		051585932464865300194002 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		051585A02464AA2300194002 /* CommentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListView.swift; sourceTree = "<group>"; };
-		051585A42464AA5B00194002 /* CommentRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRowView.swift; sourceTree = "<group>"; };
 		0541621724998EE400525898 /* CreateMonumentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMonumentView.swift; sourceTree = "<group>"; };
 		0569BC3C248E8AE0000B5972 /* MonumentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentListView.swift; sourceTree = "<group>"; };
 		0569BC3E249186C8000B5972 /* MapMonumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMonumentView.swift; sourceTree = "<group>"; };
@@ -79,6 +79,8 @@
 		05C7D973247208F000E02F47 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Coordinator.swift; path = "hidden-italy-app/MapController/Coordinator.swift"; sourceTree = SOURCE_ROOT; };
 		05C7D9762472090400E02F47 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Map.swift; path = "hidden-italy-app/Views/MapViews/Map.swift"; sourceTree = SOURCE_ROOT; };
 		05C7D9792472FCA900E02F47 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		05D0DE68249A92ED00F6DA2B /* CustomModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifier.swift; sourceTree = "<group>"; };
+		05D0DE6A249A94B000F6DA2B /* CommentRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentRowView.swift; sourceTree = "<group>"; };
 		05E8C0A72480634C007B299F /* MapView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView2.swift; sourceTree = "<group>"; };
 		05F034802477472D004805BA /* summaryString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = summaryString.swift; sourceTree = "<group>"; };
 		77042D062AEAF40F5B011575 /* Pods_hidden_italy_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hidden_italy_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -235,10 +237,11 @@
 		77880D532465582C00413151 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				05D0DE6A249A94B000F6DA2B /* CommentRowView.swift */,
 				05158587246406B700194002 /* Tab */,
-				051585A42464AA5B00194002 /* CommentRowView.swift */,
 				05F034802477472D004805BA /* summaryString.swift */,
 				059516CB2489A14E0054AC5A /* Colors.swift */,
+				05D0DE68249A92ED00F6DA2B /* CustomModifier.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -425,11 +428,12 @@
 				05158586246405E700194002 /* CircleTab.swift in Sources */,
 				051585792462E36800194002 /* LoginView.swift in Sources */,
 				051585892464072000194002 /* RootCircleTabTabView.swift in Sources */,
+				05D0DE6B249A94B000F6DA2B /* CommentRowView.swift in Sources */,
 				059516CA24898E160054AC5A /* MonumentListView2.swift in Sources */,
 				051585A12464AA2300194002 /* CommentListView.swift in Sources */,
 				05948FA5245FFD72001BB4A6 /* RootTabView.swift in Sources */,
 				05C7D974247208F000E02F47 /* LocationManager.swift in Sources */,
-				051585A52464AA5B00194002 /* CommentRowView.swift in Sources */,
+				05D0DE69249A92ED00F6DA2B /* CustomModifier.swift in Sources */,
 				05F034812477472D004805BA /* summaryString.swift in Sources */,
 				05C7D975247208F000E02F47 /* Coordinator.swift in Sources */,
 				05948F91245FFBC1001BB4A6 /* ContentView.swift in Sources */,

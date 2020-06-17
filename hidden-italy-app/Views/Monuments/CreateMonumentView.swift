@@ -37,56 +37,41 @@ struct CreateMonumentView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 35))
                 
                 HStack {
-                    TextField("Nome", text: $name).foregroundColor(.gray)
-                    Image(systemName: "person").foregroundColor(.gray).padding(4)
-                }.padding(15)
-                .overlay(RoundedRectangle(cornerRadius: 35).stroke(Color.gray, lineWidth: 1))
+                    TextField("Nome", text: $name).modifier(FormTexFieldText())
+                    Image(systemName: "person").modifier(FormTexFieldImage())
+                }.modifier(FormTexField())
                 
                 HStack {
-                    TextField("Descrizione", text: $description).foregroundColor(.gray)
-                    Image(systemName: "person").foregroundColor(.gray).padding(4)
-                }.padding(15)
-                .overlay(RoundedRectangle(cornerRadius: 35).stroke(Color.gray, lineWidth: 1))
+                    TextField("Descrizione", text: $description).modifier(FormTexFieldText())
+                    Image(systemName: "person").modifier(FormTexFieldImage())
+                }.modifier(FormTexField())
                 
                 HStack {
+                    HStack {
+                        TextField("Latitudine", text: $latitude).modifier(FormTexFieldText())
+                        Image(systemName: "person").modifier(FormTexFieldImage())
+                    }.modifier(FormTexField())
                     
                     HStack {
-                        TextField("Latitudine", text: $latitude).foregroundColor(.gray)
-                        Image(systemName: "person").foregroundColor(.gray).padding(4)
-                    }.padding(15)
-                    .overlay(RoundedRectangle(cornerRadius: 35).stroke(Color.gray, lineWidth: 1))
-                    
-                    HStack {
-                        TextField("Longitudine", text: $longitude).foregroundColor(.gray)
-                        Image(systemName: "person").foregroundColor(.gray).padding(4)
-                    }.padding(15)
-                    .overlay(RoundedRectangle(cornerRadius: 35).stroke(Color.gray, lineWidth: 1))
+                        TextField("Longitudine", text: $longitude).modifier(FormTexFieldText())
+                        Image(systemName: "person").modifier(FormTexFieldImage())
+                    }.modifier(FormTexField())
                 }
                 
                 HStack {
-                    TextField("Category", text: $category).foregroundColor(.gray)
-                    Image(systemName: "person").foregroundColor(.gray).padding(4)
-                }.padding(15)
-                .overlay(RoundedRectangle(cornerRadius: 35).stroke(Color.gray, lineWidth: 1))
+                    TextField("Category", text: $category).modifier(FormTexFieldText())
+                    Image(systemName: "person").modifier(FormTexFieldImage())
+                }.modifier(FormTexField())
                 
                 Button(action:  {
                 }){
-                    Text("Log In")
-                        .foregroundColor(.white)
-    //                            .fontWeight(.bold)
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .padding()
-                }
-                     .background(Color(bgColor))
-    //                    .background(LinearGradient(gradient: Gradient(colors:                     [Color(lightAccent), Color(darkAccent)]), startPoint:                       .top, endPoint: .bottom))
-                .clipShape(Capsule())
-
+                    Text("Inserisci")
+                        .modifier(FormButtomText())
+                }.modifier(FormButtom())
+                
                 Spacer()
-            
-            
-            
-            }.padding(.horizontal, 30).padding(.bottom)
-            
+                
+                }.modifier(Form())
         }
     }
 }

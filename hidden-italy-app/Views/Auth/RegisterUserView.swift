@@ -38,49 +38,38 @@ struct RegisterUserView: View {
                         .padding(25)
 
                     HStack {
-                        TextField("Nome", text: $name).foregroundColor(.gray)
-                        Image(systemName: "person").foregroundColor(.gray).padding(4)
-                    }.padding(15)
-                    .overlay(RoundedRectangle(cornerRadius:        35).stroke(Color.gray, lineWidth: 1))
+                        TextField("Nome", text: $name).modifier(FormTexFieldText())
+                        Image(systemName: "person").modifier(FormTexFieldImage())
+                    }.modifier(FormTexField())
                 
                     HStack {
-                        TextField("Cognome", text: $surname).foregroundColor(.gray)
-                        Image(systemName: "person").foregroundColor(.gray).padding(4)
-                    }.padding(15)
-                    .overlay(RoundedRectangle(cornerRadius:        35).stroke(Color.gray, lineWidth: 1))
+                        TextField("Cognome", text: $surname).modifier(FormTexFieldText())
+                        Image(systemName: "person").modifier(FormTexFieldImage())
+                    }.modifier(FormTexField())
                 
                     HStack {
-                        TextField("Email", text: $email).foregroundColor(.gray)
-                        Image(systemName: "envelope").foregroundColor(.gray).padding(2)
-                       }.padding(15)
-                       .overlay(RoundedRectangle(cornerRadius:  35).stroke(Color.gray, lineWidth: 1))
+                        TextField("Email", text: $email).modifier(FormTexFieldText())
+                        Image(systemName: "envelope").modifier(FormTexFieldImage())
+                       }.modifier(FormTexField())
                     
                     HStack {
-                        SecureField("Password", text:   $password).foregroundColor(.gray)
-                        Image(systemName: "lock").foregroundColor(.gray).padding(6)
-                        
-                    }.padding(15)
-                    .overlay(RoundedRectangle(cornerRadius: 35).stroke(Color.gray,  lineWidth: 1))
+                        SecureField("Password", text:   $password).modifier(FormTexFieldText())
+                        Image(systemName: "lock").modifier(FormTexFieldImage())
+                    }.modifier(FormTexField())
                     
                     HStack {
-                        SecureField("Ripeti la tua Password", text:     $r_password).foregroundColor(.gray)
-                        Image(systemName: "lock").foregroundColor(.gray).padding(6)
-                    }.padding(15)
-                    .overlay(RoundedRectangle(cornerRadius: 35).stroke(Color.gray,  lineWidth: 1))
+                        SecureField("Ripeti la tua Password", text:     $r_password).modifier(FormTexFieldText())
+                        Image(systemName: "lock").modifier(FormTexFieldImage())
+                    }.modifier(FormTexField())
                     
                     Button(action: {self.nextView = "CreateUser"}){
                         Text("Crea utente")
-                            .foregroundColor(.white)
-                            .frame(minWidth: 0, maxWidth: .infinity)
-                            .padding(15)
-                            .background(Color(bgColor))
-                            .clipShape(Capsule())
-                    }
+                            .modifier(FormButtomText())
+                    }.modifier(FormButtom())
                     
                     HStack{
                         Text("Hai già un account?")
                             .foregroundColor(Color.gray.opacity(0.5))
-                    
                         Button(action: {self.nextView = "LoginView"}) {
                             Text("Accedi")
                                 .foregroundColor(Color(darkAccent))
@@ -89,7 +78,7 @@ struct RegisterUserView: View {
                     
                     Spacer()
                     
-                }.padding(.horizontal, 30).padding(.bottom)
+                }.modifier(Form())
             }
         }
     }
