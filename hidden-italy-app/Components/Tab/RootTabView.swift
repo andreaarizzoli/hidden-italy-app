@@ -38,7 +38,7 @@ struct RootTabView: View {
                     Text("Notifiche")
                 }
             
-            MonumentListView2()
+            ProfileView()
                 .tabItem{
                     Image(systemName: "person")
                     Text("Profilo")

@@ -16,7 +16,6 @@ struct CreateMonumentView: View {
     @State private var longitude = ""
     @State private var category = ""
     
-    @State private var selectedGenderIndex: Int = 0
 
     var body: some View {
         
