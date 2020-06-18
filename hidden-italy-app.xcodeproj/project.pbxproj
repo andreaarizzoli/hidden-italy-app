@@ -18,6 +18,8 @@
 		051585922464863000194002 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585912464863000194002 /* User.swift */; };
 		051585942464865300194002 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585932464865300194002 /* Category.swift */; };
 		051585A12464AA2300194002 /* CommentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585A02464AA2300194002 /* CommentListView.swift */; };
+		0526ECFD249BC4F100B598BC /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ECFC249BC4F100B598BC /* ImagePickerView.swift */; };
+		0526ECFF249BD10C00B598BC /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ECFE249BD10C00B598BC /* UserViewModel.swift */; };
 		0541621824998EE400525898 /* CreateMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541621724998EE400525898 /* CreateMonumentView.swift */; };
 		0569BC3D248E8AE0000B5972 /* MonumentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3C248E8AE0000B5972 /* MonumentListView.swift */; };
 		0569BC3F249186C8000B5972 /* MapMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3E249186C8000B5972 /* MapMonumentView.swift */; };
@@ -46,9 +48,7 @@
 		7901B425249BBEB40099A805 /* ProfileScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901B424249BBEB40099A805 /* ProfileScore.swift */; };
 		7901B427249BD6A50099A805 /* VisitedMonuments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901B426249BD6A50099A805 /* VisitedMonuments.swift */; };
 		7901B429249BD6CB0099A805 /* Prizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901B428249BD6CB0099A805 /* Prizes.swift */; };
-		7901B42B249BD8A10099A805 /* UserTabsOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901B42A249BD8A10099A805 /* UserTabsOld.swift */; };
-		790D4C8D249D046B00CBACD4 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790D4C8C249D046B00CBACD4 /* Fonts.swift */; };
-		790D4C8F249D05FA00CBACD4 /* UserTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790D4C8E249D05FA00CBACD4 /* UserTab.swift */; };
+		7901B42B249BD8A10099A805 /* UserTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901B42A249BD8A10099A805 /* UserTabs.swift */; };
 		79ACF99D249AB78700B14999 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ACF99C249AB78700B14999 /* ProfileView.swift */; };
 		79ACF99F249AB9F300B14999 /* userSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ACF99E249AB9F300B14999 /* userSettings.swift */; };
 		79B58DD224720C990052BDC7 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B58DD124720C990052BDC7 /* Landmark.swift */; };
@@ -66,6 +66,8 @@
 		051585912464863000194002 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		051585932464865300194002 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		051585A02464AA2300194002 /* CommentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListView.swift; sourceTree = "<group>"; };
+		0526ECFC249BC4F100B598BC /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		0526ECFE249BD10C00B598BC /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		0541621724998EE400525898 /* CreateMonumentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMonumentView.swift; sourceTree = "<group>"; };
 		0569BC3C248E8AE0000B5972 /* MonumentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentListView.swift; sourceTree = "<group>"; };
 		0569BC3E249186C8000B5972 /* MapMonumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMonumentView.swift; sourceTree = "<group>"; };
@@ -96,9 +98,7 @@
 		7901B424249BBEB40099A805 /* ProfileScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScore.swift; sourceTree = "<group>"; };
 		7901B426249BD6A50099A805 /* VisitedMonuments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedMonuments.swift; sourceTree = "<group>"; };
 		7901B428249BD6CB0099A805 /* Prizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prizes.swift; sourceTree = "<group>"; };
-		7901B42A249BD8A10099A805 /* UserTabsOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTabsOld.swift; sourceTree = "<group>"; };
-		790D4C8C249D046B00CBACD4 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		790D4C8E249D05FA00CBACD4 /* UserTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTab.swift; sourceTree = "<group>"; };
+		7901B42A249BD8A10099A805 /* UserTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTabs.swift; sourceTree = "<group>"; };
 		79ACF99C249AB78700B14999 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		79ACF99E249AB9F300B14999 /* userSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userSettings.swift; sourceTree = "<group>"; };
 		79B58DD124720C990052BDC7 /* Landmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
@@ -147,6 +147,7 @@
 			children = (
 				0510B38D246DE5AB00BCB0C8 /* MonumentViewModel.swift */,
 				05C7D9792472FCA900E02F47 /* CategoryViewModel.swift */,
+				0526ECFE249BD10C00B598BC /* UserViewModel.swift */,
 			);
 			path = ModelViews;
 			sourceTree = "<group>";
@@ -258,7 +259,7 @@
 				05F034802477472D004805BA /* summaryString.swift */,
 				059516CB2489A14E0054AC5A /* Colors.swift */,
 				05D0DE68249A92ED00F6DA2B /* CustomModifier.swift */,
-				790D4C8C249D046B00CBACD4 /* Fonts.swift */,
+				0526ECFC249BC4F100B598BC /* ImagePickerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -293,8 +294,7 @@
 				7901B424249BBEB40099A805 /* ProfileScore.swift */,
 				7901B426249BD6A50099A805 /* VisitedMonuments.swift */,
 				7901B428249BD6CB0099A805 /* Prizes.swift */,
-				7901B42A249BD8A10099A805 /* UserTabsOld.swift */,
-				790D4C8E249D05FA00CBACD4 /* UserTab.swift */,
+				7901B42A249BD8A10099A805 /* UserTabs.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -443,11 +443,12 @@
 				05C7D9772472090400E02F47 /* Map.swift in Sources */,
 				05948FA3245FFCF5001BB4A6 /* ManagerView.swift in Sources */,
 				0569BC3F249186C8000B5972 /* MapMonumentView.swift in Sources */,
+				0526ECFD249BC4F100B598BC /* ImagePickerView.swift in Sources */,
 				0541621824998EE400525898 /* CreateMonumentView.swift in Sources */,
 				79B58DD224720C990052BDC7 /* Landmark.swift in Sources */,
 				059516CC2489A14E0054AC5A /* Colors.swift in Sources */,
 				05948F8D245FFBC1001BB4A6 /* AppDelegate.swift in Sources */,
-				7901B42B249BD8A10099A805 /* UserTabsOld.swift in Sources */,
+				7901B42B249BD8A10099A805 /* UserTabs.swift in Sources */,
 				051585942464865300194002 /* Category.swift in Sources */,
 				0510B38E246DE5AB00BCB0C8 /* MonumentViewModel.swift in Sources */,
 				0569BC3D248E8AE0000B5972 /* MonumentListView.swift in Sources */,
@@ -464,13 +465,12 @@
 				05D0DE6B249A94B000F6DA2B /* CommentRowView.swift in Sources */,
 				79ACF99D249AB78700B14999 /* ProfileView.swift in Sources */,
 				79ACF99F249AB9F300B14999 /* userSettings.swift in Sources */,
+				0526ECFF249BD10C00B598BC /* UserViewModel.swift in Sources */,
 				059516CA24898E160054AC5A /* MonumentListView2.swift in Sources */,
 				051585A12464AA2300194002 /* CommentListView.swift in Sources */,
 				05948FA5245FFD72001BB4A6 /* RootTabView.swift in Sources */,
-				790D4C8D249D046B00CBACD4 /* Fonts.swift in Sources */,
 				05C7D974247208F000E02F47 /* LocationManager.swift in Sources */,
 				05D0DE69249A92ED00F6DA2B /* CustomModifier.swift in Sources */,
-				790D4C8F249D05FA00CBACD4 /* UserTab.swift in Sources */,
 				05F034812477472D004805BA /* summaryString.swift in Sources */,
 				7901B429249BD6CB0099A805 /* Prizes.swift in Sources */,
 				7901B425249BBEB40099A805 /* ProfileScore.swift in Sources */,

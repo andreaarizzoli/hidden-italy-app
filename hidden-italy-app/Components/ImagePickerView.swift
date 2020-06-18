@@ -1,0 +1,45 @@
+//
+//  ImagePickerView.swift
+//  hidden-italy-app
+//
+//  Created by Andrea Arizzoli on 18/06/2020.
+//  Copyright © 2020 Andrea Arizzoli. All rights reserved.
+//
+
+import SwiftUI
+
+struct ImagePickerView: UIViewControllerRepresentable {
+    
+    @Binding var isPresented: Bool
+    @Binding var selectedImage: UIImage
+    
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePickerView>) -> UIViewController {
+        let controller = UIImagePickerController()
+        controller.delegate = context.coordinator
+        return controller
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(parent: self)
+    }
+    
+    class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+        
+        let parent: ImagePickerView
+        init(parent: ImagePickerView) {
+            self.parent = parent
+        }
+        
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            if let selectedImage = info[.originalImage] as? UIImage {
+                print(selectedImage)
+                self.parent.selectedImage = selectedImage
+            }
+            self.parent.isPresented = false
+        }
+        
+    }
+    
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: UIViewControllerRepresentableContext<ImagePickerView>) {
+    }
+}

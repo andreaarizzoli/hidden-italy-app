@@ -19,14 +19,13 @@ struct CreateMonumentView: View {
     @State private var cap = ""
     @State private var city = ""
     @State private var category = ""
-    
+    @State var image = UIImage()
     @State var isShowingImagePicker = false
-    @State var image = UIImage() //imageInBox
-    
+
     var disableForm: Bool {
-        name.count < 5 && name.count < 50 ||
-        description.count < 5 && description.count > 500 ||
-        address.count < 5 && address.count > 100 ||
+        name.count < 1 && name.count < 50 ||
+        description.count < 1 && description.count > 500 ||
+        address.count < 1 && address.count > 100 ||
         number.count < 1 && number.count > 5 ||
         cap.count < 4 && cap.count > 6 ||
         city.count < 1 && city.count > 50
@@ -60,7 +59,6 @@ struct CreateMonumentView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 35))
                             .overlay(RoundedRectangle(cornerRadius: 35)
                             .stroke(Color.gray, lineWidth: 1))
-                            
                             Image(systemName: "plus")
                             .font(.system(size: 20))
                             .foregroundColor(.gray)
@@ -72,39 +70,39 @@ struct CreateMonumentView: View {
                     
                     HStack {
                         TextField("Nome", text: $name).modifier(FormTextFieldText())
-                        Image(systemName: "circle").modifier(FormTextFieldImage())
+                        //Image(systemName: "circle").modifier(FormTextFieldImage())
                     }.modifier(FormTextField())
                     
                     HStack {
                         TextField("Descrizione", text: $description).modifier(FormTextFieldText())
-                        Image(systemName: "circle").modifier(FormTextFieldImage())
+                        //Image(systemName: "circle").modifier(FormTextFieldImage())
                     }.modifier(FormTextField())
                     
                     HStack {
                         TextField("Indirizzo", text: $address).modifier(FormTextFieldText())
-                        Image(systemName: "circle").modifier(FormTextFieldImage())
+                        //Image(systemName: "circle").modifier(FormTextFieldImage())
                     }.modifier(FormTextField())
                     
                     HStack {
                         HStack {
                             TextField("Numero", text: $number).modifier(FormTextFieldText())
-                            Image(systemName: "circle").modifier(FormTextFieldImage())
+                            //Image(systemName: "circle").modifier(FormTextFieldImage())
                         }.modifier(FormTextField())
                         
                         HStack {
                             TextField("CAP", text: $cap).modifier(FormTextFieldText())
-                            Image(systemName: "circle").modifier(FormTextFieldImage())
+                            //Image(systemName: "circle").modifier(FormTextFieldImage())
                         }.modifier(FormTextField())
                     }
                     
                     HStack {
                         TextField("Città", text: $city).modifier(FormTextFieldText())
-                        Image(systemName: "circle").modifier(FormTextFieldImage())
+                        //Image(systemName: "circle").modifier(FormTextFieldImage())
                     }.modifier(FormTextField())
                     
                     HStack {
                         TextField("Category", text: $category).modifier(FormTextFieldText())
-                        Image(systemName: "circle").modifier(FormTextFieldImage())
+                        //Image(systemName: "circle").modifier(FormTextFieldImage())
                     }.modifier(FormTextField())
                     
                     Button(action:  {
@@ -115,8 +113,8 @@ struct CreateMonumentView: View {
                             number: self.number,
                             cap: self.cap,
                             city: self.city,
-                            category: self.category
-    //                        image: self.image
+                            category: self.category,
+                            image: self.image
                         )
                         self.showSheetMonumentView = false
                         print(self.image)
@@ -140,50 +138,14 @@ struct CreateMonumentView_Previews: PreviewProvider {
     }
 }
 
-struct DummyView: UIViewRepresentable{
-    
-    func makeUIView(context: UIViewRepresentableContext<DummyView>) -> UIButton {
-        let button = UIButton()
-        button.setTitle("DUMMY", for: .normal)
-        return button
-    }
-    
-    func updateUIView(_ uiView: DummyView.UIViewType, context: UIViewRepresentableContext<DummyView>) {
-    }
-}
-
-struct ImagePickerView: UIViewControllerRepresentable {
-    
-    @Binding var isPresented: Bool
-    @Binding var selectedImage: UIImage
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePickerView>) -> UIViewController {
-        let controller = UIImagePickerController()
-        controller.delegate = context.coordinator
-        return controller
-    }
-    
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(parent: self)
-    }
-    
-    class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-        
-        let parent: ImagePickerView
-        init(parent: ImagePickerView) {
-            self.parent = parent
-        }
-        
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            if let selectedImage = info[.originalImage] as? UIImage {
-                print(selectedImage)
-                self.parent.selectedImage = selectedImage
-            }
-            self.parent.isPresented = false
-        }
-        
-    }
-    
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: UIViewControllerRepresentableContext<ImagePickerView>) {
-    }
-}
+//struct DummyView: UIViewRepresentable{
+//
+//    func makeUIView(context: UIViewRepresentableContext<DummyView>) -> UIButton {
+//        let button = UIButton()
+//        button.setTitle("DUMMY", for: .normal)
+//        return button
+//    }
+//
+//    func updateUIView(_ uiView: DummyView.UIViewType, context: UIViewRepresentableContext<DummyView>) {
+//    }
+//}
