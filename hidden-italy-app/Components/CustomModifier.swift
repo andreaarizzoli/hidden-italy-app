@@ -78,3 +78,15 @@ struct LoginText: ViewModifier {
 //        }
 //    }
 //}
+
+struct Icon: ViewModifier{
+    func body(content: Content) -> some View {
+    content
+        .font(.system(size: 30))
+        .foregroundColor(Color(darkAccent))
+    }
+}
+
+
+
+
