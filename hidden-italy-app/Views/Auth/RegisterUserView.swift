@@ -38,34 +38,34 @@ struct RegisterUserView: View {
                         .padding(25)
 
                     HStack {
-                        TextField("Nome", text: $name).modifier(FormTexFieldText())
-                        Image(systemName: "person").modifier(FormTexFieldImage())
-                    }.modifier(FormTexField())
+                        TextField("Nome", text: $name).modifier(FormTextFieldText())
+                        Image(systemName: "person").modifier(FormTextFieldImage())
+                    }.modifier(FormTextField())
                 
                     HStack {
-                        TextField("Cognome", text: $surname).modifier(FormTexFieldText())
-                        Image(systemName: "person").modifier(FormTexFieldImage())
-                    }.modifier(FormTexField())
+                        TextField("Cognome", text: $surname).modifier(FormTextFieldText())
+                        Image(systemName: "person").modifier(FormTextFieldImage())
+                    }.modifier(FormTextField())
                 
                     HStack {
-                        TextField("Email", text: $email).modifier(FormTexFieldText())
-                        Image(systemName: "envelope").modifier(FormTexFieldImage())
-                       }.modifier(FormTexField())
+                        TextField("Email", text: $email).modifier(FormTextFieldText())
+                        Image(systemName: "envelope").modifier(FormTextFieldImage())
+                       }.modifier(FormTextField())
                     
                     HStack {
-                        SecureField("Password", text:   $password).modifier(FormTexFieldText())
-                        Image(systemName: "lock").modifier(FormTexFieldImage())
-                    }.modifier(FormTexField())
+                        SecureField("Password", text:   $password).modifier(FormTextFieldText())
+                        Image(systemName: "lock").modifier(FormTextFieldImage())
+                    }.modifier(FormTextField())
                     
                     HStack {
-                        SecureField("Ripeti la tua Password", text:     $r_password).modifier(FormTexFieldText())
-                        Image(systemName: "lock").modifier(FormTexFieldImage())
-                    }.modifier(FormTexField())
+                        SecureField("Ripeti la tua Password", text:     $r_password).modifier(FormTextFieldText())
+                        Image(systemName: "lock").modifier(FormTextFieldImage())
+                    }.modifier(FormTextField())
                     
                     Button(action: {self.nextView = "CreateUser"}){
                         Text("Crea utente")
-                            .modifier(FormButtomText())
-                    }.modifier(FormButtom())
+                            .modifier(FormButtonText())
+                    }.modifier(FormButton())
                     
                     HStack{
                         Text("Hai già un account?")

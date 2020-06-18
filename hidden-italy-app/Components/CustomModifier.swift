@@ -16,7 +16,7 @@ struct Form: ViewModifier {
     }
 }
 
-struct FormTexField: ViewModifier {
+struct FormTextField: ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding(15)
@@ -25,14 +25,14 @@ struct FormTexField: ViewModifier {
     }
 }
 
-struct FormTexFieldText: ViewModifier {
+struct FormTextFieldText: ViewModifier {
     func body(content: Content) -> some View {
         content
             .foregroundColor(.gray)
     }
 }
 
-struct FormTexFieldImage: ViewModifier {
+struct FormTextFieldImage: ViewModifier {
     func body(content: Content) -> some View {
         content
             .foregroundColor(.gray)
@@ -40,7 +40,7 @@ struct FormTexFieldImage: ViewModifier {
     }
 }
 
-struct FormButtom: ViewModifier {
+struct FormButton: ViewModifier {
     func body(content: Content) -> some View {
         content
             .background(Color(bgColor))
@@ -48,7 +48,7 @@ struct FormButtom: ViewModifier {
     }
 }
 
-struct FormButtomText: ViewModifier {
+struct FormButtonText: ViewModifier {
     func body(content: Content) -> some View {
         content
             .foregroundColor(.white)

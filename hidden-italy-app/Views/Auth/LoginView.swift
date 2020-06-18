@@ -35,14 +35,14 @@ struct LoginView: View {
                     Spacer()
                 
                     HStack {
-                        TextField("Email", text: $email).modifier(FormTexFieldText())
-                        Image(systemName: "envelope").modifier(FormTexFieldImage())
-                    }.modifier(FormTexField())
+                        TextField("Email", text: $email).modifier(FormTextFieldText())
+                        Image(systemName: "envelope").modifier(FormTextFieldImage())
+                    }.modifier(FormTextField())
                     
                     HStack {
-                        SecureField("Password", text: $password).modifier(FormTexFieldText())
-                        Image(systemName: "lock").modifier(FormTexFieldImage())
-                    }.modifier(FormTexField())
+                        SecureField("Password", text: $password).modifier(FormTextFieldText())
+                        Image(systemName: "lock").modifier(FormTextFieldImage())
+                    }.modifier(FormTextField())
                    
                     HStack(){
                         Spacer()
@@ -56,8 +56,8 @@ struct LoginView: View {
                         self.nextView = "logged"
                     }){
                         Text("Log In")
-                            .modifier(FormButtomText())
-                    }.modifier(FormButtom())
+                            .modifier(FormButtonText())
+                    }.modifier(FormButton())
                     
                     HStack(){
                         Text("Non hai un account?")

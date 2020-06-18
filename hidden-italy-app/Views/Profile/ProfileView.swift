@@ -39,7 +39,7 @@ struct ProfileView: View {
                     .clipShape(Circle())
                     .padding()
                 HStack {
-                Text("Ciao").modifier(FormTexFieldText())
+                Text("Ciao").modifier(FormTextFieldText())
                 }
                 
             }

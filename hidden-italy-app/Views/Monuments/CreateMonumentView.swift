@@ -61,31 +61,31 @@ struct CreateMonumentView: View {
 
                 
                 HStack {
-                    TextField("Nome", text: $name).modifier(FormTexFieldText())
-                    Image(systemName: "person").modifier(FormTexFieldImage())
-                }.modifier(FormTexField())
+                    TextField("Nome", text: $name).modifier(FormTextFieldText())
+                    Image(systemName: "person").modifier(FormTextFieldImage())
+                }.modifier(FormTextField())
                 
                 HStack {
-                    TextField("Descrizione", text: $description).modifier(FormTexFieldText())
-                    Image(systemName: "person").modifier(FormTexFieldImage())
-                }.modifier(FormTexField())
+                    TextField("Descrizione", text: $description).modifier(FormTextFieldText())
+                    Image(systemName: "person").modifier(FormTextFieldImage())
+                }.modifier(FormTextField())
                 
                 HStack {
                     HStack {
-                        TextField("Latitudine", text: $lat).modifier(FormTexFieldText())
-                        Image(systemName: "person").modifier(FormTexFieldImage())
-                    }.modifier(FormTexField())
+                        TextField("Latitudine", text: $lat).modifier(FormTextFieldText())
+                        Image(systemName: "person").modifier(FormTextFieldImage())
+                    }.modifier(FormTextField())
                     
                     HStack {
-                        TextField("Longitudine", text: $lon).modifier(FormTexFieldText())
-                        Image(systemName: "person").modifier(FormTexFieldImage())
-                    }.modifier(FormTexField())
+                        TextField("Longitudine", text: $lon).modifier(FormTextFieldText())
+                        Image(systemName: "person").modifier(FormTextFieldImage())
+                    }.modifier(FormTextField())
                 }
                 
                 HStack {
-                    TextField("Category", text: $category).modifier(FormTexFieldText())
-                    Image(systemName: "person").modifier(FormTexFieldImage())
-                }.modifier(FormTexField())
+                    TextField("Category", text: $category).modifier(FormTextFieldText())
+                    Image(systemName: "person").modifier(FormTextFieldImage())
+                }.modifier(FormTextField())
                 
                 Button(action:  {
                     self.monuments.createMonument(
@@ -99,8 +99,8 @@ struct CreateMonumentView: View {
                     print(self.imageInBox)
                 }){
                     Text("Inserisci")
-                        .modifier(FormButtomText())
-                }.modifier(FormButtom())
+                        .modifier(FormButtonText())
+                }.modifier(FormButton())
                 
                 Spacer()
                 
