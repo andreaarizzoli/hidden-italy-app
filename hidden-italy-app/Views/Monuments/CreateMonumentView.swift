@@ -14,97 +14,121 @@ struct CreateMonumentView: View {
     @Binding var showSheetMonumentView: Bool
     @State private var name = ""
     @State private var description = ""
-    @State private var lat = ""
-    @State private var lon = ""
+    @State private var address = ""
+    @State private var number = ""
+    @State private var cap = ""
+    @State private var city = ""
     @State private var category = ""
     
     @State var isShowingImagePicker = false
-    @State var imageInBox = UIImage() //imageInBox
+    @State var image = UIImage() //imageInBox
+    
+    var disableForm: Bool {
+        name.count < 5 && name.count < 50 ||
+        description.count < 5 && description.count > 500 ||
+        address.count < 5 && address.count > 100 ||
+        number.count < 1 && number.count > 5 ||
+        cap.count < 4 && cap.count > 6 ||
+        city.count < 1 && city.count > 50
+    }
     
     var body: some View {
         
-        ScrollView{
-            VStack (alignment: .center, spacing:20){
-                HStack {
-                Spacer()
-                    Button(action: { self.showSheetMonumentView = false }){
-                        Image(systemName: "xmark.circle.fill")
-                        .foregroundColor(Color(.gray))
-                        .font(.system(size: 25))
-                    }
-                }.padding(.top, 30)
-                            
-               
-                Button(action: {
-                    self.isShowingImagePicker.toggle()
-                }){
-                    ZStack (alignment: .center){
-
-                        Image(uiImage: imageInBox)
-                        .resizable()
-                        .frame(width:150, height:150)
-                        .clipShape(RoundedRectangle(cornerRadius: 35))
-                        .overlay(RoundedRectangle(cornerRadius: 35)
-                        .stroke(Color.gray, lineWidth: 1))
-                        
-                        Image(systemName: "plus")
-                        .font(.system(size: 20))
-                        .foregroundColor(.gray)
-
-
-                    }
-                    
-                }.buttonStyle(PlainButtonStyle())
-                    .sheet(isPresented: $isShowingImagePicker, content: {
-                        ImagePickerView(isPresented: self.$isShowingImagePicker, selectedImage: self.$imageInBox)
-                    })
-
-                
-                HStack {
-                    TextField("Nome", text: $name).modifier(FormTextFieldText())
-                    Image(systemName: "person").modifier(FormTextFieldImage())
-                }.modifier(FormTextField())
-                
-                HStack {
-                    TextField("Descrizione", text: $description).modifier(FormTextFieldText())
-                    Image(systemName: "person").modifier(FormTextFieldImage())
-                }.modifier(FormTextField())
-                
-                HStack {
-                    HStack {
-                        TextField("Latitudine", text: $lat).modifier(FormTextFieldText())
-                        Image(systemName: "person").modifier(FormTextFieldImage())
-                    }.modifier(FormTextField())
-                    
-                    HStack {
-                        TextField("Longitudine", text: $lon).modifier(FormTextFieldText())
-                        Image(systemName: "person").modifier(FormTextFieldImage())
-                    }.modifier(FormTextField())
+        VStack {
+            HStack {
+            Spacer()
+                Button(action: { self.showSheetMonumentView = false }){
+                    Image(systemName: "xmark.circle.fill")
+                    .foregroundColor(Color(.gray))
+                    .font(.system(size: 25))
                 }
-                
-                HStack {
-                    TextField("Category", text: $category).modifier(FormTextFieldText())
-                    Image(systemName: "person").modifier(FormTextFieldImage())
-                }.modifier(FormTextField())
-                
-                Button(action:  {
-                    self.monuments.createMonument(
-                        name: self.name,
-                        description: self.description,
-                        lat: self.lat,
-                        lon: self.lon,
-                        category: self.category
-                    )
-                    self.showSheetMonumentView = false
-                    print(self.imageInBox)
-                }){
-                    Text("Inserisci")
-                        .modifier(FormButtonText())
-                }.modifier(FormButton())
-                
-                Spacer()
-                
-                }.modifier(Form())
+            }.padding(.top, 15).padding(.trailing, 15)
+            
+            
+            ScrollView{
+                VStack (alignment: .center, spacing:20){
+                    
+                                
+                    Button(action: {
+                        self.isShowingImagePicker.toggle()
+                    }){
+                        ZStack (alignment: .center){
+
+                            Image(uiImage: image)
+                            .resizable()
+                            .frame(width:150, height:150)
+                            .clipShape(RoundedRectangle(cornerRadius: 35))
+                            .overlay(RoundedRectangle(cornerRadius: 35)
+                            .stroke(Color.gray, lineWidth: 1))
+                            
+                            Image(systemName: "plus")
+                            .font(.system(size: 20))
+                            .foregroundColor(.gray)
+                        }
+                    }.buttonStyle(PlainButtonStyle())
+                        .sheet(isPresented: $isShowingImagePicker, content: {
+                            ImagePickerView(isPresented: self.$isShowingImagePicker, selectedImage: self.$image)
+                        })
+                    
+                    HStack {
+                        TextField("Nome", text: $name).modifier(FormTextFieldText())
+                        Image(systemName: "circle").modifier(FormTextFieldImage())
+                    }.modifier(FormTextField())
+                    
+                    HStack {
+                        TextField("Descrizione", text: $description).modifier(FormTextFieldText())
+                        Image(systemName: "circle").modifier(FormTextFieldImage())
+                    }.modifier(FormTextField())
+                    
+                    HStack {
+                        TextField("Indirizzo", text: $address).modifier(FormTextFieldText())
+                        Image(systemName: "circle").modifier(FormTextFieldImage())
+                    }.modifier(FormTextField())
+                    
+                    HStack {
+                        HStack {
+                            TextField("Numero", text: $number).modifier(FormTextFieldText())
+                            Image(systemName: "circle").modifier(FormTextFieldImage())
+                        }.modifier(FormTextField())
+                        
+                        HStack {
+                            TextField("CAP", text: $cap).modifier(FormTextFieldText())
+                            Image(systemName: "circle").modifier(FormTextFieldImage())
+                        }.modifier(FormTextField())
+                    }
+                    
+                    HStack {
+                        TextField("Città", text: $city).modifier(FormTextFieldText())
+                        Image(systemName: "circle").modifier(FormTextFieldImage())
+                    }.modifier(FormTextField())
+                    
+                    HStack {
+                        TextField("Category", text: $category).modifier(FormTextFieldText())
+                        Image(systemName: "circle").modifier(FormTextFieldImage())
+                    }.modifier(FormTextField())
+                    
+                    Button(action:  {
+                        self.monuments.createMonument(
+                            name: self.name,
+                            description: self.description,
+                            address: self.address,
+                            number: self.number,
+                            cap: self.cap,
+                            city: self.city,
+                            category: self.category
+    //                        image: self.image
+                        )
+                        self.showSheetMonumentView = false
+                        print(self.image)
+                    }){
+                        Text("Inserisci")
+                            .modifier(FormButtonText())
+                    }.modifier(FormButton()).disabled(disableForm)
+                    
+                    Spacer()
+                    
+                    }.modifier(Form())
+            }
         }
     }
 }
@@ -121,7 +145,6 @@ struct DummyView: UIViewRepresentable{
     func makeUIView(context: UIViewRepresentableContext<DummyView>) -> UIButton {
         let button = UIButton()
         button.setTitle("DUMMY", for: .normal)
-        //button.bakgroundColor = .red
         return button
     }
     
