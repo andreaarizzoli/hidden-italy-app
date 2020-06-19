@@ -12,12 +12,15 @@ struct ProfileScore: View {
     var body: some View {
         
         VStack(alignment: .center){
-            Text("Punteggio").padding(.bottom, 100)
-            
-            
-            
-            Text("Hai 20000 punti!").padding (.bottom, 20)
-            Spacer()
+            GeometryReader{_ in
+                
+                VStack{
+                    
+                    Text("Punteggio").padding(.bottom, 100)
+                    Text("Hai 20000 punti!").padding (.bottom, 20)
+                    Spacer()
+                }
+            }
             
         }
         

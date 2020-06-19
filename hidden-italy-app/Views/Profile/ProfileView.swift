@@ -14,38 +14,36 @@ struct ProfileView: View {
     
     var body: some View {
         
-        ScrollView{
-            
+        
+        VStack (spacing:20){
             HStack (alignment: .center){
                 Spacer()
                 VStack(alignment: .leading){
-                        Button(action: {
+                    Button(action: {
                         self.showSheetSettingsView.toggle()
-                        }) {
+                    }) {
                         Image(systemName: "gear")
-                        .foregroundColor(Color(bgColor))
-                        .font(.system(size: 30))
+                            .foregroundColor(Color(bgColor))
+                            .font(.system(size: 30))
                     }.sheet(isPresented: $showSheetSettingsView ) {
                         userSettings(showSheetSettingsView: self.$showSheetSettingsView)
                     }
                 }
                 
-            }.padding(.horizontal, 30).padding(.top, 30)
-        
-                
-            VStack (alignment: .center, spacing:20){
+            }.padding(.horizontal, 30).padding(.top, 15)
+            
+            HStack(spacing:20){
                 Image("phImage")
                     .resizable().frame(width:90, height:90)
                     .clipShape(Circle())
-                    .padding()
                 
-                Text("Ciao Nome Utente").modifier(FormTextFieldText())
+                Text("Ciao, Nome Utente").modifier(FormTextFieldText())
                     .font(.system(size: 24))
                     .padding(.bottom)
-                
-                UserTabs()
-                
-            }
+            }.padding(.bottom)
+            
+            UserTab()
+            
         }
     }
 }

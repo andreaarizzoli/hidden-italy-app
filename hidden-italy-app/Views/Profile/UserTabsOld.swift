@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct UserTabs: View {
+struct UserTabsOld: View {
     @State var index = 0
         
     var body: some View {
@@ -113,9 +113,9 @@ struct UserTabs: View {
 }
 
 
-struct UserTabs_Previews: PreviewProvider {
+struct UserTabsOld_Previews: PreviewProvider {
     static var previews: some View {
-        UserTabs()
+        UserTabsOld()
     }
 }
 

@@ -8,9 +8,17 @@
 
 import SwiftUI
 
-struct VisitedMonuments: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct VisitedMonuments : View {
+    
+    var body: some View{
+        
+        GeometryReader{_ in
+            
+            HStack(alignment: .center){
+                
+                Text("Monumenti Visitati")
+            }.background(Color.red)
+        }
     }
 }
 

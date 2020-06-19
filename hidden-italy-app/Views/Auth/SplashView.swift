@@ -12,8 +12,9 @@ struct SplashView: View {
     var body: some View {
         ZStack {            
             VStack {
-               Image("logo")
+                Image("logo").padding(.bottom)
                 Text("Scoprire ciò che ti circonda")
+                    .font(.system(size: 18))
                     .foregroundColor(Color(darkAccent))
             }
         }
