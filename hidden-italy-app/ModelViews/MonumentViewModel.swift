@@ -67,7 +67,7 @@ class MonumentViewModel: ObservableObject {
         }
     }
     
-    func createMonument(name: String, description: String, address: String, number: String, cap: String, city: String, category: String, image: UIImage){
+    func createMonument(name: String, description: String, address: String, number: String, cap: String, city: String, category: Int, image: UIImage){
         
         let coordinate = findCoordinates(address: address, number: number, city: city, cap: cap)
         

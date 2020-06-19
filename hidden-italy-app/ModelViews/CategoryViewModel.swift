@@ -12,14 +12,16 @@ import Combine
 
 class CategoryViewModel :ObservableObject {
     
-  //  @Published var categoriesList = [Category] ()
-    @Published var categoriesList: [Category] = [
-        .init(
-            id: 1,
-            description: "Descrizione",
-            created_at: "stringa",
-            updated_at: "stringa")
-    ]
+    @Published var categoriesList = [Category] ()
+    
+//    @Published var categoriesList: [Category] = [
+//        .init(
+//            id: 1,
+//            description: "Descrizione",
+//            created_at: "stringa",
+//            updated_at: "stringa")
+//    ]
+
     
     private var apiUrl = "http://127.0.0.1:8000/api/categories"
     

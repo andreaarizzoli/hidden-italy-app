@@ -26,6 +26,8 @@
 		0526ED09249CFDDF00B598BC /* AlertX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED08249CFDDF00B598BC /* AlertX.swift */; };
 		0526ED0B249D121F00B598BC /* UserTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED0A249D121E00B598BC /* UserTab.swift */; };
 		0526ED0D249D128600B598BC /* UserTabsOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED0C249D128600B598BC /* UserTabsOld.swift */; };
+		0526ED10249D1EED00B598BC /* ValidatedPropertyKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0526ED0F249D1EED00B598BC /* ValidatedPropertyKit */; };
+		0526ED12249D220E00B598BC /* ValidatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED11249D220E00B598BC /* ValidatorTest.swift */; };
 		0541621824998EE400525898 /* CreateMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541621724998EE400525898 /* CreateMonumentView.swift */; };
 		0569BC3D248E8AE0000B5972 /* MonumentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3C248E8AE0000B5972 /* MonumentListView.swift */; };
 		0569BC3F249186C8000B5972 /* MapMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3E249186C8000B5972 /* MapMonumentView.swift */; };
@@ -77,6 +79,7 @@
 		0526ED08249CFDDF00B598BC /* AlertX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertX.swift; sourceTree = "<group>"; };
 		0526ED0A249D121E00B598BC /* UserTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTab.swift; sourceTree = "<group>"; };
 		0526ED0C249D128600B598BC /* UserTabsOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTabsOld.swift; sourceTree = "<group>"; };
+		0526ED11249D220E00B598BC /* ValidatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorTest.swift; sourceTree = "<group>"; };
 		0541621724998EE400525898 /* CreateMonumentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMonumentView.swift; sourceTree = "<group>"; };
 		0569BC3C248E8AE0000B5972 /* MonumentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentListView.swift; sourceTree = "<group>"; };
 		0569BC3E249186C8000B5972 /* MapMonumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMonumentView.swift; sourceTree = "<group>"; };
@@ -122,6 +125,7 @@
 				0526ED04249C1AA600B598BC /* PartialSheet in Frameworks */,
 				524AFFCBDF9F2C10AA0B262F /* Pods_hidden_italy_app.framework in Frameworks */,
 				0526ED07249CF98A00B598BC /* AlertX in Frameworks */,
+				0526ED10249D1EED00B598BC /* ValidatedPropertyKit in Frameworks */,
 				059516CF248A3CB90054AC5A /* SkeletonUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,6 +174,7 @@
 				0569BC3C248E8AE0000B5972 /* MonumentListView.swift */,
 				0526ED00249C0EFA00B598BC /* Picker.swift */,
 				0526ED08249CFDDF00B598BC /* AlertX.swift */,
+				0526ED11249D220E00B598BC /* ValidatorTest.swift */,
 			);
 			path = Monuments;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				059516CE248A3CB90054AC5A /* SkeletonUI */,
 				0526ED03249C1AA600B598BC /* PartialSheet */,
 				0526ED06249CF98A00B598BC /* AlertX */,
+				0526ED0F249D1EED00B598BC /* ValidatedPropertyKit */,
 			);
 			productName = "hidden-italy-app";
 			productReference = 05948F89245FFBC1001BB4A6 /* hidden-italy-app.app */;
@@ -386,6 +392,7 @@
 				059516CD248A3CB90054AC5A /* XCRemoteSwiftPackageReference "SkeletonUI" */,
 				0526ED02249C1AA600B598BC /* XCRemoteSwiftPackageReference "PartialSheet" */,
 				0526ED05249CF98A00B598BC /* XCRemoteSwiftPackageReference "AlertX" */,
+				0526ED0E249D1EED00B598BC /* XCRemoteSwiftPackageReference "ValidatedPropertyKit" */,
 			);
 			productRefGroup = 05948F8A245FFBC1001BB4A6 /* Products */;
 			projectDirPath = "";
@@ -472,6 +479,7 @@
 				0510B38C246DE4E800BCB0C8 /* MonumentCategory.swift in Sources */,
 				05C7D971247208CC00E02F47 /* MapView.swift in Sources */,
 				05948FA1245FFC45001BB4A6 /* SplashView.swift in Sources */,
+				0526ED12249D220E00B598BC /* ValidatorTest.swift in Sources */,
 				05E8C0A82480634C007B299F /* MapView2.swift in Sources */,
 				05948F8F245FFBC1001BB4A6 /* SceneDelegate.swift in Sources */,
 				051585922464863000194002 /* User.swift in Sources */,
@@ -710,6 +718,14 @@
 				kind = branch;
 			};
 		};
+		0526ED0E249D1EED00B598BC /* XCRemoteSwiftPackageReference "ValidatedPropertyKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/ValidatedPropertyKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		059516CD248A3CB90054AC5A /* XCRemoteSwiftPackageReference "SkeletonUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CSolanaM/SkeletonUI.git";
@@ -730,6 +746,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0526ED05249CF98A00B598BC /* XCRemoteSwiftPackageReference "AlertX" */;
 			productName = AlertX;
+		};
+		0526ED0F249D1EED00B598BC /* ValidatedPropertyKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0526ED0E249D1EED00B598BC /* XCRemoteSwiftPackageReference "ValidatedPropertyKit" */;
+			productName = ValidatedPropertyKit;
 		};
 		059516CE248A3CB90054AC5A /* SkeletonUI */ = {
 			isa = XCSwiftPackageProductDependency;

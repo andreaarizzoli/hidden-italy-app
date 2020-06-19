@@ -7,37 +7,40 @@
 //
 
 import SwiftUI
-import AlertX
+import ValidatedPropertyKit
+
 
 struct CreateMonumentView: View {
     
     @ObservedObject var monuments = MonumentViewModel()
+    @ObservedObject var categories = CategoryViewModel()
+
     @Binding var showSheetMonumentView: Bool
-    @State private var name = ""
-    @State private var description = ""
-    @State private var address = ""
-    @State private var number = ""
-    @State private var cap = ""
-    @State private var city = ""
-    @State private var category = ""
+    
+//    @Validated(.isLowercased)
+//    var name: String?
+    
+    @State var name = ""
+    @State var description = ""
+    @State var address = ""
+    @State var number = ""
+    @State var cap = ""
+    @State var city = ""
+    @State var selectedCategoryName = "Categoria"
+    @State var selectedCategoryId = 0
     @State var image = UIImage()
     
     @State var isShowingImagePicker = false
     @State var isShowingOverlay = false
-    @State var showAlertX: Bool = false
-    
-    var colors = ["Red", "Green", "Blue", "Tartan"]
-    @State var selectedColor = 0
-    
 
-    var disableForm: Bool {
-        name.count < 1 && name.count < 50 ||
-        description.count < 1 && description.count > 500 ||
-        address.count < 1 && address.count > 100 ||
-        number.count < 1 && number.count > 5 ||
-        cap.count < 4 && cap.count > 6 ||
-        city.count < 1 && city.count > 50
-    }
+//    var disableForm: Bool {
+//        name.count < 1 && name.count < 50 ||
+//        description.count < 1 && description.count > 500 ||
+//        address.count < 1 && address.count > 100 ||
+//        number.count < 1 && number.count > 5 ||
+//        cap.count < 4 && cap.count > 6 ||
+//        city.count < 1 && city.count > 50
+//    }
     
     var body: some View {
         
@@ -111,10 +114,11 @@ struct CreateMonumentView: View {
                         Button(action: {
                             self.isShowingOverlay = true
                         }) {
-                        HStack {
-                            TextField("Category", text: $category).modifier(FormTextFieldText())
+                            HStack {
+                            Text("\(self.selectedCategoryName)").modifier(FormTextFieldText())
+                            Spacer()
                             //Image(systemName: "circle").modifier(FormTextFieldImage())
-                        }.modifier(FormTextField())
+                            }.frame(maxWidth: .infinity).modifier(FormTextField())
                         }
                                               
                         Button(action:  {
@@ -125,7 +129,7 @@ struct CreateMonumentView: View {
                                 number: self.number,
                                 cap: self.cap,
                                 city: self.city,
-                                category: self.category,
+                                category: self.selectedCategoryId,
                                 image: self.image
                             )
                             self.showSheetMonumentView = false
@@ -133,7 +137,8 @@ struct CreateMonumentView: View {
                         }){
                             Text("Inserisci")
                                 .modifier(FormButtonText())
-                        }.modifier(FormButton()).disabled(disableForm)
+                        }.modifier(FormButton())
+//                            .disabled(disableForm)
                         
                         Spacer()
                         
@@ -156,12 +161,14 @@ struct CreateMonumentView: View {
                         Spacer()
                         List {
                             Text("Seleziona monumento").bold()
-                            ForEach(0 ..< colors.count) {color in
+                            ForEach(categories.categoriesList) {item in
                                 Button(action: {
                                     self.isShowingOverlay = false
-                                    self.selectedColor = color
+                                    self.selectedCategoryId = item.id
+                                    self.selectedCategoryName = item.description
+
                                 }) {
-                                    Text(self.colors[color])
+                                    Text(item.description)
                                 }
                            }
                         }.frame(height: 300).cornerRadius(35).padding(30)
@@ -171,6 +178,8 @@ struct CreateMonumentView: View {
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
                 }
             }
+        }.onAppear {
+            self.categories.getCategories()
         }
     }
 }
