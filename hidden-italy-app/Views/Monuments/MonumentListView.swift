@@ -45,7 +45,7 @@ struct MonumentListView: View {
                             .font(.system(size: 35))
                         }.sheet(isPresented: $showSheetMonumentView) {
 //                            CreateMonumentView()
-                            CreateMonumentView(showSheetMonumentView: self.$showSheetMonumentView)
+                            CreateMonumentView2(showSheetMonumentView: self.$showSheetMonumentView)
                         }
                     }
                 }.padding(.horizontal, 30).padding(.top)
