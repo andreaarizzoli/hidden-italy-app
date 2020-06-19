@@ -10,9 +10,16 @@ import SwiftUI
 
 struct LoginView: View {
     
+    @ObservedObject var user = UserViewModel()
+
     @State private var email = ""
     @State private var password = ""
     @State private var nextView = ""
+    
+    var disableForm: Bool {
+        email.count < 1 && email.count < 255 ||
+        password.count < 1 && password.count > 255
+    }
 
     var body: some View {
         
@@ -22,6 +29,7 @@ struct LoginView: View {
             }
             else if (nextView == "resetUser"){
 //                ResetView()
+                AlertXView()
             }
             else if (nextView == "registerUser"){
                 RegisterUserView()
@@ -57,7 +65,7 @@ struct LoginView: View {
                     }){
                         Text("Log In")
                             .modifier(FormButtonText())
-                    }.modifier(FormButton())
+                    }.modifier(FormButton()).disabled(disableForm)
                     
                     HStack(){
                         Text("Non hai un account?")

@@ -39,3 +39,12 @@ class UserViewModel :ObservableObject {
 //        }
     }
 }
+
+
+
+struct Login: Encodable {
+    let email: String
+    let password: String
+}
+
+

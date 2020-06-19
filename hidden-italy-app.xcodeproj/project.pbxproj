@@ -20,6 +20,10 @@
 		051585A12464AA2300194002 /* CommentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585A02464AA2300194002 /* CommentListView.swift */; };
 		0526ECFD249BC4F100B598BC /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ECFC249BC4F100B598BC /* ImagePickerView.swift */; };
 		0526ECFF249BD10C00B598BC /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ECFE249BD10C00B598BC /* UserViewModel.swift */; };
+		0526ED01249C0EFA00B598BC /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED00249C0EFA00B598BC /* Picker.swift */; };
+		0526ED04249C1AA600B598BC /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 0526ED03249C1AA600B598BC /* PartialSheet */; };
+		0526ED07249CF98A00B598BC /* AlertX in Frameworks */ = {isa = PBXBuildFile; productRef = 0526ED06249CF98A00B598BC /* AlertX */; };
+		0526ED09249CFDDF00B598BC /* AllertX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED08249CFDDF00B598BC /* AllertX.swift */; };
 		0541621824998EE400525898 /* CreateMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541621724998EE400525898 /* CreateMonumentView.swift */; };
 		0569BC3D248E8AE0000B5972 /* MonumentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3C248E8AE0000B5972 /* MonumentListView.swift */; };
 		0569BC3F249186C8000B5972 /* MapMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3E249186C8000B5972 /* MapMonumentView.swift */; };
@@ -68,6 +72,8 @@
 		051585A02464AA2300194002 /* CommentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListView.swift; sourceTree = "<group>"; };
 		0526ECFC249BC4F100B598BC /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		0526ECFE249BD10C00B598BC /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		0526ED00249C0EFA00B598BC /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
+		0526ED08249CFDDF00B598BC /* AllertX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllertX.swift; sourceTree = "<group>"; };
 		0541621724998EE400525898 /* CreateMonumentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMonumentView.swift; sourceTree = "<group>"; };
 		0569BC3C248E8AE0000B5972 /* MonumentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentListView.swift; sourceTree = "<group>"; };
 		0569BC3E249186C8000B5972 /* MapMonumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMonumentView.swift; sourceTree = "<group>"; };
@@ -111,7 +117,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0526ED04249C1AA600B598BC /* PartialSheet in Frameworks */,
 				524AFFCBDF9F2C10AA0B262F /* Pods_hidden_italy_app.framework in Frameworks */,
+				0526ED07249CF98A00B598BC /* AlertX in Frameworks */,
 				059516CF248A3CB90054AC5A /* SkeletonUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,6 +166,8 @@
 				0541621724998EE400525898 /* CreateMonumentView.swift */,
 				059516C924898E160054AC5A /* MonumentListView2.swift */,
 				0569BC3C248E8AE0000B5972 /* MonumentListView.swift */,
+				0526ED00249C0EFA00B598BC /* Picker.swift */,
+				0526ED08249CFDDF00B598BC /* AllertX.swift */,
 			);
 			path = Monuments;
 			sourceTree = "<group>";
@@ -338,6 +348,8 @@
 			name = "hidden-italy-app";
 			packageProductDependencies = (
 				059516CE248A3CB90054AC5A /* SkeletonUI */,
+				0526ED03249C1AA600B598BC /* PartialSheet */,
+				0526ED06249CF98A00B598BC /* AlertX */,
 			);
 			productName = "hidden-italy-app";
 			productReference = 05948F89245FFBC1001BB4A6 /* hidden-italy-app.app */;
@@ -369,6 +381,8 @@
 			mainGroup = 05948F80245FFBC1001BB4A6;
 			packageReferences = (
 				059516CD248A3CB90054AC5A /* XCRemoteSwiftPackageReference "SkeletonUI" */,
+				0526ED02249C1AA600B598BC /* XCRemoteSwiftPackageReference "PartialSheet" */,
+				0526ED05249CF98A00B598BC /* XCRemoteSwiftPackageReference "AlertX" */,
 			);
 			productRefGroup = 05948F8A245FFBC1001BB4A6 /* Products */;
 			projectDirPath = "";
@@ -461,10 +475,12 @@
 				0515858E2464823500194002 /* Monument.swift in Sources */,
 				05158586246405E700194002 /* CircleTab.swift in Sources */,
 				051585792462E36800194002 /* LoginView.swift in Sources */,
+				0526ED09249CFDDF00B598BC /* AllertX.swift in Sources */,
 				051585892464072000194002 /* RootCircleTabTabView.swift in Sources */,
 				05D0DE6B249A94B000F6DA2B /* CommentRowView.swift in Sources */,
 				79ACF99D249AB78700B14999 /* ProfileView.swift in Sources */,
 				79ACF99F249AB9F300B14999 /* userSettings.swift in Sources */,
+				0526ED01249C0EFA00B598BC /* Picker.swift in Sources */,
 				0526ECFF249BD10C00B598BC /* UserViewModel.swift in Sources */,
 				059516CA24898E160054AC5A /* MonumentListView2.swift in Sources */,
 				051585A12464AA2300194002 /* CommentListView.swift in Sources */,
@@ -674,6 +690,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0526ED02249C1AA600B598BC /* XCRemoteSwiftPackageReference "PartialSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AndreaMiotto/PartialSheet.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		0526ED05249CF98A00B598BC /* XCRemoteSwiftPackageReference "AlertX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/neel-makhecha/AlertX.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		059516CD248A3CB90054AC5A /* XCRemoteSwiftPackageReference "SkeletonUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CSolanaM/SkeletonUI.git";
@@ -685,6 +717,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0526ED03249C1AA600B598BC /* PartialSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0526ED02249C1AA600B598BC /* XCRemoteSwiftPackageReference "PartialSheet" */;
+			productName = PartialSheet;
+		};
+		0526ED06249CF98A00B598BC /* AlertX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0526ED05249CF98A00B598BC /* XCRemoteSwiftPackageReference "AlertX" */;
+			productName = AlertX;
+		};
 		059516CE248A3CB90054AC5A /* SkeletonUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 059516CD248A3CB90054AC5A /* XCRemoteSwiftPackageReference "SkeletonUI" */;
