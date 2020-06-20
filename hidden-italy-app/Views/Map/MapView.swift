@@ -25,7 +25,7 @@ struct MapView: View {
                 .padding()
                 .offset(y: 44)
         }.onAppear {
-            self.monuments.getMonuments()
+            self.monuments.getNearMonuments()
         }
     }
 }

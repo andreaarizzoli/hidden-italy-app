@@ -101,7 +101,7 @@ struct MonumentListView: View {
                                                 Text("\(thisItem.category_id)")
                                                     .foregroundColor(Color.white)
                                                 Spacer()
-                                                Text("\(thisItem.distance) km")
+                                                Text("\(String(format: "%.2f", thisItem.distance)) km")
                                                     .foregroundColor(Color.white)
                                             }
                                             

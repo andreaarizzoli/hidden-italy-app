@@ -9,14 +9,6 @@
 import Foundation
 import Alamofire
 
-struct Results<Element: Decodable>: Decodable {
-    var items: [Element]
-}
-
-struct Result<Element: Decodable>: Decodable {
-    var item: Element
-}
-
 func defaultFailure(res: Any) -> Void {
     print(res)
 }
@@ -92,9 +84,9 @@ class ApiWrapper
                     let jsonDecoder = JSONDecoder()
                     
                     if (multiple) {
-                        success(try jsonDecoder.decode(Result<M>.self, from: response.data!))
+                        success(try jsonDecoder.decode([M].self, from: response.data!))
                     } else {
-                        success(try jsonDecoder.decode(Results<M>.self, from: response.data!))
+                        success(try jsonDecoder.decode(M.self, from: response.data!))
                     }
                     
                     self.queue[name] = nil
@@ -225,7 +217,7 @@ class ApiWrapper
         name: String = "request"
     ) {
         AF.upload(multipartFormData: {multiPart in
-            multiPart.append(Data(image.utf8), withName: "image")
+//            multiPart.append(Data(image.utf8), withName: "image")
         },
         to: self.baseURL + uri
     ).responseJSON{response in

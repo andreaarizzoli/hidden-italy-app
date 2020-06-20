@@ -21,48 +21,7 @@ class MonumentViewModel: ObservableObject {
         var lon: Double = 9.1916211
     }
         
-    func getMonuments() {
-        
-//        AF.request(self.apiUrl ,method: .get).responseJSON { response in
-//
-//            switch response.result {
-//            case .success(_):
-//                do {
-//                    let jsonDecoder  = JSONDecoder()
-//                    let decode = try jsonDecoder.decode([Monument].self, from: response.data!)
-//                    self.monumentList = decode
-//                    //                    print("Converted JSON in struct \(self.monumentList)")
-//                }
-//                catch {
-//                    print("Error reading JSON file: \(error.localizedDescription) Error description: \(error)")
-//                }
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-    }
-    
     func getNearMonuments() {
-        
-//        AF.request(self.apiUrl + "find-nearest" ,method: .get, parameters: parameters()).responseJSON { response in
-//                        print(response)
-//            print("trovato\(self.userCoordinates)")
-//
-//            switch response.result {
-//            case .success(_):
-//                do {
-//                    let jsonDecoder  = JSONDecoder()
-//                    let decode = try jsonDecoder.decode([Monument].self, from: response.data!)
-//                    self.monumentList = decode
-//                    print("Converted JSON in struct \(self.monumentList)")
-//                }
-//                catch {
-//                    print("Error reading JSON file: \(error.localizedDescription) Error description: \(error)")
-//                }
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
 
         getAll(uri: "/v1/monuments/find-nearest", body: parameters(), model: Monument.self, success: {res in
             self.monumentList = res as! [Monument]
