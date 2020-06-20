@@ -10,7 +10,11 @@ import Foundation
 import Alamofire
 
 struct Results<Element: Decodable>: Decodable {
-    //
+    var items: [Element]
+}
+
+struct Result<Element: Decodable>: Decodable {
+    var item: Element
 }
 
 func defaultFailure(res: Any) -> Void {
@@ -29,6 +33,16 @@ class ApiWrapper
     let baseURL: String = "http://127.0.0.1:8000/api"
     
     /**
+     * Headers using for multipart form-data requests.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
+    let multipartHeaders : HTTPHeaders = [
+        "Content-type": "multipart/form-data",
+        "Accept": "application/json"
+    ]
+    
+    /**
      * The requests queue.
      *
      * @author Daniele Tulone <danieletulone.work@gmail.com>
@@ -43,7 +57,7 @@ class ApiWrapper
     static let shared = ApiWrapper()
     
     /**
-     * Set private init for create a singleton
+     * Set private init for use this class as a singleton
      *
      * @author Daniele Tulone <danieletulone.work@gmail.com>
      */
@@ -73,26 +87,24 @@ class ApiWrapper
             parameters: body
         ).responseJSON{response in
             switch response.result {
-                case .success(let data):
-                    do {
-                        let jsonDecoder = JSONDecoder()
-                        
-                        print((String(data: response.data!, encoding: .utf8)!))
-                        
-                        if (multiple) {
-                            success(try jsonDecoder.decode(Results<M>.self, from: response.data!))
-                        } else {
-                            success(try jsonDecoder.decode(Results<M>.self, from: response.data!))
-                        }
-                        
-                        self.queue[name] = nil
+            case .success(let data):
+                do {
+                    let jsonDecoder = JSONDecoder()
+                    
+                    if (multiple) {
+                        success(try jsonDecoder.decode(Result<M>.self, from: response.data!))
+                    } else {
+                        success(try jsonDecoder.decode(Results<M>.self, from: response.data!))
                     }
-                    catch
-                    {
-                        failure(data)
-                    }
-                case .failure(let error):
-                    print(error)
+                    
+                    self.queue[name] = nil
+                }
+                catch
+                {
+                    failure(data)
+                }
+            case .failure(let error):
+                print(error)
             }
         }
     }
@@ -206,8 +218,25 @@ class ApiWrapper
      *
      * @author Daniele Tulone
      */
-    public func postMultipart() {
-
+    public func postMultipart(
+        uri: String,
+        image: UIImage,
+        failure: @escaping (_ res: Any?) -> Void = defaultFailure,
+        name: String = "request"
+    ) {
+        AF.upload(multipartFormData: {multiPart in
+            multiPart.append(Data(image.utf8), withName: "image")
+        },
+        to: self.baseURL + uri
+    ).responseJSON{response in
+            switch response.result {
+                case .success(let data):
+                    print(data)
+                    self.queue[name] = nil
+                case .failure(let error):
+                    print(error)
+            }
+        }
     }
     
     public func cancel(name: String = "request") -> Void {

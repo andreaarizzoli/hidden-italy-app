@@ -1,5 +1,5 @@
 //
-//  functions.swift
+//  crud.swift
 //  hidden-italy-app
 //
 //  Created by Daniele Tulone on 19/06/2020.
@@ -19,7 +19,6 @@ func get<T: Codable, M: Codable>(
     model: M.Type,
     success: @escaping (_ res: Any?) -> Void,
     failure: @escaping (_ res: Any?) -> Void = defaultFailure,
-    multiple: Bool = false,
     name: String = "request"
 ) -> Void {
     ApiWrapper.shared.get(
@@ -28,7 +27,7 @@ func get<T: Codable, M: Codable>(
         model: model,
         success: success,
         failure: failure,
-        multiple: multiple,
+        multiple: false,
         name: name
     )
 }
@@ -44,7 +43,6 @@ func getAll<T: Codable, M: Codable>(
     model: M.Type,
     success: @escaping (_ res: Any?) -> Void,
     failure: @escaping (_ res: Any?) -> Void = defaultFailure,
-    multiple: Bool = false,
     name: String = "request"
 ) -> Void {
     ApiWrapper.shared.get(
@@ -53,7 +51,7 @@ func getAll<T: Codable, M: Codable>(
         model: model,
         success: success,
         failure: failure,
-        multiple: multiple,
+        multiple: true,
         name: name
     )
 }
