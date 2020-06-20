@@ -14,8 +14,8 @@ class LocationManager: NSObject, ObservableObject {
     private let locationManager = CLLocationManager()
     @Published var location: CLLocation? = nil  //CLLocationmmanager
     
-//    @Published create observable objects that automatically announce when changes occur.
-//    That means whenever an object with a property marked @Published is changed, all views using that object will be reloaded to reflect those         changes.
+    //    @Published create observable objects that automatically announce when changes occur.
+    //    That means whenever an object with a property marked @Published is changed, all views using that object will be reloaded to reflect those         changes.
     
     override init() {
         super.init()
@@ -31,7 +31,7 @@ class LocationManager: NSObject, ObservableObject {
 extension LocationManager: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus){
-//        print(status)
+        //        print(status)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -40,7 +40,7 @@ extension LocationManager: CLLocationManagerDelegate {
         }
         
         self.location = location
-//        print("La mia posizione: \(self.location!.coordinate.longitude)")
+        //        print("La mia posizione: \(self.location!.coordinate.longitude)")
     }
     
     
