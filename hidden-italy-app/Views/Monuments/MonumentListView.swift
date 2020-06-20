@@ -18,7 +18,7 @@ struct MonumentListView: View {
     let SVWidth = UIScreen.main.bounds.width - 40
     
     @ObservedObject var monuments = MonumentViewModel()
-    @State var expandedItem = Monument(id: 1, name: "abc", description: "abc", lat: 00, lon: 00, visible: true, user_id: 1, category_id: 1, distance: 0.1, created_at: "abc",  updated_at: "abc", categories: [], images: [])
+    @State var expandedItem = testMonument
     @State var expandedScreen_startPoint = CGRect(x: 0, y: 0, width: 100, height: 100)
     @State var expandedScreen_returnPoint = CGRect(x: 0, y: 0, width: 100, height: 100)
     @State var expandedScreen_shown = false
@@ -101,7 +101,7 @@ struct MonumentListView: View {
                                                 Text("\(thisItem.category_id)")
                                                     .foregroundColor(Color.white)
                                                 Spacer()
-                                                Text("\(String(format: "%.2f", round(thisItem.distance*100)/100)) km")
+                                                Text("\(thisItem.distance) km")
                                                     .foregroundColor(Color.white)
                                             }
                                             

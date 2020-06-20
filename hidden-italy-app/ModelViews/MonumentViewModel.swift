@@ -16,61 +16,63 @@ class MonumentViewModel: ObservableObject {
     @Published var monumentList = [Monument]()
     @Published var userCoordinates = LocationManager()
     
-    let parameters = [
-        "lat": "45.4641684",
-        "lon": " 9.1916211"
-    ]
-    
-    private var apiUrl = "http://127.0.0.1:8000/api/monuments"
-    
+    struct parameters : Codable {
+        var lat: Double = 45.4641684
+        var lon: Double = 9.1916211
+    }
+        
     func getMonuments() {
         
-        AF.request(self.apiUrl ,method: .get).responseJSON { response in
-            
-            switch response.result {
-            case .success(_):
-                do {
-                    let jsonDecoder  = JSONDecoder()
-                    let decode = try jsonDecoder.decode([Monument].self, from: response.data!)
-                    self.monumentList = decode
-                    //                    print("Converted JSON in struct \(self.monumentList)")
-                }
-                catch {
-                    print("Error reading JSON file: \(error.localizedDescription) Error description: \(error)")
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
+//        AF.request(self.apiUrl ,method: .get).responseJSON { response in
+//
+//            switch response.result {
+//            case .success(_):
+//                do {
+//                    let jsonDecoder  = JSONDecoder()
+//                    let decode = try jsonDecoder.decode([Monument].self, from: response.data!)
+//                    self.monumentList = decode
+//                    //                    print("Converted JSON in struct \(self.monumentList)")
+//                }
+//                catch {
+//                    print("Error reading JSON file: \(error.localizedDescription) Error description: \(error)")
+//                }
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
     }
     
     func getNearMonuments() {
         
-        AF.request(self.apiUrl + "/findNearest" ,method: .post, parameters:parameters, encoding: JSONEncoding.default).responseJSON { response in
-            //            print(response)
-            print("trovato\(self.userCoordinates)")
-            
-            switch response.result {
-            case .success(_):
-                do {
-                    let jsonDecoder  = JSONDecoder()
-                    let decode = try jsonDecoder.decode([Monument].self, from: response.data!)
-                    self.monumentList = decode
-                    print("Converted JSON in struct \(self.monumentList)")
-                }
-                catch {
-                    print("Error reading JSON file: \(error.localizedDescription) Error description: \(error)")
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
+//        AF.request(self.apiUrl + "find-nearest" ,method: .get, parameters: parameters()).responseJSON { response in
+//                        print(response)
+//            print("trovato\(self.userCoordinates)")
+//
+//            switch response.result {
+//            case .success(_):
+//                do {
+//                    let jsonDecoder  = JSONDecoder()
+//                    let decode = try jsonDecoder.decode([Monument].self, from: response.data!)
+//                    self.monumentList = decode
+//                    print("Converted JSON in struct \(self.monumentList)")
+//                }
+//                catch {
+//                    print("Error reading JSON file: \(error.localizedDescription) Error description: \(error)")
+//                }
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+
+        getAll(uri: "/v1/monuments/find-nearest", body: parameters(), model: Monument.self, success: {res in
+            self.monumentList = res as! [Monument]
+        })
     }
     
     func createMonument(name: String, description: String, address: String, number: String, cap: String, city: String, category: Int, image: UIImage){
-        
+
         let coordinate = findCoordinates(address: address, number: number, city: city, cap: cap)
-        
+
         let parameters = [
             "name": name,
             "description": description,

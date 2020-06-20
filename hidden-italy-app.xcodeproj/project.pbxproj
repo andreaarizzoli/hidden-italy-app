@@ -35,6 +35,9 @@
 		0541621824998EE400525898 /* CreateMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541621724998EE400525898 /* CreateMonumentView.swift */; };
 		0569BC3D248E8AE0000B5972 /* MonumentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3C248E8AE0000B5972 /* MonumentListView.swift */; };
 		0569BC3F249186C8000B5972 /* MapMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3E249186C8000B5972 /* MapMonumentView.swift */; };
+		0591AAA9249E58DB00BBB949 /* crud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591AAA8249E58DB00BBB949 /* crud.swift */; };
+		0591AAAB249E58E200BBB949 /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591AAAA249E58E100BBB949 /* Wrapper.swift */; };
+		0591AAAD249E655100BBB949 /* TestApiWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591AAAC249E655100BBB949 /* TestApiWrapper.swift */; };
 		05948F8D245FFBC1001BB4A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948F8C245FFBC1001BB4A6 /* AppDelegate.swift */; };
 		05948F8F245FFBC1001BB4A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948F8E245FFBC1001BB4A6 /* SceneDelegate.swift */; };
 		05948F91245FFBC1001BB4A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948F90245FFBC1001BB4A6 /* ContentView.swift */; };
@@ -57,7 +60,6 @@
 		05E8C0A82480634C007B299F /* MapView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E8C0A72480634C007B299F /* MapView2.swift */; };
 		05F034812477472D004805BA /* summaryString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F034802477472D004805BA /* summaryString.swift */; };
 		524AFFCBDF9F2C10AA0B262F /* Pods_hidden_italy_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77042D062AEAF40F5B011575 /* Pods_hidden_italy_app.framework */; };
-		774F3DD2249D14CE00B9A757 /* ApiWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774F3DD1249D14CE00B9A757 /* ApiWrapper.swift */; };
 		7901B425249BBEB40099A805 /* ProfileScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901B424249BBEB40099A805 /* ProfileScore.swift */; };
 		7901B427249BD6A50099A805 /* VisitedMonuments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901B426249BD6A50099A805 /* VisitedMonuments.swift */; };
 		7901B429249BD6CB0099A805 /* Prizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901B428249BD6CB0099A805 /* Prizes.swift */; };
@@ -92,6 +94,9 @@
 		0541621724998EE400525898 /* CreateMonumentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMonumentView.swift; sourceTree = "<group>"; };
 		0569BC3C248E8AE0000B5972 /* MonumentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentListView.swift; sourceTree = "<group>"; };
 		0569BC3E249186C8000B5972 /* MapMonumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMonumentView.swift; sourceTree = "<group>"; };
+		0591AAA8249E58DB00BBB949 /* crud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = crud.swift; path = ApiClient/crud.swift; sourceTree = "<group>"; };
+		0591AAAA249E58E100BBB949 /* Wrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Wrapper.swift; path = ApiClient/Wrapper.swift; sourceTree = "<group>"; };
+		0591AAAC249E655100BBB949 /* TestApiWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApiWrapper.swift; sourceTree = "<group>"; };
 		05948F89245FFBC1001BB4A6 /* hidden-italy-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hidden-italy-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05948F8C245FFBC1001BB4A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05948F8E245FFBC1001BB4A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,8 +120,6 @@
 		05E8C0A72480634C007B299F /* MapView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView2.swift; sourceTree = "<group>"; };
 		05F034802477472D004805BA /* summaryString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = summaryString.swift; sourceTree = "<group>"; };
 		77042D062AEAF40F5B011575 /* Pods_hidden_italy_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hidden_italy_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		774F3DD1249D14CE00B9A757 /* ApiWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiWrapper.swift; sourceTree = "<group>"; };
-		77880D522465540200413151 /* Crud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crud.swift; sourceTree = "<group>"; };
 		7901B424249BBEB40099A805 /* ProfileScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScore.swift; sourceTree = "<group>"; };
 		7901B426249BD6A50099A805 /* VisitedMonuments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedMonuments.swift; sourceTree = "<group>"; };
 		7901B428249BD6CB0099A805 /* Prizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prizes.swift; sourceTree = "<group>"; };
@@ -188,6 +191,7 @@
 				0526ED1A249D2E7100B598BC /* Optional+Extension.swift */,
 				0526ED16249D2B1C00B598BC /* CreateMonumentView2.swift */,
 				0526ED18249D2B3E00B598BC /* CreateMonumentViewModel.swift */,
+				0591AAAC249E655100BBB949 /* TestApiWrapper.swift */,
 			);
 			path = Monuments;
 			sourceTree = "<group>";
@@ -283,8 +287,8 @@
 		77880D512465540200413151 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				77880D522465540200413151 /* Crud.swift */,
-				774F3DD1249D14CE00B9A757 /* ApiWrapper.swift */,
+				0591AAAA249E58E100BBB949 /* Wrapper.swift */,
+				0591AAA8249E58DB00BBB949 /* crud.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -493,6 +497,7 @@
 				05948FA3245FFCF5001BB4A6 /* ManagerView.swift in Sources */,
 				0526ED17249D2B1C00B598BC /* CreateMonumentView2.swift in Sources */,
 				0569BC3F249186C8000B5972 /* MapMonumentView.swift in Sources */,
+				0591AAAD249E655100BBB949 /* TestApiWrapper.swift in Sources */,
 				0526ECFD249BC4F100B598BC /* ImagePickerView.swift in Sources */,
 				0541621824998EE400525898 /* CreateMonumentView.swift in Sources */,
 				79B58DD224720C990052BDC7 /* Landmark.swift in Sources */,
@@ -511,6 +516,8 @@
 				05158586246405E700194002 /* CircleTab.swift in Sources */,
 				0526ED1D249D315600B598BC /* BrokenRule.swift in Sources */,
 				051585792462E36800194002 /* LoginView.swift in Sources */,
+				0591AAA9249E58DB00BBB949 /* crud.swift in Sources */,
+				0591AAAB249E58E200BBB949 /* Wrapper.swift in Sources */,
 				0526ED09249CFDDF00B598BC /* AlertX.swift in Sources */,
 				051585892464072000194002 /* RootCircleTabTabView.swift in Sources */,
 				05D0DE6B249A94B000F6DA2B /* CommentRowView.swift in Sources */,
@@ -519,7 +526,6 @@
 				0526ED01249C0EFA00B598BC /* Picker.swift in Sources */,
 				0526ECFF249BD10C00B598BC /* UserViewModel.swift in Sources */,
 				059516CA24898E160054AC5A /* MonumentListView2.swift in Sources */,
-				774F3DD2249D14CE00B9A757 /* ApiWrapper.swift in Sources */,
 				0526ED0B249D121F00B598BC /* UserTab.swift in Sources */,
 				051585A12464AA2300194002 /* CommentListView.swift in Sources */,
 				05948FA5245FFD72001BB4A6 /* RootTabView.swift in Sources */,
