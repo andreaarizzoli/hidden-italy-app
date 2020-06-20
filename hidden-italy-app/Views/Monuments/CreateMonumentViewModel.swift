@@ -9,7 +9,7 @@
 import Foundation
 import ValidatedPropertyKit
 
-class ValidateMonumentViewModel: ObservableObject {
+class CreateMonumentViewModel: ObservableObject {
     
     @Published private(set) var brokenRules = [BrokenRule]()
     

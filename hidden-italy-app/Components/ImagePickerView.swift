@@ -12,6 +12,7 @@ struct ImagePickerView: UIViewControllerRepresentable {
     
     @Binding var isPresented: Bool
     @Binding var selectedImage: UIImage
+    @Binding var newImage: Bool
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePickerView>) -> UIViewController {
         let controller = UIImagePickerController()
@@ -34,6 +35,7 @@ struct ImagePickerView: UIViewControllerRepresentable {
             if let selectedImage = info[.originalImage] as? UIImage {
                 print(selectedImage)
                 self.parent.selectedImage = selectedImage
+                self.parent.newImage = true
             }
             self.parent.isPresented = false
         }

@@ -186,7 +186,6 @@
 				0526ED1A249D2E7100B598BC /* Optional+Extension.swift */,
 				0526ED16249D2B1C00B598BC /* CreateMonumentView2.swift */,
 				0526ED18249D2B3E00B598BC /* CreateMonumentViewModel.swift */,
-				0526ED1E249D384800B598BC /* BrokenRulesView.swift */,
 			);
 			path = Monuments;
 			sourceTree = "<group>";
@@ -290,6 +289,7 @@
 		77880D532465582C00413151 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0526ED1E249D384800B598BC /* BrokenRulesView.swift */,
 				0526ED20249D40E200B598BC /* Validation */,
 				05D0DE6A249A94B000F6DA2B /* CommentRowView.swift */,
 				05158587246406B700194002 /* Tab */,

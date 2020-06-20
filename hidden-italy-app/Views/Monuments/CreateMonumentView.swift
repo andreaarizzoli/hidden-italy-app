@@ -32,6 +32,7 @@ struct CreateMonumentView: View {
     
     @State var isShowingImagePicker = false
     @State var isShowingOverlay = false
+    @State var newImage = false
 
 //    var disableForm: Bool {
 //        name.count < 1 && name.count < 50 ||
@@ -76,7 +77,8 @@ struct CreateMonumentView: View {
                             }
                         }.buttonStyle(PlainButtonStyle())
                             .sheet(isPresented: $isShowingImagePicker, content: {
-                                ImagePickerView(isPresented: self.$isShowingImagePicker, selectedImage: self.$image)
+                                ImagePickerView(isPresented: self.$isShowingImagePicker, selectedImage: self.$image, newImage: self.$newImage
+)
                             })
                         
                         HStack {

@@ -29,7 +29,7 @@ struct LoginView: View {
             }
             else if (nextView == "resetUser"){
 //                ResetView()
-                AlertXView()
+                LoginView()
             }
             else if (nextView == "registerUser"){
                 RegisterUserView()

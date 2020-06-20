@@ -20,6 +20,7 @@ struct RegisterUserView: View {
     @State private var nextView = ""
     @State var image = UIImage()
     @State var isShowingImagePicker = false
+    @State var newImage = false
     
     var disableForm: Bool {
         name.count < 1 && name.count < 255 ||
@@ -61,7 +62,7 @@ struct RegisterUserView: View {
                         }
                     }.buttonStyle(PlainButtonStyle())
                         .sheet(isPresented: $isShowingImagePicker, content: {
-                            ImagePickerView(isPresented: self.$isShowingImagePicker, selectedImage: self.$image)
+                            ImagePickerView(isPresented: self.$isShowingImagePicker, selectedImage: self.$image, newImage: self.$newImage)
                         })
 
                     HStack {

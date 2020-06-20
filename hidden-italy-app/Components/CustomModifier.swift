@@ -87,6 +87,23 @@ struct Icon: ViewModifier{
     }
 }
 
+struct ValidationErrorMessage: ViewModifier{
+    func body(content: Content) -> some View {
+    content
+        .foregroundColor(Color .white)
+        .frame(maxWidth: .infinity)
+        .background(Color .red)
+        .cornerRadius(35)
+    }
+}
 
+struct OverlayBackGround: ViewModifier{
+    func body(content: Content) -> some View {
+    content
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+        .background(Color (.black)
+        .opacity(0.5))
+    }
+}
 
 
