@@ -217,7 +217,7 @@ struct MonumentListView: View {
                 .animation(
                     Animation.easeInOut(duration: 0.05)
                         .delay(self.expandedScreen_willHide ? 0.5 : 0))
-        }.onAppear {
+        }.modifier(pSafeAreaTop()).onAppear {
             self.monuments.getNearMonuments()
         }
     }

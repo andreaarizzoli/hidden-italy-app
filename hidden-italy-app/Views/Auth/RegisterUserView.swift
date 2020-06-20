@@ -81,12 +81,12 @@ struct RegisterUserView: View {
                     }.modifier(FormTextField())
                     
                     HStack {
-                        SecureField("Password", text:   $password).modifier(FormTextFieldText())
+                        SecureField("Password", text: $password).modifier(FormTextFieldText())
                         Image(systemName: "lock").modifier(FormTextFieldImage())
                     }.modifier(FormTextField())
                     
                     HStack {
-                        SecureField("Ripeti la tua Password", text:     $r_password).modifier(FormTextFieldText())
+                        SecureField("Ripeti la tua Password", text: $r_password).modifier(FormTextFieldText())
                         Image(systemName: "lock").modifier(FormTextFieldImage())
                     }.modifier(FormTextField())
                     
@@ -109,7 +109,7 @@ struct RegisterUserView: View {
                     
                     Spacer()
                     
-                }.modifier(Form())
+                }.modifier(Form()).onTapGesture { hideKeyboard() }.modifier(AdaptsToSoftwareKeyboard())
             }
         }
     }

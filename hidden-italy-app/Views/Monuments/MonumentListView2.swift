@@ -46,7 +46,7 @@ struct MonumentListView2: View {
                     .frame(height: 350)
                 }
             }
-        }.onAppear {
+            }.modifier(pSafeAreaTop()).onAppear {
             self.monuments.getNearMonuments()
         }
     }

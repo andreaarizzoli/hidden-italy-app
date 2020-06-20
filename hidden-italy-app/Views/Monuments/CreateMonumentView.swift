@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import ValidatedPropertyKit
+//import ValidatedPropertyKit
 
 
 struct CreateMonumentView: View {
@@ -113,8 +113,8 @@ struct CreateMonumentView: View {
                             //Image(systemName: "circle").modifier(FormTextFieldImage())
                         }.modifier(FormTextField())
                         
-                        Button(action: {
-                            self.isShowingOverlay = true
+                        Button(action: { withAnimation(.interactiveSpring()){
+                            self.isShowingOverlay = true}
                         }) {
                             HStack {
                                 Text("\(self.selectedCategoryName)").modifier(FormTextFieldText())
@@ -180,9 +180,7 @@ struct CreateMonumentView: View {
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
                 }
             }
-        }.onAppear {
-            self.categories.getCategories()
-        }
+        }.onAppear { self.categories.getCategories() }
     }
 }
 
