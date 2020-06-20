@@ -18,31 +18,31 @@ struct RootTabView: View {
                 .tabItem{
                     Image(systemName: "magnifyingglass")
                     Text("Mappa")
-                }
+            }
             
             MonumentListView()
                 .tabItem{
                     Image(systemName: "list.dash")
                     Text("Luoghi")
-                }
+            }
             
             MonumentListView2()
                 .tabItem{
                     Image(systemName: "list.number")
                     Text("Classifica")
-                }
+            }
             
             MonumentListView2()
                 .tabItem{
                     Image(systemName: "heart")
                     Text("Notifiche")
-                }
+            }
             
             ProfileView()
                 .tabItem{
                     Image(systemName: "person")
                     Text("Profilo")
-                }
+            }
         }
         .accentColor(Color .blue)
     }

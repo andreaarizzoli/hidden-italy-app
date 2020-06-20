@@ -16,7 +16,7 @@ struct MonumentListView: View {
     let itemHeight:CGFloat = 350
     let imageHeight:CGFloat = 300
     let SVWidth = UIScreen.main.bounds.width - 40
-   
+    
     @ObservedObject var monuments = MonumentViewModel()
     @State var expandedItem = Monument(id: 1, name: "abc", description: "abc", lat: 00, lon: 00, visible: true, user_id: 1, category_id: 1, distance: 0.1, created_at: "abc",  updated_at: "abc", categories: [], images: [])
     @State var expandedScreen_startPoint = CGRect(x: 0, y: 0, width: 100, height: 100)
@@ -37,14 +37,14 @@ struct MonumentListView: View {
                         .font(.largeTitle)
                     Spacer()
                     VStack(alignment: .leading){
-                         Button(action: {
+                        Button(action: {
                             self.showSheetMonumentView.toggle()
-                         }) {
+                        }) {
                             Image(systemName: "plus.circle.fill")
-                            .foregroundColor(Color(bgColor))
-                            .font(.system(size: 35))
+                                .foregroundColor(Color(bgColor))
+                                .font(.system(size: 35))
                         }.sheet(isPresented: $showSheetMonumentView) {
-//                            CreateMonumentView()
+                            //                            CreateMonumentView()
                             CreateMonumentView2(showSheetMonumentView: self.$showSheetMonumentView)
                         }
                     }
@@ -52,23 +52,23 @@ struct MonumentListView: View {
                 
                 //ForEach_start
                 ForEach(monuments.monumentList, id: \.id){thisItem in
-
+                    
                     GeometryReader{geo -> AnyView in
                         return AnyView(
                             
                             ZStack (alignment: .bottom){
                                 
                                 URLImage(URL(string: "\(self.url)storage/\(thisItem.images[0]!.url)")!, processors: [
-                                                CoreImageFilterProcessor(name: "CISepiaTone", parameters: [ kCIInputIntensityKey: 0.2 ], context: self.ciContext),
-                                                Resize(size: CGSize(width: self.SVWidth, height: self.itemHeight), scale: UIScreen.main.scale) ], content: {
-                                            $0.image
+                                    CoreImageFilterProcessor(name: "CISepiaTone", parameters: [ kCIInputIntensityKey: 0.2 ], context: self.ciContext),
+                                    Resize(size: CGSize(width: self.SVWidth, height: self.itemHeight), scale: UIScreen.main.scale) ], content: {
+                                        $0.image
                                             .resizable()
-                                //            .offset(x: self.show ? -330 : 0)
-                                //            .rotationEffect(Angle(degrees: self.show ? 10 : 0))
+                                            //            .offset(x: self.show ? -330 : 0)
+                                            //            .rotationEffect(Angle(degrees: self.show ? 10 : 0))
                                             .clipped()
-                                            })
-                                        
-                                    
+                                })
+                                
+                                
                                 Button(action: {
                                     self.expandedItem = thisItem
                                     print(self.expandedItem)
@@ -85,29 +85,29 @@ struct MonumentListView: View {
                                 }) {
                                     ZStack (alignment: .bottom){
                                         Rectangle()
-                                        .frame(height: 100)
-                                        .opacity(0.30)
-                                        .blur(radius: 30)
-                                        .background(Color.black.opacity(0.2))
-                                            
+                                            .frame(height: 100)
+                                            .opacity(0.30)
+                                            .blur(radius: 30)
+                                            .background(Color.black.opacity(0.2))
+                                        
                                         
                                         VStack(alignment: .leading){
                                             Text("\(thisItem.name)")
                                                 .font(.largeTitle)
                                                 .fontWeight(.bold)
                                                 .padding(.bottom)
-                                        
+                                            
                                             HStack(){
                                                 Text("\(thisItem.category_id)")
-                                                .foregroundColor(Color.white)
+                                                    .foregroundColor(Color.white)
                                                 Spacer()
                                                 Text("\(String(format: "%.2f", round(thisItem.distance*100)/100)) km")
-                                                .foregroundColor(Color.white)
+                                                    .foregroundColor(Color.white)
                                             }
                                             
-
+                                            
                                         }.padding().foregroundColor(Color.white)
-
+                                        
                                     }.frame(width: self.SVWidth)
                                     
                                 }
@@ -117,9 +117,9 @@ struct MonumentListView: View {
                             .cornerRadius(15).foregroundColor(.white)
                             .shadow(color: .init(red: 0.1, green: 0.1, blue: 0.1)
                                 , radius: 11 , x: 0, y: 4)
-                            .clipShape(RoundedRectangle(cornerRadius: 15))
-
-
+                                .clipShape(RoundedRectangle(cornerRadius: 15))
+                            
+                            
                         )
                     }.background(Color.clear.opacity(0.4))
                         .frame(height:self.itemHeight)
@@ -132,7 +132,7 @@ struct MonumentListView: View {
             }
             GeometryReader{geo -> AnyView in
                 let thisItem = self.expandedItem
-
+                
                 return AnyView(
                     
                     ZStack{
@@ -140,49 +140,49 @@ struct MonumentListView: View {
                             VStack(spacing:0){
                                 ZStack{
                                     Image("duomo")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .offset(y: self.expandedScreen_shown ? 0 : 0)
-                                    .frame(width:self.expandedScreen_shown ? UIScreen.main.bounds.width : self.SVWidth, height: self.itemHeight)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .offset(y: self.expandedScreen_shown ? 0 : 0)
+                                        .frame(width:self.expandedScreen_shown ? UIScreen.main.bounds.width : self.SVWidth, height: self.itemHeight)
                                     
-//                                URLImage(URL(string: "\(self.url)storage/\(thisItem.images[0]!.url)")!, content: {
-//                                    $0.image
-//                                    .resizable()
-//                                    .scaledToFill()
-//                                    .offset(y: self.expandedScreen_shown ? 0 : 0)
-//                                    .frame(width:self.expandedScreen_shown ? UIScreen.main.bounds.width : self.SVWidth, height: self.itemHeight
-//                                    )})
-//                                    .clipped()
-//                                    .background(Color.white)
-//                                    .foregroundColor(Color.green)
-//                                    .edgesIgnoringSafeArea(.top)
+                                    //                                URLImage(URL(string: "\(self.url)storage/\(thisItem.images[0]!.url)")!, content: {
+                                    //                                    $0.image
+                                    //                                    .resizable()
+                                    //                                    .scaledToFill()
+                                    //                                    .offset(y: self.expandedScreen_shown ? 0 : 0)
+                                    //                                    .frame(width:self.expandedScreen_shown ? UIScreen.main.bounds.width : self.SVWidth, height: self.itemHeight
+                                    //                                    )})
+                                    //                                    .clipped()
+                                    //                                    .background(Color.white)
+                                    //                                    .foregroundColor(Color.green)
+                                    //                                    .edgesIgnoringSafeArea(.top)
                                     
-                                VStack{
-                                    HStack{
-                                        
-                                        VStack(alignment: .leading){
-
-                                            Text("\(thisItem.category_id)")
-                                                .font(.system(size: 18, weight: .bold, design: .default))
-                                                .foregroundColor(.init(red: 0.8 , green: 0.8, blue: 0.8  )).opacity(1.0)
-                                            Text("\(thisItem.name)")
-                                                .font(.system(size: 36, weight: .bold, design: .default))
-                                                .foregroundColor(.white)
-                                        }.padding()
+                                    VStack{
+                                        HStack{
+                                            
+                                            VStack(alignment: .leading){
+                                                
+                                                Text("\(thisItem.category_id)")
+                                                    .font(.system(size: 18, weight: .bold, design: .default))
+                                                    .foregroundColor(.init(red: 0.8 , green: 0.8, blue: 0.8  )).opacity(1.0)
+                                                Text("\(thisItem.name)")
+                                                    .font(.system(size: 36, weight: .bold, design: .default))
+                                                    .foregroundColor(.white)
+                                            }.padding()
+                                            Spacer()
+                                        }.offset(y:
+                                            self.expandedScreen_shown ? 44 : 0)
                                         Spacer()
-                                    }.offset(y:
-                                        self.expandedScreen_shown ? 44 : 0)
-                                    Spacer()
-                                }.frame(width: self.expandedScreen_startPoint.width)
-                            }.frame(height:
-                                self.itemHeight
-                            ).zIndex(1)
-                            Text("\(thisItem.description)").padding().frame(
-                            maxHeight: self.expandedScreen_shown ? .infinity : 0)
+                                    }.frame(width: self.expandedScreen_startPoint.width)
+                                }.frame(height:
+                                    self.itemHeight
+                                ).zIndex(1)
+                                Text("\(thisItem.description)").padding().frame(
+                                    maxHeight: self.expandedScreen_shown ? .infinity : 0)
                             }
                             Button(action:{}){
                                 MapMonumentView(latitude: thisItem.lat, longitude: thisItem.lon, regionRadius: 350)
-                                .frame(height: 100)
+                                    .frame(height: 100)
                             }
                             
                         }
@@ -196,7 +196,7 @@ struct MonumentListView: View {
                         Button(action: {
                             self.expandedScreen_willHide = true
                             self.expandedScreen_startPoint = self.expandedScreen_returnPoint
-
+                            
                             self.expandedScreen_shown = false
                             Timer.scheduledTimer(withTimeInterval: 0.6, repeats: false) { (timer) in
                                 self.expandedScreen_willHide = false
@@ -217,7 +217,7 @@ struct MonumentListView: View {
                     Animation.easeInOut(duration: 0.05)
                         .delay(self.expandedScreen_willHide ? 0.5 : 0))
         }.onAppear {
-        self.monuments.getNearMonuments()
+            self.monuments.getNearMonuments()
         }
     }
 }

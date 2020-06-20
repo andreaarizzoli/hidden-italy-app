@@ -19,7 +19,7 @@ struct CircleTab: View {
             Button(action: {
                 
                 self.index = 0
-                                
+                
             }){
                 
                 VStack{
@@ -33,9 +33,9 @@ struct CircleTab: View {
                     } else {
                         Image(systemName:"magnifyingglass").foregroundColor(.white)
                             
-                        .padding()
+                            .padding()
                             .background(Color("btnBg"))
-                        .clipShape(Circle())
+                            .clipShape(Circle())
                             .offset(y: -20)
                             .padding(.bottom, -20)
                         
@@ -56,9 +56,9 @@ struct CircleTab: View {
                         Image(systemName:"list.dash").foregroundColor(Color.black.opacity(0.2))
                     } else {
                         Image(systemName:"list.dash").foregroundColor(.white)
-                        .padding()
+                            .padding()
                             .background(Color("btnBg"))
-                        .clipShape(Circle())
+                            .clipShape(Circle())
                             .offset(y: -20)
                             .padding(.bottom, -20)
                         
@@ -71,16 +71,16 @@ struct CircleTab: View {
             Button(action: {
                 
                 self.index = 2
-
+                
             }){
                 VStack{
                     if self.index != 2 {
                         Image(systemName:"list.number").foregroundColor(Color.black.opacity(0.2))
                     } else {
                         Image(systemName:"list.number").foregroundColor(.white)
-                        .padding()
+                            .padding()
                             .background(Color("btnBg"))
-                        .clipShape(Circle())
+                            .clipShape(Circle())
                             .offset(y: -20)
                             .padding(.bottom, -20)
                         
@@ -100,9 +100,9 @@ struct CircleTab: View {
                         Image(systemName:"heart").foregroundColor(Color.black.opacity(0.2))
                     } else {
                         Image(systemName:"heart").foregroundColor(.white)
-                        .padding()
+                            .padding()
                             .background(Color("btnBg"))
-                        .clipShape(Circle())
+                            .clipShape(Circle())
                             .offset(y: -20)
                             .padding(.bottom, -20)
                         
@@ -115,16 +115,16 @@ struct CircleTab: View {
             Button(action: {
                 
                 self.index = 4
-
+                
             }){
                 VStack{
                     if self.index != 4 {
                         Image(systemName:"person").foregroundColor(Color.black.opacity(0.2))
                     } else {
                         Image(systemName:"person").foregroundColor(.white)
-                        .padding()
+                            .padding()
                             .background(Color("btnBg"))
-                        .clipShape(Circle())
+                            .clipShape(Circle())
                             .offset(y: -20)
                             .padding(.bottom, -20)
                         
@@ -132,7 +132,7 @@ struct CircleTab: View {
                     }
                 }
             }
-                        
+            
         }.padding(.vertical, 10)
             .padding(.horizontal, 20)
             .background(Color .white)

@@ -21,7 +21,7 @@ struct FormTextField: ViewModifier {
         content
             .padding(15)
             .overlay(RoundedRectangle(cornerRadius: 35)
-            .stroke(Color.gray, lineWidth: 1))
+                .stroke(Color.gray, lineWidth: 1))
     }
 }
 
@@ -81,9 +81,9 @@ struct LoginText: ViewModifier {
 
 struct Icon: ViewModifier{
     func body(content: Content) -> some View {
-    content
-        .font(.system(size: 30))
-        .foregroundColor(Color(darkAccent))
+        content
+            .font(.system(size: 30))
+            .foregroundColor(Color(darkAccent))
     }
 }
 

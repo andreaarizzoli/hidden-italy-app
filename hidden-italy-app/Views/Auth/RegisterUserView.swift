@@ -11,7 +11,7 @@ import SwiftUI
 struct RegisterUserView: View {
     
     @ObservedObject var user = UserViewModel()
-
+    
     @State private var name = ""
     @State private var surname = ""
     @State private var email = ""
@@ -23,61 +23,61 @@ struct RegisterUserView: View {
     
     var disableForm: Bool {
         name.count < 1 && name.count < 255 ||
-        surname.count < 1 && surname.count > 255 ||
-        email.count < 1 && email.count > 255 ||
-        password.count < 1 && password.count > 255 ||
-        r_password != password
+            surname.count < 1 && surname.count > 255 ||
+            email.count < 1 && email.count > 255 ||
+            password.count < 1 && password.count > 255 ||
+            r_password != password
     }
-
+    
     var body: some View {
         
         VStack{
             if (nextView == "LoginView") {
                 LoginView()
             }
-        
+                
             else if(nextView == "CreateUser"){
                 LoginView()
             }
-
+                
             else {
                 
                 VStack (alignment: .center, spacing:20){
                     
                     Spacer()
-
+                    
                     Button(action: {
                         self.isShowingImagePicker.toggle()
                     }){
                         ZStack (alignment: .center){
-
+                            
                             Image(uiImage: image)
-                            .resizable()
-                            .frame(width:90, height:90)
-                            .clipShape(Circle())
+                                .resizable()
+                                .frame(width:90, height:90)
+                                .clipShape(Circle())
                             Image(systemName: "plus")
-                            .font(.system(size: 20))
-                            .foregroundColor(.gray)
+                                .font(.system(size: 20))
+                                .foregroundColor(.gray)
                         }
                     }.buttonStyle(PlainButtonStyle())
                         .sheet(isPresented: $isShowingImagePicker, content: {
                             ImagePickerView(isPresented: self.$isShowingImagePicker, selectedImage: self.$image)
                         })
-
+                    
                     HStack {
                         TextField("Nome", text: $name).modifier(FormTextFieldText())
                         Image(systemName: "person").modifier(FormTextFieldImage())
                     }.modifier(FormTextField())
-                
+                    
                     HStack {
                         TextField("Cognome", text: $surname).modifier(FormTextFieldText())
                         Image(systemName: "person").modifier(FormTextFieldImage())
                     }.modifier(FormTextField())
-                
+                    
                     HStack {
                         TextField("Email", text: $email).modifier(FormTextFieldText())
                         Image(systemName: "envelope").modifier(FormTextFieldImage())
-                       }.modifier(FormTextField())
+                    }.modifier(FormTextField())
                     
                     HStack {
                         SecureField("Password", text:   $password).modifier(FormTextFieldText())

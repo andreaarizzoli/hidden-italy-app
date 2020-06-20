@@ -11,9 +11,9 @@ import ValidatedPropertyKit
 
 class CreateMonumentViewModel: ObservableObject {
     
-//    @Published private(set) var brokenRules = [BrokenRule]()
+    //    @Published private(set) var brokenRules = [BrokenRule]()
     @Published private(set) var brokenRules = [BrokenRule]()
-
+    
     @Validated(.nonEmpty)
     var name: String? = ""
     
@@ -32,13 +32,13 @@ class CreateMonumentViewModel: ObservableObject {
     @Validated(.nonEmpty)
     var city :String? = ""
     
-//    var selectedCategoryId :Int = 0
-//    var image = UIImage()
+    //    var selectedCategoryId :Int = 0
+    //    var image = UIImage()
     
     private func validate() -> Bool {
-
+        
         self.brokenRules.removeAll()
-                
+        
         let rules = [
             "nome": _name.validationError,
             "descrizione": _description.validationError,

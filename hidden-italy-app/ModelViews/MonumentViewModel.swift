@@ -22,18 +22,18 @@ class MonumentViewModel: ObservableObject {
     ]
     
     private var apiUrl = "http://127.0.0.1:8000/api/monuments"
-
+    
     func getMonuments() {
         
         AF.request(self.apiUrl ,method: .get).responseJSON { response in
-
+            
             switch response.result {
             case .success(_):
                 do {
                     let jsonDecoder  = JSONDecoder()
                     let decode = try jsonDecoder.decode([Monument].self, from: response.data!)
                     self.monumentList = decode
-//                    print("Converted JSON in struct \(self.monumentList)")
+                    //                    print("Converted JSON in struct \(self.monumentList)")
                 }
                 catch {
                     print("Error reading JSON file: \(error.localizedDescription) Error description: \(error)")
@@ -47,9 +47,9 @@ class MonumentViewModel: ObservableObject {
     func getNearMonuments() {
         
         AF.request(self.apiUrl + "/findNearest" ,method: .post, parameters:parameters, encoding: JSONEncoding.default).responseJSON { response in
-//            print(response)
+            //            print(response)
             print("trovato\(self.userCoordinates)")
-
+            
             switch response.result {
             case .success(_):
                 do {
@@ -78,23 +78,21 @@ class MonumentViewModel: ObservableObject {
             "lon": address,
             "user_id": "1",
             "main_category_id": category,
-//            "url": ???,
+            //            "url": ???,
             "categories": "2",
             ] as [String : Any]
-        
-
     }
     
     func shortDescription(description: String){
         //description.stringByPaddingToLength(3, withString: "", startingAtIndex: 0)
-       // var response = "blablabla"
-       // return response
+        // var response = "blablabla"
+        // return response
     }
     
     func findCoordinates(address: String, number: String, city: String, cap: String) -> CLGeocoder {
         
         let geocoder = CLGeocoder()
-
+        
         geocoder.geocodeAddressString(address + " " + city + " " + cap + " ") {
             placemarks, error in
             let placemark = placemarks?.first
