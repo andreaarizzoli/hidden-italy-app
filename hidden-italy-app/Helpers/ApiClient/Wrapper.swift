@@ -225,7 +225,7 @@ class ApiWrapper
         name: String = "request"
     ) {
         AF.upload(multipartFormData: {multiPart in
-            multiPart.append(Data(image.utf8), withName: "image")
+            multiPart.append(Data(image.jpegData(compressionQuality: 0.5)!), withName: "image", fileName: "cicciopuzzo.png", mimeType: "image/jpeg")
         },
         to: self.baseURL + uri
     ).responseJSON{response in
@@ -239,6 +239,11 @@ class ApiWrapper
         }
     }
     
+    /**
+     * Cancel and remove a single request.
+     *
+     * @author
+     */
     public func cancel(name: String = "request") -> Void {
         guard self.queue[name] != nil else {
             return
@@ -246,5 +251,16 @@ class ApiWrapper
         
         self.queue[name]?.cancel()
         self.queue[name] = nil
+    }
+    
+    /**
+     * Cancel and remove all requests in queue.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
+    public func cancelAll() -> Void {
+        for (key, _) in self.queue {
+            self.cancel(name: key)
+        }
     }
 }

@@ -33,10 +33,10 @@ func get<T: Codable, M: Codable>(
 }
 
 /**
-* Create a get request for multiple resources using api wrapper singleton.
-*
-* @author Daniele Tulone <danieletulone.work@gmail.com>
-*/
+ * Create a get request for multiple resources using api wrapper singleton.
+ *
+ * @author Daniele Tulone <danieletulone.work@gmail.com>
+ */
 func getAll<T: Codable, M: Codable>(
     uri: String,
     body: T,
@@ -57,10 +57,10 @@ func getAll<T: Codable, M: Codable>(
 }
 
 /**
-* Create a post request using api wrapper singleton.
-*
-* @author Daniele Tulone <danieletulone.work@gmail.com>
-*/
+ * Create a post request using api wrapper singleton.
+ *
+ * @author Daniele Tulone <danieletulone.work@gmail.com>
+ */
 func post<T: Codable, M: Codable>(
     uri: String,
     body: T,
@@ -79,4 +79,22 @@ func post<T: Codable, M: Codable>(
         multiple: multiple,
         name: name
     )
+}
+
+/**
+ * Cancel and remove a single request.
+ *
+ * @author
+ */
+func cancel(name: String = "request") -> Void {
+    ApiWrapper.shared.cancel(name: name)
+}
+
+/**
+ * Cancel and remove all requests in queue.
+ *
+ * @author Daniele Tulone <danieletulone.work@gmail.com>
+ */
+func cancelAll() -> Void {
+    ApiWrapper.shared.cancelAll()
 }
