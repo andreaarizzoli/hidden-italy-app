@@ -16,17 +16,17 @@ struct userSettings: View {
         
         
         ScrollView{
-        VStack (alignment: .center, spacing:20){
-            HStack {
-            Spacer()
-                Button(action: { self.showSheetSettingsView = false }){
-                    Image(systemName: "xmark.circle.fill")
-                    .foregroundColor(Color(.gray))
-                    .font(.system(size: 25))
-                }
-            }.padding(.top, 30)
-            
-            
+            VStack (alignment: .center, spacing:20){
+                HStack {
+                    Spacer()
+                    Button(action: { self.showSheetSettingsView = false }){
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundColor(Color(.gray))
+                            .font(.system(size: 25))
+                    }
+                }.padding(.top, 30)
+                
+                
             }.modifier(Form())
         }
     }

@@ -14,21 +14,21 @@ class CategoryViewModel :ObservableObject {
     
     @Published var categoriesList = [Category] ()
     
-//    @Published var categoriesList: [Category] = [
-//        .init(
-//            id: 1,
-//            description: "Descrizione",
-//            created_at: "stringa",
-//            updated_at: "stringa")
-//    ]
-
+    //    @Published var categoriesList: [Category] = [
+    //        .init(
+    //            id: 1,
+    //            description: "Descrizione",
+    //            created_at: "stringa",
+    //            updated_at: "stringa")
+    //    ]
+    
     
     private var apiUrl = "http://127.0.0.1:8000/api/categories"
     
     func getCategories() {
         
         AF.request(self.apiUrl,method: .get).responseJSON { response in
-
+            
             switch response.result {
             case .success(_):
                 do {
@@ -45,11 +45,11 @@ class CategoryViewModel :ObservableObject {
             }
         }
         
-//        guard let url = URL(string: apiUrl) else { return }
-//        URLSession.shared.dataTask(with: url) { (data, resp, err) in
-//            DispatchQueue.main.async {
-//                self.categoriesList = try! JSONDecoder().decode([Category].self, from: data!)
-//            }
-//        }.resume()
+        //        guard let url = URL(string: apiUrl) else { return }
+        //        URLSession.shared.dataTask(with: url) { (data, resp, err) in
+        //            DispatchQueue.main.async {
+        //                self.categoriesList = try! JSONDecoder().decode([Category].self, from: data!)
+        //            }
+        //        }.resume()
     }
 }

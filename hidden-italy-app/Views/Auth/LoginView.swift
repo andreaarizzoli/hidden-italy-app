@@ -11,19 +11,19 @@ import SwiftUI
 struct LoginView: View {
     
     @ObservedObject var user = UserViewModel()
-
+    
     @State private var email = ""
     @State private var password = ""
     @State private var nextView = ""
     
     var disableForm: Bool {
         email.count < 1 && email.count < 255 ||
-        password.count < 1 && password.count > 255
+            password.count < 1 && password.count > 255
     }
-
+    
     var body: some View {
         
-       VStack() {
+        VStack() {
             if (nextView == "logged") {
                 RootTabView()
             }
@@ -41,7 +41,7 @@ struct LoginView: View {
                     Image("logo").resizable().frame(width:109, height:89)
                     
                     Spacer()
-                
+                    
                     HStack {
                         TextField("Email", text: $email).modifier(FormTextFieldText())
                         Image(systemName: "envelope").modifier(FormTextFieldImage())
@@ -51,7 +51,7 @@ struct LoginView: View {
                         SecureField("Password", text: $password).modifier(FormTextFieldText())
                         Image(systemName: "lock").modifier(FormTextFieldImage())
                     }.modifier(FormTextField())
-                   
+                    
                     HStack(){
                         Spacer()
                         Button(action: {self.nextView = "resetUser"}) {
@@ -81,14 +81,14 @@ struct LoginView: View {
                     HStack{
                         Button(action: {    }){
                             Image("google")
-                            .resizable()
-                            .frame(width: 35.0, height: 35)
+                                .resizable()
+                                .frame(width: 35.0, height: 35)
                         }.padding(.trailing)
                         
                         Button(action: {    }){
                             Image("facebook")
-                            .resizable()
-                            .frame(width: 35.0, height: 35)
+                                .resizable()
+                                .frame(width: 35.0, height: 35)
                         }.padding(.leading)
                     }
                     

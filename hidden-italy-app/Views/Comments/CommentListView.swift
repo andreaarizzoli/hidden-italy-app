@@ -10,10 +10,10 @@ import SwiftUI
 
 struct CommentListView: View {
     init() {
-       UITableView.appearance().separatorStyle = .none
+        UITableView.appearance().separatorStyle = .none
     }
     
-//    @State var delay = 0.7
+    //    @State var delay = 0.7
     
     var body: some View {
         VStack(alignment: .leading){
@@ -22,13 +22,13 @@ struct CommentListView: View {
                 .font(.headline)
                 .fontWeight(.bold)
                 .padding(Edge.Set.leading, 30)
-                
-          ScrollView{
-            ForEach(0..<15) { item in
-                CommentRowView()
-//                    .animation(Animation.easeOut(duration: 0.7))
-                
-            }
+            
+            ScrollView{
+                ForEach(0..<15) { item in
+                    CommentRowView()
+                    //                    .animation(Animation.easeOut(duration: 0.7))
+                    
+                }
             }
         }.padding(.trailing)
     }

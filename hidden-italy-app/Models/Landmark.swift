@@ -21,15 +21,15 @@ struct Landmark {
         self.placemark.name ?? ""
     }
     
-//    var description: String {
-//           self.placemark.description ?? ""
-//    }
+    //    var description: String {
+    //           self.placemark.description ?? ""
+    //    }
     
     var primaryCategory: String {
-            self.placemark.title ?? ""
+        self.placemark.title ?? ""
     }
     
     var coordinate: CLLocationCoordinate2D {
-             self.placemark.coordinate
+        self.placemark.coordinate
     }
 }

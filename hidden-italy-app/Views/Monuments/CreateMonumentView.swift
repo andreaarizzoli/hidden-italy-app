@@ -14,11 +14,11 @@ struct CreateMonumentView: View {
     
     @ObservedObject var monuments = MonumentViewModel()
     @ObservedObject var categories = CategoryViewModel()
-
+    
     @Binding var showSheetMonumentView: Bool
     
-//    @Validated(.isLowercased)
-//    var name: String?
+    //    @Validated(.isLowercased)
+    //    var name: String?
     
     @State var name = ""
     @State var description = ""
@@ -48,11 +48,11 @@ struct CreateMonumentView: View {
         ZStack {
             VStack {
                 HStack {
-                Spacer()
+                    Spacer()
                     Button(action: { self.showSheetMonumentView = false }){
                         Image(systemName: "xmark.circle.fill")
-                        .foregroundColor(Color(.gray))
-                        .font(.system(size: 25))
+                            .foregroundColor(Color(.gray))
+                            .font(.system(size: 25))
                     }
                 }.padding(.top, 15).padding(.trailing, 15)
                 
@@ -64,16 +64,16 @@ struct CreateMonumentView: View {
                             self.isShowingImagePicker.toggle()
                         }){
                             ZStack (alignment: .center){
-
+                                
                                 Image(uiImage: image)
-                                .resizable()
-                                .frame(width:150, height:150)
-                                .clipShape(RoundedRectangle(cornerRadius: 35))
-                                .overlay(RoundedRectangle(cornerRadius: 35)
-                                .stroke(Color.gray, lineWidth: 1))
+                                    .resizable()
+                                    .frame(width:150, height:150)
+                                    .clipShape(RoundedRectangle(cornerRadius: 35))
+                                    .overlay(RoundedRectangle(cornerRadius: 35)
+                                        .stroke(Color.gray, lineWidth: 1))
                                 Image(systemName: "plus")
-                                .font(.system(size: 20))
-                                .foregroundColor(.gray)
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.gray)
                             }
                         }.buttonStyle(PlainButtonStyle())
                             .sheet(isPresented: $isShowingImagePicker, content: {
@@ -117,12 +117,12 @@ struct CreateMonumentView: View {
                             self.isShowingOverlay = true
                         }) {
                             HStack {
-                            Text("\(self.selectedCategoryName)").modifier(FormTextFieldText())
-                            Spacer()
-                            //Image(systemName: "circle").modifier(FormTextFieldImage())
+                                Text("\(self.selectedCategoryName)").modifier(FormTextFieldText())
+                                Spacer()
+                                //Image(systemName: "circle").modifier(FormTextFieldImage())
                             }.frame(maxWidth: .infinity).modifier(FormTextField())
                         }
-                                              
+                        
                         Button(action:  {
                             self.monuments.createMonument(
                                 name: self.name,
@@ -140,11 +140,11 @@ struct CreateMonumentView: View {
                             Text("Inserisci")
                                 .modifier(FormButtonText())
                         }.modifier(FormButton())
-//                            .disabled(disableForm)
+                        //                            .disabled(disableForm)
                         
                         Spacer()
                         
-                        }.modifier(Form())
+                    }.modifier(Form())
                 }
             }
             
@@ -159,7 +159,7 @@ struct CreateMonumentView: View {
                     .onTapGesture(count: 1){self.isShowingOverlay = false}
                     
                     VStack(alignment: .center) {
-                                        
+                        
                         Spacer()
                         List {
                             Text("Seleziona monumento").bold()
@@ -168,11 +168,11 @@ struct CreateMonumentView: View {
                                     self.isShowingOverlay = false
                                     self.selectedCategoryId = item.id
                                     self.selectedCategoryName = item.description
-
+                                    
                                 }) {
                                     Text(item.description)
                                 }
-                           }
+                            }
                         }.frame(height: 300).cornerRadius(35).padding(30)
                         
                         Spacer()

@@ -12,14 +12,14 @@ import MapKit
 struct Map: UIViewRepresentable {
     
     @Binding var monuments: [Monument]
-
+    
     func makeUIView(context: Context) -> MKMapView {
         let map = MKMapView(frame: UIScreen.main.bounds)
         
         map.showsUserLocation = true
         map.delegate = context.coordinator
         map.userTrackingMode = .follow
-    //    map.mapType = .mutedStandard
+        //    map.mapType = .mutedStandard
         //map.pointOfInterestFilter = .some(MKPointOfInterestFilter(including: []))        
         return map
     }
@@ -28,25 +28,25 @@ struct Map: UIViewRepresentable {
         Coordinator(self)
     }
     
-  func updateUIView(_ uiView: MKMapView, context: Context) {
-    for monument in monuments {
-        //print("entrato")
-        let coordinate = MKPointAnnotation()
-        coordinate.title = monument.name
-        coordinate.subtitle = monument.description
-        coordinate.coordinate = CLLocationCoordinate2D(latitude: monument.lat, longitude: monument.lon)
-        uiView.addAnnotation(coordinate)
+    func updateUIView(_ uiView: MKMapView, context: Context) {
+        for monument in monuments {
+            //print("entrato")
+            let coordinate = MKPointAnnotation()
+            coordinate.title = monument.name
+            coordinate.subtitle = monument.description
+            coordinate.coordinate = CLLocationCoordinate2D(latitude: monument.lat, longitude: monument.lon)
+            uiView.addAnnotation(coordinate)
+        }
+        
+        
+        
+        //    let coordinate3 = MKPointAnnotation()
+        //    coordinate3.title = self.monuments.monumentList[0].name
+        //
+        //    coordinate3.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(exactly: Double(self.monuments.monumentList[0].lat)!)!, longitude: 9.18966)
+        //    uiView.addAnnotation(coordinate3)
     }
     
-   
-    
-//    let coordinate3 = MKPointAnnotation()
-//    coordinate3.title = self.monuments.monumentList[0].name
-//
-//    coordinate3.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(exactly: Double(self.monuments.monumentList[0].lat)!)!, longitude: 9.18966)
-//    uiView.addAnnotation(coordinate3)
-  }
-
 }
 
 //struct Map_Previews: PreviewProvider {
