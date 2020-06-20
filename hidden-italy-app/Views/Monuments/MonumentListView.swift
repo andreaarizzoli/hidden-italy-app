@@ -98,8 +98,9 @@ struct MonumentListView: View {
                                                 .padding(.bottom)
                                             
                                             HStack(){
-                                                Text("\(thisItem.category_id)")
+                                                Text("\(thisItem.category.description)")
                                                     .foregroundColor(Color.white)
+                                                .foregroundColor(Color.white)
                                                 Spacer()
                                                 Text("\(String(format: "%.2f", thisItem.distance)) km")
                                                     .foregroundColor(Color.white)
