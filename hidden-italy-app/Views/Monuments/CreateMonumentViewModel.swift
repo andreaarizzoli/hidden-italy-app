@@ -11,7 +11,6 @@ import ValidatedPropertyKit
 
 class CreateMonumentViewModel: ObservableObject {
     
-    //    @Published private(set) var brokenRules = [BrokenRule]()
     @Published private(set) var brokenRules = [BrokenRule]()
     
     @Validated(.nonEmpty)
@@ -26,26 +25,32 @@ class CreateMonumentViewModel: ObservableObject {
     @Validated(.nonEmpty)
     var number :String? = ""
     
-    @Validated(.nonEmpty)
+    @Validated(.nonEmpty && .isNumeric && .range(4...5))
     var cap :String? = ""
     
     @Validated(.nonEmpty)
     var city :String? = ""
     
-    //    var selectedCategoryId :Int = 0
-    //    var image = UIImage()
+    @Validated(.greater(0))
+    var selectedCategoryId :Int?
     
-    private func validate() -> Bool {
-        
+    @Validated(.greater(0))
+    var image :Int?
+    
+    func validate() -> Bool {
+
         self.brokenRules.removeAll()
         
         let rules = [
-            "nome": _name.validationError,
-            "descrizione": _description.validationError,
-            "indirizzo": _address.validationError,
-            "numero": _number.validationError,
-            "CAP": _cap.validationError,
-            "città": _city.validationError
+            "il nome": _name.validationError,
+            "la descrizione": _description.validationError,
+            "l'indirizzo": _address.validationError,
+            "il numero": _number.validationError,
+            "il CAP": _cap.validationError,
+            "la città": _city.validationError,
+            "la categoria": _selectedCategoryId.validationError,
+            "l'immagine": _image.validationError,
+
         ]
         
         _ = rules.compactMap { pair in
@@ -54,15 +59,12 @@ class CreateMonumentViewModel: ObservableObject {
             }
             self.brokenRules.append(BrokenRule(propertyName: pair.0, message: "\(pair.0) \(errorMessage)"))
         }
-        
         return self.brokenRules.count == 0
     }
     
     func createMonument() {
         if self.validate(){
-            print("Creo il monument")
-        } else {
-            print("Non creo il monument")
+            //
         }
     }
 }

@@ -44,7 +44,7 @@ struct ProfileView: View {
             
             UserTab()
             
-        }
+        }.modifier(pSafeAreaTop())
     }
 }
 

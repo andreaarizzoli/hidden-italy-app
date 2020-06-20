@@ -1,17 +1,18 @@
 //
-//  Category.swift
+//  Comment.swift
 //  hidden-italy-app
 //
-//  Created by Andrea Arizzoli on 07/05/2020.
+//  Created by Andrea Arizzoli on 20/06/2020.
 //  Copyright © 2020 Andrea Arizzoli. All rights reserved.
 //
 
 import Foundation
 
-struct Category: Codable, Identifiable {
+struct Comment: Codable, Identifiable {
     var id: Int
-    var description: String
+    var content: String
+    var user_id: Int
+    var monument_id: Int
     var created_at: String?
     var updated_at: String?
 }
-

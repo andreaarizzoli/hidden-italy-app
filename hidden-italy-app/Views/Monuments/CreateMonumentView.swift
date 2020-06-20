@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import ValidatedPropertyKit
+//import ValidatedPropertyKit
 
 
 struct CreateMonumentView: View {
@@ -32,15 +32,16 @@ struct CreateMonumentView: View {
     
     @State var isShowingImagePicker = false
     @State var isShowingOverlay = false
-    
-    //    var disableForm: Bool {
-    //        name.count < 1 && name.count < 50 ||
-    //        description.count < 1 && description.count > 500 ||
-    //        address.count < 1 && address.count > 100 ||
-    //        number.count < 1 && number.count > 5 ||
-    //        cap.count < 4 && cap.count > 6 ||
-    //        city.count < 1 && city.count > 50
-    //    }
+    @State var newImage = false
+
+//    var disableForm: Bool {
+//        name.count < 1 && name.count < 50 ||
+//        description.count < 1 && description.count > 500 ||
+//        address.count < 1 && address.count > 100 ||
+//        number.count < 1 && number.count > 5 ||
+//        cap.count < 4 && cap.count > 6 ||
+//        city.count < 1 && city.count > 50
+//    }
     
     var body: some View {
         
@@ -76,7 +77,8 @@ struct CreateMonumentView: View {
                             }
                         }.buttonStyle(PlainButtonStyle())
                             .sheet(isPresented: $isShowingImagePicker, content: {
-                                ImagePickerView(isPresented: self.$isShowingImagePicker, selectedImage: self.$image)
+                                ImagePickerView(isPresented: self.$isShowingImagePicker, selectedImage: self.$image, newImage: self.$newImage
+)
                             })
                         
                         HStack {
@@ -111,8 +113,8 @@ struct CreateMonumentView: View {
                             //Image(systemName: "circle").modifier(FormTextFieldImage())
                         }.modifier(FormTextField())
                         
-                        Button(action: {
-                            self.isShowingOverlay = true
+                        Button(action: { withAnimation(.interactiveSpring()){
+                            self.isShowingOverlay = true}
                         }) {
                             HStack {
                                 Text("\(self.selectedCategoryName)").modifier(FormTextFieldText())
@@ -178,9 +180,7 @@ struct CreateMonumentView: View {
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
                 }
             }
-        }.onAppear {
-            self.categories.getCategories()
-        }
+        }.onAppear { self.categories.getCategories() }
     }
 }
 

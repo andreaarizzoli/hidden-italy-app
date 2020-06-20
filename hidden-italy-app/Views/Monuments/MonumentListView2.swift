@@ -46,7 +46,7 @@ struct MonumentListView2: View {
                     .frame(height: 350)
                 }
             }
-        }.onAppear {
+            }.modifier(pSafeAreaTop()).onAppear {
             self.monuments.getNearMonuments()
         }
     }
@@ -97,7 +97,7 @@ struct CardView: View {
                     Text("\(monument.category_id)")
                         .foregroundColor(Color.white)
                     Spacer()
-                    Text("\(String(format: "%.2f", round(monument.distance*100)/100)) km")
+                    Text("\(monument.distance) km")
                         .foregroundColor(Color.white)
                 }
             }.padding(.bottom)

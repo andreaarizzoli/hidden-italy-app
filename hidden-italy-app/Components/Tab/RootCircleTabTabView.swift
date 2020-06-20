@@ -15,7 +15,7 @@ struct TestTabView: View {
     var body: some View {
         
         VStack {
-            Spacer()
+           
             
             ZStack{
                 if (self.index == 0) {
@@ -32,9 +32,8 @@ struct TestTabView: View {
             }
             
             CircleTab(index: self.index)
-        }
-        .background(Color.black.opacity(0.05)
-        .edgesIgnoringSafeArea(.top))
+        }.edgesIgnoringSafeArea(.top)
+        
     }
 }
 

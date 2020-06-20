@@ -12,11 +12,16 @@ struct RootTabView: View {
     
     @ObservedObject var locationManager = LocationManager()
     
+    init() {
+//        UITabBar.appearance().backgroundColor = UIColor.blue
+//        UITabBar.appearance().barTintColor = UIColor(rgb: 0xDEEAF6)
+    }
+    
     var body: some View {
         TabView {
             MapView()
                 .tabItem{
-                    Image(systemName: "magnifyingglass")
+                    Image(systemName: "map")
                     Text("Mappa")
             }
             
@@ -43,8 +48,7 @@ struct RootTabView: View {
                     Image(systemName: "person")
                     Text("Profilo")
             }
-        }
-        .accentColor(Color .blue)
+        }.accentColor(Color(bgColor))
     }
     
 }
