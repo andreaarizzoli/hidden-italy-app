@@ -9,39 +9,46 @@
 import SwiftUI
 
 struct RootTabView: View {
+    
+    @ObservedObject var locationManager = LocationManager()
+    
+    init() {
+//        UITabBar.appearance().backgroundColor = UIColor.blue
+//        UITabBar.appearance().barTintColor = UIColor(rgb: 0xDEEAF6)
+    }
+    
     var body: some View {
         TabView {
-            Map()
+            MapView()
                 .tabItem{
-                    Image(systemName: "magnifyingglass")
+                    Image(systemName: "map")
                     Text("Mappa")
-                }
+            }
             
-            MonumentsView()
+            MonumentListView()
                 .tabItem{
                     Image(systemName: "list.dash")
                     Text("Luoghi")
-                }
+            }
             
-            Map()
+            MonumentListView2()
                 .tabItem{
                     Image(systemName: "list.number")
                     Text("Classifica")
-                }
+            }
             
-            Map()
+            MonumentListView2()
                 .tabItem{
                     Image(systemName: "heart")
                     Text("Notifiche")
-                }
+            }
             
-            Map()
+            ProfileView()
                 .tabItem{
                     Image(systemName: "person")
                     Text("Profilo")
-                }
-        }
-        .accentColor(Color .blue)
+            }
+        }.accentColor(Color(bgColor))
     }
     
 }

@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Screenshot 2020-05-04 at 09.32.37.png",
+      "filename" : "Logo iOS Hi.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Logo iOS Hi@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Logo iOS Hi@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
@@ -17,8 +19,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "template-rendering-intent" : "original"
   }
 }

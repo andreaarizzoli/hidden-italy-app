@@ -10,128 +10,93 @@ import SwiftUI
 
 struct LoginView: View {
     
+    @ObservedObject var user = UserViewModel()
+    
     @State private var email = ""
     @State private var password = ""
     @State private var nextView = ""
-    @State private var loginView = false
-
-
+    
+    var disableForm: Bool {
+        email.count < 1 && email.count < 255 ||
+            password.count < 1 && password.count > 255
+    }
+    
     var body: some View {
         
         VStack() {
-            if loginView {
+            if (nextView == "logged") {
                 RootTabView()
-                    .animation(.easeIn(duration: 1))
-                    .transition(AnyTransition.opacity.combined(with: .slide))
-            } else {
-                Text("HIDDEN ITALY")
-                    .font(.largeTitle)
-                    .padding([.top,.bottom], 20)
+            }
+            else if (nextView == "resetUser"){
+//                ResetView()
+                LoginView()
+            }
+            else if (nextView == "registerUser"){
+                RegisterUserView()
+            }
+            else {
                 
-                Spacer()
-                        
-                Text("Log In")
-                    .font(.largeTitle)
-                
-                Spacer()
-                
-                VStack(alignment: .leading){
+                VStack (alignment: .center, spacing:20){
+                    Spacer()
+                    Image("logo").resizable().frame(width:109, height:89)
                     
-                    VStack(alignment: .leading){
-                        Text("Email")
-                            .font(.headline)
-                            .fontWeight(.light)
-                            .foregroundColor(Color.init(.label).opacity(0.75))
-                            
-                        TextField("Inserisci la tua email", text: $email)
-                        
-                        Divider()
-                        
-                    }.padding(.bottom, 15)
+                    Spacer()
                     
-                    VStack(alignment: .leading){
-                        
-                        Text("Password")
-                            .font(.headline)
-                            .fontWeight(.light)
-                            .foregroundColor(
-                                Color
-                                    .init(.label)
-                                    .opacity(0.75)
-                            )
-                            
-                        SecureField("Inerisci la tua Password", text: $password)
-                        
-                        Divider()
+                    HStack {
+                        TextField("Email", text: $email).modifier(FormTextFieldText())
+                        Image(systemName: "envelope").modifier(FormTextFieldImage())
+                    }.modifier(FormTextField())
+                    
+                    HStack {
+                        SecureField("Password", text: $password).modifier(FormTextFieldText())
+                        Image(systemName: "lock").modifier(FormTextFieldImage())
+                    }.modifier(FormTextField())
+                    
+                    HStack(){
+                        Spacer()
+                        Button(action: {self.nextView = "resetUser"}) {
+                            Text("Hai dimenticato la password?")
+                                .modifier(LoginText())
+                        }
+                    }
+                    
+                    Button(action:  {
+                        self.nextView = "logged"
+                    }){
+                        Text("Log In")
+                            .modifier(FormButtonText())
+                    }.modifier(FormButton()).disabled(disableForm)
+                    
+                    HStack(){
+                        Text("Non hai un account?")
+                            .modifier(LoginText())
+                        Button(action: {
+                            self.nextView = "registerUser"
+                        }) {
+                            Text("Registrati")
+                                .foregroundColor(Color(darkAccent))
+                        }
                     }
                     
                     HStack{
+                        Button(action: {    }){
+                            Image("google")
+                                .resizable()
+                                .frame(width: 35.0, height: 35)
+                        }.padding(.trailing)
                         
-                        Spacer()
-                        
-                        
-                        Button(action: {
-                            self.nextView = "resetUser"
-                            
-                        }) {
-                            Text("Hai dimenticato la password?")
-                                .foregroundColor(Color.gray.opacity(0.5))
-                                .padding(.top, 15)
-                            
-                        }
-                    }
-
-                }.padding(.horizontal, 20)
-               
-                Button(action:  {
-                    self.loginView = true
-                }){
-                    //
-                    Text("Log In")
-                        .foregroundColor(.white)
-                        .frame(width:UIScreen.main.bounds.width - 120)
-                        .padding()
-                }
-                .background(Color("btnBg"))
-                .clipShape(Capsule())
-                .padding(.top, 35)
-                       
-                Text("oppure").foregroundColor(Color.gray.opacity(0.5)).padding([.top,.bottom], 10)
-                
-                HStack{
-                    
-                    Button(action: {
-                        
-                    }){
-                        Image("google")
-                        .resizable()
-                        .frame(width: 50.0, height: 50)
-                        
+                        Button(action: {    }){
+                            Image("facebook")
+                                .resizable()
+                                .frame(width: 35.0, height: 35)
+                        }.padding(.leading)
                     }
                     
-                    Button(action: {
-                        
-                    }){
-                        Image("facebook")
-                        .resizable()
-                        .frame(width: 50.0, height: 50)
-                        .padding()
-                    }
+                    Spacer()
                     
-                }.padding([.top,.bottom], 15)
-                
-                HStack(spacing: 8){
-                    Text("Non hai un account?").foregroundColor(Color.gray.opacity(0.5))
-                    
-                    Button(action: {
-                        self.nextView = "createUser"
-                    }) {
-                        Text("Registrati")
-                            .foregroundColor(.blue)
-                    }
-                }.padding([.top,.bottom], 10)
+                }.modifier(Form()).onTapGesture { hideKeyboard() }.modifier(AdaptsToSoftwareKeyboard())
             }
-        }
+        }.background(Color(BGColor)).edgesIgnoringSafeArea(.top)
     }
 }
 

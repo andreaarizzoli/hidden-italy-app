@@ -1,0 +1,52 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AlertX",
+        "repositoryURL": "https://github.com/neel-makhecha/AlertX.git",
+        "state": {
+          "branch": "master",
+          "revision": "d5f82d61521c019ec83571c16f3351e7ef8191d0",
+          "version": null
+        }
+      },
+      {
+        "package": "PartialSheet",
+        "repositoryURL": "https://github.com/AndreaMiotto/PartialSheet.git",
+        "state": {
+          "branch": "master",
+          "revision": "9b905dcaeedb96d8c1793de945489ed76df6754f",
+          "version": null
+        }
+      },
+      {
+        "package": "SkeletonUI",
+        "repositoryURL": "https://github.com/CSolanaM/SkeletonUI.git",
+        "state": {
+          "branch": "master",
+          "revision": "a2d68e7c17b664576f100c3241455c843d241f3f",
+          "version": null
+        }
+      },
+      {
+        "package": "SnapshotTesting",
+        "repositoryURL": "https://github.com/pointfreeco/swift-snapshot-testing",
+        "state": {
+          "branch": null,
+          "revision": "114882386a815f4a2e6d8f2f7ee4857acd372438",
+          "version": "1.7.2"
+        }
+      },
+      {
+        "package": "ValidatedPropertyKit",
+        "repositoryURL": "https://github.com/SvenTiigi/ValidatedPropertyKit.git",
+        "state": {
+          "branch": "master",
+          "revision": "014eaa4812d8522e4a6e58b4ece8f76ae3ddcd58",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
