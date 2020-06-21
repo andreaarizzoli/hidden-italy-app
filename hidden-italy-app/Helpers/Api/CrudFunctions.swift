@@ -98,3 +98,12 @@ func cancel(name: String = "request") -> Void {
 func cancelAll() -> Void {
     Client.shared.cancelAll()
 }
+
+/**
+ * Get the base api url.
+ *
+ * @author Daniele Tulone <danieletulone.work@gmail.com>
+ */
+func baseApiURL() -> String {
+    return Client.shared.baseURL
+}

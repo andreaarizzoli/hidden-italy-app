@@ -35,13 +35,11 @@
 		0541621824998EE400525898 /* CreateMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541621724998EE400525898 /* CreateMonumentView.swift */; };
 		0569BC3D248E8AE0000B5972 /* MonumentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3C248E8AE0000B5972 /* MonumentListView.swift */; };
 		0569BC3F249186C8000B5972 /* MapMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3E249186C8000B5972 /* MapMonumentView.swift */; };
-		0591AAA9249E58DB00BBB949 /* crud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591AAA8249E58DB00BBB949 /* crud.swift */; };
-		0591AAAB249E58E200BBB949 /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591AAAA249E58E100BBB949 /* Wrapper.swift */; };
-		0591AAAD249E655100BBB949 /* TestApiWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591AAAC249E655100BBB949 /* TestApiWrapper.swift */; };
+		0591AAA9249E58DB00BBB949 /* CrudFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591AAA8249E58DB00BBB949 /* CrudFunctions.swift */; };
+		0591AAAB249E58E200BBB949 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591AAAA249E58E100BBB949 /* Client.swift */; };
 		0591AAAF249E9CE200BBB949 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591AAAE249E9CE200BBB949 /* Comment.swift */; };
 		05948F8D245FFBC1001BB4A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948F8C245FFBC1001BB4A6 /* AppDelegate.swift */; };
 		05948F8F245FFBC1001BB4A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948F8E245FFBC1001BB4A6 /* SceneDelegate.swift */; };
-		05948F91245FFBC1001BB4A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948F90245FFBC1001BB4A6 /* ContentView.swift */; };
 		05948F93245FFBC4001BB4A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05948F92245FFBC4001BB4A6 /* Assets.xcassets */; };
 		05948F96245FFBC4001BB4A6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05948F95245FFBC4001BB4A6 /* Preview Assets.xcassets */; };
 		05948F99245FFBC4001BB4A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05948F97245FFBC4001BB4A6 /* LaunchScreen.storyboard */; };
@@ -61,6 +59,9 @@
 		05E8C0A82480634C007B299F /* MapView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E8C0A72480634C007B299F /* MapView2.swift */; };
 		05F034812477472D004805BA /* summaryString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F034802477472D004805BA /* summaryString.swift */; };
 		524AFFCBDF9F2C10AA0B262F /* Pods_hidden_italy_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77042D062AEAF40F5B011575 /* Pods_hidden_italy_app.framework */; };
+		77889C16249F314500CC8C02 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77889C15249F314500CC8C02 /* Endpoints.swift */; };
+		77889C19249F355200CC8C02 /* EmptyBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77889C18249F355200CC8C02 /* EmptyBody.swift */; };
+		77889C1C249F36EE00CC8C02 /* FindNearest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77889C1B249F36EE00CC8C02 /* FindNearest.swift */; };
 		7901B425249BBEB40099A805 /* ProfileScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901B424249BBEB40099A805 /* ProfileScore.swift */; };
 		7901B427249BD6A50099A805 /* VisitedMonuments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901B426249BD6A50099A805 /* VisitedMonuments.swift */; };
 		7901B429249BD6CB0099A805 /* Prizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901B428249BD6CB0099A805 /* Prizes.swift */; };
@@ -96,14 +97,12 @@
 		0541621724998EE400525898 /* CreateMonumentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMonumentView.swift; sourceTree = "<group>"; };
 		0569BC3C248E8AE0000B5972 /* MonumentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentListView.swift; sourceTree = "<group>"; };
 		0569BC3E249186C8000B5972 /* MapMonumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMonumentView.swift; sourceTree = "<group>"; };
-		0591AAA8249E58DB00BBB949 /* crud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = crud.swift; path = ApiClient/crud.swift; sourceTree = "<group>"; };
-		0591AAAA249E58E100BBB949 /* Wrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Wrapper.swift; path = ApiClient/Wrapper.swift; sourceTree = "<group>"; };
-		0591AAAC249E655100BBB949 /* TestApiWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApiWrapper.swift; sourceTree = "<group>"; };
+		0591AAA8249E58DB00BBB949 /* CrudFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrudFunctions.swift; sourceTree = "<group>"; };
+		0591AAAA249E58E100BBB949 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		0591AAAE249E9CE200BBB949 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		05948F89245FFBC1001BB4A6 /* hidden-italy-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hidden-italy-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05948F8C245FFBC1001BB4A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05948F8E245FFBC1001BB4A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		05948F90245FFBC1001BB4A6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		05948F92245FFBC4001BB4A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05948F95245FFBC4001BB4A6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		05948F98245FFBC4001BB4A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -123,6 +122,9 @@
 		05E8C0A72480634C007B299F /* MapView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView2.swift; sourceTree = "<group>"; };
 		05F034802477472D004805BA /* summaryString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = summaryString.swift; sourceTree = "<group>"; };
 		77042D062AEAF40F5B011575 /* Pods_hidden_italy_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hidden_italy_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77889C15249F314500CC8C02 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		77889C18249F355200CC8C02 /* EmptyBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBody.swift; sourceTree = "<group>"; };
+		77889C1B249F36EE00CC8C02 /* FindNearest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNearest.swift; sourceTree = "<group>"; };
 		7901B424249BBEB40099A805 /* ProfileScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScore.swift; sourceTree = "<group>"; };
 		7901B426249BD6A50099A805 /* VisitedMonuments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedMonuments.swift; sourceTree = "<group>"; };
 		7901B428249BD6CB0099A805 /* Prizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prizes.swift; sourceTree = "<group>"; };
@@ -196,7 +198,6 @@
 				0526ED1A249D2E7100B598BC /* Optional+Extension.swift */,
 				0526ED16249D2B1C00B598BC /* CreateMonumentView2.swift */,
 				0526ED18249D2B3E00B598BC /* CreateMonumentViewModel.swift */,
-				0591AAAC249E655100BBB949 /* TestApiWrapper.swift */,
 			);
 			path = Monuments;
 			sourceTree = "<group>";
@@ -239,14 +240,12 @@
 			children = (
 				77880D532465582C00413151 /* Components */,
 				77880D512465540200413151 /* Helpers */,
-				77880D4C246553D800413151 /* Config */,
 				77E544BC2465531900C27BBA /* Views */,
 				79F63FDC2464BB0C00D25235 /* Map */,
 				0515858C24647F8A00194002 /* ModelViews */,
 				0515858B24647F7F00194002 /* Models */,
 				05948F8C245FFBC1001BB4A6 /* AppDelegate.swift */,
 				05948F8E245FFBC1001BB4A6 /* SceneDelegate.swift */,
-				05948F90245FFBC1001BB4A6 /* ContentView.swift */,
 				05948F92245FFBC4001BB4A6 /* Assets.xcassets */,
 				05948F97245FFBC4001BB4A6 /* LaunchScreen.storyboard */,
 				05948F9A245FFBC4001BB4A6 /* Info.plist */,
@@ -282,18 +281,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		77880D4C246553D800413151 /* Config */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
 		77880D512465540200413151 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				0591AAAA249E58E100BBB949 /* Wrapper.swift */,
-				0591AAA8249E58DB00BBB949 /* crud.swift */,
+				77889C14249F2F9700CC8C02 /* Api */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -312,6 +303,34 @@
 				79AF7A6A249E44C000D23420 /* HideKeyboard.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		77889C14249F2F9700CC8C02 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				77889C17249F352800CC8C02 /* Bodies */,
+				77889C15249F314500CC8C02 /* Endpoints.swift */,
+				0591AAA8249E58DB00BBB949 /* CrudFunctions.swift */,
+				0591AAAA249E58E100BBB949 /* Client.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		77889C17249F352800CC8C02 /* Bodies */ = {
+			isa = PBXGroup;
+			children = (
+				77889C1A249F36D300CC8C02 /* Monuments */,
+				77889C18249F355200CC8C02 /* EmptyBody.swift */,
+			);
+			path = Bodies;
+			sourceTree = "<group>";
+		};
+		77889C1A249F36D300CC8C02 /* Monuments */ = {
+			isa = PBXGroup;
+			children = (
+				77889C1B249F36EE00CC8C02 /* FindNearest.swift */,
+			);
+			path = Monuments;
 			sourceTree = "<group>";
 		};
 		77E544BC2465531900C27BBA /* Views */ = {
@@ -503,7 +522,6 @@
 				05948FA3245FFCF5001BB4A6 /* ManagerView.swift in Sources */,
 				0526ED17249D2B1C00B598BC /* CreateMonumentView2.swift in Sources */,
 				0569BC3F249186C8000B5972 /* MapMonumentView.swift in Sources */,
-				0591AAAD249E655100BBB949 /* TestApiWrapper.swift in Sources */,
 				0526ECFD249BC4F100B598BC /* ImagePickerView.swift in Sources */,
 				0541621824998EE400525898 /* CreateMonumentView.swift in Sources */,
 				79B58DD224720C990052BDC7 /* Landmark.swift in Sources */,
@@ -512,6 +530,7 @@
 				051585942464865300194002 /* Category.swift in Sources */,
 				0510B38E246DE5AB00BCB0C8 /* MonumentViewModel.swift in Sources */,
 				0569BC3D248E8AE0000B5972 /* MonumentListView.swift in Sources */,
+				77889C1C249F36EE00CC8C02 /* FindNearest.swift in Sources */,
 				0510B38C246DE4E800BCB0C8 /* MonumentCategory.swift in Sources */,
 				05C7D971247208CC00E02F47 /* MapView.swift in Sources */,
 				05948FA1245FFC45001BB4A6 /* SplashView.swift in Sources */,
@@ -523,8 +542,8 @@
 				05158586246405E700194002 /* CircleTab.swift in Sources */,
 				0526ED1D249D315600B598BC /* BrokenRule.swift in Sources */,
 				051585792462E36800194002 /* LoginView.swift in Sources */,
-				0591AAA9249E58DB00BBB949 /* crud.swift in Sources */,
-				0591AAAB249E58E200BBB949 /* Wrapper.swift in Sources */,
+				0591AAA9249E58DB00BBB949 /* CrudFunctions.swift in Sources */,
+				0591AAAB249E58E200BBB949 /* Client.swift in Sources */,
 				0526ED09249CFDDF00B598BC /* AlertX.swift in Sources */,
 				051585892464072000194002 /* RootCircleTabTabView.swift in Sources */,
 				05D0DE6B249A94B000F6DA2B /* CommentRowView.swift in Sources */,
@@ -539,13 +558,14 @@
 				05C7D974247208F000E02F47 /* LocationManager.swift in Sources */,
 				05D0DE69249A92ED00F6DA2B /* CustomModifier.swift in Sources */,
 				05F034812477472D004805BA /* summaryString.swift in Sources */,
+				77889C16249F314500CC8C02 /* Endpoints.swift in Sources */,
 				0526ED1F249D384800B598BC /* BrokenRulesView.swift in Sources */,
 				7901B429249BD6CB0099A805 /* Prizes.swift in Sources */,
 				7901B425249BBEB40099A805 /* ProfileScore.swift in Sources */,
+				77889C19249F355200CC8C02 /* EmptyBody.swift in Sources */,
 				0526ED19249D2B3E00B598BC /* CreateMonumentViewModel.swift in Sources */,
 				05C7D975247208F000E02F47 /* Coordinator.swift in Sources */,
 				0591AAAF249E9CE200BBB949 /* Comment.swift in Sources */,
-				05948F91245FFBC1001BB4A6 /* ContentView.swift in Sources */,
 				0510B38A246DE4A300BCB0C8 /* ImageModel.swift in Sources */,
 				05C7D97A2472FCA900E02F47 /* CategoryViewModel.swift in Sources */,
 				7901B427249BD6A50099A805 /* VisitedMonuments.swift in Sources */,
