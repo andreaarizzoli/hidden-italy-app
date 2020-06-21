@@ -231,6 +231,11 @@ class Client
         }
     }
     
+    /**
+     * Cancel a request.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
     public func cancel(name: String = "request") -> Void {
         guard self.queue[name] != nil else {
             return
@@ -238,5 +243,16 @@ class Client
         
         self.queue[name]?.cancel()
         self.queue[name] = nil
+    }
+    
+    /**
+     * Cancel all requests.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
+    public func cancelAll() -> Void {
+        for (key, _) in self.queue {
+            self.cancel(name: key)
+        }
     }
 }

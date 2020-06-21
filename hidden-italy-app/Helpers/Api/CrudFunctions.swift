@@ -80,3 +80,21 @@ func post<T: Codable, M: Codable>(
         name: name
     )
 }
+
+/**
+ * Cancel a request.
+ *
+ * @author Daniele Tulone <danieletulone.work@gmail.com>
+ */
+func cancel(name: String = "request") -> Void {
+    Client.shared.cancel(name: name)
+}
+
+/**
+ * Cancel all requests.
+ *
+ * @author Daniele Tulone <danieletulone.work@gmail.com>
+ */
+func cancelAll() -> Void {
+    Client.shared.cancelAll()
+}
