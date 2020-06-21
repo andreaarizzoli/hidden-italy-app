@@ -1,5 +1,5 @@
 //
-//  Wrapper.swift
+//  Client.swift
 //  hidden-italy-app
 //
 //  Created by Daniele Tulone on 19/06/2020.
@@ -13,7 +13,7 @@ func defaultFailure(res: Any) -> Void {
     print(res)
 }
 
-class ApiWrapper
+class Client
 {
     
     /**
@@ -46,7 +46,7 @@ class ApiWrapper
      *
      * @author Daniele Tulone <danieletulone.work@gmail.com>
      */
-    static let shared = ApiWrapper()
+    static let shared = Client()
     
     /**
      * Set private init for use this class as a singleton
@@ -231,6 +231,11 @@ class ApiWrapper
         }
     }
     
+    /**
+     * Cancel a request.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
     public func cancel(name: String = "request") -> Void {
         guard self.queue[name] != nil else {
             return
@@ -238,5 +243,16 @@ class ApiWrapper
         
         self.queue[name]?.cancel()
         self.queue[name] = nil
+    }
+    
+    /**
+     * Cancel all requests.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
+    public func cancelAll() -> Void {
+        for (key, _) in self.queue {
+            self.cancel(name: key)
+        }
     }
 }

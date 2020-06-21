@@ -13,14 +13,10 @@ import Combine
 class CategoryViewModel :ObservableObject {
     
     @Published var categoriesList = [Category] ()
-    
-    private var apiUrl = "http://127.0.0.1:8000/api/categories"
-    
-    func getCategories() {
-    
-        struct Parameters : Codable {}
         
-        getAll(uri: "/v1/categories", body: Parameters(), model: Category.self, success: {res in
+    func getCategories() {
+        
+        getAll(uri: Endpoints.Categories.index, body: EmptyBody(), model: Category.self, success: {res in
             self.categoriesList = res as! [Category]
         })
     }

@@ -1,5 +1,5 @@
 //
-//  crud.swift
+//  CrudFunctions.swift
 //  hidden-italy-app
 //
 //  Created by Daniele Tulone on 19/06/2020.
@@ -21,7 +21,7 @@ func get<T: Codable, M: Codable>(
     failure: @escaping (_ res: Any?) -> Void = defaultFailure,
     name: String = "request"
 ) -> Void {
-    ApiWrapper.shared.get(
+    Client.shared.get(
         uri: uri,
         body: body,
         model: model,
@@ -45,7 +45,7 @@ func getAll<T: Codable, M: Codable>(
     failure: @escaping (_ res: Any?) -> Void = defaultFailure,
     name: String = "request"
 ) -> Void {
-    ApiWrapper.shared.get(
+    Client.shared.get(
         uri: uri,
         body: body,
         model: model,
@@ -70,7 +70,7 @@ func post<T: Codable, M: Codable>(
     multiple: Bool = false,
     name: String = "request"
 ) -> Void {
-    ApiWrapper.shared.post(
+    Client.shared.post(
         uri: uri,
         body: body,
         model: model,
@@ -79,4 +79,31 @@ func post<T: Codable, M: Codable>(
         multiple: multiple,
         name: name
     )
+}
+
+/**
+ * Cancel a request.
+ *
+ * @author Daniele Tulone <danieletulone.work@gmail.com>
+ */
+func cancel(name: String = "request") -> Void {
+    Client.shared.cancel(name: name)
+}
+
+/**
+ * Cancel all requests.
+ *
+ * @author Daniele Tulone <danieletulone.work@gmail.com>
+ */
+func cancelAll() -> Void {
+    Client.shared.cancelAll()
+}
+
+/**
+ * Get the base api url.
+ *
+ * @author Daniele Tulone <danieletulone.work@gmail.com>
+ */
+func baseApiURL() -> String {
+    return Client.shared.baseURL
 }
