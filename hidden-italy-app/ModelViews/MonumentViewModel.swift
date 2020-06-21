@@ -16,32 +16,34 @@ class MonumentViewModel: ObservableObject {
     @Published var monumentList = [Monument]()
     @Published var userCoordinates = LocationManager()
     
-    struct parameters : Codable {
-        var lat: Double = 45.4641684
-        var lon: Double = 9.1916211
-    }
-        
     func getNearMonuments() {
 
-        getAll(uri: "/v1/monuments/find-nearest", body: parameters(), model: Monument.self, success: {res in
-            self.monumentList = res as! [Monument]
-        })
+        getAll(
+            uri: Endpoints.Monuments.findNearest,
+            body: FindNearest(
+                lat: 45.4641684,
+                lon: 9.1916211
+            ),
+            model: Monument.self,
+            success: {res in
+                self.monumentList = res as! [Monument]
+            }
+        )
     }
     
     func createMonument(name: String, description: String, address: String, number: String, cap: String, city: String, category: Int, image: UIImage){
 
         let coordinate = findCoordinates(address: address, number: number, city: city, cap: cap)
 
-        let parameters = [
+        let parameters: [String: Any] = [
             "name": name,
             "description": description,
             "lat": address,
             "lon": address,
             "user_id": "1",
             "main_category_id": category,
-            //            "url": ???,
             "categories": "2",
-            ] as [String : Any]
+        ]
     }
     
     func shortDescription(description: String){
