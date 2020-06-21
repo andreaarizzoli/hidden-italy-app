@@ -27,7 +27,6 @@ extension UIColor {
     }
 }
 
-
 let bgColor = UIColor(rgb: 0x486aec)
 let lightAccent = UIColor(rgb: 0x77c4ff)
 let darkAccent = UIColor(rgb: 0x0957be)

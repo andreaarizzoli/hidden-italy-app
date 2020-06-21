@@ -19,8 +19,3 @@ struct User: Codable, Identifiable {
     var created_at: String?
     var updated_at: String?
 }
-
-struct UsersList: Codable {
-    var users:[User] = []
-}
-

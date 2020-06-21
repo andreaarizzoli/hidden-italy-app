@@ -131,7 +131,7 @@ struct CreateMonumentView2: View {
                     VStack(alignment: .center) {
                         Text("")
                     }
-                    .modifier(OverlayBackGround())
+                    .modifier(OverlayBackground())
                     .onTapGesture(count: 1){self.isShowingOverlay = false}
                     
                     VStack(alignment: .center) {

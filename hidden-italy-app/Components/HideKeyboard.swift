@@ -37,13 +37,10 @@ struct AdaptsToSoftwareKeyboard: ViewModifier {
 }
 
 func hideKeyboard() {
-    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    UIApplication.shared.sendAction(
+        #selector(UIResponder.resignFirstResponder),
+        to: nil,
+        from: nil,
+        for: nil
+    )
 }
-
-// la funzione da mettere
-//VStack {
-//    Text("Barbagianni")
-//}.onTapGesture {
-//    hideKeyboard()
-//}.modifier(AdaptsToSoftwareKeyboard())
-

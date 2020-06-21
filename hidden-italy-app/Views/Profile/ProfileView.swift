@@ -26,7 +26,7 @@ struct ProfileView: View {
                             .foregroundColor(Color(bgColor))
                             .font(.system(size: 30))
                     }.sheet(isPresented: $showSheetSettingsView ) {
-                        userSettings(showSheetSettingsView: self.$showSheetSettingsView)
+                        UserSettings(showSheetSettingsView: self.$showSheetSettingsView)
                     }
                 }
                 
@@ -44,7 +44,7 @@ struct ProfileView: View {
             
             UserTab()
             
-        }.modifier(pSafeAreaTop())
+        }.modifier(PaddingSafeArea())
     }
 }
 

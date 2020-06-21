@@ -8,9 +8,7 @@
 
 import SwiftUI
 
-
-
-struct CommentRowView: View {
+struct CommentRow: View {
     init() {
        UITableView.appearance().tableFooterView = UIView()
     }

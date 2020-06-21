@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct userSettings: View {
+struct UserSettings: View {
     
     @Binding var showSheetSettingsView: Bool
     
@@ -34,6 +34,6 @@ struct userSettings: View {
 
 struct userSettings_Previews: PreviewProvider {
     static var previews: some View {
-        userSettings(showSheetSettingsView: .constant(true))
+        UserSettings(showSheetSettingsView: .constant(true))
     }
 }

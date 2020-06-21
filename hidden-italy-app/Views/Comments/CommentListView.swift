@@ -16,7 +16,7 @@ struct CommentListView: View {
     //    @State var delay = 0.7
     
     var body: some View {
-        VStack(alignment: .leading){
+        VStack(alignment: .leading) {
             
             Text("Commenti")
                 .font(.headline)
@@ -25,9 +25,7 @@ struct CommentListView: View {
             
             ScrollView{
                 ForEach(0..<15) { item in
-                    CommentRowView()
-                    //                    .animation(Animation.easeOut(duration: 0.7))
-                    
+                    CommentRow()                    
                 }
             }
         }.padding(.trailing)
