@@ -13,7 +13,7 @@ func defaultFailure(res: Any) -> Void {
     print(res)
 }
 
-class ApiWrapper
+class Client
 {
     
     /**
@@ -46,7 +46,7 @@ class ApiWrapper
      *
      * @author Daniele Tulone <danieletulone.work@gmail.com>
      */
-    static let shared = ApiWrapper()
+    static let shared = Client()
     
     /**
      * Set private init for use this class as a singleton
