@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+/**
+ * Empty body for get requests without parameters.
+ *
+ * @author Daniele Tulone <danieletulone.work@gmail.com>
+ */
+struct EmptyBody: Codable {
+    //
+}
