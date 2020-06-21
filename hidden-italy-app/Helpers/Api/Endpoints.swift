@@ -1,5 +1,5 @@
 //
-//  endpoints.swift
+//  Endpoints.swift
 //  hidden-italy-app
 //
 //  Created by Daniele Tulone on 21/06/2020.
