@@ -9,11 +9,10 @@
 import SwiftUI
 
 struct CommentListView: View {
-    init() {
-        UITableView.appearance().separatorStyle = .none
-    }
-    
-    //    @State var delay = 0.7
+        
+    @State var monument: Monument
+   // @ObservedObject var comments = CommentViewModel()
+    @State var count = 0
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -23,17 +22,24 @@ struct CommentListView: View {
                 .fontWeight(.bold)
                 .padding(Edge.Set.leading, 30)
             
-            ScrollView{
-                ForEach(0..<15) { item in
-                    CommentRow()                    
-                }
-            }
+            Text("\(monument.comments.count)")
+            Text("\(monument.comments[0]!.content)")
+            
+//            for (comment, in count) {
+//                Text(monument.comments[0]?.content)
+//            }
+            
         }.padding(.trailing)
+//        .onAppear {
+//            self.comments.get(monument_id: self.monument.id)
+//        }
     }
 }
 
+
+
 struct CommentListView_Previews: PreviewProvider {
     static var previews: some View {
-        CommentListView()
+        CommentListView(monument: testMonument)
     }
 }

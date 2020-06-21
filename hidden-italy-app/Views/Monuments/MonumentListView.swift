@@ -206,6 +206,10 @@ struct MonumentListView: View {
                                 MapMonumentView(latitude: self.monuments.testMonument.lat, longitude: self.monuments.testMonument.lon, regionRadius: 350)
                                     .frame(height: 100)
                             }
+                            if (self.expandedScreen_shown) {
+                                CommentListView(monument: self.monuments.testMonument)
+
+                            }
                             
                         }
                         .background(Color.white)
