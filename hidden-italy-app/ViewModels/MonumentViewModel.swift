@@ -31,8 +31,16 @@ class MonumentViewModel: ObservableObject {
         )
     }
     
-    func createMonument(name: String, description: String, address: String, number: String, cap: String, city: String, category: Int, image: UIImage){
-
+    func createMonument(
+        name: String,
+        description: String,
+        address: String,
+        number: String,
+        cap: String,
+        city: String,
+        category: Int,
+        image: UIImage
+    ) -> Void {
         let coordinate = findCoordinates(address: address, number: number, city: city, cap: cap)
 
         let parameters: [String: Any] = [
@@ -46,12 +54,6 @@ class MonumentViewModel: ObservableObject {
         ]
     }
     
-    func shortDescription(description: String){
-        //description.stringByPaddingToLength(3, withString: "", startingAtIndex: 0)
-        // var response = "blablabla"
-        // return response
-    }
-    
     func findCoordinates(address: String, number: String, city: String, cap: String) -> CLGeocoder {
         
         let geocoder = CLGeocoder()
@@ -63,6 +65,7 @@ class MonumentViewModel: ObservableObject {
             let lon = placemark?.location?.coordinate.longitude
             print("Lat: \(String(describing: lat)), Lon: \(String(describing: lon))")
         }
+        
         return geocoder
     }
 }

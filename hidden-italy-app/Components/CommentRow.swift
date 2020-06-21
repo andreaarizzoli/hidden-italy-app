@@ -44,9 +44,7 @@ struct CommentRow: View {
                     Text("Il duomo è molto carino e pieno di negozi.")
                         .font(.body)
                         .fontWeight(.regular)
-                        .padding(.bottom)
-                    
-                    
+                        .padding(.bottom)                    
                 }
             }
         }
@@ -55,6 +53,6 @@ struct CommentRow: View {
 
 struct CommentRowView_Previews: PreviewProvider {
     static var previews: some View {
-        CommentRowView()
+        CommentRow()
     }
 }

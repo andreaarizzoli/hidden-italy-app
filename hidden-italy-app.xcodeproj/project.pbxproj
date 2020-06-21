@@ -339,12 +339,12 @@
 		77880D532465582C00413151 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				7760A257249F5B0B00ED0A53 /* Modifiers */,
 				059516CB2489A14E0054AC5A /* Colors.swift */,
 				05D0DE6A249A94B000F6DA2B /* CommentRow.swift */,
 				79AF7A6A249E44C000D23420 /* HideKeyboard.swift */,
 				0526ECFC249BC4F100B598BC /* ImagePickerView.swift */,
 				7760A256249F59FE00ED0A53 /* Map */,
+				7760A257249F5B0B00ED0A53 /* Modifiers */,
 				05158587246406B700194002 /* Tab */,
 				0526ED20249D40E200B598BC /* Validation */,
 			);
