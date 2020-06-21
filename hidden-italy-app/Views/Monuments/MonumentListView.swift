@@ -18,7 +18,6 @@ struct MonumentListView: View {
     let SVWidth = UIScreen.main.bounds.width - 40
     
     @ObservedObject var monuments = MonumentViewModel()
-    @State var expandedItem = testMonument
     @State var expandedScreen_startPoint = CGRect(x: 0, y: 0, width: 100, height: 100)
     @State var expandedScreen_returnPoint = CGRect(x: 0, y: 0, width: 100, height: 100)
     @State var expandedScreen_shown = false
@@ -26,7 +25,7 @@ struct MonumentListView: View {
     var url = "http://127.0.0.1:8000/"
     let ciContext = CIContext()
     @State var showSheetMonumentView = false
-    
+
     var body: some View {
         
         ZStack{
@@ -57,21 +56,17 @@ struct MonumentListView: View {
                         return AnyView(
                             
                             ZStack (alignment: .bottom){
-                                
                                 URLImage(URL(string: "\(self.url)storage/\(thisItem.images[0]!.url)")!, processors: [
                                     CoreImageFilterProcessor(name: "CISepiaTone", parameters: [ kCIInputIntensityKey: 0.2 ], context: self.ciContext),
                                     Resize(size: CGSize(width: self.SVWidth, height: self.itemHeight), scale: UIScreen.main.scale) ], content: {
                                         $0.image
                                             .resizable()
-                                            //            .offset(x: self.show ? -330 : 0)
-                                            //            .rotationEffect(Angle(degrees: self.show ? 10 : 0))
                                             .clipped()
                                 })
                                 
-                                
                                 Button(action: {
-                                    self.expandedItem = thisItem
-                                    print(self.expandedItem)
+                                    self.monuments.testMonument = thisItem
+                                    print(self.monuments.testMonument)
                                     let x = geo.frame(in: .global).minX
                                     let y = geo.frame(in: .global).minY
                                     let thisRect = CGRect(x: x, y: y, width:self.SVWidth, height: self.itemHeight)
@@ -119,7 +114,20 @@ struct MonumentListView: View {
                             .shadow(color: .init(red: 0.1, green: 0.1, blue: 0.1)
                                 , radius: 11 , x: 0, y: 4)
                                 .clipShape(RoundedRectangle(cornerRadius: 15))
-                            
+                                .onTapGesture(perform: {
+                                    self.monuments.testMonument = thisItem
+                                    print(self.monuments.testMonument)
+                                    let x = geo.frame(in: .global).minX
+                                    let y = geo.frame(in: .global).minY
+                                    let thisRect = CGRect(x: x, y: y, width:self.SVWidth, height: self.itemHeight)
+                                    self.expandedScreen_returnPoint = thisRect
+                                    self.expandedScreen_startPoint =  thisRect
+                                    
+                                    Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { (timer) in
+                                        self.expandedScreen_shown = true
+                                        self.expandedScreen_startPoint =  CGRect(x: 0, y: 0, width:UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+                                    }
+                                })
                             
                         )
                     }.background(Color.clear.opacity(0.4))
@@ -127,12 +135,12 @@ struct MonumentListView: View {
                         .padding(.leading, 20)
                         .padding(.trailing, 20)
                         .padding(.bottom, 20)
-                }.coordinateSpace(name: "forEach")
+                    }.coordinateSpace(name: "forEach")
                 
                 //ForEach_End
             }
+            
             GeometryReader{geo -> AnyView in
-                let thisItem = self.expandedItem
                 
                 return AnyView(
                     
@@ -140,33 +148,26 @@ struct MonumentListView: View {
                         ScrollView{
                             VStack(spacing:0){
                                 ZStack{
-                                    Image("duomo")
-                                        .resizable()
-                                        .scaledToFill()
-                                        .offset(y: self.expandedScreen_shown ? 0 : 0)
-                                        .frame(width:self.expandedScreen_shown ? UIScreen.main.bounds.width : self.SVWidth, height: self.itemHeight)
+                                    if (self.expandedScreen_shown) {
+                                        URLImage(URL(string: "\(self.url)storage/\(self.monuments.testMonument.images[0]!.url)")!, processors: [
+//                                            CoreImageFilterProcessor(name: "CISepiaTone", parameters: [ kCIInputIntensityKey: 0.2 ], context: self.ciContext),
+                                            Resize(size: CGSize(width: self.SVWidth, height: self.itemHeight), scale: UIScreen.main.scale) ], content: {
+                                                $0.image
+                                                    .resizable()
+                                                    .clipped()
+                                        })
+                                    }
                                     
-                                    //                                URLImage(URL(string: "\(self.url)storage/\(thisItem.images[0]!.url)")!, content: {
-                                    //                                    $0.image
-                                    //                                    .resizable()
-                                    //                                    .scaledToFill()
-                                    //                                    .offset(y: self.expandedScreen_shown ? 0 : 0)
-                                    //                                    .frame(width:self.expandedScreen_shown ? UIScreen.main.bounds.width : self.SVWidth, height: self.itemHeight
-                                    //                                    )})
-                                    //                                    .clipped()
-                                    //                                    .background(Color.white)
-                                    //                                    .foregroundColor(Color.green)
-                                    //                                    .edgesIgnoringSafeArea(.top)
-                                    
+                        
                                     VStack{
                                         HStack{
                                             
                                             VStack(alignment: .leading){
                                                 
-                                                Text("\(thisItem.category_id)")
+                                                Text("\(self.monuments.testMonument.category_id)")
                                                     .font(.system(size: 18, weight: .bold, design: .default))
                                                     .foregroundColor(.init(red: 0.8 , green: 0.8, blue: 0.8  )).opacity(1.0)
-                                                Text("\(thisItem.name)")
+                                                Text("\(self.monuments.testMonument.name)")
                                                     .font(.system(size: 36, weight: .bold, design: .default))
                                                     .foregroundColor(.white)
                                             }.padding()
@@ -178,11 +179,11 @@ struct MonumentListView: View {
                                 }.frame(height:
                                     self.itemHeight
                                 ).zIndex(1)
-                                Text("\(thisItem.description)").padding().frame(
+                                Text("\(self.monuments.testMonument.description)").padding().frame(
                                     maxHeight: self.expandedScreen_shown ? .infinity : 0)
                             }
                             Button(action:{}){
-                                MapMonumentView(latitude: thisItem.lat, longitude: thisItem.lon, regionRadius: 350)
+                                MapMonumentView(latitude: self.monuments.testMonument.lat, longitude: self.monuments.testMonument.lon, regionRadius: 350)
                                     .frame(height: 100)
                             }
                             
@@ -212,7 +213,8 @@ struct MonumentListView: View {
                         }.offset(x: (UIScreen.main.bounds.width/2) - 30, y: (-1 * UIScreen.main.bounds.height/2) + 60)
                     }
                 )
-            }.edgesIgnoringSafeArea(.top)
+            }
+                .edgesIgnoringSafeArea(.top)
                 .opacity(self.expandedScreen_shown ? 1 : 0.0)
                 .animation(
                     Animation.easeInOut(duration: 0.05)

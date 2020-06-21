@@ -17,15 +17,13 @@
 		051585A12464AA2300194002 /* CommentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585A02464AA2300194002 /* CommentListView.swift */; };
 		0526ECFD249BC4F100B598BC /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ECFC249BC4F100B598BC /* ImagePickerView.swift */; };
 		0526ECFF249BD10C00B598BC /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ECFE249BD10C00B598BC /* UserViewModel.swift */; };
-		0526ED01249C0EFA00B598BC /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED00249C0EFA00B598BC /* Picker.swift */; };
 		0526ED04249C1AA600B598BC /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 0526ED03249C1AA600B598BC /* PartialSheet */; };
 		0526ED07249CF98A00B598BC /* AlertX in Frameworks */ = {isa = PBXBuildFile; productRef = 0526ED06249CF98A00B598BC /* AlertX */; };
-		0526ED09249CFDDF00B598BC /* AlertX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED08249CFDDF00B598BC /* AlertX.swift */; };
 		0526ED0B249D121F00B598BC /* UserTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED0A249D121E00B598BC /* UserTab.swift */; };
 		0526ED10249D1EED00B598BC /* ValidatedPropertyKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0526ED0F249D1EED00B598BC /* ValidatedPropertyKit */; };
 		0526ED17249D2B1C00B598BC /* CreateMonumentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED16249D2B1C00B598BC /* CreateMonumentView2.swift */; };
 		0526ED19249D2B3E00B598BC /* CreateMonumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED18249D2B3E00B598BC /* CreateMonumentViewModel.swift */; };
-		0526ED1B249D2E7100B598BC /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED1A249D2E7100B598BC /* Optional+Extension.swift */; };
+		0526ED1B249D2E7100B598BC /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED1A249D2E7100B598BC /* Optional.swift */; };
 		0526ED1D249D315600B598BC /* BrokenRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED1C249D315600B598BC /* BrokenRule.swift */; };
 		0541621824998EE400525898 /* CreateMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541621724998EE400525898 /* CreateMonumentView.swift */; };
 		0569BC3D248E8AE0000B5972 /* MonumentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3C248E8AE0000B5972 /* MonumentListView.swift */; };
@@ -86,12 +84,10 @@
 		051585A02464AA2300194002 /* CommentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListView.swift; sourceTree = "<group>"; };
 		0526ECFC249BC4F100B598BC /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		0526ECFE249BD10C00B598BC /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
-		0526ED00249C0EFA00B598BC /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
-		0526ED08249CFDDF00B598BC /* AlertX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertX.swift; sourceTree = "<group>"; };
 		0526ED0A249D121E00B598BC /* UserTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTab.swift; sourceTree = "<group>"; };
 		0526ED16249D2B1C00B598BC /* CreateMonumentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMonumentView2.swift; sourceTree = "<group>"; };
 		0526ED18249D2B3E00B598BC /* CreateMonumentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMonumentViewModel.swift; sourceTree = "<group>"; };
-		0526ED1A249D2E7100B598BC /* Optional+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extension.swift"; sourceTree = "<group>"; };
+		0526ED1A249D2E7100B598BC /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		0526ED1C249D315600B598BC /* BrokenRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrokenRule.swift; sourceTree = "<group>"; };
 		0541621724998EE400525898 /* CreateMonumentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMonumentView.swift; sourceTree = "<group>"; };
 		0569BC3C248E8AE0000B5972 /* MonumentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentListView.swift; sourceTree = "<group>"; };
@@ -197,10 +193,7 @@
 				0541621724998EE400525898 /* CreateMonumentView.swift */,
 				059516C924898E160054AC5A /* MonumentListView2.swift */,
 				0569BC3C248E8AE0000B5972 /* MonumentListView.swift */,
-				0526ED00249C0EFA00B598BC /* Picker.swift */,
-				0526ED08249CFDDF00B598BC /* AlertX.swift */,
 				0526ED1C249D315600B598BC /* BrokenRule.swift */,
-				0526ED1A249D2E7100B598BC /* Optional+Extension.swift */,
 				0526ED16249D2B1C00B598BC /* CreateMonumentView2.swift */,
 				0526ED18249D2B3E00B598BC /* CreateMonumentViewModel.swift */,
 			);
@@ -287,6 +280,7 @@
 		7760A255249F53AF00ED0A53 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0526ED1A249D2E7100B598BC /* Optional.swift */,
 				05F034802477472D004805BA /* String.swift */,
 			);
 			path = Extensions;
@@ -552,7 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7760A269249F5CB400ED0A53 /* LoginText.swift in Sources */,
-				0526ED1B249D2E7100B598BC /* Optional+Extension.swift in Sources */,
+				0526ED1B249D2E7100B598BC /* Optional.swift in Sources */,
 				051585752462E32F00194002 /* RegisterUserView.swift in Sources */,
 				05C7D9772472090400E02F47 /* Map.swift in Sources */,
 				05948FA3245FFCF5001BB4A6 /* ManagerView.swift in Sources */,
@@ -583,11 +577,9 @@
 				051585792462E36800194002 /* LoginView.swift in Sources */,
 				0591AAA9249E58DB00BBB949 /* CrudFunctions.swift in Sources */,
 				0591AAAB249E58E200BBB949 /* Client.swift in Sources */,
-				0526ED09249CFDDF00B598BC /* AlertX.swift in Sources */,
 				05D0DE6B249A94B000F6DA2B /* CommentRow.swift in Sources */,
 				79ACF99D249AB78700B14999 /* ProfileView.swift in Sources */,
 				79ACF99F249AB9F300B14999 /* UserSettings.swift in Sources */,
-				0526ED01249C0EFA00B598BC /* Picker.swift in Sources */,
 				0526ECFF249BD10C00B598BC /* UserViewModel.swift in Sources */,
 				059516CA24898E160054AC5A /* MonumentListView2.swift in Sources */,
 				0526ED0B249D121F00B598BC /* UserTab.swift in Sources */,

@@ -45,6 +45,15 @@ let testMonument = Monument(
     created_at: "sjodjifs",
     updated_at: "blabla",
     categories: [],
-    images: [],
+    images: [ImageModel(
+        id: 0,
+        title: "",
+        description: "",
+        url: "",
+        monument_id: 0,
+        user_id: 0,
+        created_at: "",
+        updated_at: ""
+    )],
     comments: []
 )

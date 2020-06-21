@@ -1,5 +1,5 @@
 //
-//  summaryString.swift
+//  String.swift
 //  hidden-italy-app
 //
 //  Created by Andrea Arizzoli on 22/05/2020.

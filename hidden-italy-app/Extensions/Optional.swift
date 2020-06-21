@@ -1,5 +1,5 @@
 //
-//  Optional+Extension.swift
+//  Optional.swift
 //  hidden-italy-app
 //
 //  Created by Andrea Arizzoli on 19/06/2020.
@@ -17,6 +17,7 @@ extension Optional where Wrapped == String {
             self = newValue
         }
     }
+    
     public var bound: String {
         get {
             return _bound ?? ""
