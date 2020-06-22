@@ -48,7 +48,7 @@ struct RootTabView: View {
                     Image(systemName: "person")
                     Text("Profilo")
             }
-        }.accentColor(Color(Accent))
+            }.accentColor(Color(Accent)).modifier(PaddingSafeArea())
     }
     
 }
