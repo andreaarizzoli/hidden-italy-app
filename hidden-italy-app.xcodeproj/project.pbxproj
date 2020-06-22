@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		050FCB0824A019C300235742 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050FCB0724A019C300235742 /* ContentView.swift */; };
+		050FCB0C24A0FFF000235742 /* CreateComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050FCB0B24A0FFF000235742 /* CreateComment.swift */; };
 		0510B38A246DE4A300BCB0C8 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0510B389246DE4A300BCB0C8 /* ImageModel.swift */; };
 		0510B38E246DE5AB00BCB0C8 /* MonumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0510B38D246DE5AB00BCB0C8 /* MonumentViewModel.swift */; };
 		051585752462E32F00194002 /* RegisterUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585742462E32F00194002 /* RegisterUserView.swift */; };
@@ -23,9 +23,10 @@
 		0526ED0B249D121F00B598BC /* UserTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED0A249D121E00B598BC /* UserTab.swift */; };
 		0526ED10249D1EED00B598BC /* ValidatedPropertyKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0526ED0F249D1EED00B598BC /* ValidatedPropertyKit */; };
 		0526ED17249D2B1C00B598BC /* CreateMonumentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED16249D2B1C00B598BC /* CreateMonumentView2.swift */; };
-		0526ED19249D2B3E00B598BC /* CreateMonumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED18249D2B3E00B598BC /* CreateMonumentViewModel.swift */; };
+		0526ED19249D2B3E00B598BC /* ValidationMonument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED18249D2B3E00B598BC /* ValidationMonument.swift */; };
 		0526ED1B249D2E7100B598BC /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED1A249D2E7100B598BC /* Optional.swift */; };
 		0526ED1D249D315600B598BC /* BrokenRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED1C249D315600B598BC /* BrokenRule.swift */; };
+		05342F5B24A11AD800F9589B /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05342F5A24A11AD800F9589B /* TextView.swift */; };
 		0541621824998EE400525898 /* CreateMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541621724998EE400525898 /* CreateMonumentView.swift */; };
 		0569BC3D248E8AE0000B5972 /* MonumentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3C248E8AE0000B5972 /* MonumentListView.swift */; };
 		0569BC3F249186C8000B5972 /* MapMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3E249186C8000B5972 /* MapMonumentView.swift */; };
@@ -33,7 +34,6 @@
 		0591AAAB249E58E200BBB949 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591AAAA249E58E100BBB949 /* Client.swift */; };
 		0591AAAF249E9CE200BBB949 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591AAAE249E9CE200BBB949 /* Comment.swift */; };
 		0591AAB1249F86D700BBB949 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591AAB0249F86D600BBB949 /* CommentViewModel.swift */; };
-		0591AAB3249F987100BBB949 /* FindComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591AAB2249F987100BBB949 /* FindComment.swift */; };
 		05948F8D245FFBC1001BB4A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948F8C245FFBC1001BB4A6 /* AppDelegate.swift */; };
 		05948F8F245FFBC1001BB4A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948F8E245FFBC1001BB4A6 /* SceneDelegate.swift */; };
 		05948F93245FFBC4001BB4A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05948F92245FFBC4001BB4A6 /* Assets.xcassets */; };
@@ -77,7 +77,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		050FCB0724A019C300235742 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		050FCB0B24A0FFF000235742 /* CreateComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateComment.swift; sourceTree = "<group>"; };
 		0510B389246DE4A300BCB0C8 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		0510B38D246DE5AB00BCB0C8 /* MonumentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentViewModel.swift; sourceTree = "<group>"; };
 		051585742462E32F00194002 /* RegisterUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserView.swift; sourceTree = "<group>"; };
@@ -90,9 +90,10 @@
 		0526ECFE249BD10C00B598BC /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		0526ED0A249D121E00B598BC /* UserTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTab.swift; sourceTree = "<group>"; };
 		0526ED16249D2B1C00B598BC /* CreateMonumentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMonumentView2.swift; sourceTree = "<group>"; };
-		0526ED18249D2B3E00B598BC /* CreateMonumentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMonumentViewModel.swift; sourceTree = "<group>"; };
+		0526ED18249D2B3E00B598BC /* ValidationMonument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationMonument.swift; sourceTree = "<group>"; };
 		0526ED1A249D2E7100B598BC /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		0526ED1C249D315600B598BC /* BrokenRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrokenRule.swift; sourceTree = "<group>"; };
+		05342F5A24A11AD800F9589B /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		0541621724998EE400525898 /* CreateMonumentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMonumentView.swift; sourceTree = "<group>"; };
 		0569BC3C248E8AE0000B5972 /* MonumentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentListView.swift; sourceTree = "<group>"; };
 		0569BC3E249186C8000B5972 /* MapMonumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMonumentView.swift; sourceTree = "<group>"; };
@@ -100,7 +101,6 @@
 		0591AAAA249E58E100BBB949 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		0591AAAE249E9CE200BBB949 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		0591AAB0249F86D600BBB949 /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
-		0591AAB2249F987100BBB949 /* FindComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindComment.swift; sourceTree = "<group>"; };
 		05948F89245FFBC1001BB4A6 /* hidden-italy-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hidden-italy-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05948F8C245FFBC1001BB4A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05948F8E245FFBC1001BB4A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +162,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		050FCB0D24A1008000235742 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				050FCB0B24A0FFF000235742 /* CreateComment.swift */,
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
 		05158587246406B700194002 /* Tab */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,7 +210,7 @@
 				0569BC3C248E8AE0000B5972 /* MonumentListView.swift */,
 				0526ED1C249D315600B598BC /* BrokenRule.swift */,
 				0526ED16249D2B1C00B598BC /* CreateMonumentView2.swift */,
-				0526ED18249D2B3E00B598BC /* CreateMonumentViewModel.swift */,
+				0526ED18249D2B3E00B598BC /* ValidationMonument.swift */,
 			);
 			path = Monuments;
 			sourceTree = "<group>";
@@ -211,7 +219,6 @@
 			isa = PBXGroup;
 			children = (
 				051585A02464AA2300194002 /* CommentListView.swift */,
-				050FCB0724A019C300235742 /* ContentView.swift */,
 			);
 			path = Comments;
 			sourceTree = "<group>";
@@ -345,6 +352,7 @@
 				05D0DE6A249A94B000F6DA2B /* CommentRow.swift */,
 				79AF7A6A249E44C000D23420 /* HideKeyboard.swift */,
 				0526ECFC249BC4F100B598BC /* ImagePickerView.swift */,
+				05342F5A24A11AD800F9589B /* TextView.swift */,
 				7760A256249F59FE00ED0A53 /* Map */,
 				7760A257249F5B0B00ED0A53 /* Modifiers */,
 				05158587246406B700194002 /* Tab */,
@@ -367,6 +375,7 @@
 		77889C17249F352800CC8C02 /* Bodies */ = {
 			isa = PBXGroup;
 			children = (
+				050FCB0D24A1008000235742 /* Comments */,
 				77889C1A249F36D300CC8C02 /* Monuments */,
 				77889C18249F355200CC8C02 /* EmptyBody.swift */,
 			);
@@ -377,7 +386,6 @@
 			isa = PBXGroup;
 			children = (
 				77889C1B249F36EE00CC8C02 /* FindNearest.swift */,
-				0591AAB2249F987100BBB949 /* FindComment.swift */,
 			);
 			path = Monuments;
 			sourceTree = "<group>";
@@ -558,6 +566,7 @@
 				0526ED1B249D2E7100B598BC /* Optional.swift in Sources */,
 				051585752462E32F00194002 /* RegisterUserView.swift in Sources */,
 				05C7D9772472090400E02F47 /* Map.swift in Sources */,
+				05342F5B24A11AD800F9589B /* TextView.swift in Sources */,
 				05948FA3245FFCF5001BB4A6 /* ManagerView.swift in Sources */,
 				0526ED17249D2B1C00B598BC /* CreateMonumentView2.swift in Sources */,
 				0569BC3F249186C8000B5972 /* MapMonumentView.swift in Sources */,
@@ -565,7 +574,6 @@
 				0541621824998EE400525898 /* CreateMonumentView.swift in Sources */,
 				0591AAB1249F86D700BBB949 /* CommentViewModel.swift in Sources */,
 				79B58DD224720C990052BDC7 /* Landmark.swift in Sources */,
-				050FCB0824A019C300235742 /* ContentView.swift in Sources */,
 				7760A26F249F5D1B00ED0A53 /* PaddingSafeArea.swift in Sources */,
 				059516CC2489A14E0054AC5A /* Colors.swift in Sources */,
 				05948F8D245FFBC1001BB4A6 /* AppDelegate.swift in Sources */,
@@ -577,7 +585,6 @@
 				77889C1C249F36EE00CC8C02 /* FindNearest.swift in Sources */,
 				05C7D971247208CC00E02F47 /* MapView.swift in Sources */,
 				7760A25E249F5B8F00ED0A53 /* FormTextFieldText.swift in Sources */,
-				0591AAB3249F987100BBB949 /* FindComment.swift in Sources */,
 				05948FA1245FFC45001BB4A6 /* SplashView.swift in Sources */,
 				7760A26D249F5CF800ED0A53 /* FormButton.swift in Sources */,
 				05948F8F245FFBC1001BB4A6 /* SceneDelegate.swift in Sources */,
@@ -591,6 +598,7 @@
 				0591AAAB249E58E200BBB949 /* Client.swift in Sources */,
 				05D0DE6B249A94B000F6DA2B /* CommentRow.swift in Sources */,
 				79ACF99D249AB78700B14999 /* ProfileView.swift in Sources */,
+				050FCB0C24A0FFF000235742 /* CreateComment.swift in Sources */,
 				79ACF99F249AB9F300B14999 /* UserSettings.swift in Sources */,
 				0526ECFF249BD10C00B598BC /* UserViewModel.swift in Sources */,
 				059516CA24898E160054AC5A /* MonumentListView2.swift in Sources */,
@@ -606,7 +614,7 @@
 				7760A265249F5C4800ED0A53 /* ValidationErrorMessage.swift in Sources */,
 				7901B425249BBEB40099A805 /* ProfileScore.swift in Sources */,
 				77889C19249F355200CC8C02 /* EmptyBody.swift in Sources */,
-				0526ED19249D2B3E00B598BC /* CreateMonumentViewModel.swift in Sources */,
+				0526ED19249D2B3E00B598BC /* ValidationMonument.swift in Sources */,
 				05C7D975247208F000E02F47 /* Coordinator.swift in Sources */,
 				0591AAAF249E9CE200BBB949 /* Comment.swift in Sources */,
 				0510B38A246DE4A300BCB0C8 /* ImageModel.swift in Sources */,

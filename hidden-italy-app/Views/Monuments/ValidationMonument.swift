@@ -9,7 +9,7 @@
 import Foundation
 import ValidatedPropertyKit
 
-class CreateMonumentViewModel: ObservableObject {
+class ValidationMonument: ObservableObject {
     
     @Published private(set) var brokenRules = [BrokenRule]()
     
@@ -50,7 +50,6 @@ class CreateMonumentViewModel: ObservableObject {
             "la città": _city.validationError,
             "la categoria": _selectedCategoryId.validationError,
             "l'immagine": _image.validationError,
-
         ]
         
         _ = rules.compactMap { pair in
