@@ -25,4 +25,8 @@ enum Endpoints {
             return "/v1/categories/" + id
         }
     }
+    
+    enum Comments {
+        static var create: String = "/v1/comments"
+    }
 }
