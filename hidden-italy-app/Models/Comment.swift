@@ -15,4 +15,5 @@ struct Comment: Codable, Identifiable {
     var monument_id: Int
     var created_at: String?
     var updated_at: String?
+    var user: User
 }

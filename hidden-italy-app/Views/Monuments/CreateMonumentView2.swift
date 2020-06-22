@@ -14,7 +14,7 @@ struct CreateMonumentView2: View {
     
     @ObservedObject var monuments = MonumentViewModel()
     @ObservedObject var categories = CategoryViewModel()
-    @ObservedObject var creationMonument = CreateMonumentViewModel()
+    @ObservedObject var creationMonument = ValidationMonument()
 
     @Binding var showSheetMonumentView: Bool
     
@@ -112,7 +112,6 @@ struct CreateMonumentView2: View {
                         
                         Button(action:  {
                             if (self.newImage) {self.creationMonument.image = 1}
-                            self.creationMonument.validate()
                             self.validateError = true
                             if (self.creationMonument.validate()) {
                                 print("inseriamo il monumento")

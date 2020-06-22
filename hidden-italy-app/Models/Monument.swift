@@ -23,7 +23,7 @@ struct Monument: Codable, Identifiable {
     var updated_at: String?
     var categories: [Category?]
     var images: [ImageModel?]
-    var comments: [Comment?]
+    var comments: [Comment] = []
 }
 
 let testMonument = Monument(
@@ -55,5 +55,22 @@ let testMonument = Monument(
         created_at: "",
         updated_at: ""
     )],
-    comments: []
+    comments: [Comment(
+        id: 1,
+        content: "Blablabla",
+        user_id: 0,
+        monument_id: 1,
+        created_at: "",
+        updated_at: "",
+        user: User(
+            id: 1,
+            firstname: "Jack",
+            lastname: "Sparrot",
+            email: "alskdlsfk",
+            email_verified_at: "salkdlfa",
+            role_id: 1,
+            created_at: "dklfaksd",
+            updated_at: "lsdfkjlas"
+        )
+    )]
 )
