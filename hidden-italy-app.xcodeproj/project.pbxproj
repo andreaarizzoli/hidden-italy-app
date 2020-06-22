@@ -52,6 +52,11 @@
 		05D0DE6B249A94B000F6DA2B /* CommentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D0DE6A249A94B000F6DA2B /* CommentRow.swift */; };
 		05F034812477472D004805BA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F034802477472D004805BA /* String.swift */; };
 		524AFFCBDF9F2C10AA0B262F /* Pods_hidden_italy_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77042D062AEAF40F5B011575 /* Pods_hidden_italy_app.framework */; };
+		77066E3F24A1569E00A74057 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77066E3E24A1569E00A74057 /* Input.swift */; };
+		77066E4224A15B8A00A74057 /* LoginBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77066E4124A15B8A00A74057 /* LoginBody.swift */; };
+		77066E4524A1631E00A74057 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77066E4424A1631E00A74057 /* Role.swift */; };
+		77066E4924A1633100A74057 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77066E4824A1633100A74057 /* Login.swift */; };
+		77066E4B24A1633A00A74057 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77066E4A24A1633A00A74057 /* Register.swift */; };
 		7760A25A249F5B1D00ED0A53 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7760A259249F5B1D00ED0A53 /* Form.swift */; };
 		7760A25C249F5B4200ED0A53 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7760A25B249F5B4200ED0A53 /* FormTextField.swift */; };
 		7760A25E249F5B8F00ED0A53 /* FormTextFieldText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7760A25D249F5B8F00ED0A53 /* FormTextFieldText.swift */; };
@@ -123,6 +128,11 @@
 		05D0DE6A249A94B000F6DA2B /* CommentRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentRow.swift; sourceTree = "<group>"; };
 		05F034802477472D004805BA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		77042D062AEAF40F5B011575 /* Pods_hidden_italy_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hidden_italy_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77066E3E24A1569E00A74057 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
+		77066E4124A15B8A00A74057 /* LoginBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBody.swift; sourceTree = "<group>"; };
+		77066E4424A1631E00A74057 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
+		77066E4824A1633100A74057 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		77066E4A24A1633A00A74057 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		7760A259249F5B1D00ED0A53 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
 		7760A25B249F5B4200ED0A53 /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
 		7760A25D249F5B8F00ED0A53 /* FormTextFieldText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextFieldText.swift; sourceTree = "<group>"; };
@@ -187,6 +197,7 @@
 		0515858B24647F7F00194002 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				77066E4324A162F600A74057 /* Auth */,
 				79B58DD124720C990052BDC7 /* Landmark.swift */,
 				0515858D2464823500194002 /* Monument.swift */,
 				0510B389246DE4A300BCB0C8 /* ImageModel.swift */,
@@ -299,6 +310,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		77066E4024A15B8100A74057 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				77066E4124A15B8A00A74057 /* LoginBody.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		77066E4324A162F600A74057 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				77066E4424A1631E00A74057 /* Role.swift */,
+				77066E4824A1633100A74057 /* Login.swift */,
+				77066E4A24A1633A00A74057 /* Register.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		7760A255249F53AF00ED0A53 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +392,7 @@
 				79AF7A6A249E44C000D23420 /* HideKeyboard.swift */,
 				0526ECFC249BC4F100B598BC /* ImagePickerView.swift */,
 				05342F5A24A11AD800F9589B /* TextView.swift */,
+				77066E3E24A1569E00A74057 /* Input.swift */,
 				7760A256249F59FE00ED0A53 /* Map */,
 				7760A257249F5B0B00ED0A53 /* Modifiers */,
 				05158587246406B700194002 /* Tab */,
@@ -386,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				050FCB0D24A1008000235742 /* Comments */,
+				77066E4024A15B8100A74057 /* Auth */,
 				77889C18249F355200CC8C02 /* EmptyBody.swift */,
 				77889C1A249F36D300CC8C02 /* Monuments */,
 			);
@@ -576,6 +607,7 @@
 				0526ED1B249D2E7100B598BC /* Optional.swift in Sources */,
 				7968C565249FA2B400A4464D /* ButtonCircle.swift in Sources */,
 				051585752462E32F00194002 /* RegisterUserView.swift in Sources */,
+				77066E4B24A1633A00A74057 /* Register.swift in Sources */,
 				05C7D9772472090400E02F47 /* Map.swift in Sources */,
 				05342F5B24A11AD800F9589B /* TextView.swift in Sources */,
 				05948FA3245FFCF5001BB4A6 /* ManagerView.swift in Sources */,
@@ -599,11 +631,14 @@
 				7760A25E249F5B8F00ED0A53 /* FormTextFieldText.swift in Sources */,
 				05948FA1245FFC45001BB4A6 /* SplashView.swift in Sources */,
 				7760A26D249F5CF800ED0A53 /* FormButton.swift in Sources */,
+				77066E4524A1631E00A74057 /* Role.swift in Sources */,
 				05948F8F245FFBC1001BB4A6 /* SceneDelegate.swift in Sources */,
 				79AF7A6B249E44C000D23420 /* HideKeyboard.swift in Sources */,
 				051585922464863000194002 /* User.swift in Sources */,
 				7760A25C249F5B4200ED0A53 /* FormTextField.swift in Sources */,
 				0515858E2464823500194002 /* Monument.swift in Sources */,
+				77066E4924A1633100A74057 /* Login.swift in Sources */,
+				77066E3F24A1569E00A74057 /* Input.swift in Sources */,
 				0526ED1D249D315600B598BC /* BrokenRule.swift in Sources */,
 				0591AAA9249E58DB00BBB949 /* CrudFunctions.swift in Sources */,
 				0591AAAB249E58E200BBB949 /* Client.swift in Sources */,
@@ -624,6 +659,7 @@
 				7901B429249BD6CB0099A805 /* Prizes.swift in Sources */,
 				7760A263249F5BF500ED0A53 /* Icon.swift in Sources */,
 				7760A265249F5C4800ED0A53 /* ValidationErrorMessage.swift in Sources */,
+				77066E4224A15B8A00A74057 /* LoginBody.swift in Sources */,
 				7901B425249BBEB40099A805 /* ProfileScore.swift in Sources */,
 				7968C567249FADBD00A4464D /* LoginView.swift in Sources */,
 				77889C19249F355200CC8C02 /* EmptyBody.swift in Sources */,

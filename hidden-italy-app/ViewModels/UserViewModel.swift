@@ -10,41 +10,73 @@ import Foundation
 import Alamofire
 import Combine
 
-class UserViewModel :ObservableObject {
+class UserViewModel: ObservableObject {
     
-    //@Published var user = User()
+    /**
+     * Struct used during login flow.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
+    @Published var newLogin = LoginBody(email: "", password: "")
     
-    private var apiUrl = "http://127.0.0.1:8000/api/register"
+    /**
+     * The field name in which store token.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
+    private static var tokenName = "token"
     
-    func createUser(name: String, surname: String, email: String, password: String) {
-        
-        //        let parameters: [String: AnyObject] = [
-        //            "firstname" : name as AnyObject,
-        //            "lastname" : surname as AnyObject,
-        //            "email" : email as AnyObject,
-        //            "password" : password as AnyObject,
-        //        ]
-        //
-        //        let user: User = [
-        //             "firstname" : name as AnyObject,
-        //             "lastname" : surname as AnyObject,
-        //             "email" : email as AnyObject,
-        //             "password" : password as AnyObject,
-        //         ]
-        //
-        //        let data = Data("data".utf8)
-        
-        //        AF.upload(parameters, to: "http://127.0.0.1:8000/api/register").responseDecodable(of: HTTPBinResponse.self) { response in
-        //            debugPrint(response)
-        //        }
+    /**
+     * Get the token.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
+    func getToken() -> String {
+        return String(
+            UserDefaults.standard.string(forKey: UserViewModel.tokenName) ?? ""
+        )
+    }
+    
+    /**
+     * Get the token.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
+    static func getToken() -> String {
+        return String(
+            UserDefaults.standard.string(forKey: UserViewModel.tokenName) ?? ""
+        )
+    }
+
+    /**
+     * Send login request to api and obtain token.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
+    func login(callback: @escaping (Any?) -> Void) -> Void {
+        post(
+            uri: "/v1/auth/login",
+            body: LoginBody(
+                email: self.newLogin.email,
+                password: self.newLogin.password
+            ),
+            model: Login.self,
+            success: {res in
+                let response = res as! Login
+
+                self.setApiToken(token: response.token)
+                
+                callback(res)
+            }
+        )
+    }
+    
+    /**
+     * Set the token.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
+    func setApiToken(token: String) -> Void {
+        UserDefaults.standard.set(token, forKey: UserViewModel.tokenName)
     }
 }
-
-
-
-struct Login: Encodable {
-    let email: String
-    let password: String
-}
-
-

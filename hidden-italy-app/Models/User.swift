@@ -17,6 +17,7 @@ struct User: Codable, Identifiable {
     var role_id: Int
     var created_at: String?
     var updated_at: String?
+    var role: Role?
 }
 
 
