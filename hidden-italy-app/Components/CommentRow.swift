@@ -9,50 +9,47 @@
 import SwiftUI
 
 struct CommentRow: View {
-    init() {
-       UITableView.appearance().tableFooterView = UIView()
-    }
+//    init() {
+//       UITableView.appearance().tableFooterView = UIView()
+//    }
+    
+    @ObservedObject var comments = CommentViewModel()
+    @State var comment: Comment
+    
     
     var body: some View {
-        VStack(alignment:.leading) {
+        VStack(alignment:.trailing) {
             HStack(alignment: .top){
+                
+                //FACCIAMO UNA QUERY SOLO PER RECUPERARE L'IMMAGINE DEL UTENTE?
                 Image("duomoComment")
                     .resizable()
-                    .frame(width: 65, height: 65)
+                    .frame(width: 30, height: 30)
                     .clipShape(Circle())
                     .shadow(
                         color: Color.black.opacity(0.5),
                         radius: 5, x: 5, y: 5
                     )
-                    .padding(.leading)
                     .padding(.trailing)
-                
-               
-                
+                                
                 VStack(alignment:.leading) {
-                    HStack(){
-                        Text("zola91")
-                        .font(.custom("Avenir-Black", size: 16))
-                        .fontWeight(.regular)
-                        .padding(.bottom)
-                        Text("24 mar 19:00")
-                            .font(.caption)
-                        .fontWeight(.regular)
-                        .padding(.bottom)
-                    }
-                    
-                    Text("Il duomo è molto carino e pieno di negozi.")
-                        .font(.body)
-                        .fontWeight(.regular)
-                        .padding(.bottom)                    
+                    Text("\(comment.id)")
+                    .font(.system(size: 14))
+                    .fontWeight(.light)
+
+                    Text("\(comment.content)")
+                    .font(.system(size: 14))
+
                 }
-            }
+                Spacer()
+            }.padding(.horizontal)
+
         }
     }
 }
 
 struct CommentRowView_Previews: PreviewProvider {
     static var previews: some View {
-        CommentRow()
+        CommentRow(comment: CommentViewModel().testComment)
     }
 }

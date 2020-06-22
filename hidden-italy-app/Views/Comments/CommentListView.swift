@@ -11,28 +11,58 @@ import SwiftUI
 struct CommentListView: View {
         
     @State var monument: Monument
-   // @ObservedObject var comments = CommentViewModel()
-    @State var count = 0
+    @ObservedObject var comments = CommentViewModel()
+    @State var isShowingTextComment: Bool = false
+    @State var newComment: String = ""
     
     var body: some View {
-        VStack(alignment: .leading) {
-            
-            Text("Commenti")
-                .font(.headline)
-                .fontWeight(.bold)
-                .padding(Edge.Set.leading, 30)
-            
-            Text("\(monument.comments.count)")
-            Text("\(monument.comments[0]!.content)")
-            
-//            for (comment, in count) {
-//                Text(monument.comments[0]?.content)
+        ZStack {
+            VStack() {
+                        
+                HStack{
+                    
+                    Text("Commenti:")
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        withAnimation {
+                            if (self.isShowingTextComment){
+                                self.isShowingTextComment = false
+                            } else {
+                                self.isShowingTextComment = true
+                            }
+                        }
+                        print(self.$newComment)
+                        
+                    }) {
+                        Image(systemName: "message")
+                    }.buttonStyle(PlainButtonStyle())
+                }
+                
+                if (isShowingTextComment) {
+                    HStack {
+                        TextField("Inserisci comment", text: self.$newComment)
+                        Button(action: {
+                            withAnimation {
+                                self.isShowingTextComment = false
+                            }
+                        }) {
+                        Image(systemName: "paperplane")
+                        }.buttonStyle(PlainButtonStyle())
+                    }.modifier(FormTextField()).padding(.bottom)
+                }
+        
+                ForEach(self.monument.comments){ comment in
+                    CommentRow(comment: comment)
+                }
+                
+            }.padding(.horizontal).padding(.top)
+//            .onAppear {
+//                self.comments.get(monument_id: self.monument.id)
 //            }
-            
-        }.padding(.trailing)
-//        .onAppear {
-//            self.comments.get(monument_id: self.monument.id)
-//        }
+        }
+        
     }
 }
 
@@ -43,3 +73,4 @@ struct CommentListView_Previews: PreviewProvider {
         CommentListView(monument: testMonument)
     }
 }
+
