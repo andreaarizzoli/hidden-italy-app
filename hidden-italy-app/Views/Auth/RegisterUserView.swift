@@ -91,7 +91,7 @@ struct RegisterUserView: View {
                     }.modifier(FormTextField())
                     
                     Button(action: {
-                        self.user.createUser(name: "Andrea", surname: "surname", email: "email", password: "password")
+//                        self.user.createUser(name: "Andrea", surname: "surname", email: "email", password: "password")
                         self.nextView = "CreateUser"
                     }){
                         Text("Crea utente")

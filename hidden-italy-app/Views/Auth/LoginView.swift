@@ -12,60 +12,59 @@ struct LoginView: View {
     
     @ObservedObject var user = UserViewModel()
     
-    @State private var email = ""
-    @State private var password = ""
-    @State private var nextView = ""
+    @State private var nextView: String = ""
     
     var disableForm: Bool {
-        email.count < 1 && email.count < 255 ||
-            password.count < 1 && password.count > 255
+        user.newLogin.email.count < 1 && user.newLogin.email.count < 255 ||
+        user.newLogin.password.count < 1 && user.newLogin.password.count > 255
     }
     
     var body: some View {
         
         VStack() {
-            if (nextView == "logged") {
+            if (nextView == "logged" || self.user.getToken() != "") {
                 RootTabView()
-            }
-            else if (nextView == "resetUser"){
-                //                ResetView()
-                LoginView()
-            }
-            else if (nextView == "registerUser"){
+            } else if (nextView == "registerUser") {
                 RegisterUserView()
-            }
-            else {
+            } else {
                 
-                VStack (alignment: .center, spacing:20){
+                VStack (
+                    alignment: .center,
+                    spacing:20
+                ) {
                     Spacer()
-                    Image("logo").resizable().frame(width:109, height:89)
+                    
+                    Image("logo")
+                        .resizable()
+                        .frame(width:109, height:89)
                     
                     Spacer()
                     
-                    HStack {
-                        TextField("Email", text: $email).modifier(FormTextFieldText())
-                        Image(systemName: "envelope").modifier(FormTextFieldImage())
-                    }.modifier(FormTextField())
+                    Input(
+                        icon: "envelope",
+                        placeholder: "Email",
+                        type: "email",
+                        value: $user.newLogin.email
+                    )
                     
-                    HStack {
-                        SecureField("Password", text: $password).modifier(FormTextFieldText())
-                        Image(systemName: "lock").modifier(FormTextFieldImage())
-                    }.modifier(FormTextField())
+                    Input(
+                        icon: "lock",
+                        placeholder: "Password",
+                        type: "password",
+                        value: $user.newLogin.password
+                    )
                     
-                    HStack(){
-                        Spacer()
-                        Button(action: {self.nextView = "resetUser"}) {
-                            Text("Hai dimenticato la password?")
-                                .modifier(LoginText())
+                    Button(
+                        action:  {                            
+                            self.user.login(callback: {res in
+                                 self.nextView = "logged"
+                            })
                         }
-                    }
-                    
-                    Button(action:  {
-                        self.nextView = "logged"
-                    }){
+                    ) {
                         Text("Log In")
                             .modifier(FormButtonText())
-                    }.modifier(FormButton()).disabled(disableForm)
+                    }.modifier(FormButton())
+                        .disabled(disableForm)
                     
                     HStack(){
                         Text("Non hai un account?")
@@ -76,20 +75,6 @@ struct LoginView: View {
                             Text("Registrati")
                                 .foregroundColor(Color(darkAccent))
                         }
-                    }
-                    
-                    HStack{
-                        Button(action: {    }){
-                            Image("google")
-                                .resizable()
-                                .frame(width: 35.0, height: 35)
-                        }.padding(.trailing)
-                        
-                        Button(action: {    }){
-                            Image("facebook")
-                                .resizable()
-                                .frame(width: 35.0, height: 35)
-                        }.padding(.leading)
                     }
                     
                     Spacer()
