@@ -27,7 +27,7 @@ extension UIColor {
     }
 }
 
-let bgColor = UIColor(rgb: 0x486aec)
+let Accent = UIColor(rgb: 0x486aec)
 let lightAccent = UIColor(rgb: 0x77c4ff)
 let darkAccent = UIColor(rgb: 0x0957be)
 let offWhite = UIColor(rgb: 0xFEFEFE)
@@ -35,5 +35,8 @@ let offWhite = UIColor(rgb: 0xFEFEFE)
 //let shadow =  #colorLiteral(red: 0.7608050108, green: 0.8164883852, blue: 0.9259157777, alpha: 1.0)
 
 let BGColor = UIColor(rgb: 0xDEEAF6)
-let lightShadow = UIColor(rgb: 0xF3F9FF)
-let darkShadow = UIColor(rgb: 0xBECBD8)
+//let BGColor = UIColor(rgb: 0xdbe2ef)
+let lightShadow = UIColor(rgb: 0x3f72af)
+let darkShadow = UIColor(rgb: 0xAEAEC0)
+
+let redAlert = UIColor(rgb: 0xe14646)

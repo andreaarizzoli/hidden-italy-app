@@ -14,7 +14,7 @@ struct RootTabView: View {
     
     init() {
 //        UITabBar.appearance().backgroundColor = UIColor.blue
-//        UITabBar.appearance().barTintColor = UIColor(rgb: 0xDEEAF6)
+        UITabBar.appearance().barTintColor = BGColor
     }
     
     var body: some View {
@@ -48,7 +48,7 @@ struct RootTabView: View {
                     Image(systemName: "person")
                     Text("Profilo")
             }
-        }.accentColor(Color(bgColor))
+        }.accentColor(Color(Accent))
     }
     
 }

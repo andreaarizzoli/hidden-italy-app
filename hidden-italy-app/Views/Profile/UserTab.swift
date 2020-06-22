@@ -38,7 +38,7 @@ struct UserTab: View {
                     
                 .onEnded({ (value) in
                     
-                    if value.translation.width > 50{// minimum drag...
+                    if value.translation.width > 50{
                         
                         print("right")
                         self.changeView(left: false)
@@ -50,7 +50,7 @@ struct UserTab: View {
                     }
                 }))
             }
-        }
+        }.background(Color(BGColor)).edgesIgnoringSafeArea(.top)
         //        .animation(.linear)
         //        .edgesIgnoringSafeArea(.all)
     }
@@ -84,7 +84,6 @@ struct UserTab: View {
             
             self.offset = -self.width
         }
-        // change the width based on the size of the tabs...
     }
 }
 
@@ -112,15 +111,15 @@ struct AppBar : View {
                         HStack(spacing: 12){
                             
                             if self.index == 1  {
-                                Image(systemName:"map.fill").foregroundColor(Color(darkAccent)).modifier(Icon())
+                                Image(systemName:"map.fill").foregroundColor(Color(Accent)).modifier(Icon())
                             } else{
-                                Image(systemName:"map").foregroundColor(Color(darkAccent)).modifier(Icon())
+                                Image(systemName:"map").foregroundColor(Color(Accent)).modifier(Icon())
                             }
                             Text("Visitati")
-                                .foregroundColor(Color(darkAccent))
+                                .foregroundColor(Color(Accent))
                         }.padding(.bottom, 10)
                         
-                        Capsule().fill(self.index == 1 ? Color(darkAccent) : Color.clear)
+                        Capsule().fill(self.index == 1 ? Color(Accent) : Color.clear)
                             .frame(height: 4)
                     }
                 }
@@ -137,14 +136,14 @@ struct AppBar : View {
                         HStack(spacing: 12){
                             
                             if self.index == 2  {
-                                Image(systemName:"gift.fill").foregroundColor(Color(darkAccent)).modifier(Icon())
+                                Image(systemName:"gift.fill").foregroundColor(Color(Accent)).modifier(Icon())
                             } else{
-                                Image(systemName:"gift").foregroundColor(Color(darkAccent)).modifier(Icon())
+                                Image(systemName:"gift").foregroundColor(Color(Accent)).modifier(Icon())
                             }
-                            Text("Premi").foregroundColor(Color(darkAccent))
+                            Text("Premi").foregroundColor(Color(Accent))
                         }.padding(.bottom, 10)
                         
-                        Capsule().fill(self.index == 2 ? Color(darkAccent) : Color.clear)
+                        Capsule().fill(self.index == 2 ? Color(Accent) : Color.clear)
                             .frame(height: 4)
                     }
                 }
@@ -161,24 +160,22 @@ struct AppBar : View {
                         HStack(spacing: 12){
                             
                             if self.index == 3  {
-                                Image(systemName:"star.fill").foregroundColor(Color(darkAccent)).modifier(Icon())
+                                Image(systemName:"star.fill").foregroundColor(Color(Accent)).modifier(Icon())
                             } else{
-                                Image(systemName:"star").foregroundColor(Color(darkAccent)).modifier(Icon())
+                                Image(systemName:"star").foregroundColor(Color(Accent)).modifier(Icon())
                             }
-                            Text("Punti").foregroundColor(Color(darkAccent))
+                            Text("Punti").foregroundColor(Color(Accent))
                         }.padding(.bottom, 10)
                         
-                        Capsule().fill(self.index == 3 ? Color(darkAccent) : Color.clear)
+                        Capsule().fill(self.index == 3 ? Color(Accent) : Color.clear)
                             .frame(height: 4)
                     }
                 }
-                
             }
         })
-            //            .padding(.top, (UIApplication.shared.windows.first?.safeAreaInsets.top)! + 15)
+            .modifier(PaddingSafeArea())
             .padding(.horizontal)
             .padding(.bottom, 10)
-        
     }
 }
 

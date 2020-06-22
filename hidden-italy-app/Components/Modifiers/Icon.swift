@@ -12,6 +12,6 @@ struct Icon: ViewModifier{
     func body(content: Content) -> some View {
         content
             .font(.system(size: 30))
-            .foregroundColor(Color(darkAccent))
+            .foregroundColor(Color(Accent))
     }
 }

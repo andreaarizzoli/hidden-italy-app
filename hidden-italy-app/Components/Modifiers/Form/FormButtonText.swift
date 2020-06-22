@@ -11,7 +11,7 @@ import SwiftUI
 struct FormButtonText: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .foregroundColor(Color.gray.opacity(0.5))
+            .foregroundColor(Color.white)
             .frame(minWidth: 0, maxWidth: .infinity)
             .padding()
     }

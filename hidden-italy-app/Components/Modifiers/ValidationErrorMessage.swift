@@ -13,7 +13,7 @@ struct ValidationErrorMessage: ViewModifier{
         content
             .foregroundColor(Color .white)
             .frame(maxWidth: .infinity)
-            .background(Color .red)
+            .background(Color(redAlert))
             .cornerRadius(35)
     }
 }

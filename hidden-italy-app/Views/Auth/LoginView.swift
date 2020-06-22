@@ -28,7 +28,7 @@ struct LoginView: View {
                 RootTabView()
             }
             else if (nextView == "resetUser"){
-//                ResetView()
+                //                ResetView()
                 LoginView()
             }
             else if (nextView == "registerUser"){
@@ -96,7 +96,7 @@ struct LoginView: View {
                     
                 }.modifier(Form()).onTapGesture { hideKeyboard() }.modifier(AdaptsToSoftwareKeyboard())
             }
-        }.background(Color(BGColor)).edgesIgnoringSafeArea(.top)
+        }.modifier(BgSafearea())
     }
 }
 

@@ -28,8 +28,8 @@ struct CreateMonumentView: View {
     @State var city = ""
     @State var selectedCategoryName = "Categoria"
     @State var selectedCategoryId = 0
-    @State var image = UIImage()
     
+    @State var image = UIImage()
     @State var isShowingImagePicker = false
     @State var isShowingOverlay = false
     @State var newImage = false
@@ -51,34 +51,32 @@ struct CreateMonumentView: View {
                     Spacer()
                     Button(action: { self.showSheetMonumentView = false }){
                         Image(systemName: "xmark.circle.fill")
-                            .foregroundColor(Color(.gray))
+                            .foregroundColor(Color(Accent))
+//                            .foregroundColor(Color(.gray))
                             .font(.system(size: 25))
-                    }
+                    }.modifier(ButtonCircle())
                 }.padding(.top, 15).padding(.trailing, 15)
-                
                 
                 ScrollView{
                     VStack (alignment: .center, spacing:20){
                         
-                        Button(action: {
-                            self.isShowingImagePicker.toggle()
-                        }){
+                        Button(action: { self.isShowingImagePicker.toggle() }) {
+                            
                             ZStack (alignment: .center){
-                                
                                 Image(uiImage: image)
                                     .resizable()
                                     .frame(width:150, height:150)
                                     .clipShape(RoundedRectangle(cornerRadius: 35))
-                                    .overlay(RoundedRectangle(cornerRadius: 35)
-                                        .stroke(Color.gray, lineWidth: 1))
+                                    .modifier(AddImage())
                                 Image(systemName: "plus")
-                                    .font(.system(size: 20))
-                                    .foregroundColor(.gray)
+                                    .font(.system(size: 35))
+                                    .foregroundColor(Color(Accent))
                             }
                         }.buttonStyle(PlainButtonStyle())
-                            .sheet(isPresented: $isShowingImagePicker, content: {
-                                ImagePickerView(isPresented: self.$isShowingImagePicker, selectedImage: self.$image, newImage: self.$newImage
-)
+                         .sheet(isPresented: $isShowingImagePicker, content: {
+                            ImagePickerView(
+                                isPresented: self.$isShowingImagePicker,
+                                selectedImage: self.$image, newImage: self.$newImage)
                             })
                         
                         HStack {
@@ -113,9 +111,7 @@ struct CreateMonumentView: View {
                             //Image(systemName: "circle").modifier(FormTextFieldImage())
                         }.modifier(FormTextField())
                         
-                        Button(action: { withAnimation(.interactiveSpring()){
-                            self.isShowingOverlay = true}
-                        }) {
+                        Button(action: { withAnimation(.interactiveSpring()){self.isShowingOverlay = true} }) {
                             HStack {
                                 Text("\(self.selectedCategoryName)").modifier(FormTextFieldText())
                                 Spacer()
@@ -140,7 +136,7 @@ struct CreateMonumentView: View {
                             Text("Inserisci")
                                 .modifier(FormButtonText())
                         }.modifier(FormButton())
-                        //                            .disabled(disableForm)
+                        //.disabled(disableForm)
                         
                         Spacer()
                         
@@ -180,7 +176,9 @@ struct CreateMonumentView: View {
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
                 }
             }
-        }.onAppear { self.categories.getCategories() }
+        }.modifier(BgSafearea())
+         .onAppear { self.categories.getCategories() }
+         
     }
 }
 

@@ -54,11 +54,11 @@ struct RegisterUserView: View {
                             
                             Image(uiImage: image)
                                 .resizable()
-                                .frame(width:90, height:90)
-                                .clipShape(Circle())
+                                .frame(width:125, height:125)
+                                .clipShape(Circle()).modifier(AddImage())
                             Image(systemName: "plus")
-                                .font(.system(size: 20))
-                                .foregroundColor(.gray)
+                                .font(.system(size: 35))
+                                .foregroundColor(Color(Accent))
                         }
                     }.buttonStyle(PlainButtonStyle())
                         .sheet(isPresented: $isShowingImagePicker, content: {
@@ -109,7 +109,7 @@ struct RegisterUserView: View {
                     
                     Spacer()
                     
-                }.modifier(Form()).onTapGesture { hideKeyboard() }.modifier(AdaptsToSoftwareKeyboard())
+                }.modifier(Form()).modifier(BgSafearea()).onTapGesture { hideKeyboard() }.modifier(AdaptsToSoftwareKeyboard())
             }
         }
     }

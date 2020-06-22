@@ -21,14 +21,15 @@ struct UserSettings: View {
                     Spacer()
                     Button(action: { self.showSheetSettingsView = false }){
                         Image(systemName: "xmark.circle.fill")
-                            .foregroundColor(Color(.gray))
+                            .foregroundColor(Color(Accent))
+                            //                            .foregroundColor(Color(.gray))
                             .font(.system(size: 25))
-                    }
+                    }.modifier(ButtonCircle())
                 }.padding(.top, 30)
                 
                 
             }.modifier(Form())
-        }
+            }.modifier(BgSafearea())
     }
 }
 

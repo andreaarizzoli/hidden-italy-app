@@ -29,23 +29,26 @@ struct MonumentListView: View {
     var body: some View {
         
         ZStack{
-            Color.white.edgesIgnoringSafeArea(.all)
             ScrollView{
                 HStack (alignment: .center){
                     Text("Monumenti")
                         .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(Accent))
                     Spacer()
                     VStack(alignment: .leading){
                         Button(action: {
                             self.showSheetMonumentView.toggle()
                         }) {
                             Image(systemName: "plus.circle.fill")
-                                .foregroundColor(Color(bgColor))
+                                .foregroundColor(Color(Accent))
                                 .font(.system(size: 35))
+                            
+                                
                         }.sheet(isPresented: $showSheetMonumentView) {
                             //                            CreateMonumentView()
                             CreateMonumentView2(showSheetMonumentView: self.$showSheetMonumentView)
-                        }
+                        }.modifier(ButtonCircle())
                     }
                 }.padding(.horizontal, 30).padding(.top)
                 
@@ -219,9 +222,8 @@ struct MonumentListView: View {
                 .animation(
                     Animation.easeInOut(duration: 0.05)
                         .delay(self.expandedScreen_willHide ? 0.5 : 0))
-        }.modifier(PaddingSafeArea()).onAppear {
-            self.monuments.getNearMonuments()
-        }
+        }.modifier(PaddingSafeArea()).modifier(BgSafearea())
+         .onAppear { self.monuments.getNearMonuments() }
     }
 }
 

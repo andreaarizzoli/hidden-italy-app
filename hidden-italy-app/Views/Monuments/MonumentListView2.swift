@@ -28,7 +28,7 @@ struct MonumentListView2: View {
                     VStack(alignment: .leading){
                         Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                             Text("Aggiungi")
-                                .foregroundColor(Color(bgColor))
+                                .foregroundColor(Color(Accent))
                             //                            Image("duomo")
                             //                            .resizable()
                             //                            .frame(width: 50, height: 50)

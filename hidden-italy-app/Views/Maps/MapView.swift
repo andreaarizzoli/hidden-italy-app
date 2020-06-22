@@ -19,18 +19,19 @@ struct MapView: View {
         ZStack(alignment: .top){
             Map(monuments: self.$monuments.monumentList)
             
-            TextField(
-                "Search",
-                text: $search,
-                onEditingChanged: { _ in }
-            ) {
-                //
-            }.textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-                .offset(y: 44)
-        }.onAppear {
-            self.monuments.getNearMonuments()
-        }
+            
+            HStack {
+                Image(systemName: "magnifyingglass").modifier(FormTextFieldImage())
+                TextField("Search", text: $search, onEditingChanged: { _ in }){
+                    
+                }.modifier(FormTextFieldText())
+                
+            }.modifier(FormTextField())
+             .padding(.horizontal, 30)
+             .padding(.top, 45).modifier(PaddingSafeArea())
+
+            }.modifier(BgSafearea())
+             .onAppear { self.monuments.getNearMonuments() }
     }
 }
 

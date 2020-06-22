@@ -26,6 +26,11 @@ struct CreateMonumentView2: View {
     @State var validateError = false
     @State var newImage = false
 
+//    init() {
+//        UITableView.appearance().separatorStyle = .none
+//        UITableViewCell.appearance().backgroundColor = .green
+//        UITableView.appearance().backgroundColor = .green
+//    }
 
     var body: some View {
         
@@ -37,9 +42,10 @@ struct CreateMonumentView2: View {
 
                     Button(action: { self.showSheetMonumentView = false }){
                         Image(systemName: "xmark.circle.fill")
-                            .foregroundColor(Color(.gray))
+                            .foregroundColor(Color(Accent))
+                            //                            .foregroundColor(Color(.gray))
                             .font(.system(size: 25))
-                    }
+                    }.modifier(ButtonCircle())
                 }.padding(.top, 15).padding(.trailing, 15)
                 
                 ScrollView{
@@ -54,11 +60,10 @@ struct CreateMonumentView2: View {
                                     .resizable()
                                     .frame(width:150, height:150)
                                     .clipShape(RoundedRectangle(cornerRadius: 35))
-                                    .overlay(RoundedRectangle(cornerRadius: 35)
-                                        .stroke(Color.gray, lineWidth: 1))
+                                    .modifier(AddImage())
                                 Image(systemName: "plus")
-                                    .font(.system(size: 20))
-                                    .foregroundColor(.gray)
+                                    .font(.system(size: 35))
+                                    .foregroundColor(Color(Accent))
                             }
                         }.buttonStyle(PlainButtonStyle())
                             .sheet(isPresented: $isShowingImagePicker, content: {
@@ -149,16 +154,15 @@ struct CreateMonumentView2: View {
                                     Text(item.description)
                                 }
                             }
-                        }.frame(height: 300).cornerRadius(35).padding(30)
+                        }.frame(height: 300).cornerRadius(35).padding(30).colorMultiply(Color(BGColor)).padding(.top)
                         
                         Spacer()
                         
                     }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
                 }
             }
-        }.onAppear {
-            self.categories.getCategories()
-        }
+        }.modifier(BgSafearea())
+         .onAppear { self.categories.getCategories() }
     }
 }
 

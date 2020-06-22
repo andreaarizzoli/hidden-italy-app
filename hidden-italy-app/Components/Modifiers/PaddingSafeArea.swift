@@ -11,6 +11,6 @@ import SwiftUI
 struct PaddingSafeArea: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .padding(.top, 30)
+            .padding(.top, (UIApplication.shared.windows.first?.safeAreaInsets.top)!)
     }
 }

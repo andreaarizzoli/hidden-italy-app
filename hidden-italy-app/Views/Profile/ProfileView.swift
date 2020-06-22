@@ -11,6 +11,10 @@ import SwiftUI
 struct ProfileView: View {
     
     @State var showSheetSettingsView = false
+    @State var isShowingImagePicker = false
+    @State var isShowingOverlay = false
+    @State var newImage = false
+    @State var image = UIImage()
     
     var body: some View {
         
@@ -23,28 +27,46 @@ struct ProfileView: View {
                         self.showSheetSettingsView.toggle()
                     }) {
                         Image(systemName: "gear")
-                            .foregroundColor(Color(bgColor))
-                            .font(.system(size: 30))
+                            .foregroundColor(Color(Accent))
+                            .font(.system(size: 24))
                     }.sheet(isPresented: $showSheetSettingsView ) {
                         UserSettings(showSheetSettingsView: self.$showSheetSettingsView)
                     }
                 }
                 
-            }.padding(.horizontal, 30).padding(.top, 15)
+            }.padding(.horizontal, 30).padding(.top, 15).modifier(PaddingSafeArea())
             
             HStack(spacing:20){
-                Image("phImage")
-                    .resizable().frame(width:90, height:90)
-                    .clipShape(Circle())
+                Button(action: {
+                    self.isShowingImagePicker.toggle()
+                }){
+                    ZStack (alignment: .center){
+                        
+                        Image(uiImage: image)
+                            .resizable()
+                            .frame(width:125, height:125)
+                            .clipShape(RoundedRectangle(cornerRadius: 35))
+                            .modifier(AddImage())
+                        Image(systemName: "plus")
+                            .font(.system(size: 35))
+                            .foregroundColor(Color(Accent))
+                    }
+                }.buttonStyle(PlainButtonStyle())
+                    .sheet(isPresented: $isShowingImagePicker, content: {
+                        ImagePickerView(
+                            isPresented: self.$isShowingImagePicker,
+                            selectedImage: self.$image, newImage: self.$newImage)
+                        
+                    })
+
                 
                 Text("Ciao, Nome Utente").modifier(FormTextFieldText())
                     .font(.system(size: 24))
                     .padding(.bottom)
-            }.padding(.bottom)
-            
+            }
             UserTab()
             
-        }.modifier(PaddingSafeArea())
+        }.modifier(PaddingSafeArea()).modifier(BgSafearea())
     }
 }
 

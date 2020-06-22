@@ -17,7 +17,7 @@ struct VisitedMonuments : View {
             HStack(alignment: .center){
                 
                 Text("Monumenti Visitati")
-            }.background(Color.red)
+            }
         }
     }
 }
