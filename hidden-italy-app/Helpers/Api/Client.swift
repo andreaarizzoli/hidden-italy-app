@@ -67,7 +67,9 @@ class Client
         model: M.Type,
         success: @escaping (_ res: Any?) -> Void,
         failure: @escaping (_ res: Any?) -> Void = defaultFailure,
-        headers: HTTPHeaders = HTTPHeaders(),
+        headers: HTTPHeaders = HTTPHeaders([
+            "Authorization": "Bearer " + UserViewModel.getToken()
+        ]),
         multiple: Bool = false,
         name: String = "request"
     ) -> Void {
@@ -76,7 +78,8 @@ class Client
         self.queue[name] = AF.request(
             self.baseURL + uri,
             method: method,
-            parameters: body
+            parameters: body,
+            headers: headers
         ).responseJSON{response in
             switch response.result {
             case .success(let data):
