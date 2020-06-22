@@ -61,6 +61,16 @@ let testMonument = Monument(
         user_id: 0,
         monument_id: 1,
         created_at: "",
-        updated_at: ""
+        updated_at: "",
+        user: User(
+            id: 1,
+            firstname: "Jack",
+            lastname: "Sparrot",
+            email: "alskdlsfk",
+            email_verified_at: "salkdlfa",
+            role_id: 1,
+            created_at: "dklfaksd",
+            updated_at: "lsdfkjlas"
+        )
     )]
 )

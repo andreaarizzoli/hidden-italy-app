@@ -13,14 +13,15 @@ struct CommentListView: View {
         
     @State var monument: Monument
     @ObservedObject var comments = CommentViewModel()
+    @ObservedObject var users = UserViewModel()
     @State var isShowingTextComment: Bool = false
-    @State var errorMessage: Bool = false
     @State var newComment: String = ""
+    var characterLimitDescription = 250
     
     var body: some View {
         ZStack {
             VStack() {
-                        
+                
                 HStack{
                     
                     Text("Commenti:")
@@ -31,51 +32,48 @@ struct CommentListView: View {
                         withAnimation {
                             if (self.isShowingTextComment){
                                 self.isShowingTextComment = false
-                                self.errorMessage = false
                             } else {
                                 self.isShowingTextComment = true
                             }
                         }
-                        print(self.$newComment)
-                        
                     }) {
                         Image(systemName: "message")
                     }.buttonStyle(PlainButtonStyle())
                 }
                 
-                if (isShowingTextComment) {
+                if (self.isShowingTextComment) {
                     HStack {
-                        TextField("Inserisci comment", text: self.$newComment)
+                        
+                        TextView(placeholderText: "Inserisci commento...", text: $newComment, limit: self.characterLimitDescription, size: 17, weightFont: .light).frame(numLines: 2)
+                        
                         Button(action: {
                             
                             let monumentId = self.monument.id
                             if (self.comments.validate(userId: 1, monumentId: monumentId, comment: self.newComment)) {
+                                
+                                self.newComment = ""
+
                                 withAnimation {
                                     self.isShowingTextComment = false
-                                    self.errorMessage = false
-                                }
-                            } else {
-                                withAnimation (.spring()){
-                                    self.errorMessage = true
                                 }
                             }
                         }) {
-                        Image(systemName: "paperplane")
+                            if (self.newComment == "") {
+                                Image(systemName: "paperplane").foregroundColor(Color .gray)
+                            } else {
+                                Image(systemName: "paperplane").foregroundColor(Color(bgColor))
+                            }
                         }.buttonStyle(PlainButtonStyle())
                     }.modifier(FormTextField()).padding(.bottom)
                 }
                 
-                if(self.errorMessage) {
-                    Text("Commenta con massimo 250 caratteri!").modifier(ValidationErrorMessage())
-                }
-        
                 ForEach(self.monument.comments){ comment in
                     CommentRow(comment: comment)
                 }
                 
             }.padding(.horizontal).padding(.top)
 //            .onAppear {
-//                self.comments.get(monument_id: self.monument.id)
+//                self.users.get(userId: self.monument.user)
 //            }
         }
         

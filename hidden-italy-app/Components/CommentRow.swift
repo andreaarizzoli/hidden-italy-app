@@ -9,10 +9,7 @@
 import SwiftUI
 
 struct CommentRow: View {
-//    init() {
-//       UITableView.appearance().tableFooterView = UIView()
-//    }
-    
+
     @ObservedObject var comments = CommentViewModel()
     @State var comment: Comment
     
@@ -21,8 +18,7 @@ struct CommentRow: View {
         VStack(alignment:.trailing) {
             HStack(alignment: .top){
                 
-                //FACCIAMO UNA QUERY SOLO PER RECUPERARE L'IMMAGINE DEL UTENTE?
-                Image("duomoComment")
+                Image("placeHolderProfile")
                     .resizable()
                     .frame(width: 30, height: 30)
                     .clipShape(Circle())
@@ -33,7 +29,7 @@ struct CommentRow: View {
                     .padding(.trailing)
                                 
                 VStack(alignment:.leading) {
-                    Text("\(comment.id)")
+                    Text("\(comment.user.firstname) \(comment.user.lastname)")
                     .font(.system(size: 14))
                     .fontWeight(.light)
 
@@ -42,8 +38,7 @@ struct CommentRow: View {
 
                 }
                 Spacer()
-            }.padding(.horizontal)
-
+            }.padding(.horizontal).padding(.top)
         }
     }
 }
