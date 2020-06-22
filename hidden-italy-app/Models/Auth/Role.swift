@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+struct Role: Codable {
+    var id: Int
+    var name: String
+    var scopes: [String]?
+    var created_at: String?
+    var updated_at: String?
+}
