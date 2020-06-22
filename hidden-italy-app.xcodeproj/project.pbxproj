@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050FCB0824A019C300235742 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050FCB0724A019C300235742 /* ContentView.swift */; };
 		0510B38A246DE4A300BCB0C8 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0510B389246DE4A300BCB0C8 /* ImageModel.swift */; };
 		0510B38E246DE5AB00BCB0C8 /* MonumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0510B38D246DE5AB00BCB0C8 /* MonumentViewModel.swift */; };
 		051585752462E32F00194002 /* RegisterUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051585742462E32F00194002 /* RegisterUserView.swift */; };
@@ -31,6 +32,8 @@
 		0591AAA9249E58DB00BBB949 /* CrudFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591AAA8249E58DB00BBB949 /* CrudFunctions.swift */; };
 		0591AAAB249E58E200BBB949 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591AAAA249E58E100BBB949 /* Client.swift */; };
 		0591AAAF249E9CE200BBB949 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591AAAE249E9CE200BBB949 /* Comment.swift */; };
+		0591AAB1249F86D700BBB949 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591AAB0249F86D600BBB949 /* CommentViewModel.swift */; };
+		0591AAB3249F987100BBB949 /* FindComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591AAB2249F987100BBB949 /* FindComment.swift */; };
 		05948F8D245FFBC1001BB4A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948F8C245FFBC1001BB4A6 /* AppDelegate.swift */; };
 		05948F8F245FFBC1001BB4A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948F8E245FFBC1001BB4A6 /* SceneDelegate.swift */; };
 		05948F93245FFBC4001BB4A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05948F92245FFBC4001BB4A6 /* Assets.xcassets */; };
@@ -74,6 +77,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		050FCB0724A019C300235742 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0510B389246DE4A300BCB0C8 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		0510B38D246DE5AB00BCB0C8 /* MonumentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentViewModel.swift; sourceTree = "<group>"; };
 		051585742462E32F00194002 /* RegisterUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserView.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 		0591AAA8249E58DB00BBB949 /* CrudFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrudFunctions.swift; sourceTree = "<group>"; };
 		0591AAAA249E58E100BBB949 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		0591AAAE249E9CE200BBB949 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		0591AAB0249F86D600BBB949 /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
+		0591AAB2249F987100BBB949 /* FindComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindComment.swift; sourceTree = "<group>"; };
 		05948F89245FFBC1001BB4A6 /* hidden-italy-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hidden-italy-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05948F8C245FFBC1001BB4A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05948F8E245FFBC1001BB4A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +189,7 @@
 				0510B38D246DE5AB00BCB0C8 /* MonumentViewModel.swift */,
 				05C7D9792472FCA900E02F47 /* CategoryViewModel.swift */,
 				0526ECFE249BD10C00B598BC /* UserViewModel.swift */,
+				0591AAB0249F86D600BBB949 /* CommentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -204,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				051585A02464AA2300194002 /* CommentListView.swift */,
+				050FCB0724A019C300235742 /* ContentView.swift */,
 			);
 			path = Comments;
 			sourceTree = "<group>";
@@ -369,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				77889C1B249F36EE00CC8C02 /* FindNearest.swift */,
+				0591AAB2249F987100BBB949 /* FindComment.swift */,
 			);
 			path = Monuments;
 			sourceTree = "<group>";
@@ -554,7 +563,9 @@
 				0569BC3F249186C8000B5972 /* MapMonumentView.swift in Sources */,
 				0526ECFD249BC4F100B598BC /* ImagePickerView.swift in Sources */,
 				0541621824998EE400525898 /* CreateMonumentView.swift in Sources */,
+				0591AAB1249F86D700BBB949 /* CommentViewModel.swift in Sources */,
 				79B58DD224720C990052BDC7 /* Landmark.swift in Sources */,
+				050FCB0824A019C300235742 /* ContentView.swift in Sources */,
 				7760A26F249F5D1B00ED0A53 /* PaddingSafeArea.swift in Sources */,
 				059516CC2489A14E0054AC5A /* Colors.swift in Sources */,
 				05948F8D245FFBC1001BB4A6 /* AppDelegate.swift in Sources */,
@@ -566,6 +577,7 @@
 				77889C1C249F36EE00CC8C02 /* FindNearest.swift in Sources */,
 				05C7D971247208CC00E02F47 /* MapView.swift in Sources */,
 				7760A25E249F5B8F00ED0A53 /* FormTextFieldText.swift in Sources */,
+				0591AAB3249F987100BBB949 /* FindComment.swift in Sources */,
 				05948FA1245FFC45001BB4A6 /* SplashView.swift in Sources */,
 				7760A26D249F5CF800ED0A53 /* FormButton.swift in Sources */,
 				05948F8F245FFBC1001BB4A6 /* SceneDelegate.swift in Sources */,
