@@ -34,13 +34,13 @@ struct RootTabView: View {
                             Text("Luoghi")
                         }
                     
-                    MonumentListView2()
+                    MonumentListView()
                         .tabItem{
                             Image(systemName: "list.number")
                             Text("Classifica")
                         }
                     
-                    MonumentListView2()
+                    MonumentListView()
                         .tabItem{
                             Image(systemName: "heart")
                             Text("Notifiche")

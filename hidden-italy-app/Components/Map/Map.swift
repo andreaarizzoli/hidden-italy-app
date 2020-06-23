@@ -11,7 +11,7 @@ import MapKit
 
 struct Map: UIViewRepresentable {
     
-    @Binding var monuments: [Monument]
+    @Binding var monuments: [FindNearest]
     
     func makeUIView(context: Context) -> MKMapView {
         let map = MKMapView(frame: UIScreen.main.bounds)
@@ -30,10 +30,8 @@ struct Map: UIViewRepresentable {
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
         for monument in monuments {
-            //print("entrato")
             let coordinate = MKPointAnnotation()
             coordinate.title = monument.name
-            coordinate.subtitle = monument.description
             coordinate.coordinate = CLLocationCoordinate2D(latitude: monument.lat, longitude: monument.lon)
             uiView.addAnnotation(coordinate)
         }

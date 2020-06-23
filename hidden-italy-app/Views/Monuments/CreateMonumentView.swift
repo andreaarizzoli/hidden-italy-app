@@ -162,7 +162,7 @@ struct CreateMonumentView: View {
                             ForEach(categories.categoriesList) {item in
                                 Button(action: {
                                     self.isShowingOverlay = false
-                                    self.selectedCategoryId = item.id
+                                    self.selectedCategoryId = item.id ?? 1
                                     self.selectedCategoryName = item.description
                                     
                                 }) {

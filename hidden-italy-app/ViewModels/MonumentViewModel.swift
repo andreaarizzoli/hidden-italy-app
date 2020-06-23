@@ -13,7 +13,7 @@ import CoreLocation
 
 class MonumentViewModel: ObservableObject {
     
-    @Published var monumentList = [Monument]()
+    @Published var monumentList = [FindNearest]()
     @Published var userCoordinates = LocationManager()
     @Published var testMonument = Monument(
         id: 1,
@@ -51,13 +51,13 @@ class MonumentViewModel: ObservableObject {
 
         getAll(
             uri: endpoint(.findNearestMonuments),
-            body: FindNearest(
+            body: FindNearestBody(
                 lat: 45.4641684,
                 lon: 9.1916211
             ),
-            model: Monument.self,
+            model: FindNearest.self,
             success: {res in
-                self.monumentList = res as! [Monument]
+                self.monumentList = res as! [FindNearest]
             }
         )
     }
@@ -82,6 +82,30 @@ class MonumentViewModel: ObservableObject {
         }
         
         return geocoder
+    }
+    
+    func show(id: Int, view: MonumentListView, geo: GeometryProxy) -> Void {
+        get(
+            uri: Endpoints.showMonument(id: id),
+            body: EmptyBody(),
+            model: Monument.self,
+            success: {res in
+                let monument = res as! Monument
+                
+                let x = geo.frame(in: .global).minX
+                let y = geo.frame(in: .global).minY
+                let thisRect = CGRect(x: x, y: y, width: view.SVWidth, height: view.itemHeight)
+                view.expandedScreen_returnPoint = thisRect
+                view.expandedScreen_startPoint =  thisRect
+
+                Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { (timer) in
+                    view.expandedScreen_shown = true
+                    view.expandedScreen_startPoint =  CGRect(x: 0, y: 0, width:UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+                }
+                
+                view.monuments.testMonument = monument
+            }
+        )
     }
 }
 

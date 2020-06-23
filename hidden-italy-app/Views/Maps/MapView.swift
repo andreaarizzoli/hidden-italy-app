@@ -12,13 +12,12 @@ import MapKit
 struct MapView: View {
     
     @ObservedObject var locationManager = LocationManager()
-    @State private var search:String = ""
-    @ObservedObject var monuments = MonumentViewModel()
+    @State private var search: String = ""
+    @EnvironmentObject var monuments: MonumentViewModel
     
     var body: some View {
         ZStack(alignment: .top){
             Map(monuments: self.$monuments.monumentList)
-            
             
             HStack {
                 Image(systemName: "magnifyingglass").modifier(FormTextFieldImage())

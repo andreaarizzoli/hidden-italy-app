@@ -64,8 +64,8 @@ enum Endpoints: String {
      *
      * @author Daniele Tulone <danieletulone.work@gmail.com>
      */
-    static func showMonument (id: String) -> String {
-        return "/v1/monuments/" + id
+    static func showMonument (id: Int) -> String {
+        return "/v1/monuments/" + String(id)
     }
     
     //------------------
@@ -84,8 +84,8 @@ enum Endpoints: String {
      *
      * @author Daniele Tulone <danieletulone.work@gmail.com>
      */
-    static func showCategory (id: String) -> String {
-        return "/v1/categories/" + id
+    static func showCategory (id: Int) -> String {
+        return "/v1/categories/" + String(id)
     }
     
     //-----------------

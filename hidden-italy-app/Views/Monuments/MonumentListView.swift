@@ -9,7 +9,6 @@
 import SwiftUI
 import URLImage
 import CoreImage
-import SkeletonUI
 
 struct MonumentListView: View {
     
@@ -17,16 +16,15 @@ struct MonumentListView: View {
     let imageHeight:CGFloat = 300
     let SVWidth = UIScreen.main.bounds.width - 60
     
-    @ObservedObject var monuments = MonumentViewModel()
+    @EnvironmentObject var monuments: MonumentViewModel
     @State var expandedScreen_startPoint = CGRect(x: 0, y: 0, width: 100, height: 100)
     @State var expandedScreen_returnPoint = CGRect(x: 0, y: 0, width: 100, height: 100)
     @State var expandedScreen_shown = false
     @State var expandedScreen_willHide = false
-    var url = "http://127.0.0.1:8000/"
+    
     let ciContext = CIContext()
     @State var showSheetMonumentView = false
     @State var showAlertMonument = false
-
 
     var body: some View {
         
@@ -67,7 +65,7 @@ struct MonumentListView: View {
                             
                             ZStack (alignment: .bottom){
                                 URLImage(
-                                    URL(string: "\(self.url)storage/\(thisItem.images[0]!.url)")!,
+                                    URL(string: "\(baseApiURL())storage/\(thisItem.images[0].url)")!,
                                     processors: [CoreImageFilterProcessor(
                                         name: "CISepiaTone",
                                         parameters: [ kCIInputIntensityKey: 0.2 ],
@@ -90,17 +88,7 @@ struct MonumentListView: View {
                                 )
                                 
                                 Button(action: {
-                                    self.monuments.testMonument = thisItem
-                                    let x = geo.frame(in: .global).minX
-                                    let y = geo.frame(in: .global).minY
-                                    let thisRect = CGRect(x: x, y: y, width:self.SVWidth, height: self.itemHeight)
-                                    self.expandedScreen_returnPoint = thisRect
-                                    self.expandedScreen_startPoint =  thisRect
-                                    
-                                    Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { (timer) in
-                                        self.expandedScreen_shown = true
-                                        self.expandedScreen_startPoint =  CGRect(x: 0, y: 0, width:UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
-                                    }
+                                    self.monuments.show(id: thisItem.id, view: self, geo: geo)
                                 }) {
                                     ZStack (alignment: .bottom){
                                         Rectangle()
@@ -139,17 +127,7 @@ struct MonumentListView: View {
                                 .modifier(AddImage())
 
                                 .onTapGesture(perform: {
-                                    self.monuments.testMonument = thisItem
-                                    let x = geo.frame(in: .global).minX
-                                    let y = geo.frame(in: .global).minY
-                                    let thisRect = CGRect(x: x, y: y, width:self.SVWidth, height: self.itemHeight)
-                                    self.expandedScreen_returnPoint = thisRect
-                                    self.expandedScreen_startPoint =  thisRect
-                                    
-                                    Timer.scheduledTimer(withTimeInterval: 5.3, repeats: false) { (timer) in
-                                        self.expandedScreen_shown = true
-                                        self.expandedScreen_startPoint =  CGRect(x: 0, y: 0, width:UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
-                                    }
+                                    self.monuments.show(id: thisItem.id, view: self, geo: geo)
                                 })
                             
                         )
@@ -173,7 +151,7 @@ struct MonumentListView: View {
                                     
                                     if (self.expandedScreen_shown) {
                                         URLImage(
-                                            URL(string: "\(self.url)storage/\(self.monuments.testMonument.images[0]!.url)")!,
+                                            URL(string: "\(baseApiURL())storage/\(self.monuments.testMonument.images[0]!.url)")!,
                                             processors: [
                                                 Resize(size: CGSize(width: self.SVWidth, height: self.itemHeight),
                                                 scale: UIScreen.main.scale)

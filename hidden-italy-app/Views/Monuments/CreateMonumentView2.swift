@@ -178,7 +178,7 @@ struct CreateMonumentView2: View {
                                 Button(action: {
                                     self.isShowingOverlay = false
                                     self.creationMonument.selectedCategoryId = item.id
-                                    self.selectedCategoryId = item.id
+//                                    self.selectedCategoryId = item.id
                                     self.selectedCategoryName = item.description
                                 }) {
                                     Text(item.description)
