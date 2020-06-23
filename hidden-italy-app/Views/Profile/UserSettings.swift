@@ -9,32 +9,43 @@
 import SwiftUI
 
 struct UserSettings: View {
-    
+    @Environment(\.presentationMode) var presentationMode
+
+    @EnvironmentObject var user: UserViewModel
+
     @Binding var showSheetSettingsView: Bool
     
     var body: some View {
-        
-        
+    
         ScrollView{
             VStack (alignment: .center, spacing:20){
                 HStack {
                     Spacer()
-                    Button(action: { self.showSheetSettingsView = false }){
+                    Button(action: {
+                        self.showSheetSettingsView = false
+                    }){
                         Image(systemName: "xmark.circle.fill")
                             .foregroundColor(Color(Accent))
-                            //                            .foregroundColor(Color(.gray))
                             .font(.system(size: 25))
                     }.modifier(ButtonCircle())
                 }.padding(.top, 30)
                 
+                Button(action: {
+                    self.showSheetSettingsView = false
+                    self.user.logout()
+                }) {
+                    Text("Logout")
+                }
                 
             }.modifier(Form())
-            }.modifier(BgSafearea())
+        }.modifier(BgSafearea())
     }
 }
 
 struct userSettings_Previews: PreviewProvider {
     static var previews: some View {
-        UserSettings(showSheetSettingsView: .constant(true))
+        UserSettings(
+            showSheetSettingsView: .constant(true)
+        )
     }
 }

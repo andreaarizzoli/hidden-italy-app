@@ -10,7 +10,7 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @ObservedObject var user = UserViewModel()
+    @EnvironmentObject var user: UserViewModel
     
     @State private var nextView: String = ""
     
@@ -23,7 +23,7 @@ struct LoginView: View {
         
         VStack() {
             if (nextView == "logged" || self.user.getToken() != "") {
-                RootTabView()
+                RootTabView().environmentObject(user)
             } else if (nextView == "registerUser") {
                 RegisterUserView()
             } else {
@@ -43,14 +43,14 @@ struct LoginView: View {
                     Input(
                         icon: "envelope",
                         placeholder: "Email",
-                        type: "email",
+                        type: .email,
                         value: $user.newLogin.email
                     )
                     
                     Input(
                         icon: "lock",
                         placeholder: "Password",
-                        type: "password",
+                        type: .password,
                         value: $user.newLogin.password
                     )
                     

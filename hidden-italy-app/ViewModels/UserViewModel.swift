@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import Combine
+import SwiftUI
 
 class UserViewModel: ObservableObject {
     
@@ -18,6 +19,9 @@ class UserViewModel: ObservableObject {
      * @author Daniele Tulone <danieletulone.work@gmail.com>
      */
     @Published var newLogin = LoginBody(email: "", password: "")
+    
+    
+    @Published var logged: Bool = UserViewModel.getToken() == "" ? false : true
     
     /**
      * The field name in which store token.
@@ -55,7 +59,7 @@ class UserViewModel: ObservableObject {
      */
     func login(callback: @escaping (Any?) -> Void) -> Void {
         post(
-            uri: "/v1/auth/login",
+            uri: endpoint(.login),
             body: LoginBody(
                 email: self.newLogin.email,
                 password: self.newLogin.password
@@ -64,11 +68,32 @@ class UserViewModel: ObservableObject {
             success: {res in
                 let response = res as! Login
 
-                self.setApiToken(token: response.token)
+                UserViewModel.setApiToken(token: response.token)
+                
+                self.logged = true
                 
                 callback(res)
             }
         )
+    }
+    
+    func logout() -> Void {
+        post(
+            uri: endpoint(.revoke),
+            body: EmptyBody(),
+            model: Revoke.self,
+            success: {res in
+                
+                let data = res as! Revoke
+                
+                if (data.revoked) {
+                    UserViewModel.setApiToken(token: "")
+                    self.logged = false
+                }
+            }
+        )
+        
+       
     }
     
     /**
@@ -76,7 +101,7 @@ class UserViewModel: ObservableObject {
      *
      * @author Daniele Tulone <danieletulone.work@gmail.com>
      */
-    func setApiToken(token: String) -> Void {
+    static func setApiToken(token: String) -> Void {
         UserDefaults.standard.set(token, forKey: UserViewModel.tokenName)
     }
 }

@@ -10,10 +10,10 @@ import SwiftUI
 
 struct RegisterUserView: View {
     
-    @ObservedObject var user = UserViewModel()
+    @EnvironmentObject var user: UserViewModel
     
-    @State private var name = ""
-    @State private var surname = ""
+    @State private var firstname = ""
+    @State private var lastname = ""
     @State private var email = ""
     @State private var password = ""
     @State private var r_password = ""
@@ -23,11 +23,11 @@ struct RegisterUserView: View {
     @State var newImage = false
     
     var disableForm: Bool {
-        name.count < 1 && name.count < 255 ||
-            surname.count < 1 && surname.count > 255 ||
-            email.count < 1 && email.count > 255 ||
-            password.count < 1 && password.count > 255 ||
-            r_password != password
+        firstname.count < 1 && firstname.count < 255 ||
+        lastname.count < 1 && lastname.count > 255 ||
+        email.count < 1 && email.count > 255 ||
+        password.count < 1 && password.count > 255 ||
+        r_password != password
     }
     
     var body: some View {
@@ -65,31 +65,39 @@ struct RegisterUserView: View {
                             ImagePickerView(isPresented: self.$isShowingImagePicker, selectedImage: self.$image, newImage: self.$newImage)
                         })
                     
-                    HStack {
-                        TextField("Nome", text: $name).modifier(FormTextFieldText())
-                        Image(systemName: "person").modifier(FormTextFieldImage())
-                    }.modifier(FormTextField())
+                    Input(
+                        icon: "person",
+                        placeholder: "Nome",
+                        value: $firstname
+                    )
                     
-                    HStack {
-                        TextField("Cognome", text: $surname).modifier(FormTextFieldText())
-                        Image(systemName: "person").modifier(FormTextFieldImage())
-                    }.modifier(FormTextField())
+                    Input(
+                        icon: "person",
+                        placeholder: "Cognome",
+                        value: $lastname
+                    )
                     
-                    HStack {
-                        TextField("Email", text: $email).modifier(FormTextFieldText())
-                        Image(systemName: "envelope").modifier(FormTextFieldImage())
-                    }.modifier(FormTextField())
+                    Input(
+                        icon: "envelope",
+                        placeholder: "Email",
+                        type: .email,
+                        value: $email
+                    )
                     
-                    HStack {
-                        SecureField("Password", text: $password).modifier(FormTextFieldText())
-                        Image(systemName: "lock").modifier(FormTextFieldImage())
-                    }.modifier(FormTextField())
+                    Input(
+                        icon: "lock",
+                        placeholder: "Nome",
+                        type: .password,
+                        value: $password
+                    )
                     
-                    HStack {
-                        SecureField("Ripeti la tua Password", text: $r_password).modifier(FormTextFieldText())
-                        Image(systemName: "lock").modifier(FormTextFieldImage())
-                    }.modifier(FormTextField())
-                    
+                    Input(
+                        icon: "lock",
+                        placeholder: "Ripeti password",
+                        type: .password,
+                        value: $r_password
+                    )
+    
                     Button(action: {
 //                        self.user.createUser(name: "Andrea", surname: "surname", email: "email", password: "password")
                         self.nextView = "CreateUser"
@@ -109,7 +117,10 @@ struct RegisterUserView: View {
                     
                     Spacer()
                     
-                }.modifier(Form()).modifier(BgSafearea()).onTapGesture { hideKeyboard() }.modifier(AdaptsToSoftwareKeyboard())
+                }.modifier(Form())
+                 .modifier(BgSafearea())
+                 .modifier(AdaptsToSoftwareKeyboard())
+                 .onTapGesture{hideKeyboard()}
             }
         }
     }

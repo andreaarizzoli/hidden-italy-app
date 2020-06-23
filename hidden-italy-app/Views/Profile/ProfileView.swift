@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @EnvironmentObject var user: UserViewModel
+    
     @State var showSheetSettingsView = false
     @State var isShowingImagePicker = false
     @State var isShowingOverlay = false
@@ -17,7 +19,6 @@ struct ProfileView: View {
     @State var image = UIImage()
     
     var body: some View {
-        
         
         VStack (spacing:20){
             HStack (alignment: .center){
@@ -30,11 +31,16 @@ struct ProfileView: View {
                             .foregroundColor(Color(Accent))
                             .font(.system(size: 24))
                     }.sheet(isPresented: $showSheetSettingsView ) {
-                        UserSettings(showSheetSettingsView: self.$showSheetSettingsView)
+                        UserSettings(
+                            showSheetSettingsView:
+                            self.$showSheetSettingsView
+                        ).environmentObject(self.user)
                     }
                 }
                 
-            }.padding(.horizontal, 30).padding(.top, 15).modifier(PaddingSafeArea())
+            }.padding(.horizontal, 30)
+             .padding(.top, 15)
+             .modifier(PaddingSafeArea())
             
             HStack(spacing:20){
                 Button(action: {
@@ -52,12 +58,13 @@ struct ProfileView: View {
                             .foregroundColor(Color(Accent))
                     }
                 }.buttonStyle(PlainButtonStyle())
-                    .sheet(isPresented: $isShowingImagePicker, content: {
-                        ImagePickerView(
-                            isPresented: self.$isShowingImagePicker,
-                            selectedImage: self.$image, newImage: self.$newImage)
-                        
-                    })
+                    .sheet(isPresented: $isShowingImagePicker,
+                           content: {
+                            ImagePickerView(
+                                isPresented: self.$isShowingImagePicker,
+                                selectedImage: self.$image, newImage: self.$newImage
+                            )
+                        })
 
                 
                 Text("Ciao, Nome Utente").modifier(FormTextFieldText())
