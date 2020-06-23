@@ -26,6 +26,7 @@
 		0526ED1B249D2E7100B598BC /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED1A249D2E7100B598BC /* Optional.swift */; };
 		0526ED1D249D315600B598BC /* BrokenRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526ED1C249D315600B598BC /* BrokenRule.swift */; };
 		05342F5B24A11AD800F9589B /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05342F5A24A11AD800F9589B /* TextView.swift */; };
+		05342F5F24A238A500F9589B /* ValidationSuccessMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05342F5E24A238A500F9589B /* ValidationSuccessMessage.swift */; };
 		0541621824998EE400525898 /* CreateMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541621724998EE400525898 /* CreateMonumentView.swift */; };
 		0569BC3D248E8AE0000B5972 /* MonumentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3C248E8AE0000B5972 /* MonumentListView.swift */; };
 		0569BC3F249186C8000B5972 /* MapMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3E249186C8000B5972 /* MapMonumentView.swift */; };
@@ -101,6 +102,7 @@
 		0526ED1A249D2E7100B598BC /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		0526ED1C249D315600B598BC /* BrokenRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrokenRule.swift; sourceTree = "<group>"; };
 		05342F5A24A11AD800F9589B /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		05342F5E24A238A500F9589B /* ValidationSuccessMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationSuccessMessage.swift; sourceTree = "<group>"; };
 		0541621724998EE400525898 /* CreateMonumentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMonumentView.swift; sourceTree = "<group>"; };
 		0569BC3C248E8AE0000B5972 /* MonumentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentListView.swift; sourceTree = "<group>"; };
 		0569BC3E249186C8000B5972 /* MapMonumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMonumentView.swift; sourceTree = "<group>"; };
@@ -225,7 +227,6 @@
 				0526ED1C249D315600B598BC /* BrokenRule.swift */,
 				0541621724998EE400525898 /* CreateMonumentView.swift */,
 				0526ED16249D2B1C00B598BC /* CreateMonumentView2.swift */,
-				0526ED18249D2B3E00B598BC /* CreateMonumentViewModel.swift */,
 				0569BC3C248E8AE0000B5972 /* MonumentListView.swift */,
 				059516C924898E160054AC5A /* MonumentListView2.swift */,
 				0526ED18249D2B3E00B598BC /* ValidationMonument.swift */,
@@ -357,6 +358,7 @@
 				7760A266249F5C6F00ED0A53 /* OverlayBackground.swift */,
 				7760A26E249F5D1B00ED0A53 /* PaddingSafeArea.swift */,
 				7760A264249F5C4800ED0A53 /* ValidationErrorMessage.swift */,
+				05342F5E24A238A500F9589B /* ValidationSuccessMessage.swift */,
 				7760A258249F5B1000ED0A53 /* Form */,
 			);
 			path = Modifiers;
@@ -605,6 +607,7 @@
 			files = (
 				7760A269249F5CB400ED0A53 /* LoginText.swift in Sources */,
 				0526ED1B249D2E7100B598BC /* Optional.swift in Sources */,
+				05342F5F24A238A500F9589B /* ValidationSuccessMessage.swift in Sources */,
 				7968C565249FA2B400A4464D /* ButtonCircle.swift in Sources */,
 				051585752462E32F00194002 /* RegisterUserView.swift in Sources */,
 				77066E4B24A1633A00A74057 /* Register.swift in Sources */,

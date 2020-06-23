@@ -15,7 +15,7 @@ struct MonumentListView: View {
     
     let itemHeight:CGFloat = 350
     let imageHeight:CGFloat = 300
-    let SVWidth = UIScreen.main.bounds.width - 40
+    let SVWidth = UIScreen.main.bounds.width - 60
     
     @ObservedObject var monuments = MonumentViewModel()
     @State var expandedScreen_startPoint = CGRect(x: 0, y: 0, width: 100, height: 100)
@@ -25,17 +25,22 @@ struct MonumentListView: View {
     var url = "http://127.0.0.1:8000/"
     let ciContext = CIContext()
     @State var showSheetMonumentView = false
+    @State var showAlertMonument = false
+
 
     var body: some View {
         
-        ZStack{
-            ScrollView{
+        ZStack {
+            ScrollView {
                 HStack (alignment: .center){
+                    
                     Text("Monumenti")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(Color(Accent))
+                    
                     Spacer()
+                    
                     VStack(alignment: .leading){
                         Button(action: {
                             self.showSheetMonumentView.toggle()
@@ -43,19 +48,21 @@ struct MonumentListView: View {
                             Image(systemName: "plus.circle.fill")
                                 .foregroundColor(Color(Accent))
                                 .font(.system(size: 35))
-                            
-                                
-                        }.sheet(isPresented: $showSheetMonumentView) {
-                            //                            CreateMonumentView()
-                            CreateMonumentView2(showSheetMonumentView: self.$showSheetMonumentView)
-                        }.modifier(ButtonCircle())
+                        }
+                        .modifier(ButtonCircle())
+                        .sheet(isPresented: $showSheetMonumentView) {
+                            CreateMonumentView2(
+                                showSheetMonumentView: self.$showSheetMonumentView,
+                                showAlertMonument: self.$showAlertMonument
+                            )
+                        }
                     }
                 }.padding(.horizontal, 30).padding(.top)
                 
                 //ForEach_start
                 ForEach(monuments.monumentList, id: \.id){thisItem in
                     
-                    GeometryReader{geo -> AnyView in
+                    GeometryReader {geo -> AnyView in
                         return AnyView(
                             
                             ZStack (alignment: .bottom){
@@ -125,11 +132,11 @@ struct MonumentListView: View {
                                 }
                                 
                                 
-                            }
-                            .cornerRadius(15).foregroundColor(.white)
-                            .shadow(color: .init(red: 0.1, green: 0.1, blue: 0.1)
-                                , radius: 11 , x: 0, y: 4)
-                                .clipShape(RoundedRectangle(cornerRadius: 15))
+                                }
+                                .frame(width: self.SVWidth)
+                                .clipShape(RoundedRectangle(cornerRadius: 35))
+                                .modifier(AddImage())
+
                                 .onTapGesture(perform: {
                                     self.monuments.testMonument = thisItem
                                     let x = geo.frame(in: .global).minX
@@ -145,11 +152,10 @@ struct MonumentListView: View {
                                 })
                             
                         )
-                    }.background(Color.clear.opacity(0.4))
+                    }
                         .frame(height:self.itemHeight)
-                        .padding(.leading, 20)
-                        .padding(.trailing, 20)
-                        .padding(.bottom, 20)
+                        .padding(.horizontal, 30)
+                        .padding(.bottom, 30)
                     }.coordinateSpace(name: "forEach")
                 
                 //ForEach_End
@@ -245,6 +251,22 @@ struct MonumentListView: View {
                 .animation(
                     Animation.easeInOut(duration: 0.05)
                         .delay(self.expandedScreen_willHide ? 0.5 : 0))
+            
+            if (self.showAlertMonument) {
+                VStack (alignment: .center) {
+                    Text("Grazie per avere segnalato un nuovo monumento.\nAppena verrà approvato sarà disponibile.")
+                        .fontWeight(.bold)
+                        .padding()
+                }.modifier(ValidationSuccessMessage())
+                    .onAppear(perform: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            withAnimation {
+                                self.showAlertMonument = false
+                            }
+                        }
+                    })
+            }
+            
         }.modifier(PaddingSafeArea()).modifier(BgSafearea())
          .onAppear { self.monuments.getNearMonuments() }
     }
