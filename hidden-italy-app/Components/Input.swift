@@ -35,7 +35,7 @@ struct Input: View {
      *
      * @author Daniele Tulone <danieletulone.work@gmail.com>
      */
-    var type: String = "text"
+    var type: InputEnum = .text
     
     /**
      * The value of input that will send.
@@ -54,15 +54,15 @@ struct Input: View {
     var body: some View {
         
         HStack {
-            if (self.type == "text" || self.type == "email") {
+            if (self.type.rawValue == "text" || self.type.rawValue == "email") {
                 TextField(self.placeholder, text: $value)
                     .autocapitalization(
-                        self.type == "email" ? .none : .sentences
+                        self.type.rawValue == "email" ? .none : .sentences
                     )
                     .modifier(FormTextFieldText())
             }
             
-            if (self.type == "password") {
+            if (self.type.rawValue == "password") {
                 SecureField(self.placeholder, text: $value)
                     .modifier(FormTextFieldText())
             }
