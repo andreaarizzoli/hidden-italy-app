@@ -17,14 +17,18 @@ struct CreateMonumentView2: View {
     @ObservedObject var creationMonument = ValidationMonument()
 
     @Binding var showSheetMonumentView: Bool
+    @Binding var showAlertMonument: Bool
     
     @State var image = UIImage()
     @State var selectedCategoryName = "Categoria"
+    @State var selectedCategoryId: Int = 0
     
     @State var isShowingImagePicker = false
     @State var isShowingOverlay = false
     @State var validateError = false
     @State var newImage = false
+    var characterLimitDescription: Int = 800
+
 
 //    init() {
 //        UITableView.appearance().separatorStyle = .none
@@ -42,9 +46,8 @@ struct CreateMonumentView2: View {
 
                     Button(action: { self.showSheetMonumentView = false }){
                         Image(systemName: "xmark.circle.fill")
-                            .foregroundColor(Color(Accent))
-                            //                            .foregroundColor(Color(.gray))
-                            .font(.system(size: 25))
+                            .modifier(ButtonExit())
+                           
                     }.modifier(ButtonCircle())
                 }.padding(.top, 15).padding(.trailing, 15)
                 
@@ -67,33 +70,44 @@ struct CreateMonumentView2: View {
                             }
                         }.buttonStyle(PlainButtonStyle())
                             .sheet(isPresented: $isShowingImagePicker, content: {
-                                ImagePickerView(isPresented: self.$isShowingImagePicker, selectedImage: self.$image, newImage: self.$newImage)
+                                ImagePickerView(isPresented: self.$isShowingImagePicker,
+                                                selectedImage: self.$image,
+                                                newImage: self.$newImage)
                             })
                         
                         HStack {
-                            TextField("Nome", text: self.$creationMonument.name.bound).modifier(FormTextFieldText())
+                            TextField("Nome", text: self.$creationMonument.name.bound)
+                                .modifier(FormTextFieldText())
                         }.modifier(FormTextField())
                         
                         HStack {
-                            TextField("Descrizione", text: self.$creationMonument.description.bound).modifier(FormTextFieldText())
-                        }.modifier(FormTextField())
+                            TextView(placeholderText: "Descrizione",
+                                     text: self.$creationMonument.description.bound,
+                                     limit: self.characterLimitDescription, size: 17,
+                                     weightFont: .regular).frame(numLines: 4)
+                            .padding()
+                        }.modifier(AddImage())
                         
                         HStack {
-                            TextField("Indirizzo", text: self.$creationMonument.address.bound).modifier(FormTextFieldText())
+                            TextField("Indirizzo", text: self.$creationMonument.address.bound)
+                                .modifier(FormTextFieldText())
                         }.modifier(FormTextField())
                         
                         HStack {
                             HStack {
-                                TextField("Numero", text: self.$creationMonument.number.bound).modifier(FormTextFieldText())
+                                TextField("Numero", text: self.$creationMonument.number.bound)
+                                    .modifier(FormTextFieldText())
                             }.modifier(FormTextField())
                             
                             HStack {
-                                TextField("CAP", text: self.$creationMonument.cap.bound).modifier(FormTextFieldText())
+                                TextField("CAP", text: self.$creationMonument.cap.bound)
+                                    .modifier(FormTextFieldText())
                             }.modifier(FormTextField())
                         }
                         
                         HStack {
-                            TextField("Città", text: self.$creationMonument.city.bound).modifier(FormTextFieldText())
+                            TextField("Città", text: self.$creationMonument.city.bound)
+                                .modifier(FormTextFieldText())
                         }.modifier(FormTextField())
                         
                         Button(action: {
@@ -108,12 +122,28 @@ struct CreateMonumentView2: View {
                         if (self.validateError == true && self.creationMonument.brokenRules.count >= 1) {
                             Text("Inserisci  \(self.creationMonument.brokenRules[0].propertyName).")
                             .modifier(ValidationErrorMessage())
+                            .onAppear(perform: {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                    withAnimation {
+                                        self.validateError = false
+                                    }
+                                }
+                            })
                         }
                         
                         Button(action:  {
                             if (self.newImage) {self.creationMonument.image = 1}
                             self.validateError = true
                             if (self.creationMonument.validate()) {
+                                self.monuments.create(name: self.creationMonument.name.bound,
+                                                      description: self.creationMonument.description.bound,
+                                                      address: self.creationMonument.address.bound,
+                                                      number: self.creationMonument.number.bound,
+                                                      cap: self.creationMonument.cap.bound,
+                                                      city: self.creationMonument.city.bound,
+                                                      category: self.selectedCategoryId,
+                                                      image: self.image)
+                                self.showAlertMonument = true
                                 print("inseriamo il monumento")
                                 self.showSheetMonumentView = false
                             }
@@ -124,7 +154,7 @@ struct CreateMonumentView2: View {
 
                         Spacer()
                         
-                    }.modifier(Form())
+                    }.modifier(Form()).padding(.top)
                 }
             }
             
@@ -148,6 +178,7 @@ struct CreateMonumentView2: View {
                                 Button(action: {
                                     self.isShowingOverlay = false
                                     self.creationMonument.selectedCategoryId = item.id
+                                    self.selectedCategoryId = item.id
                                     self.selectedCategoryName = item.description
                                 }) {
                                     Text(item.description)
@@ -168,7 +199,7 @@ struct CreateMonumentView2: View {
 
 struct CreateMonumentView2_Previews: PreviewProvider {
     static var previews: some View {
-        CreateMonumentView2(showSheetMonumentView: .constant(true))
+        CreateMonumentView2(showSheetMonumentView: .constant(true), showAlertMonument: .constant(false))
     }
 }
 

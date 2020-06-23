@@ -62,27 +62,11 @@ class MonumentViewModel: ObservableObject {
         )
     }
     
-    func createMonument(
-        name: String,
-        description: String,
-        address: String,
-        number: String,
-        cap: String,
-        city: String,
-        category: Int,
-        image: UIImage
-    ) -> Void {
-//        let coordinate = findCoordinates(address: address, number: number, city: city, cap: cap)
-//
-//        let _: [String: Any] = [
-//            "name": name,
-//            "description": description,
-//            "lat": address,
-//            "lon": address,
-//            "user_id": "1",
-//            "main_category_id": category,
-//            "categories": "2",
-//        ]
+    func create(name: String, description: String, address: String, number: String, cap: String, city: String, category: Int, image: UIImage) {
+        
+        let coordinate = findCoordinates(address: address, number: number, city: city, cap: cap)
+        
+        print("coordinate: \(coordinate)")
     }
     
     func findCoordinates(address: String, number: String, city: String, cap: String) -> CLGeocoder {

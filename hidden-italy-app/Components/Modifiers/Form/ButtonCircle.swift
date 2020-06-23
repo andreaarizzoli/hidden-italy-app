@@ -11,10 +11,9 @@ import SwiftUI
 struct ButtonCircle: ViewModifier {
     func body(content: Content) -> some View {
         content
-            
             .background(
                 Circle()
-                    .fill(Color.clear)
+                    .fill(Color(BGColor))
                     .shadow(
                         color: Color(darkShadow),
                         radius: 10,
@@ -28,6 +27,5 @@ struct ButtonCircle: ViewModifier {
                         y: -10
                     )
             )
-        
     }
 }

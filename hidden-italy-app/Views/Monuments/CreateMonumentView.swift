@@ -120,16 +120,16 @@ struct CreateMonumentView: View {
                         }
                         
                         Button(action:  {
-                            self.monuments.createMonument(
-                                name: self.name,
-                                description: self.description,
-                                address: self.address,
-                                number: self.number,
-                                cap: self.cap,
-                                city: self.city,
-                                category: self.selectedCategoryId,
-                                image: self.image
-                            )
+//                            self.monuments.create(
+//                                name: self.name,
+//                                description: self.description,
+//                                address: self.address,
+//                                number: self.number,
+//                                cap: self.cap,
+//                                city: self.city,
+//                                category: self.selectedCategoryId,
+//                                image: self.image
+//                            )
                             self.showSheetMonumentView = false
                             print(self.image)
                         }){

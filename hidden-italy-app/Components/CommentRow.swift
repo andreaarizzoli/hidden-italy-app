@@ -38,7 +38,7 @@ struct CommentRow: View {
 
                 }
                 Spacer()
-            }.padding(.horizontal).padding(.top)
+            }.padding(.top)
         }
     }
 }
