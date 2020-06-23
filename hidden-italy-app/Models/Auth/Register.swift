@@ -8,6 +8,17 @@
 
 import Foundation
 
+/**
+ * The model used for register response.
+ *
+ * @author Daniele Tulone <danieletulone.work@gmail.com>
+ */
 struct Register: Codable {
     
+    /**
+    * The user data.
+    *
+    * @author Daniele Tulone <danieletulone.work@gmail.com>
+    */
+    var user: User
 }

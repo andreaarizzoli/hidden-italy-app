@@ -8,7 +8,24 @@
 
 import Foundation
 
+/**
+ * The model used for login response.
+ *
+ * @author Daniele Tulone <danieletulone.work@gmail.com>
+ */
 struct Login: Codable {
+    
+    /**
+     * The api token. It's a jwt token.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
     var token: String
+    
+    /**
+     * The user data.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
     var user: User
 }

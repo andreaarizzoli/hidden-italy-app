@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+struct Revoke: Codable {
+    
+    /**
+     * If true tells that token has been revoked correctly.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
+    var revoked: Bool
+}
