@@ -84,7 +84,7 @@ struct CreateMonumentView2: View {
                             TextView(placeholderText: "Descrizione",
                                      text: self.$creationMonument.description.bound,
                                      limit: self.characterLimitDescription, size: 17,
-                                     weightFont: .light).frame(numLines: 4)
+                                     weightFont: .regular).frame(numLines: 4)
                             .padding()
                         }.modifier(AddImage())
                         

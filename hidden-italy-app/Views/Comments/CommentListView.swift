@@ -16,6 +16,7 @@ struct CommentListView: View {
     @ObservedObject var users = UserViewModel()
     @State var isShowingTextComment: Bool = false
     @State var newComment: String = ""
+    @State var commentNotification: Bool = false
     var characterLimitDescription = 250
     
     var body: some View {
@@ -37,34 +38,55 @@ struct CommentListView: View {
                             }
                         }
                     }) {
+                        
                         Image(systemName: "message")
+                        
                     }.buttonStyle(PlainButtonStyle())
+                    
                 }.padding(.bottom)
                 
                 if (self.isShowingTextComment) {
-                    HStack {
-                        
-                        TextView(placeholderText: "Inserisci commento...", text: $newComment, limit: self.characterLimitDescription, size: 17, weightFont: .light).frame(numLines: 2)
-                        
-                        Button(action: {
-                            
-                            let monumentId = self.monument.id
-                            if (self.comments.validate(userId: 1, monumentId: monumentId, comment: self.newComment)) {
-                                
-                                self.newComment = ""
-
+                    if (self.commentNotification) {
+                        Text("Commento aggiunto!")
+                        .fontWeight(.light)
+                        .padding()
+                        .onAppear(perform: {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                 withAnimation {
                                     self.isShowingTextComment = false
+                                    self.commentNotification = false
+
                                 }
                             }
-                        }) {
-                            if (self.newComment == "") {
-                                Image(systemName: "paperplane").foregroundColor(Color .gray)
-                            } else {
-                                Image(systemName: "paperplane").foregroundColor(Color(Accent))
-                            }
-                        }.buttonStyle(PlainButtonStyle())
-                    }.modifier(FormTextField()).padding(.bottom)
+                        })
+                    } else {
+
+                        HStack {
+
+                            TextView(placeholderText: "Inserisci commento...",
+                            text: $newComment, limit: self.characterLimitDescription,
+                            size: 17, weightFont: .light).frame(numLines: 2)
+
+                            Button(action: {
+                                
+                                let monumentId = self.monument.id
+                                if (self.comments.validate(userId: 1, monumentId: monumentId, comment: self.newComment)) {
+                                    
+                                    self.newComment = ""
+                                    
+                                    self.commentNotification = true
+
+                                }
+                            }) {
+                                if (self.newComment == "") {
+                                    Image(systemName: "paperplane").foregroundColor(Color .gray)
+                                } else {
+                                    Image(systemName: "paperplane").foregroundColor(Color(Accent))
+                                }
+                            }.buttonStyle(PlainButtonStyle())
+                        }.modifier(FormTextField()).padding(.bottom)
+                    }
+
                 }
                 
                 ForEach(self.monument.comments){ comment in
