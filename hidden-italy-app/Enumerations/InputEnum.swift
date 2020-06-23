@@ -8,8 +8,31 @@
 
 import Foundation
 
+/**
+ * Enumeration that contains allowed types of input.
+ *
+ * @author Daniele Tulone <danieletulone.work@gmail.com>
+ */
 enum InputEnum: String {
+    
+    /**
+     * Text is visible and first letter of each sentece is uppercase.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
     case text
+    
+    /**
+     * Text is visible and first letter is lowercase.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
     case email
+    
+    /**
+     * Text is not visible and first letter is lowercase.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
     case password
 }
