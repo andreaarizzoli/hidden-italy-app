@@ -20,12 +20,12 @@ struct LoginBody: Codable {
      *
      * @author Daniele Tulone <danieletulone.work@gmail.com>
      */
-    var email: String
+    var email: String = ""
     
     /**
      * The password to send.
      *
      * @author Daniele Tulone <danieletulone.work@gmail.com>
      */
-    var password: String
+    var password: String = ""
 }

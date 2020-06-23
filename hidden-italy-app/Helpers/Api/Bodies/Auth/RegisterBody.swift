@@ -21,33 +21,33 @@ struct RegisterBody: Codable {
      *
      * @author Daniele Tulone <danieletulone.work@gmail.com>
      */
-    var firstname:  String = ""
+    var firstname: String = ""
     
     /**
      * The lastname to send.
      *
      * @author Daniele Tulone <danieletulone.work@gmail.com>
      */
-    var lastname:   String = ""
+    var lastname: String = ""
     
     /**
      * The email to send. Validation only back side.
      *
      * @author Daniele Tulone <danieletulone.work@gmail.com>
      */
-    var email:      String = ""
+    var email: String = ""
     
     /**
      * The password to send.
      *
      * @author Daniele Tulone <danieletulone.work@gmail.com>
      */
-    var password:   String = ""
+    var password: String = ""
     
     /**
      * The retype password to send. This value must match with password field.
      *
      * @author Daniele Tulone <danieletulone.work@gmail.com>
      */
-    var password_confirm: String = ""
+    var password_confirmation: String = ""
 }

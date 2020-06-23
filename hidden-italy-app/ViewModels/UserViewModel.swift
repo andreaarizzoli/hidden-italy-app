@@ -20,6 +20,7 @@ class UserViewModel: ObservableObject {
      */
     @Published var newLogin = LoginBody(email: "", password: "")
     
+    @Published var newUser = RegisterBody()
     
     @Published var logged: Bool = UserViewModel.getToken() == "" ? false : true
     
@@ -57,7 +58,7 @@ class UserViewModel: ObservableObject {
      *
      * @author Daniele Tulone <danieletulone.work@gmail.com>
      */
-    func login(callback: @escaping (Any?) -> Void) -> Void {
+    func login(callback: @escaping (Any?) -> Void = {res in }) -> Void {
         post(
             uri: endpoint(.login),
             body: LoginBody(
@@ -92,8 +93,19 @@ class UserViewModel: ObservableObject {
                 }
             }
         )
-        
-       
+    }
+    
+    func register() -> Void {
+        post(
+            uri: endpoint(.register),
+            body: self.newUser,
+            model: Register.self,
+            success: {res in
+                self.newLogin.email = self.newUser.email
+                self.newLogin.password = self.newUser.password
+                self.login()
+            }
+        )
     }
     
     /**

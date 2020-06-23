@@ -12,27 +12,22 @@ struct RegisterUserView: View {
     
     @EnvironmentObject var user: UserViewModel
     
-    @State private var firstname = ""
-    @State private var lastname = ""
-    @State private var email = ""
-    @State private var password = ""
-    @State private var r_password = ""
     @State private var nextView = ""
     @State var image = UIImage()
     @State var isShowingImagePicker = false
     @State var newImage = false
     
     var disableForm: Bool {
-        firstname.count < 1 && firstname.count < 255 ||
-        lastname.count < 1 && lastname.count > 255 ||
-        email.count < 1 && email.count > 255 ||
-        password.count < 1 && password.count > 255 ||
-        r_password != password
+        user.newUser.firstname.count < 1 && user.newUser.firstname.count < 255 ||
+        user.newUser.lastname.count < 1 && user.newUser.lastname.count > 255 ||
+        user.newUser.email.count < 1 && user.newUser.email.count > 255 ||
+        user.newUser.password.count < 1 && user.newUser.password.count > 255 ||
+        user.newUser.password != user.newUser.password_confirmation
     }
     
     var body: some View {
         
-        VStack{
+        VStack {
             if (nextView == "LoginView") {
                 LoginView()
             }
@@ -68,39 +63,38 @@ struct RegisterUserView: View {
                     Input(
                         icon: "person",
                         placeholder: "Nome",
-                        value: $firstname
+                        value: $user.newUser.firstname
                     )
                     
                     Input(
                         icon: "person",
                         placeholder: "Cognome",
-                        value: $lastname
+                        value: $user.newUser.lastname
                     )
                     
                     Input(
                         icon: "envelope",
                         placeholder: "Email",
                         type: .email,
-                        value: $email
+                        value: $user.newUser.email
                     )
                     
                     Input(
                         icon: "lock",
                         placeholder: "Nome",
                         type: .password,
-                        value: $password
+                        value: $user.newUser.password
                     )
                     
                     Input(
                         icon: "lock",
                         placeholder: "Ripeti password",
                         type: .password,
-                        value: $r_password
+                        value: $user.newUser.password_confirmation
                     )
     
                     Button(action: {
-//                        self.user.createUser(name: "Andrea", surname: "surname", email: "email", password: "password")
-                        self.nextView = "CreateUser"
+                        self.user.register()
                     }){
                         Text("Crea utente")
                             .modifier(FormButtonText())
