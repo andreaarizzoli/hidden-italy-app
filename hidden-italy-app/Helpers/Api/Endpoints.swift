@@ -5,28 +5,92 @@
 //  Created by Daniele Tulone on 21/06/2020.
 //  Copyright © 2020 Andrea Arizzoli. All rights reserved.
 //
+//  ALL CASES AND METHODS ARE SORTED BY TOPIC -> TYPE -> a to Z
 
 import Foundation
 
-enum Endpoints {
-    enum Monuments {
-        static var findNearest: String = "/v1/monuments/find-nearest"
-        static var index: String = "/v1/monuments"
-        
-        static func show (id: String) -> String {
-            return "/v1/monuments/" + id
-        }
+/**
+ * Enumeration that contians all api (first-party) endpoints.
+ *
+ * @author Daniele Tulone <danieletulone.work@gmail.com>
+ */
+enum Endpoints: String {
+    
+    //------------------
+    //  AUTHENTICATION
+    //------------------
+    
+    /**
+     * Endpoint used for obtain api token.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
+    case login = "/v1/auth/login"
+    
+    /**
+     * Endpoint used for create a new user. This not provides token.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
+    case register = "/v1/auth/register"
+    
+    /**
+     * Endpoint used for revoke api token.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
+    case revoke = "/v1/auth/revoke"
+    
+    //-----------------
+    //    MONUMENTS
+    //-----------------
+    
+    /**
+     * Endpoint used for find monuments around current user location.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
+    case findNearestMonuments = "/v1/monuments/find-nearest"
+    
+    /**
+     * Endpoint used for get all monuments.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
+    case indexMonuments = "/v1/monuments"
+    
+    /**
+     * Endpoint used for get all details about a single monument.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
+    static func showMonument (id: String) -> String {
+        return "/v1/monuments/" + id
     }
     
-    enum Categories {
-        static var index: String = "/v1/categories"
+    //------------------
+    //    CATEGORIES
+    //------------------
         
-        static func show (id: String) -> String {
-            return "/v1/categories/" + id
-        }
+    /**
+     * Endpoint used for get all categories.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
+    case indexCategories = "/v1/categories"
+    
+    /**
+     * Enpoint used for get all details about single category.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
+    static func showCategory (id: String) -> String {
+        return "/v1/categories/" + id
     }
     
-    enum Comments {
-        static var create: String = "/v1/comments"
-    }
+    //-----------------
+    //    COMMENTS
+    //-----------------
+    
+    case createComment = "/v1/comments"
 }

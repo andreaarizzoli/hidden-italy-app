@@ -5,8 +5,47 @@
 //  Created by Daniele Tulone on 19/06/2020.
 //  Copyright © 2020 Andrea Arizzoli. All rights reserved.
 //
+//  ALL METHODS ARE SORTED FROM a to Z
 
 import Foundation
+
+/**
+ * Get the base api url.
+ *
+ * @author Daniele Tulone <danieletulone.work@gmail.com>
+ */
+func baseApiURL() -> String {
+    return Client.shared.baseURL
+}
+
+/**
+ * Cancel a request.
+ *
+ * @author Daniele Tulone <danieletulone.work@gmail.com>
+ */
+func cancel(name: String = "request") -> Void {
+    Client.shared.cancel(name: name)
+}
+
+/**
+ * Cancel all requests.
+ *
+ * @author Daniele Tulone <danieletulone.work@gmail.com>
+ */
+func cancelAll() -> Void {
+    Client.shared.cancelAll()
+}
+
+
+
+/**
+ * Get the endpoint uri from endpoint cases.
+ *
+ * @author Daniele Tulone <danieletulone.work@gmail.com>
+ */
+func endpoint(_ endpoint: Endpoints) -> String {
+    return endpoint.rawValue
+}
 
 /**
  * Create a get request using api wrapper singleton.
@@ -33,10 +72,10 @@ func get<T: Codable, M: Codable>(
 }
 
 /**
-* Create a get request for multiple resources using api wrapper singleton.
-*
-* @author Daniele Tulone <danieletulone.work@gmail.com>
-*/
+ * Create a get request for multiple resources using api wrapper singleton.
+ *
+ * @author Daniele Tulone <danieletulone.work@gmail.com>
+ */
 func getAll<T: Codable, M: Codable>(
     uri: String,
     body: T,
@@ -79,31 +118,4 @@ func post<T: Codable, M: Codable>(
         multiple: multiple,
         name: name
     )
-}
-
-/**
- * Cancel a request.
- *
- * @author Daniele Tulone <danieletulone.work@gmail.com>
- */
-func cancel(name: String = "request") -> Void {
-    Client.shared.cancel(name: name)
-}
-
-/**
- * Cancel all requests.
- *
- * @author Daniele Tulone <danieletulone.work@gmail.com>
- */
-func cancelAll() -> Void {
-    Client.shared.cancelAll()
-}
-
-/**
- * Get the base api url.
- *
- * @author Daniele Tulone <danieletulone.work@gmail.com>
- */
-func baseApiURL() -> String {
-    return Client.shared.baseURL
 }

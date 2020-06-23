@@ -87,9 +87,19 @@ class Client
                     let jsonDecoder = JSONDecoder()
                     
                     if (multiple) {
-                        success(try jsonDecoder.decode([M].self, from: response.data!))
+                        success(try
+                            jsonDecoder.decode(
+                                [M].self,
+                                from: response.data!
+                            )
+                        )
                     } else {
-                        success(try jsonDecoder.decode(M.self, from: response.data!))
+                        success(try
+                            jsonDecoder.decode(
+                                M.self,
+                                from: response.data!
+                            )
+                        )
                     }
                     
                     self.queue[name] = nil
