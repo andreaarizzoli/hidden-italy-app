@@ -9,6 +9,10 @@
 
 import Foundation
 
+func baseImageURL() -> String {
+    return "http://127.0.0.1:8000/storage/"
+}
+
 /**
  * Get the base api url.
  *

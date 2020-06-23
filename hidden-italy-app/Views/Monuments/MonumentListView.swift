@@ -65,7 +65,7 @@ struct MonumentListView: View {
                             
                             ZStack (alignment: .bottom){
                                 URLImage(
-                                    URL(string: "\(baseApiURL())storage/\(thisItem.images[0].url)")!,
+                                    URL(string: baseImageURL() + thisItem.images[0].url)!,
                                     processors: [CoreImageFilterProcessor(
                                         name: "CISepiaTone",
                                         parameters: [ kCIInputIntensityKey: 0.2 ],
@@ -151,7 +151,7 @@ struct MonumentListView: View {
                                     
                                     if (self.expandedScreen_shown) {
                                         URLImage(
-                                            URL(string: "\(baseApiURL())storage/\(self.monuments.testMonument.images[0]!.url)")!,
+                                            URL(string: baseImageURL() + self.monuments.testMonument.images[0]!.url)!,
                                             processors: [
                                                 Resize(size: CGSize(width: self.SVWidth, height: self.itemHeight),
                                                 scale: UIScreen.main.scale)
