@@ -71,6 +71,10 @@
 		77889C16249F314500CC8C02 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77889C15249F314500CC8C02 /* Endpoints.swift */; };
 		77889C19249F355200CC8C02 /* EmptyBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77889C18249F355200CC8C02 /* EmptyBody.swift */; };
 		77889C1C249F36EE00CC8C02 /* FindNearest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77889C1B249F36EE00CC8C02 /* FindNearest.swift */; };
+		77F7369D24A2074B00173DCD /* RegisterBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F7369C24A2074B00173DCD /* RegisterBody.swift */; };
+		77F7369F24A254EF00173DCD /* Revoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F7369E24A254EF00173DCD /* Revoke.swift */; };
+		77F736A224A2574100173DCD /* InputEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F736A124A2574100173DCD /* InputEnum.swift */; };
+		77F736A424A261A800173DCD /* ScopesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F736A324A261A800173DCD /* ScopesEnum.swift */; };
 		7901B425249BBEB40099A805 /* ProfileScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901B424249BBEB40099A805 /* ProfileScore.swift */; };
 		7901B427249BD6A50099A805 /* VisitedMonuments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901B426249BD6A50099A805 /* VisitedMonuments.swift */; };
 		7901B429249BD6CB0099A805 /* Prizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901B428249BD6CB0099A805 /* Prizes.swift */; };
@@ -147,6 +151,10 @@
 		77889C15249F314500CC8C02 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		77889C18249F355200CC8C02 /* EmptyBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBody.swift; sourceTree = "<group>"; };
 		77889C1B249F36EE00CC8C02 /* FindNearest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNearest.swift; sourceTree = "<group>"; };
+		77F7369C24A2074B00173DCD /* RegisterBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBody.swift; sourceTree = "<group>"; };
+		77F7369E24A254EF00173DCD /* Revoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Revoke.swift; sourceTree = "<group>"; };
+		77F736A124A2574100173DCD /* InputEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputEnum.swift; sourceTree = "<group>"; };
+		77F736A324A261A800173DCD /* ScopesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopesEnum.swift; sourceTree = "<group>"; };
 		7901B424249BBEB40099A805 /* ProfileScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScore.swift; sourceTree = "<group>"; };
 		7901B426249BD6A50099A805 /* VisitedMonuments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedMonuments.swift; sourceTree = "<group>"; };
 		7901B428249BD6CB0099A805 /* Prizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prizes.swift; sourceTree = "<group>"; };
@@ -225,7 +233,6 @@
 				0526ED1C249D315600B598BC /* BrokenRule.swift */,
 				0541621724998EE400525898 /* CreateMonumentView.swift */,
 				0526ED16249D2B1C00B598BC /* CreateMonumentView2.swift */,
-				0526ED18249D2B3E00B598BC /* CreateMonumentViewModel.swift */,
 				0569BC3C248E8AE0000B5972 /* MonumentListView.swift */,
 				059516C924898E160054AC5A /* MonumentListView2.swift */,
 				0526ED18249D2B3E00B598BC /* ValidationMonument.swift */,
@@ -269,6 +276,7 @@
 		05948F8B245FFBC1001BB4A6 /* hidden-italy-app */ = {
 			isa = PBXGroup;
 			children = (
+				77F736A024A2572900173DCD /* Enumerations */,
 				7760A255249F53AF00ED0A53 /* Extensions */,
 				77880D532465582C00413151 /* Components */,
 				77880D512465540200413151 /* Helpers */,
@@ -314,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				77066E4124A15B8A00A74057 /* LoginBody.swift */,
+				77F7369C24A2074B00173DCD /* RegisterBody.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -324,6 +333,7 @@
 				77066E4424A1631E00A74057 /* Role.swift */,
 				77066E4824A1633100A74057 /* Login.swift */,
 				77066E4A24A1633A00A74057 /* Register.swift */,
+				77F7369E24A254EF00173DCD /* Revoke.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -415,9 +425,9 @@
 		77889C17249F352800CC8C02 /* Bodies */ = {
 			isa = PBXGroup;
 			children = (
-				050FCB0D24A1008000235742 /* Comments */,
-				77066E4024A15B8100A74057 /* Auth */,
 				77889C18249F355200CC8C02 /* EmptyBody.swift */,
+				77066E4024A15B8100A74057 /* Auth */,
+				050FCB0D24A1008000235742 /* Comments */,
 				77889C1A249F36D300CC8C02 /* Monuments */,
 			);
 			path = Bodies;
@@ -452,6 +462,15 @@
 				7968C566249FADBD00A4464D /* LoginView.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		77F736A024A2572900173DCD /* Enumerations */ = {
+			isa = PBXGroup;
+			children = (
+				77F736A124A2574100173DCD /* InputEnum.swift */,
+				77F736A324A261A800173DCD /* ScopesEnum.swift */,
+			);
+			path = Enumerations;
 			sourceTree = "<group>";
 		};
 		79ACF999249AB74500B14999 /* Profile */ = {
@@ -624,6 +643,7 @@
 				051585942464865300194002 /* Category.swift in Sources */,
 				7760A25A249F5B1D00ED0A53 /* Form.swift in Sources */,
 				0510B38E246DE5AB00BCB0C8 /* MonumentViewModel.swift in Sources */,
+				77F7369F24A254EF00173DCD /* Revoke.swift in Sources */,
 				0569BC3D248E8AE0000B5972 /* MonumentListView.swift in Sources */,
 				7760A261249F5BC100ED0A53 /* FormTextFieldImage.swift in Sources */,
 				77889C1C249F36EE00CC8C02 /* FindNearest.swift in Sources */,
@@ -635,6 +655,7 @@
 				05948F8F245FFBC1001BB4A6 /* SceneDelegate.swift in Sources */,
 				79AF7A6B249E44C000D23420 /* HideKeyboard.swift in Sources */,
 				051585922464863000194002 /* User.swift in Sources */,
+				77F7369D24A2074B00173DCD /* RegisterBody.swift in Sources */,
 				7760A25C249F5B4200ED0A53 /* FormTextField.swift in Sources */,
 				0515858E2464823500194002 /* Monument.swift in Sources */,
 				77066E4924A1633100A74057 /* Login.swift in Sources */,
@@ -652,6 +673,7 @@
 				79F0D91024A1015E0024DCD0 /* BgSafeArea.swift in Sources */,
 				051585A12464AA2300194002 /* CommentListView.swift in Sources */,
 				7760A26B249F5CD100ED0A53 /* FormButtonText.swift in Sources */,
+				77F736A224A2574100173DCD /* InputEnum.swift in Sources */,
 				05948FA5245FFD72001BB4A6 /* RootTabView.swift in Sources */,
 				05C7D974247208F000E02F47 /* LocationManager.swift in Sources */,
 				05F034812477472D004805BA /* String.swift in Sources */,
@@ -664,6 +686,7 @@
 				7968C567249FADBD00A4464D /* LoginView.swift in Sources */,
 				77889C19249F355200CC8C02 /* EmptyBody.swift in Sources */,
 				0526ED19249D2B3E00B598BC /* ValidationMonument.swift in Sources */,
+				77F736A424A261A800173DCD /* ScopesEnum.swift in Sources */,
 				05C7D975247208F000E02F47 /* Coordinator.swift in Sources */,
 				0591AAAF249E9CE200BBB949 /* Comment.swift in Sources */,
 				0510B38A246DE4A300BCB0C8 /* ImageModel.swift in Sources */,

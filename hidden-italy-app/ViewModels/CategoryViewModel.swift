@@ -16,7 +16,7 @@ class CategoryViewModel :ObservableObject {
         
     func getCategories() {
         
-        getAll(uri: Endpoints.Categories.index, body: EmptyBody(), model: Category.self, success: {res in
+        getAll(uri: endpoint(.indexCategories), body: EmptyBody(), model: Category.self, success: {res in
             self.categoriesList = res as! [Category]
         })
     }

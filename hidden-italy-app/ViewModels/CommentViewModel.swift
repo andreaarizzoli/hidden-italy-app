@@ -33,7 +33,7 @@ class CommentViewModel :ObservableObject {
     func create(userId: Int, monumentId: Int, comment: String) {
         
         post(
-            uri: Endpoints.Comments.create,
+            uri: endpoint(.createComment),
             body: CreateComment(
                 user_id: userId,
                 monument_id: monumentId,
