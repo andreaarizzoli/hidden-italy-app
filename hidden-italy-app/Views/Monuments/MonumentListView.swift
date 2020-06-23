@@ -77,9 +77,10 @@ struct MonumentListView: View {
                                         )
                                     ],
                                     placeholder: {_ in
-                                        Image(systemName: "phImage")
+                                        Image("placeholderImage")
                                             .resizable()
                                             .clipped()
+                                        
                                     },
                                     content: {
                                         $0.image
@@ -178,7 +179,7 @@ struct MonumentListView: View {
                                                 scale: UIScreen.main.scale)
                                             ],
                                             placeholder: {_ in
-                                                Image(systemName: "duomo")
+                                                Image("placeholderImage")
                                                     .resizable()
                                                     .clipped()
                                             },
