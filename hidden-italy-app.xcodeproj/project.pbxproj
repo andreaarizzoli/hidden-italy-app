@@ -44,7 +44,6 @@
 		05948FA1245FFC45001BB4A6 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948FA0245FFC45001BB4A6 /* SplashView.swift */; };
 		05948FA3245FFCF5001BB4A6 /* ManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948FA2245FFCF5001BB4A6 /* ManagerView.swift */; };
 		05948FA5245FFD72001BB4A6 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05948FA4245FFD72001BB4A6 /* RootTabView.swift */; };
-		059516CA24898E160054AC5A /* MonumentListView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059516C924898E160054AC5A /* MonumentListView2.swift */; };
 		059516CC2489A14E0054AC5A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059516CB2489A14E0054AC5A /* Colors.swift */; };
 		059516CF248A3CB90054AC5A /* SkeletonUI in Frameworks */ = {isa = PBXBuildFile; productRef = 059516CE248A3CB90054AC5A /* SkeletonUI */; };
 		05C7D971247208CC00E02F47 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7D970247208CC00E02F47 /* MapView.swift */; };
@@ -60,6 +59,7 @@
 		77066E4524A1631E00A74057 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77066E4424A1631E00A74057 /* Role.swift */; };
 		77066E4924A1633100A74057 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77066E4824A1633100A74057 /* Login.swift */; };
 		77066E4B24A1633A00A74057 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77066E4A24A1633A00A74057 /* Register.swift */; };
+		773A700124A2A5670066F8AE /* FindNearest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773A700024A2A5670066F8AE /* FindNearest.swift */; };
 		7760A25A249F5B1D00ED0A53 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7760A259249F5B1D00ED0A53 /* Form.swift */; };
 		7760A25C249F5B4200ED0A53 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7760A25B249F5B4200ED0A53 /* FormTextField.swift */; };
 		7760A25E249F5B8F00ED0A53 /* FormTextFieldText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7760A25D249F5B8F00ED0A53 /* FormTextFieldText.swift */; };
@@ -73,7 +73,7 @@
 		7760A26F249F5D1B00ED0A53 /* PaddingSafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7760A26E249F5D1B00ED0A53 /* PaddingSafeArea.swift */; };
 		77889C16249F314500CC8C02 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77889C15249F314500CC8C02 /* Endpoints.swift */; };
 		77889C19249F355200CC8C02 /* EmptyBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77889C18249F355200CC8C02 /* EmptyBody.swift */; };
-		77889C1C249F36EE00CC8C02 /* FindNearest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77889C1B249F36EE00CC8C02 /* FindNearest.swift */; };
+		77889C1C249F36EE00CC8C02 /* FindNearestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77889C1B249F36EE00CC8C02 /* FindNearestBody.swift */; };
 		77F7369D24A2074B00173DCD /* RegisterBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F7369C24A2074B00173DCD /* RegisterBody.swift */; };
 		77F7369F24A254EF00173DCD /* Revoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F7369E24A254EF00173DCD /* Revoke.swift */; };
 		77F736A224A2574100173DCD /* InputEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F736A124A2574100173DCD /* InputEnum.swift */; };
@@ -128,7 +128,6 @@
 		05948FA0245FFC45001BB4A6 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		05948FA2245FFCF5001BB4A6 /* ManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerView.swift; sourceTree = "<group>"; };
 		05948FA4245FFD72001BB4A6 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
-		059516C924898E160054AC5A /* MonumentListView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentListView2.swift; sourceTree = "<group>"; };
 		059516CB2489A14E0054AC5A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		05C7D970247208CC00E02F47 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		05C7D972247208F000E02F47 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = "hidden-italy-app/Components/Map/LocationManager.swift"; sourceTree = SOURCE_ROOT; };
@@ -143,6 +142,7 @@
 		77066E4424A1631E00A74057 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		77066E4824A1633100A74057 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		77066E4A24A1633A00A74057 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		773A700024A2A5670066F8AE /* FindNearest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNearest.swift; sourceTree = "<group>"; };
 		7760A259249F5B1D00ED0A53 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
 		7760A25B249F5B4200ED0A53 /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
 		7760A25D249F5B8F00ED0A53 /* FormTextFieldText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextFieldText.swift; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 		7760A26E249F5D1B00ED0A53 /* PaddingSafeArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingSafeArea.swift; sourceTree = "<group>"; };
 		77889C15249F314500CC8C02 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		77889C18249F355200CC8C02 /* EmptyBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBody.swift; sourceTree = "<group>"; };
-		77889C1B249F36EE00CC8C02 /* FindNearest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNearest.swift; sourceTree = "<group>"; };
+		77889C1B249F36EE00CC8C02 /* FindNearestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNearestBody.swift; sourceTree = "<group>"; };
 		77F7369C24A2074B00173DCD /* RegisterBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBody.swift; sourceTree = "<group>"; };
 		77F7369E24A254EF00173DCD /* Revoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Revoke.swift; sourceTree = "<group>"; };
 		77F736A124A2574100173DCD /* InputEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputEnum.swift; sourceTree = "<group>"; };
@@ -218,6 +218,7 @@
 				051585912464863000194002 /* User.swift */,
 				051585932464865300194002 /* Category.swift */,
 				0591AAAE249E9CE200BBB949 /* Comment.swift */,
+				773A700024A2A5670066F8AE /* FindNearest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -240,7 +241,6 @@
 				0541621724998EE400525898 /* CreateMonumentView.swift */,
 				0526ED16249D2B1C00B598BC /* CreateMonumentView2.swift */,
 				0569BC3C248E8AE0000B5972 /* MonumentListView.swift */,
-				059516C924898E160054AC5A /* MonumentListView2.swift */,
 				0526ED18249D2B3E00B598BC /* ValidationMonument.swift */,
 			);
 			path = Monuments;
@@ -445,7 +445,7 @@
 		77889C1A249F36D300CC8C02 /* Monuments */ = {
 			isa = PBXGroup;
 			children = (
-				77889C1B249F36EE00CC8C02 /* FindNearest.swift */,
+				77889C1B249F36EE00CC8C02 /* FindNearestBody.swift */,
 			);
 			path = Monuments;
 			sourceTree = "<group>";
@@ -647,6 +647,7 @@
 				0591AAB1249F86D700BBB949 /* CommentViewModel.swift in Sources */,
 				79B58DD224720C990052BDC7 /* Landmark.swift in Sources */,
 				79F0D90E24A0F5980024DCD0 /* AddImage.swift in Sources */,
+				773A700124A2A5670066F8AE /* FindNearest.swift in Sources */,
 				7760A26F249F5D1B00ED0A53 /* PaddingSafeArea.swift in Sources */,
 				059516CC2489A14E0054AC5A /* Colors.swift in Sources */,
 				05948F8D245FFBC1001BB4A6 /* AppDelegate.swift in Sources */,
@@ -656,7 +657,7 @@
 				77F7369F24A254EF00173DCD /* Revoke.swift in Sources */,
 				0569BC3D248E8AE0000B5972 /* MonumentListView.swift in Sources */,
 				7760A261249F5BC100ED0A53 /* FormTextFieldImage.swift in Sources */,
-				77889C1C249F36EE00CC8C02 /* FindNearest.swift in Sources */,
+				77889C1C249F36EE00CC8C02 /* FindNearestBody.swift in Sources */,
 				05C7D971247208CC00E02F47 /* MapView.swift in Sources */,
 				7760A25E249F5B8F00ED0A53 /* FormTextFieldText.swift in Sources */,
 				05342F6524A2837200F9589B /* ButtonExit.swift in Sources */,
@@ -679,7 +680,6 @@
 				050FCB0C24A0FFF000235742 /* CreateComment.swift in Sources */,
 				79ACF99F249AB9F300B14999 /* UserSettings.swift in Sources */,
 				0526ECFF249BD10C00B598BC /* UserViewModel.swift in Sources */,
-				059516CA24898E160054AC5A /* MonumentListView2.swift in Sources */,
 				0526ED0B249D121F00B598BC /* UserTab.swift in Sources */,
 				79F0D91024A1015E0024DCD0 /* BgSafeArea.swift in Sources */,
 				051585A12464AA2300194002 /* CommentListView.swift in Sources */,
