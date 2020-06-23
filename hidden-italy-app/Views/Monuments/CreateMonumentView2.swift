@@ -46,9 +46,8 @@ struct CreateMonumentView2: View {
 
                     Button(action: { self.showSheetMonumentView = false }){
                         Image(systemName: "xmark.circle.fill")
-                            .foregroundColor(Color(Accent))
-                            //                            .foregroundColor(Color(.gray))
-                            .font(.system(size: 25))
+                            .modifier(ButtonExit())
+                           
                     }.modifier(ButtonCircle())
                 }.padding(.top, 15).padding(.trailing, 15)
                 
@@ -155,7 +154,7 @@ struct CreateMonumentView2: View {
 
                         Spacer()
                         
-                    }.modifier(Form())
+                    }.modifier(Form()).padding(.top)
                 }
             }
             

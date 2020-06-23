@@ -186,42 +186,69 @@ struct MonumentListView: View {
                                                 $0.image
                                                     .resizable()
                                                     .clipped()
+                                                    .cornerRadius(radius: 35, corners: [.bottomLeft, .bottomRight])
+                                                    .shadow(color: Color(darkShadow), radius: 10, x: 10, y: 10)
+                                                    .shadow(color: Color.white.opacity(0.7), radius: 10, x: -10, y: -10)
+
                                             }
                                         )
                                     }
                                     
                                     VStack{
+                                        
                                         HStack{
+                                            
                                             VStack(alignment: .leading){
-                                                Text("\(self.monuments.testMonument.category.description)")
-                                                    .font(.system(size: 18, weight: .bold, design: .default))
-                                                    .foregroundColor(.init(red: 0.8 , green: 0.8, blue: 0.8  )).opacity(1.0)
+                                                
                                                 Text("\(self.monuments.testMonument.name)")
-                                                    .font(.system(size: 36, weight: .bold, design: .default))
+                                                    .font(.largeTitle)
+                                                    .fontWeight(.bold)
                                                     .foregroundColor(.white)
-                                            }.padding()
+                                                    .padding(.bottom)
+                                                Text("\(self.monuments.testMonument.category.description)")
+                                                    .padding(.vertical, 3)
+                                                    .padding(.horizontal, 10)
+                                                    .font(.system(size: 18, weight: .light, design: .default))
+                                                    .foregroundColor(Color(Accent))
+                                                    .background(Capsule()
+                                                    .fill(Color .white))
+//                                                    .shadow(color: Color(darkShadow), radius: 10, x: 10, y: 10)
+//                                                    .shadow(color: Color.white.opacity(0.7), radius: 10, x: -10, y: -10)
+        
+                                            }.padding(.horizontal)
+                                            
                                             Spacer()
-                                        }.offset(y:
-                                            self.expandedScreen_shown ? 44 : 0)
+                                            
+                                        }.offset(y: self.expandedScreen_shown ? 44 : 0)
+                                        
                                         Spacer()
+                                        
                                     }.frame(width: self.expandedScreen_startPoint.width)
-                                }.frame(height:
+                                }
+                                .frame(height:
                                     self.itemHeight
                                 ).zIndex(1)
-                                Text("\(self.monuments.testMonument.description)").padding().frame(
-                                    maxHeight: self.expandedScreen_shown ? .infinity : 0)
+                                Text("\(self.monuments.testMonument.description)")
+                                    .padding(.horizontal).padding(.vertical, 50)
+//                                    .frame(
+//                                    maxHeight: self.expandedScreen_shown ? .infinity : 0)
                             }
                             Button(action:{}){
                                 MapMonumentView(latitude: self.monuments.testMonument.lat, longitude: self.monuments.testMonument.lon, regionRadius: 350)
-                                    .frame(height: 100)
+                                    .cornerRadius(35)
+                                    .frame(height: 250)
+                                    .padding(.horizontal, 30)
+                                    .shadow(color: Color(darkShadow), radius: 10, x: 10, y: 10)
+                                    .shadow(color: Color.white.opacity(0.7), radius: 10, x: -10, y: -10)
+                                    .padding(.bottom, 60)
+
                             }
                             if (self.expandedScreen_shown) {
-                                CommentListView(monument: self.monuments.testMonument)
-
+                                CommentListView(monument: self.monuments.testMonument).padding(.bottom, 60)
                             }
                             
                         }
-                        .background(Color.white)
+                        .background(Color (BGColor))
                         .frame(width: self.expandedScreen_startPoint.width, height: self.expandedScreen_startPoint.height)
                         .background(Color.clear)
                         .cornerRadius(self.expandedScreen_shown ? 0 : 15 )
@@ -238,8 +265,9 @@ struct MonumentListView: View {
                             }
                         }){
                             Image(systemName: "xmark.circle.fill")
-                                .foregroundColor(.init(white: 0.9))
-                                .font(.system(size: 25)).padding()
+                                .foregroundColor(Color(Accent))
+                                .font(.system(size: 25))
+                                .padding()
                                 .opacity(self.expandedScreen_shown ? 1 : 0.0)
                                 .animation(
                                     Animation.easeInOut(duration: 0.3))

@@ -39,7 +39,7 @@ struct CommentListView: View {
                     }) {
                         Image(systemName: "message")
                     }.buttonStyle(PlainButtonStyle())
-                }
+                }.padding(.bottom)
                 
                 if (self.isShowingTextComment) {
                     HStack {
@@ -61,7 +61,7 @@ struct CommentListView: View {
                             if (self.newComment == "") {
                                 Image(systemName: "paperplane").foregroundColor(Color .gray)
                             } else {
-                                Image(systemName: "paperplane").foregroundColor(Color(BGColor))
+                                Image(systemName: "paperplane").foregroundColor(Color(Accent))
                             }
                         }.buttonStyle(PlainButtonStyle())
                     }.modifier(FormTextField()).padding(.bottom)
@@ -71,10 +71,7 @@ struct CommentListView: View {
                     CommentRow(comment: comment)
                 }
                 
-            }.padding(.horizontal).padding(.top)
-//            .onAppear {
-//                self.users.get(userId: self.monument.user)
-//            }
+            }.padding(.horizontal,30)
         }
         
     }
