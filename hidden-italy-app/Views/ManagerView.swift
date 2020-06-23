@@ -9,21 +9,22 @@
 import SwiftUI
 
 struct ManagerView: View {
-    
-    @State private var flagStart = false
+        
+    @EnvironmentObject var user: UserViewModel
+        
+    @State var flagStart = false
     
     let timer = Timer.publish(
         every: 3,
         on: .main,
         in: .common
     ).autoconnect()
-   
        
     var body: some View {
-       Group{
-           
+       
+        Group{
            if (self.flagStart) {
-               LoginView()
+                LoginView()
                     .transition(AnyTransition.opacity.combined(with: .slide))
             
            } else {
@@ -33,11 +34,12 @@ struct ManagerView: View {
                     }
            }
        }
+        
     }
 }
 
 struct ManagerView_Previews: PreviewProvider {
     static var previews: some View {
-        ManagerView()
+        ManagerView().environmentObject(UserViewModel())
     }
 }

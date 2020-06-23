@@ -10,45 +10,53 @@ import SwiftUI
 
 struct RootTabView: View {
     
+    @EnvironmentObject var user: UserViewModel
+
     @ObservedObject var locationManager = LocationManager()
     
     init() {
-//        UITabBar.appearance().backgroundColor = UIColor.blue
         UITabBar.appearance().barTintColor = BGColor
     }
     
     var body: some View {
-        TabView {
-            MapView()
-                .tabItem{
-                    Image(systemName: "map")
-                    Text("Mappa")
-            }
-            
-            MonumentListView()
-                .tabItem{
-                    Image(systemName: "list.dash")
-                    Text("Luoghi")
-            }
-            
-            MonumentListView2()
-                .tabItem{
-                    Image(systemName: "list.number")
-                    Text("Classifica")
-            }
-            
-            MonumentListView2()
-                .tabItem{
-                    Image(systemName: "heart")
-                    Text("Notifiche")
-            }
-            
-            ProfileView()
-                .tabItem{
-                    Image(systemName: "person")
-                    Text("Profilo")
-            }
-            }.accentColor(Color(Accent)).modifier(PaddingSafeArea())
+        Group {
+            if (user.logged == true) {
+                TabView {
+                    MapView()
+                        .tabItem{
+                            Image(systemName: "map")
+                            Text("Mappa")
+                        }
+                    
+                    MonumentListView()
+                        .tabItem{
+                            Image(systemName: "list.dash")
+                            Text("Luoghi")
+                        }
+                    
+                    MonumentListView2()
+                        .tabItem{
+                            Image(systemName: "list.number")
+                            Text("Classifica")
+                        }
+                    
+                    MonumentListView2()
+                        .tabItem{
+                            Image(systemName: "heart")
+                            Text("Notifiche")
+                        }
+                    
+                    ProfileView()
+                        .tabItem{
+                            Image(systemName: "person")
+                            Text("Profilo")
+                        }
+                    
+                    }.accentColor(Color(Accent)).modifier(PaddingSafeArea())
+            } else {
+                LoginView().environmentObject(user)
+            }            
+        }
     }
     
 }
