@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import Combine
 import CoreLocation
+import SwiftUI
 
 class MonumentViewModel: ObservableObject {
     
