@@ -9,9 +9,10 @@
 import SwiftUI
 
 struct ManagerView: View {
-        
-    @EnvironmentObject var user: UserViewModel
-        
+    
+    /**
+     * Bool used for display splash view
+     */
     @State var flagStart = false
     
     let timer = Timer.publish(
