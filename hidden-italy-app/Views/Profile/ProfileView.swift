@@ -63,17 +63,19 @@ struct ProfileView: View {
                                 .foregroundColor(Color(Accent))
                             
                         } else {
-                           
-                            URLImage(
-                                URL(string: baseImageURL() + self.user.current.image!.url)!,
-                                content: {
-                                    $0.image
-                                        .resizable()
-                                        .frame(width:125, height:125)
-                                        .clipShape(RoundedRectangle(cornerRadius: 35))
-                                        .modifier(AddImage())
-                                }
-                            )
+                            if (self.user.image != nil) {
+                                URLImage(
+                                    URL(string: baseImageURL() + self.user.image!)!,
+                                    content: {
+                                        $0.image
+                                            .resizable()
+                                            .frame(width:125, height:125)
+                                            .clipShape(RoundedRectangle(cornerRadius: 35))
+                                            .modifier(AddImage())
+                                    }
+                                )
+                            }
+                            
                         }
                         
                     }
@@ -94,7 +96,9 @@ struct ProfileView: View {
                     .padding(.bottom)
             }.onAppear(perform: {
                 self.user.getCurrent(callback: {
-                    self.imageLoaded.toggle()
+                    if (self.user.image != nil) {
+                        self.imageLoaded.toggle()
+                    }
                 })
             })
             

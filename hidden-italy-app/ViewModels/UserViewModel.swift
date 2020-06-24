@@ -26,6 +26,10 @@ class UserViewModel: ObservableObject {
     
     @Published var current: User = User(id: 0, firstname: "", lastname: "", email: "", email_verified_at: "", role_id: 0, image: ImageModel(url: ""))
     
+    var image: String? {
+       self.current.image?.url
+    }
+    
     /**
      * The field name in which store token.
      *
