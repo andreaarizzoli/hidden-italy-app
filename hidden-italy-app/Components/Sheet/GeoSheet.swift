@@ -32,6 +32,25 @@ struct GeoSheet: View {
                             GeoCardTop()
                             
                             VStack(alignment: .leading) {
+//                                HStack{
+//                                    Spacer()
+//                                    Button(action:{
+//                                        
+//                                    }){
+//                                        HStack{
+//                                            Image(systemName: "circle")
+//                                               .font(.system(size: 18))
+//                                                .foregroundColor(Color(Accent))
+//                                            Text("Visitato")
+//                                                .foregroundColor(Color(Accent))
+//                                        }.padding(.vertical, 3)
+//                                        .padding(.horizontal, 10)
+//                                        .font(.system(size: 18, weight: .light, design: .default))
+//                                        .foregroundColor(Color(Accent))
+//                                        .background(Capsule()
+//                                        .fill(Color .white))
+//                                    }
+//                                }
                                 Text("Informazioni")
                                     .font(.system(
                                         size: 18,
