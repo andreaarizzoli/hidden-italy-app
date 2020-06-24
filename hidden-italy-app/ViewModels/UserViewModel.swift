@@ -24,6 +24,9 @@ class UserViewModel: ObservableObject {
     
     @Published var logged: Bool = UserViewModel.getToken() == "" ? false : true
     
+    @Published var monumentVisited = [MonumentUser]()
+
+    
     /**
      * The field name in which store token.
      *
@@ -93,6 +96,15 @@ class UserViewModel: ObservableObject {
                 }
             }
         )
+    }
+    
+    func visitedMonument() -> Void {
+        get(uri: endpoint(.userMonument),
+            body: EmptyBody(),
+            model: MonumentUser.self,
+            success: {res in
+                self.monumentVisited = res as! [MonumentUser]
+            })
     }
     
     func register() -> Void {

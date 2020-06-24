@@ -30,6 +30,7 @@
 		05342F6324A274F600F9589B /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05342F6224A274F600F9589B /* CornerRadiusStyle.swift */; };
 		05342F6524A2837200F9589B /* ButtonExit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05342F6424A2837200F9589B /* ButtonExit.swift */; };
 		0541621824998EE400525898 /* CreateMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541621724998EE400525898 /* CreateMonumentView.swift */; };
+		054DBD5B24A3CA4F00FAAACE /* MonumentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054DBD5A24A3CA4F00FAAACE /* MonumentUser.swift */; };
 		0569BC3D248E8AE0000B5972 /* MonumentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3C248E8AE0000B5972 /* MonumentListView.swift */; };
 		0569BC3F249186C8000B5972 /* MapMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3E249186C8000B5972 /* MapMonumentView.swift */; };
 		0591AAA9249E58DB00BBB949 /* CrudFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591AAA8249E58DB00BBB949 /* CrudFunctions.swift */; };
@@ -121,6 +122,7 @@
 		05342F6224A274F600F9589B /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
 		05342F6424A2837200F9589B /* ButtonExit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExit.swift; sourceTree = "<group>"; };
 		0541621724998EE400525898 /* CreateMonumentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMonumentView.swift; sourceTree = "<group>"; };
+		054DBD5A24A3CA4F00FAAACE /* MonumentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentUser.swift; sourceTree = "<group>"; };
 		0569BC3C248E8AE0000B5972 /* MonumentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentListView.swift; sourceTree = "<group>"; };
 		0569BC3E249186C8000B5972 /* MapMonumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMonumentView.swift; sourceTree = "<group>"; };
 		0591AAA8249E58DB00BBB949 /* CrudFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrudFunctions.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				051585932464865300194002 /* Category.swift */,
 				0591AAAE249E9CE200BBB949 /* Comment.swift */,
 				773A700024A2A5670066F8AE /* FindNearest.swift */,
+				054DBD5A24A3CA4F00FAAACE /* MonumentUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -741,6 +744,7 @@
 				05C7D974247208F000E02F47 /* LocationManager.swift in Sources */,
 				05F034812477472D004805BA /* String.swift in Sources */,
 				77889C16249F314500CC8C02 /* Endpoints.swift in Sources */,
+				054DBD5B24A3CA4F00FAAACE /* MonumentUser.swift in Sources */,
 				7901B429249BD6CB0099A805 /* Prizes.swift in Sources */,
 				7760A263249F5BF500ED0A53 /* Icon.swift in Sources */,
 				7760A265249F5C4800ED0A53 /* ValidationErrorMessage.swift in Sources */,
