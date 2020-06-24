@@ -39,8 +39,12 @@ struct RegisterUserView: View {
             else {
                 
                 VStack (alignment: .center, spacing:20){
-                    
                     Spacer()
+                    
+                    Image("logo")
+                        .resizable()
+                        .frame(width:109, height:89)
+                        .padding(.bottom, 50)
                     
                     Input(
                         icon: "person",
@@ -63,7 +67,7 @@ struct RegisterUserView: View {
                     
                     Input(
                         icon: "lock",
-                        placeholder: "Nome",
+                        placeholder: "Password",
                         type: .password,
                         value: $user.newUser.password
                     )
@@ -92,7 +96,7 @@ struct RegisterUserView: View {
                     }
                     
                     Spacer()
-                    
+                                        
                 }.modifier(Form())
                  .modifier(BgSafearea())
                  .modifier(AdaptsToSoftwareKeyboard())
