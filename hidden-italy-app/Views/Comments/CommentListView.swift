@@ -99,8 +99,6 @@ struct CommentListView: View {
     }
 }
 
-
-
 struct CommentListView_Previews: PreviewProvider {
     static var previews: some View {
         CommentListView(monument: testMonument)

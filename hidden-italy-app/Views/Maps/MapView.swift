@@ -8,29 +8,49 @@
 
 import SwiftUI
 import MapKit
+import URLImage
+import CoreImage
 
 struct MapView: View {
     
     @ObservedObject var locationManager = LocationManager()
-    @State private var search: String = ""
+     
+    @EnvironmentObject var sheetExpandable: SheetExpandable
     @EnvironmentObject var monuments: MonumentViewModel
     
-    var body: some View {
-        ZStack(alignment: .top){
-            Map(monuments: self.$monuments.monumentList)
-            
-            HStack {
-                Image(systemName: "magnifyingglass").modifier(FormTextFieldImage())
-                TextField("Search", text: $search, onEditingChanged: { _ in }){
-                    
-                }.modifier(FormTextFieldText())
-                
-            }.modifier(FormTextField())
-             .padding(.horizontal, 30)
-             .padding(.top, 45).modifier(PaddingSafeArea())
+    @State private var search: String = ""
+    @State var showSheetMonumentView = false
+    
+    let ciContext = CIContext()
+   
+    @State var geo: GeometryProxy? = nil
 
-            }.modifier(BgSafearea())
-             .onAppear { self.monuments.getNearMonuments() }
+    var body: some View {
+        Group {
+                ZStack(alignment: .top) {
+                    Map(view: self, monuments: self.$monuments.monumentList)
+                
+                    HStack {
+                        Image(systemName: "magnifyingglass").modifier(FormTextFieldImage())
+                        
+                        TextField(
+                            "Search",
+                            text: $search,
+                            onEditingChanged: { _ in }){
+                            
+                            }.modifier(FormTextFieldText()
+                        )
+                        
+                    }.modifier(FormTextField())
+                     .padding(.horizontal, 30)
+                     .padding(.top, 45).modifier(PaddingSafeArea())
+
+                    GeoSheet(geo: self.$geo).modifier(PaddingSafeArea())
+                }.modifier(BgSafearea())
+                 .onAppear { self.monuments.getNearMonuments() }
+                
+                
+        }
     }
 }
 
