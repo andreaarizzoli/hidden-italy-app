@@ -19,6 +19,7 @@ struct User: Codable, Identifiable {
     var updated_at: String?
     var role: Role?
     var image: ImageModel?
+    var visitedMonuments: [MonumentUser]?
 }
 
 
