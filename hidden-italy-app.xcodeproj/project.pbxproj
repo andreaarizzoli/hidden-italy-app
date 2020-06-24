@@ -29,7 +29,6 @@
 		05342F5F24A238A500F9589B /* ValidationSuccessMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05342F5E24A238A500F9589B /* ValidationSuccessMessage.swift */; };
 		05342F6324A274F600F9589B /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05342F6224A274F600F9589B /* CornerRadiusStyle.swift */; };
 		05342F6524A2837200F9589B /* ButtonExit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05342F6424A2837200F9589B /* ButtonExit.swift */; };
-		0541621824998EE400525898 /* CreateMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541621724998EE400525898 /* CreateMonumentView.swift */; };
 		0569BC3D248E8AE0000B5972 /* MonumentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3C248E8AE0000B5972 /* MonumentListView.swift */; };
 		0569BC3F249186C8000B5972 /* MapMonumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569BC3E249186C8000B5972 /* MapMonumentView.swift */; };
 		0591AAA9249E58DB00BBB949 /* CrudFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591AAA8249E58DB00BBB949 /* CrudFunctions.swift */; };
@@ -97,7 +96,6 @@
 		79ACF99D249AB78700B14999 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ACF99C249AB78700B14999 /* ProfileView.swift */; };
 		79ACF99F249AB9F300B14999 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ACF99E249AB9F300B14999 /* UserSettings.swift */; };
 		79AF7A6B249E44C000D23420 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF7A6A249E44C000D23420 /* HideKeyboard.swift */; };
-		79B58DD224720C990052BDC7 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B58DD124720C990052BDC7 /* Landmark.swift */; };
 		79F0D90E24A0F5980024DCD0 /* AddImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F0D90D24A0F5980024DCD0 /* AddImage.swift */; };
 		79F0D91024A1015E0024DCD0 /* BgSafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F0D90F24A1015E0024DCD0 /* BgSafeArea.swift */; };
 /* End PBXBuildFile section */
@@ -122,7 +120,6 @@
 		05342F5E24A238A500F9589B /* ValidationSuccessMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationSuccessMessage.swift; sourceTree = "<group>"; };
 		05342F6224A274F600F9589B /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
 		05342F6424A2837200F9589B /* ButtonExit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExit.swift; sourceTree = "<group>"; };
-		0541621724998EE400525898 /* CreateMonumentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMonumentView.swift; sourceTree = "<group>"; };
 		0569BC3C248E8AE0000B5972 /* MonumentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentListView.swift; sourceTree = "<group>"; };
 		0569BC3E249186C8000B5972 /* MapMonumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMonumentView.swift; sourceTree = "<group>"; };
 		0591AAA8249E58DB00BBB949 /* CrudFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrudFunctions.swift; sourceTree = "<group>"; };
@@ -191,7 +188,6 @@
 		79ACF99C249AB78700B14999 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		79ACF99E249AB9F300B14999 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		79AF7A6A249E44C000D23420 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
-		79B58DD124720C990052BDC7 /* Landmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		79F0D90D24A0F5980024DCD0 /* AddImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImage.swift; sourceTree = "<group>"; };
 		79F0D90F24A1015E0024DCD0 /* BgSafeArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BgSafeArea.swift; sourceTree = "<group>"; };
 		8A070482E3B92E37E0CE7C77 /* Pods-hidden-italy-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hidden-italy-app.release.xcconfig"; path = "Target Support Files/Pods-hidden-italy-app/Pods-hidden-italy-app.release.xcconfig"; sourceTree = "<group>"; };
@@ -234,7 +230,6 @@
 			isa = PBXGroup;
 			children = (
 				77066E4324A162F600A74057 /* Auth */,
-				79B58DD124720C990052BDC7 /* Landmark.swift */,
 				0515858D2464823500194002 /* Monument.swift */,
 				0510B389246DE4A300BCB0C8 /* ImageModel.swift */,
 				051585912464863000194002 /* User.swift */,
@@ -260,7 +255,6 @@
 			isa = PBXGroup;
 			children = (
 				0526ED1C249D315600B598BC /* BrokenRule.swift */,
-				0541621724998EE400525898 /* CreateMonumentView.swift */,
 				0526ED16249D2B1C00B598BC /* CreateMonumentView2.swift */,
 				0569BC3C248E8AE0000B5972 /* MonumentListView.swift */,
 				0526ED18249D2B3E00B598BC /* ValidationMonument.swift */,
@@ -451,19 +445,19 @@
 		77880D532465582C00413151 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				773A700B24A3641B0066F8AE /* Sheet */,
+				7715FF9B24A3B202008BF431 /* CircleSpinner.swift */,
 				059516CB2489A14E0054AC5A /* Colors.swift */,
 				05D0DE6A249A94B000F6DA2B /* CommentRow.swift */,
 				79AF7A6A249E44C000D23420 /* HideKeyboard.swift */,
 				0526ECFC249BC4F100B598BC /* ImagePickerView.swift */,
-				05342F5A24A11AD800F9589B /* TextView.swift */,
 				77066E3E24A1569E00A74057 /* Input.swift */,
+				7715FF9D24A3B5EF008BF431 /* ItemImage.swift */,
+				05342F5A24A11AD800F9589B /* TextView.swift */,
 				7760A256249F59FE00ED0A53 /* Map */,
 				7760A257249F5B0B00ED0A53 /* Modifiers */,
+				773A700B24A3641B0066F8AE /* Sheet */,
 				05158587246406B700194002 /* Tab */,
 				0526ED20249D40E200B598BC /* Validation */,
-				7715FF9B24A3B202008BF431 /* CircleSpinner.swift */,
-				7715FF9D24A3B5EF008BF431 /* ItemImage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -696,9 +690,7 @@
 				0526ED17249D2B1C00B598BC /* CreateMonumentView2.swift in Sources */,
 				0569BC3F249186C8000B5972 /* MapMonumentView.swift in Sources */,
 				0526ECFD249BC4F100B598BC /* ImagePickerView.swift in Sources */,
-				0541621824998EE400525898 /* CreateMonumentView.swift in Sources */,
 				0591AAB1249F86D700BBB949 /* CommentViewModel.swift in Sources */,
-				79B58DD224720C990052BDC7 /* Landmark.swift in Sources */,
 				79F0D90E24A0F5980024DCD0 /* AddImage.swift in Sources */,
 				773A700124A2A5670066F8AE /* FindNearest.swift in Sources */,
 				7760A26F249F5D1B00ED0A53 /* PaddingSafeArea.swift in Sources */,

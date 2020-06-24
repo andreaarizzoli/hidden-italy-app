@@ -39,26 +39,12 @@ struct RegisterUserView: View {
             else {
                 
                 VStack (alignment: .center, spacing:20){
-                    
                     Spacer()
                     
-                    Button(action: {
-                        self.isShowingImagePicker.toggle()
-                    }){
-                        ZStack (alignment: .center){
-                            
-                            Image(uiImage: image)
-                                .resizable()
-                                .frame(width:125, height:125)
-                                .clipShape(Circle()).modifier(AddImage())
-                            Image(systemName: "plus")
-                                .font(.system(size: 35))
-                                .foregroundColor(Color(Accent))
-                        }
-                    }.buttonStyle(PlainButtonStyle())
-                        .sheet(isPresented: $isShowingImagePicker, content: {
-                            ImagePickerView(isPresented: self.$isShowingImagePicker, selectedImage: self.$image, newImage: self.$newImage)
-                        })
+                    Image("logo")
+                        .resizable()
+                        .frame(width:109, height:89)
+                        .padding(.bottom, 50)
                     
                     Input(
                         icon: "person",
@@ -81,7 +67,7 @@ struct RegisterUserView: View {
                     
                     Input(
                         icon: "lock",
-                        placeholder: "Nome",
+                        placeholder: "Password",
                         type: .password,
                         value: $user.newUser.password
                     )
@@ -110,7 +96,7 @@ struct RegisterUserView: View {
                     }
                     
                     Spacer()
-                    
+                                        
                 }.modifier(Form())
                  .modifier(BgSafearea())
                  .modifier(AdaptsToSoftwareKeyboard())

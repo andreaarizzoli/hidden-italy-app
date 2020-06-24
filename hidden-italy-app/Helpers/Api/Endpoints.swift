@@ -93,4 +93,22 @@ enum Endpoints: String {
     //-----------------
     
     case createComment = "/v1/comments"
+    
+    //-----------------
+    //    USERS
+    //-----------------
+   
+    /**
+     * Endpoint used for upload profile image.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
+    case uploadProfileImage = "/v1/users/image"
+    
+    /**
+     * Endpoint used for get info about current logged user.
+     *
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     */
+    case showUser = "/v1/users/info"
 }

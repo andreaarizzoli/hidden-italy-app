@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct ProfileView: View {
     
@@ -17,10 +18,10 @@ struct ProfileView: View {
     @State var isShowingOverlay = false
     @State var newImage = false
     @State var image = UIImage()
+    @State var imageLoaded: Bool = false
     
     var body: some View {
         
-        ScrollView{
         VStack (spacing:20){
             HStack (alignment: .center){
                 Spacer()
@@ -49,39 +50,56 @@ struct ProfileView: View {
                 }){
                     ZStack (alignment: .center){
                         
-                        Image(uiImage: image)
-                            .resizable()
-                            .frame(width:125, height:125)
-                            .clipShape(RoundedRectangle(cornerRadius: 35))
-                            .modifier(AddImage())
-                        Image(systemName: "plus")
-                            .font(.system(size: 35))
-                            .foregroundColor(Color(Accent))
+                        if (!self.imageLoaded) {
+                            
+                            Image(uiImage: image)
+                                .resizable()
+                                .frame(width:125, height:125)
+                                .clipShape(RoundedRectangle(cornerRadius: 35))
+                                .modifier(AddImage())
+                            
+                            Image(systemName: "plus")
+                                .font(.system(size: 35))
+                                .foregroundColor(Color(Accent))
+                            
+                        } else {
+                           
+                            URLImage(
+                                URL(string: baseImageURL() + self.user.current.image!.url)!,
+                                content: {
+                                    $0.image
+                                        .resizable()
+                                        .frame(width:125, height:125)
+                                        .clipShape(RoundedRectangle(cornerRadius: 35))
+                                        .modifier(AddImage())
+                                }
+                            )
+                        }
+                        
                     }
                 }.buttonStyle(PlainButtonStyle())
                     .sheet(isPresented: $isShowingImagePicker,
                            content: {
                             ImagePickerView(
                                 isPresented: self.$isShowingImagePicker,
-                                selectedImage: self.$image, newImage: self.$newImage
+                                selectedImage: self.$image,
+                                newImage: self.$newImage,
+                                imageLoaded: self.$imageLoaded
                             )
                         })
 
                 
-                Text("Ciao, Nome Utente").modifier(FormTextFieldText())
+                Text("Ciao, \(user.current.firstname)").modifier(FormTextFieldText())
                     .font(.system(size: 24))
                     .padding(.bottom)
-            }
-            HStack{
-                Text("Monumenti Visitati")
-                    .font(.title)
-                    .fontWeight(.medium)
-                    .foregroundColor(Color(Accent))
-                .padding(.vertical)
-            Spacer()
-            }.padding(.horizontal, 30)
-            VisitedMonuments()
-            }
+            }.onAppear(perform: {
+                self.user.getCurrent(callback: {
+                    self.imageLoaded.toggle()
+                })
+            })
+            
+            UserTab()
+            
         }.modifier(PaddingSafeArea()).modifier(BgSafearea())
     }
 }
