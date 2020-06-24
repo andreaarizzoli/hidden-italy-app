@@ -93,4 +93,10 @@ enum Endpoints: String {
     //-----------------
     
     case createComment = "/v1/comments"
+    
+    //-----------------
+    //    USERS
+    //-----------------
+    
+    case userMonument = "/v1/users/monuments"
 }
