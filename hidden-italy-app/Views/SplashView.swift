@@ -16,7 +16,9 @@ struct SplashView: View {
                 Text("Scoprire ciò che ti circonda")
                     .font(.system(size: 18))
                     .foregroundColor(Color(darkAccent))
-            }
+            }.frame(minWidth: 0, maxWidth: .infinity)
+            .frame(minHeight: 0, maxHeight: .infinity)
+            .background(Color(BGColor)).edgesIgnoringSafeArea(.top)
         }
     }
 }
