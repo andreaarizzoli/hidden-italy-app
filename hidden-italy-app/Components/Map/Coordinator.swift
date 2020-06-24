@@ -21,6 +21,7 @@ final class Coordinator: NSObject, MKMapViewDelegate{
               annotationView.annotation = annotation
               return annotationView
           } else {
+            
                 let annotationView = MKPinAnnotationView(annotation:annotation, reuseIdentifier: "bla")
                 annotationView.isEnabled = true
                 annotationView.canShowCallout = true

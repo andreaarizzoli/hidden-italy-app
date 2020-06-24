@@ -12,15 +12,14 @@ import CoreImage
 
 struct MonumentListView: View {
     
-    let itemHeight:CGFloat = 350
-    let imageHeight:CGFloat = 300
+    let itemHeight: CGFloat = 350
+    let imageHeight: CGFloat = 300
     let SVWidth = UIScreen.main.bounds.width - 60
     
     @EnvironmentObject var monuments: MonumentViewModel
-    @State var expandedScreen_startPoint = CGRect(x: 0, y: 0, width: 100, height: 100)
-    @State var expandedScreen_returnPoint = CGRect(x: 0, y: 0, width: 100, height: 100)
-    @State var expandedScreen_shown = false
-    @State var expandedScreen_willHide = false
+    @EnvironmentObject var sheetExpandable: SheetExpandable
+    
+    @State var geo: GeometryProxy?
     
     let ciContext = CIContext()
     @State var showSheetMonumentView = false
@@ -140,124 +139,7 @@ struct MonumentListView: View {
                 //ForEach_End
             }
             
-            GeometryReader{geo -> AnyView in
-                
-                return AnyView(
-                    
-                    ZStack{
-                        ScrollView{
-                            VStack(spacing:0){
-                                ZStack{
-                                    
-                                    if (self.expandedScreen_shown) {
-                                        URLImage(
-                                            URL(string: baseImageURL() + self.monuments.testMonument.images[0]!.url)!,
-                                            processors: [
-                                                Resize(size: CGSize(width: self.SVWidth, height: self.itemHeight),
-                                                scale: UIScreen.main.scale)
-                                            ],
-                                            placeholder: {_ in
-                                                Image("placeholderImage")
-                                                    .resizable()
-                                                    .clipped()
-                                            },
-                                            content: {
-                                                $0.image
-                                                    .resizable()
-                                                    .clipped()
-                                                    .cornerRadius(radius: 35, corners: [.bottomLeft, .bottomRight])
-                                                    .shadow(color: Color(darkShadow), radius: 10, x: 10, y: 10)
-                                                    .shadow(color: Color.white.opacity(0.7), radius: 10, x: -10, y: -10)
-
-                                            }
-                                        )
-                                    }
-                                    
-                                    VStack{
-                                        
-                                        HStack{
-                                            
-                                            VStack(alignment: .leading){
-                                                
-                                                Text("\(self.monuments.testMonument.name)")
-                                                    .font(.largeTitle)
-                                                    .fontWeight(.bold)
-                                                    .foregroundColor(.white)
-                                                    .padding(.bottom)
-                                                Text("\(self.monuments.testMonument.category.description)")
-                                                    .padding(.vertical, 3)
-                                                    .padding(.horizontal, 10)
-                                                    .font(.system(size: 18, weight: .light, design: .default))
-                                                    .foregroundColor(Color(Accent))
-                                                    .background(Capsule()
-                                                    .fill(Color .white))
-//                                                    .shadow(color: Color(darkShadow), radius: 10, x: 10, y: 10)
-//                                                    .shadow(color: Color.white.opacity(0.7), radius: 10, x: -10, y: -10)
-        
-                                            }.padding(.horizontal)
-                                            
-                                            Spacer()
-                                            
-                                        }.offset(y: self.expandedScreen_shown ? 44 : 0)
-                                        
-                                        Spacer()
-                                        
-                                    }.frame(width: self.expandedScreen_startPoint.width)
-                                }
-                                .frame(height:
-                                    self.itemHeight
-                                ).zIndex(1)
-                                Text("\(self.monuments.testMonument.description)")
-                                    .padding(.horizontal).padding(.vertical, 50)
-//                                    .frame(
-//                                    maxHeight: self.expandedScreen_shown ? .infinity : 0)
-                            }
-                            Button(action:{}){
-                                MapMonumentView(latitude: self.monuments.testMonument.lat, longitude: self.monuments.testMonument.lon, regionRadius: 350)
-                                    .cornerRadius(35)
-                                    .frame(height: 250)
-                                    .padding(.horizontal, 30)
-                                    .shadow(color: Color(darkShadow), radius: 10, x: 10, y: 10)
-                                    .shadow(color: Color.white.opacity(0.7), radius: 10, x: -10, y: -10)
-                                    .padding(.bottom, 60)
-
-                            }
-                            if (self.expandedScreen_shown) {
-                                CommentListView(monument: self.monuments.testMonument).padding(.bottom, 60)
-                            }
-                            
-                        }
-                        .background(Color (BGColor))
-                        .frame(width: self.expandedScreen_startPoint.width, height: self.expandedScreen_startPoint.height)
-                        .background(Color.clear)
-                        .cornerRadius(self.expandedScreen_shown ? 0 : 15 )
-                        .animation(.easeInOut(duration: 0.3))
-                        .offset(x: self.expandedScreen_startPoint.minX, y: self.expandedScreen_startPoint.minY)
-                        
-                        Button(action: {
-                            self.expandedScreen_willHide = true
-                            self.expandedScreen_startPoint = self.expandedScreen_returnPoint
-                            
-                            self.expandedScreen_shown = false
-                            Timer.scheduledTimer(withTimeInterval: 0.6, repeats: false) { (timer) in
-                                self.expandedScreen_willHide = false
-                            }
-                        }){
-                            Image(systemName: "xmark.circle.fill")
-                                .foregroundColor(Color(Accent))
-                                .font(.system(size: 25))
-                                .padding()
-                                .opacity(self.expandedScreen_shown ? 1 : 0.0)
-                                .animation(
-                                    Animation.easeInOut(duration: 0.3))
-                        }.offset(x: (UIScreen.main.bounds.width/2) - 30, y: (-1 * UIScreen.main.bounds.height/2) + 60)
-                    }
-                )
-            }.edgesIgnoringSafeArea(.top)
-                .opacity(self.expandedScreen_shown ? 1 : 0.0)
-                .animation(
-                    Animation.easeInOut(duration: 0.05)
-                        .delay(self.expandedScreen_willHide ? 0.5 : 0))
+            GeoSheet(geo: self.$geo)
             
             if (self.showAlertMonument) {
                 VStack (alignment: .center) {
