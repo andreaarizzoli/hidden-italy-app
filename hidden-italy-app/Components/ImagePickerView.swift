@@ -33,7 +33,14 @@ struct ImagePickerView: UIViewControllerRepresentable {
         
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let selectedImage = info[.originalImage] as? UIImage {
-                print(selectedImage)
+                
+                let multipart = prepareMultipart(data: ["image": selectedImage])
+                
+                postMultipart(
+                    uri: endpoint(.uploadProfileImage),
+                    params: multipart
+                )
+                
                 self.parent.selectedImage = selectedImage
                 self.parent.newImage = true
             }
