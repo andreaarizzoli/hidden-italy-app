@@ -29,44 +29,7 @@ struct GeoSheet: View {
                 ZStack {
                     ScrollView{
                         VStack(spacing:0){
-                            ZStack{
-                                if (self.sheetExpandable.shown) {
-                                    SheetImage()
-                                }
-                                
-                                VStack{
-                                    
-                                    HStack{
-                                        
-                                        VStack(alignment: .leading){
-                                            
-                                            Text("\(self.monuments.testMonument.name)")
-                                                .font(.largeTitle)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(.white)
-                                                .padding(.bottom)
-                                            
-                                            Text("\(self.monuments.testMonument.category.description)")
-                                                .padding(.vertical, 3)
-                                                .padding(.horizontal, 10)
-                                                .font(.system(size: 18, weight: .light, design: .default))
-                                                .foregroundColor(Color(Accent))
-                                                .background(Capsule()
-                                                .fill(Color .white))
-                                            
-                                        }.padding(.horizontal)
-                                        
-                                        Spacer()
-                                        
-                                    }.offset(y: self.self.sheetExpandable.shown ? 44 : 0)
-                                    
-                                    Spacer()
-                                    
-                                    }.frame(width: self.self.sheetExpandable.startPoint.width)
-                            }
-                            .frame(height:
-                                self.sheetExpandable.itemHeight
-                            ).zIndex(1)
+                            GeoCardTop()
                             
                             VStack(alignment: .leading) {
                                 Text("Informazioni")

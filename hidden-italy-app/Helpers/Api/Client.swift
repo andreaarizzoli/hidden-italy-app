@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 func defaultFailure(res: Any) -> Void {
-    print(res)
+    UserViewModel.setApiToken(token: "")
 }
 
 class Client
@@ -68,7 +68,8 @@ class Client
         success: @escaping (_ res: Any?) -> Void,
         failure: @escaping (_ res: Any?) -> Void = defaultFailure,
         headers: HTTPHeaders = HTTPHeaders([
-            "Authorization": "Bearer " + UserViewModel.getToken()
+            "Authorization": "Bearer " + UserViewModel.getToken(),
+            "Accept": "application/json"
         ]),
         multiple: Bool = false,
         name: String = "request"
@@ -82,34 +83,34 @@ class Client
             headers: headers
         ).responseJSON{response in
             switch response.result {
-            case .success(let data):
-                do {
-                    let jsonDecoder = JSONDecoder()
-                    
-                    if (multiple) {
-                        success(try
-                            jsonDecoder.decode(
-                                [M].self,
-                                from: response.data!
+                case .success(let data):
+                    do {
+                        let jsonDecoder = JSONDecoder()
+                        
+                        if (multiple) {
+                            success(try
+                                jsonDecoder.decode(
+                                    [M].self,
+                                    from: response.data!
+                                )
                             )
-                        )
-                    } else {
-                        success(try
-                            jsonDecoder.decode(
-                                M.self,
-                                from: response.data!
+                        } else {
+                            success(try
+                                jsonDecoder.decode(
+                                    M.self,
+                                    from: response.data!
+                                )
                             )
-                        )
+                        }
+                        
+                        self.queue[name] = nil
                     }
-                    
-                    self.queue[name] = nil
-                }
-                catch
-                {
-                    failure(data)
-                }
-            case .failure(let error):
-                print(error)
+                    catch
+                    {
+                        failure(data)
+                    }
+                case .failure(_):
+                    failure(response)
             }
         }
     }
