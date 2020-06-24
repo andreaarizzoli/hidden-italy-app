@@ -32,14 +32,12 @@ struct LoginView: View {
                     alignment: .center,
                     spacing:20
                 ) {
-                    Spacer()
                     
                     Image("logo")
                         .resizable()
                         .frame(width:109, height:89)
-                    
-                    Spacer()
-                    
+                        .padding(.vertical, 200)
+                                        
                     Input(
                         icon: "envelope",
                         placeholder: "Email",
@@ -80,6 +78,7 @@ struct LoginView: View {
                     Spacer()
                     
                 }.modifier(Form())
+                 .modifier(BgSafearea())
                  .onTapGesture { hideKeyboard() }
                  .modifier(AdaptsToSoftwareKeyboard())
             }
