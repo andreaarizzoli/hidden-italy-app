@@ -20,6 +20,7 @@ struct MonumentListView: View {
     @EnvironmentObject var sheetExpandable: SheetExpandable
     
     @State var geo: GeometryProxy?
+    @State var zIndexItem: Double = 20.0
     
     let ciContext = CIContext()
     @State var showSheetMonumentView = false
@@ -63,27 +64,11 @@ struct MonumentListView: View {
                         return AnyView(
                             
                             ZStack (alignment: .bottom){
-                                URLImage(
-                                    URL(string: baseImageURL() + thisItem.images[0].url)!,
-                                    processors: [CoreImageFilterProcessor(
-                                        name: "CISepiaTone",
-                                        parameters: [ kCIInputIntensityKey: 0.2 ],
-                                        context: self.ciContext),
-                                        Resize(size: CGSize(width: self.SVWidth, height: self.itemHeight),
-                                        scale: UIScreen.main.scale
-                                        )
-                                    ],
-                                    placeholder: {_ in
-                                        Image("placeholderImage")
-                                            .resizable()
-                                            .clipped()
-                                        
-                                    },
-                                    content: {
-                                        $0.image
-                                            .resizable()
-                                            .clipped()
-                                    }
+                                ItemImage(
+                                    item: thisItem,
+                                    width: self.SVWidth,
+                                    height: self.itemHeight,
+                                    context: self.ciContext
                                 )
                                 
                                 Button(action: {

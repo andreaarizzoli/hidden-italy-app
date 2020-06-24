@@ -60,6 +60,8 @@
 		77066E4924A1633100A74057 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77066E4824A1633100A74057 /* Login.swift */; };
 		77066E4B24A1633A00A74057 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77066E4A24A1633A00A74057 /* Register.swift */; };
 		7715FF9824A3A04E008BF431 /* GeoCardTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7715FF9724A3A04E008BF431 /* GeoCardTop.swift */; };
+		7715FF9C24A3B202008BF431 /* CircleSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7715FF9B24A3B202008BF431 /* CircleSpinner.swift */; };
+		7715FF9E24A3B5EF008BF431 /* ItemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7715FF9D24A3B5EF008BF431 /* ItemImage.swift */; };
 		773A700124A2A5670066F8AE /* FindNearest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773A700024A2A5670066F8AE /* FindNearest.swift */; };
 		773A700424A2E67D0066F8AE /* SheetExpandable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773A700324A2E67D0066F8AE /* SheetExpandable.swift */; };
 		773A700624A2E91A0066F8AE /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773A700524A2E91A0066F8AE /* Shadow.swift */; };
@@ -150,6 +152,8 @@
 		77066E4824A1633100A74057 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		77066E4A24A1633A00A74057 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		7715FF9724A3A04E008BF431 /* GeoCardTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCardTop.swift; sourceTree = "<group>"; };
+		7715FF9B24A3B202008BF431 /* CircleSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleSpinner.swift; sourceTree = "<group>"; };
+		7715FF9D24A3B5EF008BF431 /* ItemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemImage.swift; sourceTree = "<group>"; };
 		773A700024A2A5670066F8AE /* FindNearest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNearest.swift; sourceTree = "<group>"; };
 		773A700324A2E67D0066F8AE /* SheetExpandable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetExpandable.swift; sourceTree = "<group>"; };
 		773A700524A2E91A0066F8AE /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
@@ -453,6 +457,8 @@
 				7760A257249F5B0B00ED0A53 /* Modifiers */,
 				05158587246406B700194002 /* Tab */,
 				0526ED20249D40E200B598BC /* Validation */,
+				7715FF9B24A3B202008BF431 /* CircleSpinner.swift */,
+				7715FF9D24A3B5EF008BF431 /* ItemImage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -679,6 +685,7 @@
 				05C7D9772472090400E02F47 /* Map.swift in Sources */,
 				05342F5B24A11AD800F9589B /* TextView.swift in Sources */,
 				05948FA3245FFCF5001BB4A6 /* ManagerView.swift in Sources */,
+				7715FF9E24A3B5EF008BF431 /* ItemImage.swift in Sources */,
 				0526ED17249D2B1C00B598BC /* CreateMonumentView2.swift in Sources */,
 				0569BC3F249186C8000B5972 /* MapMonumentView.swift in Sources */,
 				0526ECFD249BC4F100B598BC /* ImagePickerView.swift in Sources */,
@@ -711,6 +718,7 @@
 				0515858E2464823500194002 /* Monument.swift in Sources */,
 				77066E4924A1633100A74057 /* Login.swift in Sources */,
 				77066E3F24A1569E00A74057 /* Input.swift in Sources */,
+				7715FF9C24A3B202008BF431 /* CircleSpinner.swift in Sources */,
 				0526ED1D249D315600B598BC /* BrokenRule.swift in Sources */,
 				773A700A24A35F530066F8AE /* GeoSheet.swift in Sources */,
 				0591AAA9249E58DB00BBB949 /* CrudFunctions.swift in Sources */,

@@ -9,9 +9,7 @@
 import SwiftUI
 
 struct SplashView: View {
-    
-    @State var spin = false
-    
+        
     var body: some View {
         ZStack {            
             VStack {
@@ -22,24 +20,10 @@ struct SplashView: View {
                 Spacer()
                 
                 ZStack {
-                    Circle()
-                        .trim(from: 0.0, to: 0.3)
-                        .stroke(lineWidth: 10.0)
-                        .opacity(0.3)
-                        .foregroundColor(Color(darkAccent))
-                        .rotationEffect(Angle(degrees: spin ? 360 : 0))
-                        .animation(
-                            Animation.easeInOut(duration: 0.8)
-                                .repeatForever(autoreverses: false)
-                        )
-                        
-                       
+                    CircleSpinner()
                 }
                 .frame(width: 50.0, height: 50.0)
                 .padding(.vertical, 100)
-                .onAppear(perform: {
-                    self.spin.toggle()
-                })
                
             }.frame(minWidth: 0, maxWidth: .infinity)
             .frame(minHeight: 0, maxHeight: .infinity)
