@@ -11,13 +11,11 @@ import SwiftUI
 struct VisitedMonuments : View {
     
     var body: some View{
-        
-        GeometryReader{_ in
+        VStack{
             
-            HStack(alignment: .center){
-                
-                Text("Monumenti Visitati")
-            }
+            
+                SimpleFlip()
+            
         }
     }
 }

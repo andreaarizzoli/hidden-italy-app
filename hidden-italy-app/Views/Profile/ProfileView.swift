@@ -20,6 +20,7 @@ struct ProfileView: View {
     
     var body: some View {
         
+        ScrollView{
         VStack (spacing:20){
             HStack (alignment: .center){
                 Spacer()
@@ -71,8 +72,16 @@ struct ProfileView: View {
                     .font(.system(size: 24))
                     .padding(.bottom)
             }
-            UserTab()
-            
+            HStack{
+                Text("Monumenti Visitati")
+                    .font(.title)
+                    .fontWeight(.medium)
+                    .foregroundColor(Color(Accent))
+                .padding(.vertical)
+            Spacer()
+            }.padding(.horizontal, 30)
+            VisitedMonuments()
+            }
         }.modifier(PaddingSafeArea()).modifier(BgSafearea())
     }
 }
