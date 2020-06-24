@@ -26,6 +26,8 @@ class UserViewModel: ObservableObject {
     
     @Published var current: User = User(id: 0, firstname: "", lastname: "", email: "", email_verified_at: "", role_id: 0, image: ImageModel(url: ""))
     
+//    @Published var monument = [MonumentUser]()
+    
     var image: String? {
        self.current.image?.url
     }
@@ -113,6 +115,22 @@ class UserViewModel: ObservableObject {
             }
         )
     }
+    
+//    func visitedMonument() -> Void {
+//        getAll(uri: endpoint(.userMonument),
+//            body: EmptyBody(),
+//            model: MonumentUser.self,
+//            success: {res in
+//                self.monument = res as! [MonumentUser]
+//            })
+//    }
+    
+//    func newVisitedMonument() -> Void {
+//        post(uri: endpoint(.userMonument),
+//             body: <#T##Decodable & Encodable#>,
+//             model: MonumentUser.self,
+//             success: <#T##(Any?) -> Void#>)
+//    }
     
     func register() -> Void {
         post(

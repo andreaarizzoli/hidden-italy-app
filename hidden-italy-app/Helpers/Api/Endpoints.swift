@@ -105,6 +105,8 @@ enum Endpoints: String {
      */
     case uploadProfileImage = "/v1/users/image"
     
+    case userMonument = "/v1/users/monuments"
+    
     /**
      * Endpoint used for get info about current logged user.
      *
