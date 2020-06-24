@@ -11,7 +11,12 @@ import SwiftUI
 struct RootTabView: View {
     
     @EnvironmentObject var user: UserViewModel
-
+    @EnvironmentObject var sheetExpandable: SheetExpandable
+    
+    var logged: Bool {
+        user.logged && user.getToken() != ""
+    }
+    
     @ObservedObject var locationManager = LocationManager()
     
     init() {
@@ -20,13 +25,15 @@ struct RootTabView: View {
     
     var body: some View {
         Group {
-            if (user.logged == true) {
+            if (self.logged == true) {
                 TabView {
                     MapView()
                         .tabItem{
                             Image(systemName: "map")
                             Text("Mappa")
-                        }
+                    }.onAppear(perform: {
+                        self.sheetExpandable.shown = false
+                    })
                     
                     MonumentListView()
                         .tabItem{
@@ -34,13 +41,13 @@ struct RootTabView: View {
                             Text("Luoghi")
                         }
                     
-                    MonumentListView2()
+                    MonumentListView()
                         .tabItem{
                             Image(systemName: "list.number")
                             Text("Classifica")
                         }
                     
-                    MonumentListView2()
+                    MonumentListView()
                         .tabItem{
                             Image(systemName: "heart")
                             Text("Notifiche")

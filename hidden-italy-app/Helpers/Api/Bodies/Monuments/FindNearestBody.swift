@@ -13,7 +13,7 @@ import Foundation
  *
  * @author Daniele Tulone <danieletulone.work@gmail.com>
  */
-struct FindNearest: Codable {
+struct FindNearestBody: Codable {
     var lat: Double
     var lon: Double
     var page: Int?

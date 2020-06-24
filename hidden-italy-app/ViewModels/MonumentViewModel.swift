@@ -10,10 +10,12 @@ import Foundation
 import Alamofire
 import Combine
 import CoreLocation
+import SwiftUI
 
 class MonumentViewModel: ObservableObject {
     
-    @Published var monumentList = [Monument]()
+    @Published var currentId: Int = 0
+    @Published var monumentList = [FindNearest]()
     @Published var userCoordinates = LocationManager()
     @Published var testMonument = Monument(
         id: 1,
@@ -51,38 +53,22 @@ class MonumentViewModel: ObservableObject {
 
         getAll(
             uri: endpoint(.findNearestMonuments),
-            body: FindNearest(
+            body: FindNearestBody(
                 lat: 45.4641684,
                 lon: 9.1916211
             ),
-            model: Monument.self,
+            model: FindNearest.self,
             success: {res in
-                self.monumentList = res as! [Monument]
+                self.monumentList = res as! [FindNearest]
             }
         )
     }
     
-    func createMonument(
-        name: String,
-        description: String,
-        address: String,
-        number: String,
-        cap: String,
-        city: String,
-        category: Int,
-        image: UIImage
-    ) -> Void {
-//        let coordinate = findCoordinates(address: address, number: number, city: city, cap: cap)
-//
-//        let _: [String: Any] = [
-//            "name": name,
-//            "description": description,
-//            "lat": address,
-//            "lon": address,
-//            "user_id": "1",
-//            "main_category_id": category,
-//            "categories": "2",
-//        ]
+    func create(name: String, description: String, address: String, number: String, cap: String, city: String, category: Int, image: UIImage) {
+        
+        let coordinate = findCoordinates(address: address, number: number, city: city, cap: cap)
+        
+        print("coordinate: \(coordinate)")
     }
     
     func findCoordinates(address: String, number: String, city: String, cap: String) -> CLGeocoder {
@@ -98,6 +84,56 @@ class MonumentViewModel: ObservableObject {
         }
         
         return geocoder
+    }
+    
+    func show(id: Int, view: MonumentListView, geo: GeometryProxy) -> Void {
+        get(
+            uri: Endpoints.showMonument(id: id),
+            body: EmptyBody(),
+            model: Monument.self,
+            success: {res in
+                let monument = res as! Monument
+                
+                let x = geo.frame(in: .global).minX
+                let y = geo.frame(in: .global).minY
+                let thisRect = CGRect(x: x ?? 0, y: y ?? 0, width: view.sheetExpandable.SVWidth, height: view.sheetExpandable.itemHeight)
+                view.sheetExpandable.returnPoint = thisRect
+                view.sheetExpandable.startPoint =  thisRect
+
+                Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { (timer) in
+                    view.sheetExpandable.shown = true
+                    view.sheetExpandable.startPoint = CGRect(x: 0, y: 0, width:UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+                }
+                
+                view.monuments.testMonument = monument
+            }
+        )
+    }
+    
+    func show(id: Int, view: MapView) -> Void {
+        let geo = view.geo
+        
+        get(
+            uri: Endpoints.showMonument(id: id),
+            body: EmptyBody(),
+            model: Monument.self,
+            success: {res in
+                let monument = res as! Monument
+                
+                let x = geo?.frame(in: .global).minX ?? 0
+                let y = geo?.frame(in: .global).minY ?? 0
+                let thisRect = CGRect(x: x ?? 0, y: y ?? 0, width: view.sheetExpandable.SVWidth, height: view.sheetExpandable.itemHeight)
+                view.sheetExpandable.returnPoint = thisRect
+                view.sheetExpandable.startPoint =  thisRect
+
+                Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { (timer) in
+                    view.sheetExpandable.shown = true
+                    view.sheetExpandable.startPoint = CGRect(x: 0, y: 0, width:UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+                }
+                
+                view.monuments.testMonument = monument
+            }
+        )
     }
 }
 

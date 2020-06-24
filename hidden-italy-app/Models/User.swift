@@ -18,6 +18,7 @@ struct User: Codable, Identifiable {
     var created_at: String?
     var updated_at: String?
     var role: Role?
+    var image: ImageModel?
 }
 
 

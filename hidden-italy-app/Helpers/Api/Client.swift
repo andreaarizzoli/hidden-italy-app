@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 func defaultFailure(res: Any) -> Void {
-    print(res)
+    UserViewModel.setApiToken(token: "")
 }
 
 class Client
@@ -68,7 +68,8 @@ class Client
         success: @escaping (_ res: Any?) -> Void,
         failure: @escaping (_ res: Any?) -> Void = defaultFailure,
         headers: HTTPHeaders = HTTPHeaders([
-            "Authorization": "Bearer " + UserViewModel.getToken()
+            "Authorization": "Bearer " + UserViewModel.getToken(),
+            "Accept": "application/json"
         ]),
         multiple: Bool = false,
         name: String = "request"
@@ -82,34 +83,34 @@ class Client
             headers: headers
         ).responseJSON{response in
             switch response.result {
-            case .success(let data):
-                do {
-                    let jsonDecoder = JSONDecoder()
-                    
-                    if (multiple) {
-                        success(try
-                            jsonDecoder.decode(
-                                [M].self,
-                                from: response.data!
+                case .success(let data):
+                    do {
+                        let jsonDecoder = JSONDecoder()
+                        
+                        if (multiple) {
+                            success(try
+                                jsonDecoder.decode(
+                                    [M].self,
+                                    from: response.data!
+                                )
                             )
-                        )
-                    } else {
-                        success(try
-                            jsonDecoder.decode(
-                                M.self,
-                                from: response.data!
+                        } else {
+                            success(try
+                                jsonDecoder.decode(
+                                    M.self,
+                                    from: response.data!
+                                )
                             )
-                        )
+                        }
+                        
+                        self.queue[name] = nil
                     }
-                    
-                    self.queue[name] = nil
-                }
-                catch
-                {
-                    failure(data)
-                }
-            case .failure(let error):
-                print(error)
+                    catch
+                    {
+                        failure(data)
+                    }
+                case .failure(_):
+                    failure(response)
             }
         }
     }
@@ -225,22 +226,25 @@ class Client
      */
     public func postMultipart(
         uri: String,
-        image: UIImage,
+        params: MultipartFormData,
         failure: @escaping (_ res: Any?) -> Void = defaultFailure,
-        name: String = "request"
+        name: String = "request",
+        headers: HTTPHeaders = HTTPHeaders([
+            "Authorization": "Bearer " + UserViewModel.getToken(),
+            "Accept": "application/json"
+        ])
     ) {
-        AF.upload(multipartFormData: {multiPart in
-//            multiPart.append(Data(image.utf8), withName: "image")
-        },
-        to: self.baseURL + uri
-    ).responseJSON{response in
-            switch response.result {
-                case .success(let data):
-                    print(data)
-                    self.queue[name] = nil
-                case .failure(let error):
-                    print(error)
-            }
+        self.cancel(name: name)
+        
+        AF.upload(multipartFormData: params, to: self.baseURL + uri, headers: headers)
+            .responseJSON{response in
+                switch response.result {
+                    case .success(let data):
+                        print(data)
+                        self.queue[name] = nil
+                    case .failure(_):
+                        print(response.data)
+                }
         }
     }
     

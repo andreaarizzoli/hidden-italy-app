@@ -8,6 +8,11 @@
 //  ALL METHODS ARE SORTED FROM a to Z
 
 import Foundation
+import Alamofire
+
+func baseImageURL() -> String {
+    return "http://127.0.0.1:8000/storage/"
+}
 
 /**
  * Get the base api url.
@@ -35,8 +40,6 @@ func cancel(name: String = "request") -> Void {
 func cancelAll() -> Void {
     Client.shared.cancelAll()
 }
-
-
 
 /**
  * Get the endpoint uri from endpoint cases.
@@ -118,4 +121,41 @@ func post<T: Codable, M: Codable>(
         multiple: multiple,
         name: name
     )
+}
+
+func postMultipart(
+    uri: String,
+    params: MultipartFormData
+) {
+    Client.shared.postMultipart(
+        uri: uri,
+        params: params
+    )
+}
+
+func prepareMultipart(data: [String: Any]) -> MultipartFormData {
+    let multipart = MultipartFormData()
+        
+    for (key, val) in data {
+        if let data = val as? String {
+            multipart.append(Data((data).utf8), withName: key)
+        }
+        
+        if let data = val as? Int {
+            multipart.append(Data(("\(data)").utf8), withName: key)
+        }
+        
+        if let data = val as? UIImage {
+            let image = data.jpegData(compressionQuality: 0.2)!
+
+            multipart.append(
+                image,
+                withName: key,
+                fileName: UUID().uuidString,
+                mimeType: "image/jpeg"
+            )
+        }
+    }
+    
+    return multipart
 }

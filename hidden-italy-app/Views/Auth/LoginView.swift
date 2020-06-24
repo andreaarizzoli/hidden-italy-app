@@ -79,7 +79,9 @@ struct LoginView: View {
                     
                     Spacer()
                     
-                }.modifier(Form()).onTapGesture { hideKeyboard() }.modifier(AdaptsToSoftwareKeyboard())
+                }.modifier(Form())
+                 .onTapGesture { hideKeyboard() }
+                 .modifier(AdaptsToSoftwareKeyboard())
             }
         }.modifier(BgSafearea())
     }

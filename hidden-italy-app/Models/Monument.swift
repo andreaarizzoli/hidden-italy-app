@@ -14,11 +14,11 @@ struct Monument: Codable, Identifiable {
     var description: String
     var lat: Double
     var lon: Double
-    var visible: Bool
+    var visible: Bool?
     var user_id: Int
-    var category_id: Int
+    var category_id: Int?
     var category: Category
-    var distance: Double
+    var distance: Double?
     var created_at: String?
     var updated_at: String?
     var categories: [Category?]

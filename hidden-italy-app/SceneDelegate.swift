@@ -25,8 +25,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             window.rootViewController = UIHostingController(
                 rootView: ManagerView()
-                    .environmentObject(UserViewModel()
-                )
+                    .environmentObject(UserViewModel())
+                    .environmentObject(MonumentViewModel())
+                    .environmentObject(SheetExpandable())
             )
             
             self.window = window

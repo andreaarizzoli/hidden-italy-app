@@ -9,12 +9,12 @@
 import Foundation
 
 struct ImageModel: Codable, Identifiable {
-    var id: Int
-    var title: String
-    var description: String
+    var id: Int?
+    var title: String?
+    var description: String?
     var url: String
-    var monument_id: Int
-    var user_id: Int
+    var monument_id: Int?
+    var user_id: Int?
     var created_at: String?
     var updated_at: String?
 }

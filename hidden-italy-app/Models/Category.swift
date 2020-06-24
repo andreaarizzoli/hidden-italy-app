@@ -9,9 +9,10 @@
 import Foundation
 
 struct Category: Codable, Identifiable {
-    var id: Int
+    var id: Int?
     var description: String
     var created_at: String?
     var updated_at: String?
+    var laravel_through_key: Int?
 }
 
