@@ -24,12 +24,27 @@ class UserViewModel: ObservableObject {
     
     @Published var logged: Bool = UserViewModel.getToken() == "" ? false : true
     
+    @Published var current: User = User(id: 0, firstname: "", lastname: "", email: "", email_verified_at: "", role_id: 0, image: ImageModel(url: ""))
+    
     /**
      * The field name in which store token.
      *
      * @author Daniele Tulone <danieletulone.work@gmail.com>
      */
     private static var tokenName = "token"
+    
+    func getCurrent(callback: @escaping () -> Void ) -> Void {
+        get(
+            uri: endpoint(.showUser),
+            body: EmptyBody(),
+            model: User.self,
+            success: {res in
+                self.current = res as! User
+                
+                callback()
+            }
+        )
+    }
     
     /**
      * Get the token.

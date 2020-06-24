@@ -42,24 +42,6 @@ struct RegisterUserView: View {
                     
                     Spacer()
                     
-                    Button(action: {
-                        self.isShowingImagePicker.toggle()
-                    }){
-                        ZStack (alignment: .center){
-                            
-                            Image(uiImage: image)
-                                .resizable()
-                                .frame(width:125, height:125)
-                                .clipShape(Circle()).modifier(AddImage())
-                            Image(systemName: "plus")
-                                .font(.system(size: 35))
-                                .foregroundColor(Color(Accent))
-                        }
-                    }.buttonStyle(PlainButtonStyle())
-                        .sheet(isPresented: $isShowingImagePicker, content: {
-                            ImagePickerView(isPresented: self.$isShowingImagePicker, selectedImage: self.$image, newImage: self.$newImage)
-                        })
-                    
                     Input(
                         icon: "person",
                         placeholder: "Nome",
