@@ -13,7 +13,6 @@ struct CommentRow: View {
     @ObservedObject var comments = CommentViewModel()
     @State var comment: Comment
     
-    
     var body: some View {
         VStack(alignment:.trailing) {
             HStack(alignment: .top){
