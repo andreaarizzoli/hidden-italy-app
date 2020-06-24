@@ -22,6 +22,7 @@ struct CreateMonumentView2: View {
     @State var image = UIImage()
     @State var selectedCategoryName = "Categoria"
     @State var selectedCategoryId: Int = 0
+    @State var imageLoaded = false
     
     @State var isShowingImagePicker = false
     @State var isShowingOverlay = false
@@ -72,7 +73,8 @@ struct CreateMonumentView2: View {
                             .sheet(isPresented: $isShowingImagePicker, content: {
                                 ImagePickerView(isPresented: self.$isShowingImagePicker,
                                                 selectedImage: self.$image,
-                                                newImage: self.$newImage)
+                                                newImage: self.$newImage,
+                                                imageLoaded: self.$imageLoaded)
                             })
                         
                         HStack {
